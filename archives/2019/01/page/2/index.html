@@ -161,7 +161,7 @@
 <span class="comment-counter">
     <i class="fa fa-comments-o"></i>
     
-        <span class="fb-comments-count" data-href="http://j0n9hyun.github.io/2019/01/30/2019-01-30-solidity/">0</span>
+        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://j0n9hyun.github.io/2019/01/30/2019-01-30-solidity/">0</span>
     
 </span>
 
@@ -184,8 +184,14 @@
     
 
         <p class="article-excerpt">
-              img.border-shadow{    border:1px solid #888888;    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
-Solidity문제에 Ropsten 주소가 주어진다.0x74b841a9d926db89b2cfeef454a75d178feda
+            
+  img.border-shadow{
+    border:1px solid #888888;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+Solidity문제에 Ropsten 주소가 주어진다.0x74b841a9d926db89b2cfeef454a75d1
         </p>
     </div>
 </article>
@@ -256,7 +262,7 @@ Solidity문제에 Ropsten 주소가 주어진다.0x74b841a9d926db89b2cfeef454a75
                             <a href="/2019/05/05/2019-05-05-doesnt_contain_k_integer/" class="thumbnail">
     
     
-        <span style="background-image:url(\j0n9hyun.github.io\images\ctf\allmn2019\prog1.png)" alt="ALLMN CTF 2019 Doesn&#39;t contain K integer" class="thumbnail-image"></span>
+        <span style="background-image:url(https://user-images.githubusercontent.com/16969364/58037160-c3e62a80-7b67-11e9-9c1e-41ef1aac964a.png)" alt="ALLMN CTF 2019 Doesn&#39;t contain K integer" class="thumbnail-image"></span>
     
     
 </a>
@@ -359,7 +365,7 @@ Solidity문제에 Ropsten 주소가 주어진다.0x74b841a9d926db89b2cfeef454a75
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Pwnable/">Pwnable</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Pwnable/Theory/">Theory</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/">WriteUps</a><span class="category-list-count">17</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Foren/">Foren</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Misc/">Misc</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Pwn/">Pwn</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Script/">Script</a><span class="category-list-count">1</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Pwnable/">Pwnable</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Pwnable/Theory/">Theory</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/">WriteUps</a><span class="category-list-count">17</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Foren/">Foren</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Misc/">Misc</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Pwn/">Pwn</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Script/">Script</a><span class="category-list-count">1</span></li></ul></li></ul>
         </div>
     </div>
 
@@ -431,14 +437,18 @@ Solidity문제에 Ropsten 주소가 주어진다.0x74b841a9d926db89b2cfeef454a75
 
         
     
-<script>(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en/sdk.js#xfbml=1&version=v2.8";
-    fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
+    <script>
+    var disqus_shortname = 'j0n9hyun';
+    
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
 
 
 
