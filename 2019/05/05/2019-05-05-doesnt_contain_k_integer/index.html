@@ -21,7 +21,7 @@
 <meta property="og:description" content="img.border-shadow{     border:1px solid #888888;     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }   Doesn’t contain K integer123How many numbers from 1 to N that">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://j0n9hyun.github.io/j0n9hyun.github.io/images/ctf/allmn2019/prog1.png">
-<meta property="og:updated_time" content="2019-05-20T14:58:12.044Z">
+<meta property="og:updated_time" content="2019-05-20T15:33:11.904Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ALLMN CTF 2019 Doesn&#39;t contain K integer">
 <meta name="twitter:description" content="img.border-shadow{     border:1px solid #888888;     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }   Doesn’t contain K integer123How many numbers from 1 to N that">
@@ -73,7 +73,7 @@
                                     <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
-                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Pwnable/">Pwnable</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Pwnable/Theory/">Theory</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/">WriteUps</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Forensic/">Forensic</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Misc/">Misc</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Pwn/">Pwn</a></li></ul></li></ul>
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Pwnable/">Pwnable</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Pwnable/Theory/">Theory</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/">WriteUps</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Foren/">Foren</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Misc/">Misc</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Pwn/">Pwn</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Script/">Script</a></li></ul></li></ul>
                                     
                                 <li class="main-nav-list-item">
                                     <a class="main-nav-list-link" href="/hueman/about/index.thml">About</a>
@@ -132,7 +132,7 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    uncategorized
+    <a class="page-title-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/WriteUps/Script/">Script</a>
     </h1>
 </div>
 
@@ -184,6 +184,7 @@
 <p>파이썬으로 짜면 금방인 문제. 하지만 간단하면서도 간단하지 않다. 계산하는 수가 매우 높아서 소요 시간이 개노답이기 때문이다. 그래서 결국 c로 다시 뚝딱했다.<br>c로도 약 2시간 30분이 소요 됐다. (더 빠른 알고리즘이 있겠지만 아몰랑) <br></p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> num_start = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">int</span> num_end = <span class="number">281939942</span>;</span><br><span class="line">	<span class="keyword">int</span> num = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> digit = <span class="number">3</span>;</span><br><span class="line">	<span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	digit %= <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (num = num_start; num &lt;= num_end; num++) &#123;</span><br><span class="line">		<span class="keyword">int</span> temp_num = num;</span><br><span class="line">		<span class="keyword">int</span> have = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">if</span> (num == <span class="number">0</span>) &#123;</span><br><span class="line">			<span class="keyword">if</span> (digit == <span class="number">0</span>) &#123;</span><br><span class="line">				have = <span class="number">1</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="keyword">while</span> (temp_num &gt; <span class="number">0</span>) &#123;</span><br><span class="line">				<span class="keyword">if</span> (temp_num % <span class="number">10</span> == digit) &#123;</span><br><span class="line">					have = <span class="number">1</span>;</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				temp_num /= <span class="number">10</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (have == <span class="number">1</span>) &#123;</span><br><span class="line">			count++;</span><br><span class="line">			<span class="keyword">if</span> (count &gt; <span class="number">1</span>) &#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">", "</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%d "</span>, num);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"\n\ncount : %d\n"</span>, num_end-count+<span class="number">1</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <center><small>[C]</small></center><br><br><br><img class="border-shadow" src="\j0n9hyun.github.io\images\ctf\allmn2019\prog1.png"><br><center><small>[Run]</small></center>
+
         </div>
         <footer class="article-footer">
             
@@ -263,10 +264,10 @@
         "headline": "ALLMN CTF 2019 Doesn&#39;t contain K integer",
         "image": "http://j0n9hyun.github.io\j0n9hyun.github.io\images\ctf\allmn2019\prog1.png",
         "keywords": "WriteUps ALLMN",
-        "genre": "",
+        "genre": "WriteUps Script",
         "datePublished": "2019-05-05",
         "dateCreated": "2019-05-05",
-        "dateModified": "2019-05-20",
+        "dateModified": "2019-05-21",
         "url": "http://j0n9hyun.github.io/2019/05/05/2019-05-05-doesnt_contain_k_integer/",
         "description": "
   img.border-shadow{
@@ -343,7 +344,7 @@ Doesn’t contain K integer123How many numbers from 1 to N that "
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Script/">Script</a></p>
                             <p class="item-title"><a href="/2019/05/05/2019-05-05-doesnt_contain_k_integer/" class="title">ALLMN CTF 2019 Doesn&#39;t contain K integer</a></p>
                             <p class="item-date"><time datetime="2019-05-04T17:06:00.000Z" itemprop="datePublished">2019-05-05</time></p>
                         </div>
@@ -383,7 +384,7 @@ Doesn’t contain K integer123How many numbers from 1 to N that "
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Pwn/">Pwn</a></p>
                             <p class="item-title"><a href="/2019/03/26/2019-03-26-0ctf_aegis/" class="title">0CTF CTF 2019 aegis (Incompletion)</a></p>
                             <p class="item-date"><time datetime="2019-03-26T01:45:00.000Z" itemprop="datePublished">2019-03-26</time></p>
                         </div>
@@ -395,7 +396,7 @@ Doesn’t contain K integer123How many numbers from 1 to N that "
                             <a href="/2019/03/25/2019-03-25-securinet_EZ/" class="thumbnail">
     
     
-        <span style="background-image:url(\j0n9hyun.github.io\images\ctf\securinets2019\foren\ez00.PNG)" alt="Securinets Prequals CTF 2019 EZ" class="thumbnail-image"></span>
+        <span style="background-image:url(https://user-images.githubusercontent.com/16969364/58034097-bda08000-7b60-11e9-80b3-5a9c06483d2b.PNG)" alt="Securinets Prequals CTF 2019 EZ" class="thumbnail-image"></span>
     
     
 </a>
@@ -403,7 +404,7 @@ Doesn’t contain K integer123How many numbers from 1 to N that "
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Misc/">Misc</a></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Foren/">Foren</a></p>
                             <p class="item-title"><a href="/2019/03/25/2019-03-25-securinet_EZ/" class="title">Securinets Prequals CTF 2019 EZ</a></p>
                             <p class="item-date"><time datetime="2019-03-25T07:27:00.000Z" itemprop="datePublished">2019-03-25</time></p>
                         </div>
@@ -415,7 +416,7 @@ Doesn’t contain K integer123How many numbers from 1 to N that "
                             <a href="/2019/03/25/2019-03-25-securinet_hidden/" class="thumbnail">
     
     
-        <span style="background-image:url(\0.PNG)" alt="Securinets Prequals CTF 2019 HIDDEN" class="thumbnail-image"></span>
+        <span style="background-image:url(https://user-images.githubusercontent.com/16969364/58033845-36530c80-7b60-11e9-903a-a6f0731646c8.PNG)" alt="Securinets Prequals CTF 2019 HIDDEN" class="thumbnail-image"></span>
     
     
 </a>
@@ -438,7 +439,7 @@ Doesn’t contain K integer123How many numbers from 1 to N that "
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Pwnable/">Pwnable</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Pwnable/Theory/">Theory</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/">WriteUps</a><span class="category-list-count">14</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Forensic/">Forensic</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Misc/">Misc</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Pwn/">Pwn</a><span class="category-list-count">6</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Pwnable/">Pwnable</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Pwnable/Theory/">Theory</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/">WriteUps</a><span class="category-list-count">17</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Foren/">Foren</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Misc/">Misc</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Pwn/">Pwn</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Script/">Script</a><span class="category-list-count">1</span></li></ul></li></ul>
         </div>
     </div>
 
