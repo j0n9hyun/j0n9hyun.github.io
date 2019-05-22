@@ -1,1 +1,3 @@
 User-agent: *
+Allow: /
+Sitemap: https://j0n9hyun.github.io/sitemap.xml
