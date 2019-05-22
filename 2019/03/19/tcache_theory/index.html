@@ -21,7 +21,7 @@
 <meta property="og:description" content="Tcache 12345678910111213141516171819202122#if USE_TCACHE/* We overlay this structure on the user-data portion of a chunk when   the chunk is stored in the per-thread cache.  */typedef struct tcache_e">
 <meta property="og:locale" content="ko">
 <meta property="og:image" content="https://user-images.githubusercontent.com/16969364/58037363-3eaf4580-7b68-11e9-9dec-a36a43808625.PNG">
-<meta property="og:updated_time" content="2019-05-22T06:01:18.367Z">
+<meta property="og:updated_time" content="2019-05-22T07:49:40.692Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Tcache Theory Analysis">
 <meta name="twitter:description" content="Tcache 12345678910111213141516171819202122#if USE_TCACHE/* We overlay this structure on the user-data portion of a chunk when   the chunk is stored in the per-thread cache.  */typedef struct tcache_e">
@@ -185,7 +185,7 @@
 <h3 id="특징-br"><a class="markdownIt-Anchor" href="#특징-br"></a> 특징 <br></h3>
 <ul>
 <li>Single linked list(단일 연결 구조)를 이루고 있다.</li>
-<li>Condidate를 하지 않는다.</li>
+<li>Consolidate를 하지 않는다.</li>
 <li>LIFO 구조를 가지고 있다.</li>
 <li>Pointer가 오직 next chunk만 포함하고 있다.</li>
 <li>기본적으로 Chunk Size는 24 ~ 1032 bytes 이다. (32bit : 12 ~ 516 bytes)</li>
@@ -199,7 +199,7 @@
 <center><small>[tcache_get]</small></center>
 <p><strong>tcache_put</strong>과 <strong>tcache_get</strong> 함수는 _int_free 와 __libc_malloc 함수가 시작할때 호출된다.<br>
 <strong>tacace_get</strong>은 할당된 크기의 영역이 요청될때 0x408보다 작으면 호출된다.</p>
-<img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/58037363-3eaf4580-7b68-11e9-9dec-a36a43808625.PNG">
+<p><img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/58037363-3eaf4580-7b68-11e9-9dec-a36a43808625.PNG"> <br></p>
 <img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/58037374-41119f80-7b68-11e9-8533-5a9f1d95e084.PNG">
 <center><small>[free]</small></center>
 <img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/58037376-41aa3600-7b68-11e9-97e6-41660941aa5c.PNG">
@@ -298,7 +298,7 @@ entry와 count가 보이는 것을 알 수 있다. <br> <br>
         "url": "http://j0n9hyun.github.io/2019/03/19/tcache_theory/",
         "description": " Tcache
 12345678910111213141516171819202122#if USE_TCACHE/* We overlay this structure on the user-data portion of a chunk when   the chunk is stored in the per-thread cache.  */typedef struct tcache_e"
-        "wordCount": 567
+        "wordCount": 568
     }
 </script>
 
