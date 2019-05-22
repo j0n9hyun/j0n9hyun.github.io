@@ -10,20 +10,20 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="WriteUps,TRUST">
+        <meta name="keywords" content="WriteUps,CTF">
     
-    <meta name="description" content="start Binary File 123456789sub_4005E6 proc near; __unwind &amp;#123;push    rbpmov     rbp, rsppop     raxpop     rdxpop     rdipop     rsiretn [sub_4005E6] 4개의 sub 함수 중 4005E6에는 pop gadget이 있다.    12345">
-<meta name="keywords" content="WriteUps,TRUST">
+    <meta name="description" content="start Binary File Here is a footnote reference,[1] and another.[2] 123456789sub_4005E6 proc near; __unwind &amp;#123;push    rbpmov     rbp, rsppop     raxpop     rdxpop     rdipop     rsiretn [sub_4005E">
+<meta name="keywords" content="WriteUps,CTF">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TRUST CTF 2019 start">
 <meta property="og:url" content="http://j0n9hyun.github.io/2019/02/15/pwnstart/index.html">
 <meta property="og:site_name" content="j0n9hyun">
-<meta property="og:description" content="start Binary File 123456789sub_4005E6 proc near; __unwind &amp;#123;push    rbpmov     rbp, rsppop     raxpop     rdxpop     rdipop     rsiretn [sub_4005E6] 4개의 sub 함수 중 4005E6에는 pop gadget이 있다.    12345">
+<meta property="og:description" content="start Binary File Here is a footnote reference,[1] and another.[2] 123456789sub_4005E6 proc near; __unwind &amp;#123;push    rbpmov     rbp, rsppop     raxpop     rdxpop     rdipop     rsiretn [sub_4005E">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2019-05-22T06:02:58.005Z">
+<meta property="og:updated_time" content="2019-05-22T12:59:43.473Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TRUST CTF 2019 start">
-<meta name="twitter:description" content="start Binary File 123456789sub_4005E6 proc near; __unwind &amp;#123;push    rbpmov     rbp, rsppop     raxpop     rdxpop     rdipop     rsiretn [sub_4005E6] 4개의 sub 함수 중 4005E6에는 pop gadget이 있다.    12345">
+<meta name="twitter:description" content="start Binary File Here is a footnote reference,[1] and another.[2] 123456789sub_4005E6 proc near; __unwind &amp;#123;push    rbpmov     rbp, rsppop     raxpop     rdxpop     rdipop     rsiretn [sub_4005E">
     
 	<link rel="canonical" href="http://j0n9hyun.github.io/2019/02/15/pwnstart/">
 
@@ -169,7 +169,7 @@
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/TRUST/">TRUST</a>, <a class="tag-link" href="/tags/WriteUps/">WriteUps</a>
+        <a class="tag-link" href="/tags/CTF/">CTF</a>, <a class="tag-link" href="/tags/WriteUps/">WriteUps</a>
     </div>
 
             </div>
@@ -178,6 +178,7 @@
         <div class="article-entry" itemprop="articleBody">
             <h2 id="start"><a class="markdownIt-Anchor" href="#start"></a> start</h2>
 <p><a href="/j0n9hyun.github.io/upload/start.zip">Binary File</a></p>
+<p>Here is a footnote reference,<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> and another.<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sub_4005E6 proc near</span><br><span class="line">; __unwind &#123;</span><br><span class="line">push    rbp</span><br><span class="line">mov     rbp, rsp</span><br><span class="line">pop     rax</span><br><span class="line">pop     rdx</span><br><span class="line">pop     rdi</span><br><span class="line">pop     rsi</span><br><span class="line">retn</span><br></pre></td></tr></table></figure>
 <center><small>[sub_4005E6]</small></center>
 4개의 sub 함수 중 4005E6에는 pop gadget이 있다.  
@@ -197,6 +198,15 @@
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 </style>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>Here is the footnote. <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>Here’s one with multiple blocks. <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
 
         </div>
         <footer class="article-footer">
@@ -204,7 +214,7 @@
 
 
 
-    <a data-url="http://j0n9hyun.github.io/2019/02/15/pwnstart/" data-id="cjvyrcdlb000jocfpe7kjerbh" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+    <a data-url="http://j0n9hyun.github.io/2019/02/15/pwnstart/" data-id="cjvz5tnea000822fpexb54rcx" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -276,7 +286,7 @@
         },
         "headline": "TRUST CTF 2019 start",
         "image": "http://j0n9hyun.github.io",
-        "keywords": "WriteUps TRUST",
+        "keywords": "WriteUps CTF",
         "genre": "WriteUps Pwn",
         "datePublished": "2019-02-15",
         "dateCreated": "2019-02-15",
@@ -284,12 +294,10 @@
         "url": "http://j0n9hyun.github.io/2019/02/15/pwnstart/",
         "description": " start
 Binary File
+Here is a footnote reference,[1] and another.[2]
 123456789sub_4005E6 proc near; __unwind &#123;push    rbpmov     rbp, rsppop     raxpop     rdxpop     rdipop     rsiretn
-[sub_4005E6]
-4개의 sub 함수 중 4005E6에는 pop gadget이 있다.  
-
-12345"
-        "wordCount": 392
+[sub_4005E"
+        "wordCount": 424
     }
 </script>
 
@@ -415,7 +423,7 @@ Binary File
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">태그</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/0CTF/">0CTF</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ALLMN/">ALLMN</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CodeGate/">CodeGate</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NEWSECU/">NEWSECU</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Securinets/">Securinets</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TRUST/">TRUST</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theory/">Theory</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WriteUps/">WriteUps</a><span class="tag-list-count">18</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/0CTF/">0CTF</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ALLMN/">ALLMN</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/">CTF</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CodeGate/">CodeGate</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NEWSECU/">NEWSECU</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Securinets/">Securinets</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theory/">Theory</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WriteUps/">WriteUps</a><span class="tag-list-count">18</span></li></ul>
         </div>
     </div>
 
