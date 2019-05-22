@@ -10,17 +10,17 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="WriteUps,NEWSECU">
+        <meta name="keywords" content="WriteUps,CTF">
     
     <meta name="description" content="Base64 디코딩을 3번 하면 풀리는 문제다. 12345671 from pwn import *2 import base643 r = remote(&apos;35.237.96.115&apos;, 1357)4 for i in range(3):5     result = base64.decodestring(r.recvline())6     r.sendlineafter(&quot;: &quot;,">
-<meta name="keywords" content="WriteUps,NEWSECU">
+<meta name="keywords" content="WriteUps,CTF">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NEWSECU CTF 2019 Base64">
 <meta property="og:url" content="http://j0n9hyun.github.io/2019/01/30/base64/index.html">
 <meta property="og:site_name" content="j0n9hyun">
 <meta property="og:description" content="Base64 디코딩을 3번 하면 풀리는 문제다. 12345671 from pwn import *2 import base643 r = remote(&apos;35.237.96.115&apos;, 1357)4 for i in range(3):5     result = base64.decodestring(r.recvline())6     r.sendlineafter(&quot;: &quot;,">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2019-05-22T06:06:14.009Z">
+<meta property="og:updated_time" content="2019-05-22T14:03:39.083Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NEWSECU CTF 2019 Base64">
 <meta name="twitter:description" content="Base64 디코딩을 3번 하면 풀리는 문제다. 12345671 from pwn import *2 import base643 r = remote(&apos;35.237.96.115&apos;, 1357)4 for i in range(3):5     result = base64.decodestring(r.recvline())6     r.sendlineafter(&quot;: &quot;,">
@@ -169,14 +169,14 @@
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/NEWSECU/">NEWSECU</a>, <a class="tag-link" href="/tags/WriteUps/">WriteUps</a>
+        <a class="tag-link" href="/tags/CTF/">CTF</a>, <a class="tag-link" href="/tags/WriteUps/">WriteUps</a>
     </div>
 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h2 id="base64"><a class="markdownIt-Anchor" href="#base64"></a> Base64</h2>
+            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="base64"><a class="markdownIt-Anchor" href="#base64"></a> Base64</h2>
 <p>디코딩을 3번 하면 풀리는 문제다.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"><span class="number">2</span> <span class="keyword">import</span> base64</span><br><span class="line"><span class="number">3</span> r = remote(<span class="string">'35.237.96.115'</span>, <span class="number">1357</span>)</span><br><span class="line"><span class="number">4</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">3</span>):</span><br><span class="line"><span class="number">5</span>     result = base64.decodestring(r.recvline())</span><br><span class="line"><span class="number">6</span>     r.sendlineafter(<span class="string">": "</span>, result)</span><br><span class="line"><span class="number">7</span> r.interactive()</span><br></pre></td></tr></table></figure>
 <div class="notice_info">
@@ -263,7 +263,7 @@
         },
         "headline": "NEWSECU CTF 2019 Base64",
         "image": "http://j0n9hyun.github.io",
-        "keywords": "WriteUps NEWSECU",
+        "keywords": "WriteUps CTF",
         "genre": "WriteUps Misc",
         "datePublished": "2019-01-30",
         "dateCreated": "2019-01-30",
@@ -272,7 +272,7 @@
         "description": " Base64
 디코딩을 3번 하면 풀리는 문제다.
 12345671 from pwn import *2 import base643 r = remote('35.237.96.115', 1357)4 for i in range(3):5     result = base64.decodestring(r.recvline())6     r.sendlineafter(": ", "
-        "wordCount": 163
+        "wordCount": 166
     }
 </script>
 
@@ -398,7 +398,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">태그</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/0CTF/">0CTF</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ALLMN/">ALLMN</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/">CTF</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CodeGate/">CodeGate</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NEWSECU/">NEWSECU</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Securinets/">Securinets</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theory/">Theory</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WriteUps/">WriteUps</a><span class="tag-list-count">18</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/">CTF</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theory/">Theory</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WriteUps/">WriteUps</a><span class="tag-list-count">18</span></li></ul>
         </div>
     </div>
 

@@ -3,29 +3,15 @@
 
 
     <url>
-        <loc>http://j0n9hyun.github.io/tags/ALLMN/</loc>
-        <lastmod>2019-05-22T13:57:30.508Z</lastmod>
+        <loc>http://j0n9hyun.github.io/tags/CTF/</loc>
+        <lastmod>2019-05-22T14:04:55.915Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://j0n9hyun.github.io/tags/WriteUps/</loc>
-        <lastmod>2019-05-22T13:57:30.508Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://j0n9hyun.github.io/tags/CTF/</loc>
-        <lastmod>2019-05-22T13:48:54.210Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://j0n9hyun.github.io/tags/Securinets/</loc>
-        <lastmod>2019-05-22T10:09:56.533Z</lastmod>
+        <lastmod>2019-05-22T14:04:55.915Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -33,27 +19,6 @@
     <url>
         <loc>http://j0n9hyun.github.io/tags/Theory/</loc>
         <lastmod>2019-05-22T07:49:40.692Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://j0n9hyun.github.io/tags/NEWSECU/</loc>
-        <lastmod>2019-05-22T06:06:27.156Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://j0n9hyun.github.io/tags/CodeGate/</loc>
-        <lastmod>2019-05-22T06:03:33.735Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://j0n9hyun.github.io/tags/0CTF/</loc>
-        <lastmod>2019-05-22T05:56:45.792Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
