@@ -12,18 +12,18 @@
     
         <meta name="keywords" content="Theory">
     
-    <meta name="description" content="img.border-shadow{     border:1px solid #888888;     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }   Return-to-csu Binary File 64bit ROP 기법을 사용할 때 우리는 gadget을 이용하곤">
+    <meta name="description" content="Return-to-csu Binary File 64bit ROP 기법을 사용할 때 우리는 gadget을 이용하곤 한다. 하지만 우리가 원하는 pop gadget이 존재하지 않을 경우는 어떻게 할까? 바로 RTC 를 사용하여 우회를 시킬 수 있다. 12345678int __cdecl main(int argc, const char **argv, const c">
 <meta name="keywords" content="Theory">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Reutrn-to-Csu Theory">
 <meta property="og:url" content="http://j0n9hyun.github.io/2019/04/01/rtc_theory/index.html">
 <meta property="og:site_name" content="j0n9hyun">
-<meta property="og:description" content="img.border-shadow{     border:1px solid #888888;     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }   Return-to-csu Binary File 64bit ROP 기법을 사용할 때 우리는 gadget을 이용하곤">
+<meta property="og:description" content="Return-to-csu Binary File 64bit ROP 기법을 사용할 때 우리는 gadget을 이용하곤 한다. 하지만 우리가 원하는 pop gadget이 존재하지 않을 경우는 어떻게 할까? 바로 RTC 를 사용하여 우회를 시킬 수 있다. 12345678int __cdecl main(int argc, const char **argv, const c">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2019-05-20T18:02:56.582Z">
+<meta property="og:updated_time" content="2019-05-22T05:51:48.493Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Reutrn-to-Csu Theory">
-<meta name="twitter:description" content="img.border-shadow{     border:1px solid #888888;     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }   Return-to-csu Binary File 64bit ROP 기법을 사용할 때 우리는 gadget을 이용하곤">
+<meta name="twitter:description" content="Return-to-csu Binary File 64bit ROP 기법을 사용할 때 우리는 gadget을 이용하곤 한다. 하지만 우리가 원하는 pop gadget이 존재하지 않을 경우는 어떻게 할까? 바로 RTC 를 사용하여 우회를 시킬 수 있다. 12345678int __cdecl main(int argc, const char **argv, const c">
     
 	<link rel="canonical" href="http://j0n9hyun.github.io/2019/04/01/rtc_theory/">
 
@@ -176,13 +176,7 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            <style>
-  img.border-shadow{
-    border:1px solid #888888;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-</style>
-<h2 id="return-to-csu"><a class="markdownIt-Anchor" href="#return-to-csu"></a> Return-to-csu</h2>
+            <h2 id="return-to-csu"><a class="markdownIt-Anchor" href="#return-to-csu"></a> Return-to-csu</h2>
 <p><a href="https://ctf.j0n9hyun.xyz/files/240f3f36125011483a357c5c8fb0fb4a/rtc" target="_blank" rel="noopener">Binary File</a></p>
 <p>64bit ROP 기법을 사용할 때 우리는 gadget을 이용하곤 한다. 하지만 우리가 원하는 pop gadget이 존재하지 않을 경우는 어떻게 할까?<br>
 바로 RTC 를 사용하여 우회를 시킬 수 있다.</p>
@@ -204,6 +198,12 @@ _libc_csu_init 이라는 함수를 어셈블리 뷰로 확인해보자. <br>
 <p>[gadget1] 코드에서 pop 해줬던 r15,r14,r13 값을 다시 edi,rsi,rdx에 셋팅한다.(보다시피 rdi가 아닌 edi라서 edi 값은 32비트 범위의 한해서만 조작이 가능하다.)<br>
 그리고는 <strong>r12+rbx*8</strong>한 값을 호출하는데 rbx 값을 0으로 셋팅해준다면 <strong>0[rbx] * 8</strong>이 돼서 최종적으로 r12의 값만 호출할 수 있게끔 한다.<br>
 rbx의 값에 1을 더하고 rbp값과 비교연산을 거친다. rbx값을 1로 셋팅해준다면 조건분기문도 성립되어 문제 없이 통과하게 된다.</p>
+<style>
+  img.border-shadow{
+      border:1px solid #888888;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+</style>
 
         </div>
         <footer class="article-footer">
@@ -287,18 +287,14 @@ rbx의 값에 1을 더하고 rbp값과 비교연산을 거친다. rbx값을 1로
         "genre": "Theory",
         "datePublished": "2019-04-01",
         "dateCreated": "2019-04-01",
-        "dateModified": "2019-05-21",
+        "dateModified": "2019-05-22",
         "url": "http://j0n9hyun.github.io/2019/04/01/rtc_theory/",
-        "description": "
-  img.border-shadow{
-    border:1px solid #888888;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
- Return-to-csu
+        "description": " Return-to-csu
 Binary File
-64bit ROP 기법을 사용할 때 우리는 gadget을 이용하곤"
-        "wordCount": 751
+64bit ROP 기법을 사용할 때 우리는 gadget을 이용하곤 한다. 하지만 우리가 원하는 pop gadget이 존재하지 않을 경우는 어떻게 할까?
+바로 RTC 를 사용하여 우회를 시킬 수 있다.
+12345678int __cdecl main(int argc, const char **argv, const c"
+        "wordCount": 757
     }
 </script>
 

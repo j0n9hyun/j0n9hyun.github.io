@@ -172,17 +172,17 @@
     
 
         <p class="article-excerpt">
-            
-  img.border-shadow{
-    border:1px solid #888888;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
- aegis
+             aegis
 Binary File
 
 [Mitigation]
-잘 안 보이는 보호기법이 추가되었다. (대회에서 나온 
+잘 안 보이는 보호기법이 추가되었다. (대회에서 나온 거 처음 봄)    
+
+[In IDA]
+IDA를 통해서 열어보면 ASAN, UBSAN 보호기법의 영향으로 마치 libc 파일을 여는 듯이 불러오는 함수가 많다. (보기 싫어진다)  
+
+[main.c]
+여느 힙 문제와 같이 메뉴들이 주어졌는데 하단
         </p>
     </div>
 </article>

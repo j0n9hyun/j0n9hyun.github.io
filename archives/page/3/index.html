@@ -172,14 +172,8 @@
     
 
         <p class="article-excerpt">
-            
-  img.border-shadow{
-    border:1px solid #888888;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  }
-
- Tcache
-12345678910111213141516171819202122#if USE_TCACHE/* W
+             Tcache
+12345678910111213141516171819202122#if USE_TCACHE/* We overlay this structure on the user-data portion of a chunk when   the chunk is stored in the per-thread cache.  */typedef struct tcache_e
         </p>
     </div>
 </article>
@@ -206,15 +200,9 @@
     
 
         <p class="article-excerpt">
-            
-  img.border-shadow {
-    border:1px solid #888888;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  }
-
- Warm Heap
+             Warm Heap
 Binary File
-123456789101112131415161718192021void
+123456789101112131415161718192021void __fastcall __noreturn main(__int64 a1, char **a2, char **a3)&#123;  void *v3; // ST10_8  void *v4; // ST18_8  char s; // [rsp+20h] [rbp-101
         </p>
     </div>
 </article>
@@ -245,17 +233,17 @@ Binary File
     
 
         <p class="article-excerpt">
-            
-  img.border-shadow{
-    border:1px solid #888888;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
- betting
+             betting
 Binary File
 
 [사진 1-1]
-Canary가 걸려있으므로 Canary Leak을 해줘야 
+Canary가 걸려있으므로 Canary Leak을 해줘야 한다 우선 프로그램을 실행해보자.  
+
+
+[사진 1-2]
+
+[사진 1-3]
+함수를 하나하나 훑어보면 shell 실행 함수가 떡하니 나와있다. 앞에 padding을 하고 마지막에 오는 ret 주소 부분에 이 helper 함수를 넣어주면 될 것이다.
         </p>
     </div>
 </article>
@@ -282,13 +270,7 @@ Canary가 걸려있으므로 Canary Leak을 해줘야
     
 
         <p class="article-excerpt">
-            
-  img.border-shadow{
-    border:1px solid #888888;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
- r0pbaby
+             r0pbaby
 Binary File
 
 [바이너리 보호기법 확인]
@@ -296,7 +278,13 @@ Binary File
 
 [실행 화면 메뉴]
 
-1번 진입시, libc
+1번 진입시, libc의 주소를 알려준다. 하지만 확인해보니 실제 libc 주소는 아니었다.
+
+
+2번 진입시, symbol 입력란이 추가로 뜨는데 여기서 system 함수의 주소를 알려준다.
+
+
+3번 진입시, 최대 1024 바이트까지 버퍼를 보낼 수 있다. 우리가 최
         </p>
     </div>
 </article>

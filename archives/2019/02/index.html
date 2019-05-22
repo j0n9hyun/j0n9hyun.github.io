@@ -172,17 +172,17 @@
     
 
         <p class="article-excerpt">
-            
-  img.border-shadow{
-    border:1px solid #888888;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
- betting
+             betting
 Binary File
 
 [사진 1-1]
-Canary가 걸려있으므로 Canary Leak을 해줘야 
+Canary가 걸려있으므로 Canary Leak을 해줘야 한다 우선 프로그램을 실행해보자.  
+
+
+[사진 1-2]
+
+[사진 1-3]
+함수를 하나하나 훑어보면 shell 실행 함수가 떡하니 나와있다. 앞에 padding을 하고 마지막에 오는 ret 주소 부분에 이 helper 함수를 넣어주면 될 것이다.
         </p>
     </div>
 </article>
@@ -209,13 +209,7 @@ Canary가 걸려있으므로 Canary Leak을 해줘야
     
 
         <p class="article-excerpt">
-            
-  img.border-shadow{
-    border:1px solid #888888;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
- r0pbaby
+             r0pbaby
 Binary File
 
 [바이너리 보호기법 확인]
@@ -223,7 +217,13 @@ Binary File
 
 [실행 화면 메뉴]
 
-1번 진입시, libc
+1번 진입시, libc의 주소를 알려준다. 하지만 확인해보니 실제 libc 주소는 아니었다.
+
+
+2번 진입시, symbol 입력란이 추가로 뜨는데 여기서 system 함수의 주소를 알려준다.
+
+
+3번 진입시, 최대 1024 바이트까지 버퍼를 보낼 수 있다. 우리가 최
         </p>
     </div>
 </article>
@@ -254,15 +254,13 @@ Binary File
     
 
         <p class="article-excerpt">
-            
-  img.border-shadow{
-    border:1px solid #888888;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
+             start
+Binary File
+123456789sub_4005E6 proc near; __unwind &#123;push    rbpmov     rbp, rsppop     raxpop     rdxpop     rdipop     rsiretn
+[sub_4005E6]
+4개의 sub 함수 중 4005E6에는 pop gadget이 있다.  
 
- start
-Binary File{: .btn .btn_info}
-123456789sub_4005E6 proc n
+12345
         </p>
     </div>
 </article>
@@ -289,16 +287,15 @@ Binary File{: .btn .btn_info}
     
 
         <p class="article-excerpt">
-            
-  img.border-shadow{
-    border:1px solid #888888;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
+             대회 후기
 
- 대회 후기
-
-[1등!!!]
+ [1등!!!] 
 낮 12시부터 시작해서 자정까지 총 12시간동안 진행하는 디미고 CTF 대회였다.  
+좀 아쉬웠던 부분이라고 하면 포너블 문제가 죄다 막혀서 하나도 못 풀었다...아직 내공이 더 필요한 거 같다.  
+참여한 팀원들 모두 고생했고 또 있을 대회에 상위권으로 들 수 있도록 화이팅!
+
+  img.border-shadow{
+    
         </p>
     </div>
 </article>

