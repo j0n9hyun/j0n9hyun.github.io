@@ -6,7 +6,7 @@
     
 
     
-    <title>아카이브 | j0n9hyun</title>
+    <title>카테고리: Pwn | j0n9hyun</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
@@ -14,7 +14,7 @@
 <meta name="keywords" content="j0n9hyun, HackCTF">
 <meta property="og:type" content="website">
 <meta property="og:title" content="j0n9hyun">
-<meta property="og:url" content="http://j0n9hyun.github.io/archives/page/6/index.html">
+<meta property="og:url" content="http://j0n9hyun.github.io/categories/WriteUps/Pwn/page/3/index.html">
 <meta property="og:site_name" content="j0n9hyun">
 <meta property="og:description" content="j0n9yhun&apos;s repository">
 <meta property="og:locale" content="ko">
@@ -22,7 +22,7 @@
 <meta name="twitter:title" content="j0n9hyun">
 <meta name="twitter:description" content="j0n9yhun&apos;s repository">
     
-	<link rel="canonical" href="http://j0n9hyun.github.io/archives/page/6/">
+	<link rel="canonical" href="http://j0n9hyun.github.io/categories/writeups/pwn/page/3/">
 
     
 
@@ -134,7 +134,7 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-archive"></i>아카이브
+    <i class="icon fa fa-folder-open"></i>카테고리: <em class="page-title-link">Pwn</em>
     </h1>
 </div>
 
@@ -160,58 +160,28 @@
         
         <div class="article-meta">
             <div class="category">
-            <a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Misc/">Misc</a>
+            <a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Pwn/">Pwn</a>
             </div>
-            <div class="date"><time datetime="2019-01-30T06:00:28.000Z" itemprop="datePublished">2019-01-30</time></div>
+            <div class="date"><time datetime="2019-02-05T03:42:00.000Z" itemprop="datePublished">2019-02-05</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/01/30/base64/">NEWSECU CTF 2019 Base64</a>
+        <a href="/2019/02/05/baskinrobbins31/">CODEGATE 2018 BaskinRobbins31</a>
         </h1>
     
 
         <p class="article-excerpt">
-             Base64
-디코딩을 3번 하면 풀리는 문제다.
-12345671 from pwn import *2 import base643 r = remote('35.237.96.115', 1357)4 for i in range(3):5     result = base64.decodestring(r.recvline())6     r.sendlineafter(": ", 
-        </p>
-    </div>
-</article>
-    
+             BaskinRobbins31
+ Binary File 
 
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Misc/">Misc</a>
-            </div>
-            <div class="date"><time datetime="2019-01-30T05:47:28.000Z" itemprop="datePublished">2019-01-30</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/01/30/solidity/">NEWSECU CTF 2019 Solidity</a>
-        </h1>
-    
+[사진 1-1]
+우리가 아는 그 베라 게임이다. 하지만 일반적인 방법으로는 이길 수 없다.
 
-        <p class="article-excerpt">
-             Solidity
-문제에 Ropsten 주소가 주어진다.
-0x74b841a9d926db89b2cfeef454a75d178feda06f
+[사진 1-2]
+필승법으로 이겨보려 하지만 치트를 쓴다.
 
-이 주소를 기반으로 거래내역을 살펴보면 위와 같이 나타난다.
-
-
-거래내역을 하나하나 살펴보면 플래그가 입력되어 있는 것을 볼 수 있다. 
-
-  img.border-shadow{
-        border:1px solid 
+1234567891011121314151617181920212223242526272829303132333435363738from pwn import 
         </p>
     </div>
 </article>
@@ -224,9 +194,10 @@
 
 
     <nav id="page-nav">
-        <span class="pages">페이지 6 of 6</span>
-        <a class="extend prev" rel="prev" href="/archives/page/5/">&laquo;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/4/">4</a><a class="page-number" href="/archives/page/5/">5</a><span class="page-number current">6</span>
+        <span class="pages">페이지 3 of 3</span>
+        <a class="extend prev" rel="prev" href="/categories/WriteUps/Pwn/page/2/">&laquo;</a><a class="page-number" href="/categories/WriteUps/Pwn/">1</a><a class="page-number" href="/categories/WriteUps/Pwn/page/2/">2</a><span class="page-number current">3</span>
     </nav>
+
 
 
                         </div>

