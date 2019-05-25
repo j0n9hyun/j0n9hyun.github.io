@@ -82,7 +82,7 @@
                                     <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
-                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Daily/">Daily</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Theory/">Theory</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/">WriteUps</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Foren/">Foren</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Misc/">Misc</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Pwn/">Pwn</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Script/">Script</a></li></ul></li></ul>
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Daily/">Daily</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Theory/">Theory</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/">WriteUps</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Foren/">Foren</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Misc/">Misc</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Pwn/">Pwn</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Script/">Script</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Web/">Web</a></li></ul></li></ul>
                                     
                                 <li class="main-nav-list-item">
                                     <a class="main-nav-list-link" href="https://about.me/j0n9hyun">About</a>
@@ -168,6 +168,42 @@
         
         <div class="article-meta">
             <div class="category">
+            <a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Web/">Web</a>
+            </div>
+            <div class="date"><time datetime="2019-05-25T09:13:01.000Z" itemprop="datePublished">2019-05-25</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2019/05/25/HackCTF-Time-WriteUp/">[HackCTF] Time WriteUp</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+             Time
+ [문제] 
+문제 링크
+문제에서는 is_numeric을 사용하여 숫자를 체크한다.
+그리고 끝에는 time값을 int로 변환을 해준 뒤 나온 값의 시간이 지나면 플래그를 뱉어낸다.
+
+ [사진 1-1] 
+풀기 위해서는 5184000 ~ 7776000 사이의 값을 넣어야 하는데 단순하게 생각했을 때 해당 시간동안 계속 켜놓으면 된다.
+
+ [사진 1-2
+        </p>
+    </div>
+</article>
+    
+
+    
+    
+    
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <div class="article-meta">
+            <div class="category">
             <a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Pwn/">Pwn</a>
             </div>
             <div class="date"><time datetime="2019-05-24T00:03:43.000Z" itemprop="datePublished">2019-05-24</time></div>
@@ -188,10 +224,14 @@
     </div>
 </article>
     
+        </div>
+    
 
     
     
     
+    
+        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -216,14 +256,10 @@
     </div>
 </article>
     
-        </div>
-    
 
     
     
     
-    
-        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -253,50 +289,6 @@ IDA를 통해서 열어보면 ASAN, UBSAN 보호기법의 영향으로 마치 li
 
 [main.c]
 여느 힙 문제와 같이 메뉴들이 주어졌는데 하단
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Foren/">Foren</a>
-            </div>
-            <div class="date"><time datetime="2019-03-25T07:27:00.000Z" itemprop="datePublished">2019-03-25</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/03/25/EZ/">Securinets Prequals CTF 2019 EZ</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-             EZ
-File
-
-[Problem] 
-
-[Steganography Decoding] 
-
-[Hidden.txt] 
-
-[Googling] 
-
-[SHA-1 Encoding] 
-
-flag is Securinets{b47f0d2a8866a75696f94a515d0cdf54c7ea3174}
-
-
-  img.border-shadow{
-      border:1px sol
         </p>
     </div>
 </article>
@@ -365,18 +357,18 @@ flag is Securinets{b47f0d2a8866a75696f94a515d0cdf54c7ea3174}
                     <li>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Theory/">Theory</a></p>
-                            <p class="item-title"><a href="/2019/05/24/Heap-Theory-First-Fit/" class="title">[Heap Thoery] First Fit</a></p>
-                            <p class="item-date"><time datetime="2019-05-24T05:51:30.000Z" itemprop="datePublished">2019-05-24</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Web/">Web</a></p>
+                            <p class="item-title"><a href="/2019/05/25/HackCTF-Time-WriteUp/" class="title">[HackCTF] Time WriteUp</a></p>
+                            <p class="item-date"><time datetime="2019-05-25T09:13:01.000Z" itemprop="datePublished">2019-05-25</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Pwn/">Pwn</a></p>
-                            <p class="item-title"><a href="/2019/05/24/Security-Fest-2019-baby2/" class="title">Security Fest 2019 baby2</a></p>
-                            <p class="item-date"><time datetime="2019-05-24T00:03:43.000Z" itemprop="datePublished">2019-05-24</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/Theory/">Theory</a></p>
+                            <p class="item-title"><a href="/2019/05/24/Heap-Theory-First-Fit/" class="title">[Heap Thoery] First Fit</a></p>
+                            <p class="item-date"><time datetime="2019-05-24T05:51:30.000Z" itemprop="datePublished">2019-05-24</time></p>
                         </div>
                     </li>
                 
@@ -390,7 +382,7 @@ flag is Securinets{b47f0d2a8866a75696f94a515d0cdf54c7ea3174}
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">카테고리</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Daily/">Daily</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Theory/">Theory</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/">WriteUps</a><span class="category-list-count">19</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Foren/">Foren</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Misc/">Misc</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Pwn/">Pwn</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Script/">Script</a><span class="category-list-count">1</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Daily/">Daily</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Theory/">Theory</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/">WriteUps</a><span class="category-list-count">20</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Foren/">Foren</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Misc/">Misc</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Pwn/">Pwn</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Script/">Script</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Web/">Web</a><span class="category-list-count">1</span></li></ul></li></ul>
         </div>
     </div>
 
@@ -400,7 +392,7 @@ flag is Securinets{b47f0d2a8866a75696f94a515d0cdf54c7ea3174}
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">태그</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/">CTF</a><span class="tag-list-count">19</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theory/">Theory</a><span class="tag-list-count">3</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/">CTF</a><span class="tag-list-count">19</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theory/">Theory</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WarGame/">WarGame</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
