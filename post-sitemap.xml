@@ -8,6 +8,22 @@
     </url>
 
     <url>
+        <loc>http://j0n9hyun.github.io/2019/05/27/How2Heap-fastbin-dup-into-stack-c/</loc>
+        <lastmod>2019-05-27T13:17:57.394Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://j0n9hyun.github.io/2019/05/27/How2Heap-fastbin-dup-c/</loc>
+        <lastmod>2019-05-27T13:17:09.526Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://j0n9hyun.github.io/2019/05/25/HackCTF-Time-WriteUp/</loc>
         <lastmod>2019-05-26T10:06:01.261Z</lastmod>
         <changefreq>weekly</changefreq>
