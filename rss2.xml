@@ -8,11 +8,11 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>j0n9yhun&#39;s repository</description>
-    <pubDate>Wed, 29 May 2019 07:10:41 GMT</pubDate>
+    <pubDate>Wed, 29 May 2019 07:16:06 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
-      <title>[How2Heap] House_of_spirit.c</title>
+      <title>[How2Heap] House_of_spirit</title>
       <link>http://j0n9hyun.github.io/2019/05/29/How2Heap-House-of-spirit-c/</link>
       <guid>http://j0n9hyun.github.io/2019/05/29/How2Heap-House-of-spirit-c/</guid>
       <pubDate>Wed, 29 May 2019 07:05:24 GMT</pubDate>
@@ -50,7 +50,7 @@
     </item>
     
     <item>
-      <title>[How2Heap] fastbin_dup_into_consolidate.c</title>
+      <title>[How2Heap] fastbin_dup_into_consolidate</title>
       <link>http://j0n9hyun.github.io/2019/05/28/How2Heap-fastbin-dup-into-consolidate-c/</link>
       <guid>http://j0n9hyun.github.io/2019/05/28/How2Heap-fastbin-dup-into-consolidate-c/</guid>
       <pubDate>Tue, 28 May 2019 05:15:29 GMT</pubDate>
@@ -69,7 +69,7 @@
     </item>
     
     <item>
-      <title>[How2Heap] fastbin_dup_into_stack.c</title>
+      <title>[How2Heap] fastbin_dup_into_stack</title>
       <link>http://j0n9hyun.github.io/2019/05/27/How2Heap-fastbin-dup-into-stack-c/</link>
       <guid>http://j0n9hyun.github.io/2019/05/27/How2Heap-fastbin-dup-into-stack-c/</guid>
       <pubDate>Mon, 27 May 2019 12:36:51 GMT</pubDate>
@@ -88,7 +88,7 @@
     </item>
     
     <item>
-      <title>[How2Heap] fastbin_dup.c</title>
+      <title>[How2Heap] fastbin_dup</title>
       <link>http://j0n9hyun.github.io/2019/05/27/How2Heap-fastbin-dup-c/</link>
       <guid>http://j0n9hyun.github.io/2019/05/27/How2Heap-fastbin-dup-c/</guid>
       <pubDate>Mon, 27 May 2019 10:31:21 GMT</pubDate>
