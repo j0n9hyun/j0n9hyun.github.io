@@ -182,7 +182,7 @@
         <p class="article-excerpt">
              Combo Chain
 Binary File
-1234567891011121314151617181920212223242526272829303132333435363738from pwn import *r = process('./combo-chain')e = ELF('./combo-chain')libc = e.libcru = lambda a: r.recvuntil
+123456789101112131415161718192021222324252627282930313233343536373839from pwn import *#r = process('./combo-chain')r = remote('pwn.hsctf.com', 2345)e = ELF('./combo-chain')lib
         </p>
     </div>
 </article>
