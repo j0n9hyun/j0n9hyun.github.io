@@ -8,6 +8,20 @@
     </url>
 
     <url>
+        <loc>http://j0n9hyun.github.io/categories/WriteUps/Pwn/</loc>
+        <lastmod>2019-06-08T22:48:55.232Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://j0n9hyun.github.io/categories/WriteUps/</loc>
+        <lastmod>2019-06-08T22:48:55.232Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://j0n9hyun.github.io/categories/Theory/</loc>
         <lastmod>2019-05-31T02:54:24.115Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -17,20 +31,6 @@
     <url>
         <loc>http://j0n9hyun.github.io/categories/WriteUps/Misc/</loc>
         <lastmod>2019-05-30T05:53:52.245Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://j0n9hyun.github.io/categories/WriteUps/</loc>
-        <lastmod>2019-05-30T05:53:52.245Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://j0n9hyun.github.io/categories/WriteUps/Pwn/</loc>
-        <lastmod>2019-05-27T14:43:16.033Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

