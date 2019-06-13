@@ -14,28 +14,28 @@
     
 
     
-    <title>Securinets Prequals CTF 2019 EZ | j0n9hyun</title>
+    <title>IDA Pro Korean String 적용 방법 | j0n9hyun</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="CTF">
+        <meta name="keywords" content="Tips">
     
-    <meta name="description" content="EZ File  [Problem]   [Steganography Decoding]   [Hidden.txt]   [Googling]   [SHA-1 Encoding]   flag is Securinets{b47f0d2a8866a75696f94a515d0cdf54c7ea3174}     img.border-shadow{       border:1px sol">
-<meta name="keywords" content="CTF">
+    <meta name="description" content="IDA Pro Korean String 적용 방법 패치 파일 바이너리 파일에  영어가 아닌 다른 언어가 입력돼있으면 IDA에서는 puts(byte_8048840) 처럼 한글 그대로 나오지 않는 것을 볼 수 있다. 물론 대부분은 영어로 작성돼있고 이렇게 돼있는다 한들, 보는 데 크게 지장을 주진 않지만 그래도 한번 찾아본 결과, 방법을 알아볼 수 있었다.">
+<meta name="keywords" content="Tips">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Securinets Prequals CTF 2019 EZ">
-<meta property="og:url" content="http://j0n9hyun.github.io/2019/03/25/EZ/index.html">
+<meta property="og:title" content="IDA Pro Korean String 적용 방법">
+<meta property="og:url" content="http://j0n9hyun.github.io/2019/06/13/ida-7.0-korean-string-apply/index.html">
 <meta property="og:site_name" content="j0n9hyun">
-<meta property="og:description" content="EZ File  [Problem]   [Steganography Decoding]   [Hidden.txt]   [Googling]   [SHA-1 Encoding]   flag is Securinets{b47f0d2a8866a75696f94a515d0cdf54c7ea3174}     img.border-shadow{       border:1px sol">
+<meta property="og:description" content="IDA Pro Korean String 적용 방법 패치 파일 바이너리 파일에  영어가 아닌 다른 언어가 입력돼있으면 IDA에서는 puts(byte_8048840) 처럼 한글 그대로 나오지 않는 것을 볼 수 있다. 물론 대부분은 영어로 작성돼있고 이렇게 돼있는다 한들, 보는 데 크게 지장을 주진 않지만 그래도 한번 찾아본 결과, 방법을 알아볼 수 있었다.">
 <meta property="og:locale" content="ko">
-<meta property="og:image" content="https://user-images.githubusercontent.com/16969364/58034097-bda08000-7b60-11e9-80b3-5a9c06483d2b.PNG">
-<meta property="og:updated_time" content="2019-05-24T13:14:09.679Z">
+<meta property="og:image" content="https://user-images.githubusercontent.com/16969364/59404563-f2ab9580-8de1-11e9-82d1-00d5fa782281.PNG">
+<meta property="og:updated_time" content="2019-06-13T05:08:29.334Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Securinets Prequals CTF 2019 EZ">
-<meta name="twitter:description" content="EZ File  [Problem]   [Steganography Decoding]   [Hidden.txt]   [Googling]   [SHA-1 Encoding]   flag is Securinets{b47f0d2a8866a75696f94a515d0cdf54c7ea3174}     img.border-shadow{       border:1px sol">
-<meta name="twitter:image" content="https://user-images.githubusercontent.com/16969364/58034097-bda08000-7b60-11e9-80b3-5a9c06483d2b.PNG">
+<meta name="twitter:title" content="IDA Pro Korean String 적용 방법">
+<meta name="twitter:description" content="IDA Pro Korean String 적용 방법 패치 파일 바이너리 파일에  영어가 아닌 다른 언어가 입력돼있으면 IDA에서는 puts(byte_8048840) 처럼 한글 그대로 나오지 않는 것을 볼 수 있다. 물론 대부분은 영어로 작성돼있고 이렇게 돼있는다 한들, 보는 데 크게 지장을 주진 않지만 그래도 한번 찾아본 결과, 방법을 알아볼 수 있었다.">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/16969364/59404563-f2ab9580-8de1-11e9-82d1-00d5fa782281.PNG">
     
-	<link rel="canonical" href="http://j0n9hyun.github.io/2019/03/25/ez/">
+	<link rel="canonical" href="http://j0n9hyun.github.io/2019/06/13/ida-7.0-korean-string-apply/">
 
     
 
@@ -147,19 +147,19 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/WriteUps/Foren/">Foren</a>
+    미지정
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-EZ" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-ida-7.0-korean-string-apply" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        Securinets Prequals CTF 2019 EZ
+        IDA Pro Korean String 적용 방법
         </h1>
     
 
@@ -169,8 +169,8 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2019/03/25/EZ/" class="article-date">
-            <time datetime="2019-03-25T07:27:00.000Z" itemprop="datePublished">2019-03-25</time>
+        <a href="/2019/06/13/ida-7.0-korean-string-apply/" class="article-date">
+            <time datetime="2019-06-13T04:37:48.000Z" itemprop="datePublished">2019-06-13</time>
         </a>
     </div>
 
@@ -179,7 +179,7 @@
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/CTF/">CTF</a>
+        <a class="tag-link" href="/tags/Tips/">Tips</a>
     </div>
 
   			<span class="reading-time">⏱ 1 분</span>
@@ -187,21 +187,25 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="ez"><a class="markdownIt-Anchor" href="#ez"></a> EZ</h2>
-<p><a href="#" class="btn_success">File</a></p>
-<img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/58034097-bda08000-7b60-11e9-80b3-5a9c06483d2b.PNG">
-<center><small>[Problem]</small></center> <br>
-<img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/58034098-bda08000-7b60-11e9-9289-c9c21922caf7.PNG">
-<center><small>[Steganography Decoding]</small></center> <br>
-<img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/58034100-bda08000-7b60-11e9-9c8d-9b239b667f3e.PNG">
-<center><small>[Hidden.txt]</small></center> <br>
-<img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/58034101-bda08000-7b60-11e9-99da-ae3cbfcdd87e.PNG">
-<center><small>[Googling]</small></center> <br>
-<img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/58034096-bd07e980-7b60-11e9-8b05-dd7b66865c84.PNG">
-<center><small>[SHA-1 Encoding]</small></center> <br>
-<blockquote>
-<p>flag is <strong>Securinets{b47f0d2a8866a75696f94a515d0cdf54c7ea3174}</strong></p>
-</blockquote>
+            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="ida-pro-korean-string-적용-방법"><a class="markdownIt-Anchor" href="#ida-pro-korean-string-적용-방법"></a> IDA Pro Korean String 적용 방법</h3>
+<p><a href="https://github.com/j0n9hyun/j0n9hyun.github.io/files/3284234/korean.zip" target="_blank" rel="noopener"><strong>패치 파일</strong></a></p>
+<p>바이너리 파일에  영어가 아닌 다른 언어가 입력돼있으면 IDA에서는 <code>puts(byte_8048840)</code> 처럼 한글 그대로 나오지 않는 것을 볼 수 있다. 물론 대부분은 영어로 작성돼있고 이렇게 돼있는다 한들, 보는 데 크게 지장을 주진 않지만 그래도 한번 찾아본 결과, 방법을 알아볼 수 있었다.</p>
+<img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/59404563-f2ab9580-8de1-11e9-82d1-00d5fa782281.PNG">
+<center><small> [IDA Pro] </small></center> <br>
+우선 위에 있는 패치 파일을 다운 받고 압축을 풀어서 IDA 설치 경로 안에 있는 cfg 폴더에 넣어준다.
+<br><br>
+<img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/59404811-f986d800-8de2-11e9-871d-d51cd03012a8.PNG">
+<center><small> [ida.cfg] </small></center> <br>
+다음 ida.cfg 파일을 열어서 분홍박스처럼 한 줄 추가해주면 적용이 완료된다.
+<br><br>
+<img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/59404273-f0950700-8de0-11e9-9ff4-900da4536761.PNG">
+<center><small> [적용 화면] </small></center>
+<center>
+<p><strong><code>세 줄 요약</code><br>
+<code>1. 패치 파일 다운 받아서 압축 품</code><br>
+<code>2. 파일을 IDA 설치 경로에 있는 cfg 폴더 안에 넣음</code><br>
+<code>3. ida.cfg 파일에 한 줄 추가함</code></strong></p>
+</center>
 <style>
   img.border-shadow{
       border:1px solid #888888;
@@ -215,7 +219,7 @@
 
 
 
-    <a data-url="http://j0n9hyun.github.io/2019/03/25/EZ/" data-id="cjwu7dapx0001smfpu2kb96vh" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+    <a data-url="http://j0n9hyun.github.io/2019/06/13/ida-7.0-korean-string-apply/" data-id="cjwu7darz001ismfpxidnonnk" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -285,33 +289,19 @@
             "@type": "Person",
             "name": "j0n9hyun"
         },
-        "headline": "Securinets Prequals CTF 2019 EZ",
-        "image": "http://j0n9hyun.github.iohttps://user-images.githubusercontent.com/16969364/58034097-bda08000-7b60-11e9-80b3-5a9c06483d2b.PNG",
-        "keywords": "CTF",
-        "genre": "WriteUps Foren",
-        "datePublished": "2019-03-25",
-        "dateCreated": "2019-03-25",
-        "dateModified": "2019-05-24",
-        "url": "http://j0n9hyun.github.io/2019/03/25/EZ/",
-        "description": " EZ
-File
-
-[Problem] 
-
-[Steganography Decoding] 
-
-[Hidden.txt] 
-
-[Googling] 
-
-[SHA-1 Encoding] 
-
-flag is Securinets{b47f0d2a8866a75696f94a515d0cdf54c7ea3174}
-
-
-  img.border-shadow{
-      border:1px sol"
-        "wordCount": 63
+        "headline": "IDA Pro Korean String 적용 방법",
+        "image": "http://j0n9hyun.github.iohttps://user-images.githubusercontent.com/16969364/59404563-f2ab9580-8de1-11e9-82d1-00d5fa782281.PNG",
+        "keywords": "Tips",
+        "genre": "",
+        "datePublished": "2019-06-13",
+        "dateCreated": "2019-06-13",
+        "dateModified": "2019-06-13",
+        "url": "http://j0n9hyun.github.io/2019/06/13/ida-7.0-korean-string-apply/",
+        "description": " IDA Pro Korean String 적용 방법
+패치 파일
+바이너리 파일에  영어가 아닌 다른 언어가 입력돼있으면 IDA에서는 puts(byte_8048840) 처럼 한글 그대로 나오지 않는 것을 볼 수 있다. 물론 대부분은 영어로 작성돼있고 이렇게 돼있는다 한들, 보는 데 크게 지장을 주진 않지만 그래도 한번 찾아본 결과, 방법을 알아볼 수 있었다.
+"
+        "wordCount": 153
     }
 </script>
 
@@ -359,20 +349,10 @@ flag is Securinets{b47f0d2a8866a75696f94a515d0cdf54c7ea3174}
         
 <nav id="article-nav">
     
-        <a href="/2019/03/26/0ctf_aegis/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">다음 글</strong>
-        <p class="article-nav-title">
-        
-            0CTF CTF 2019 aegis (Incompletion)
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2019/03/25/securinets_hidden/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2019/06/09/HSCTF-2019-Combo-Chain/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">이전 글</strong>
-        <p class="article-nav-title">Securinets Prequals CTF 2019 HIDDEN</p>
+        <p class="article-nav-title">HSCTF 2019 Combo Chain</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -482,7 +462,7 @@ flag is Securinets{b47f0d2a8866a75696f94a515d0cdf54c7ea3174}
     var disqus_shortname = 'j0n9hyun';
     
     
-    var disqus_url = 'http://j0n9hyun.github.io/2019/03/25/EZ/';
+    var disqus_url = 'http://j0n9hyun.github.io/2019/06/13/ida-7.0-korean-string-apply/';
     
     (function() {
     var dsq = document.createElement('script');
