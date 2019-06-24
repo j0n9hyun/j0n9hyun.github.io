@@ -14,26 +14,28 @@
     
 
     
-    <title>NEWSECU CTF 2019 Base64 | j0n9hyun</title>
+    <title>IDA Pro 7.2 한글 스트링 지원 | j0n9hyun</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="CTF">
+        <meta name="keywords" content>
     
-    <meta name="description" content="Base64 디코딩을 3번 하면 풀리는 문제다. 12345671 from pwn import *2 import base643 r = remote(&apos;35.237.96.115&apos;, 1357)4 for i in range(3):5     result = base64.decodestring(r.recvline())6     r.sendlineafter(&quot;: &quot;,">
-<meta name="keywords" content="CTF">
+    <meta name="description" content="IDA Pro 7.2 한글 스트링 지원 7.0 버전까지만 해도 clt 파일을 따로 추가해줘야 했는데 7.2 부턴 그냥 한줄 추가만 해주면 된다. 제작자가파일을 보냈다고 했는데 회사에서 잘 반영해준 것 같다. 상단의 주석에도 IDA 사용자가 제공해줬다고 적혀있다.   [Korean.clt]     [IDA Pro 7.2]      img.border-sha">
+<meta name="keywords" content="j0n9hyun, HackCTF">
 <meta property="og:type" content="article">
-<meta property="og:title" content="NEWSECU CTF 2019 Base64">
-<meta property="og:url" content="http://j0n9hyun.github.io/2019/01/30/base64/index.html">
+<meta property="og:title" content="IDA Pro 7.2 한글 스트링 지원">
+<meta property="og:url" content="http://j0n9hyun.github.io/2019/06/24/IDA-Pro-7-2-한글-스트링-지원/index.html">
 <meta property="og:site_name" content="j0n9hyun">
-<meta property="og:description" content="Base64 디코딩을 3번 하면 풀리는 문제다. 12345671 from pwn import *2 import base643 r = remote(&apos;35.237.96.115&apos;, 1357)4 for i in range(3):5     result = base64.decodestring(r.recvline())6     r.sendlineafter(&quot;: &quot;,">
+<meta property="og:description" content="IDA Pro 7.2 한글 스트링 지원 7.0 버전까지만 해도 clt 파일을 따로 추가해줘야 했는데 7.2 부턴 그냥 한줄 추가만 해주면 된다. 제작자가파일을 보냈다고 했는데 회사에서 잘 반영해준 것 같다. 상단의 주석에도 IDA 사용자가 제공해줬다고 적혀있다.   [Korean.clt]     [IDA Pro 7.2]      img.border-sha">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2019-05-24T13:15:30.288Z">
+<meta property="og:image" content="https://user-images.githubusercontent.com/16969364/60010989-d3e7b180-96b3-11e9-94e7-7a83b0a31d89.PNG">
+<meta property="og:updated_time" content="2019-06-24T10:18:53.118Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="NEWSECU CTF 2019 Base64">
-<meta name="twitter:description" content="Base64 디코딩을 3번 하면 풀리는 문제다. 12345671 from pwn import *2 import base643 r = remote(&apos;35.237.96.115&apos;, 1357)4 for i in range(3):5     result = base64.decodestring(r.recvline())6     r.sendlineafter(&quot;: &quot;,">
+<meta name="twitter:title" content="IDA Pro 7.2 한글 스트링 지원">
+<meta name="twitter:description" content="IDA Pro 7.2 한글 스트링 지원 7.0 버전까지만 해도 clt 파일을 따로 추가해줘야 했는데 7.2 부턴 그냥 한줄 추가만 해주면 된다. 제작자가파일을 보냈다고 했는데 회사에서 잘 반영해준 것 같다. 상단의 주석에도 IDA 사용자가 제공해줬다고 적혀있다.   [Korean.clt]     [IDA Pro 7.2]      img.border-sha">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/16969364/60010989-d3e7b180-96b3-11e9-94e7-7a83b0a31d89.PNG">
     
-	<link rel="canonical" href="http://j0n9hyun.github.io/2019/01/30/base64/">
+	<link rel="canonical" href="http://j0n9hyun.github.io/2019/06/24/ida-pro-7-2-한글-스트링-지원/">
 
     
 
@@ -145,19 +147,19 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/WriteUps/Misc/">Misc</a>
+    <a class="page-title-link" href="/categories/Daily/">Daily</a>
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-base64" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-IDA-Pro-7-2-한글-스트링-지원" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        NEWSECU CTF 2019 Base64
+        IDA Pro 7.2 한글 스트링 지원
         </h1>
     
 
@@ -167,40 +169,39 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2019/01/30/base64/" class="article-date">
-            <time datetime="2019-01-30T06:00:28.000Z" itemprop="datePublished">2019-01-30</time>
+        <a href="/2019/06/24/IDA-Pro-7-2-한글-스트링-지원/" class="article-date">
+            <time datetime="2019-06-24T10:04:12.000Z" itemprop="datePublished">2019-06-24</time>
         </a>
     </div>
 
 		
 
                 
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/CTF/">CTF</a>
-    </div>
-
   			<span class="reading-time">⏱ 1 분</span>
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="base64"><a class="markdownIt-Anchor" href="#base64"></a> Base64</h2>
-<p>디코딩을 3번 하면 풀리는 문제다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"><span class="number">2</span> <span class="keyword">import</span> base64</span><br><span class="line"><span class="number">3</span> r = remote(<span class="string">'35.237.96.115'</span>, <span class="number">1357</span>)</span><br><span class="line"><span class="number">4</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">3</span>):</span><br><span class="line"><span class="number">5</span>     result = base64.decodestring(r.recvline())</span><br><span class="line"><span class="number">6</span>     r.sendlineafter(<span class="string">": "</span>, result)</span><br><span class="line"><span class="number">7</span> r.interactive()</span><br></pre></td></tr></table></figure>
-<div class="notice_info">
-  <h4>근데 더 줄일 수도 있다!</h4>
-  <p>사실 위 코드 또한 import base64를 제외해도 pwntools 안에 base64 모듈이 내장돼 있기 때문에 정상적으로 작동이 된다. b64d는 pwntools에서 사용할 수 있는 함수다. 기능은 decodestring과 동일하다.</p>
-</div>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"><span class="number">2</span> r = remote(<span class="string">'35.237.96.115'</span>, <span class="number">1357</span>)</span><br><span class="line"><span class="number">3</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">3</span>):</span><br><span class="line"><span class="number">4</span>     result = b64d(r.recvline())</span><br><span class="line"><span class="number">5</span>     r.sendlineafter(<span class="string">": "</span>, result)</span><br><span class="line"><span class="number">6</span> r.interactive()</span><br></pre></td></tr></table></figure>
-
+            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="ida-pro-72-한글-스트링-지원"><a class="markdownIt-Anchor" href="#ida-pro-72-한글-스트링-지원"></a> IDA Pro 7.2 한글 스트링 지원</h3>
+<p>7.0 버전까지만 해도 clt 파일을 따로 추가해줘야 했는데 7.2 부턴 그냥 한줄 추가만 해주면 된다. <a href="http://egloos.zum.com/shadowxx/v/11310107" target="_blank" rel="noopener">제작자</a>가파일을 보냈다고 했는데 회사에서 잘 반영해준 것 같다. 상단의 주석에도 IDA 사용자가 제공해줬다고 적혀있다.</p>
+<img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/60010989-d3e7b180-96b3-11e9-94e7-7a83b0a31d89.PNG">
+<center><small> [Korean.clt] </small><center> <br><br>
+<img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/60011395-a94a2880-96b4-11e9-8ae8-860ac2d98aa7.PNG">
+<center><small> [IDA Pro 7.2] </small><center> <br>
+<style>
+  img.border-shadow{
+        border:1px solid #888888;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+</style>
+</center></center></center></center>
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="http://j0n9hyun.github.io/2019/01/30/base64/" data-id="cjxa7s9se000vpefpvrv3s0aa" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+    <a data-url="http://j0n9hyun.github.io/2019/06/24/IDA-Pro-7-2-한글-스트링-지원/" data-id="cjxa7s9s5000kpefpjvm3biqh" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -270,18 +271,23 @@
             "@type": "Person",
             "name": "j0n9hyun"
         },
-        "headline": "NEWSECU CTF 2019 Base64",
-        "image": "http://j0n9hyun.github.io",
-        "keywords": "CTF",
-        "genre": "WriteUps Misc",
-        "datePublished": "2019-01-30",
-        "dateCreated": "2019-01-30",
-        "dateModified": "2019-05-24",
-        "url": "http://j0n9hyun.github.io/2019/01/30/base64/",
-        "description": " Base64
-디코딩을 3번 하면 풀리는 문제다.
-12345671 from pwn import *2 import base643 r = remote('35.237.96.115', 1357)4 for i in range(3):5     result = base64.decodestring(r.recvline())6     r.sendlineafter(": ", "
-        "wordCount": 166
+        "headline": "IDA Pro 7.2 한글 스트링 지원",
+        "image": "http://j0n9hyun.github.iohttps://user-images.githubusercontent.com/16969364/60010989-d3e7b180-96b3-11e9-94e7-7a83b0a31d89.PNG",
+        "keywords": "",
+        "genre": "Daily",
+        "datePublished": "2019-06-24",
+        "dateCreated": "2019-06-24",
+        "dateModified": "2019-06-24",
+        "url": "http://j0n9hyun.github.io/2019/06/24/IDA-Pro-7-2-한글-스트링-지원/",
+        "description": " IDA Pro 7.2 한글 스트링 지원
+7.0 버전까지만 해도 clt 파일을 따로 추가해줘야 했는데 7.2 부턴 그냥 한줄 추가만 해주면 된다. 제작자가파일을 보냈다고 했는데 회사에서 잘 반영해준 것 같다. 상단의 주석에도 IDA 사용자가 제공해줬다고 적혀있다.
+
+ [Korean.clt]  
+
+ [IDA Pro 7.2]  
+
+  img.border-sha"
+        "wordCount": 96
     }
 </script>
 
@@ -329,20 +335,10 @@
         
 <nav id="article-nav">
     
-        <a href="/2019/01/30/goback/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">다음 글</strong>
-        <p class="article-nav-title">
-        
-            NEWSECU CTF 2019 Goback
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2019/01/30/solidity/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2019/06/20/How2Heap-Overlapping-Chunks/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">이전 글</strong>
-        <p class="article-nav-title">NEWSECU CTF 2019 Solidity</p>
+        <p class="article-nav-title">[How2Heap] Overlapping_Chunks</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -452,7 +448,7 @@
     var disqus_shortname = 'j0n9hyun';
     
     
-    var disqus_url = 'http://j0n9hyun.github.io/2019/01/30/base64/';
+    var disqus_url = 'http://j0n9hyun.github.io/2019/06/24/IDA-Pro-7-2-한글-스트링-지원/';
     
     (function() {
     var dsq = document.createElement('script');
