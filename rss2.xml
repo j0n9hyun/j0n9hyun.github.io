@@ -8,7 +8,7 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>j0n9yhun&#39;s repository</description>
-    <pubDate>Mon, 24 Jun 2019 10:18:53 GMT</pubDate>
+    <pubDate>Mon, 24 Jun 2019 10:20:58 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -25,7 +25,7 @@
       
       </description>
       
-      <content:encoded><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="ida-pro-72-한글-스트링-지원"><a class="markdownIt-Anchor" href="#ida-pro-72-한글-스트링-지원"></a> IDA Pro 7.2 한글 스트링 지원</h3><p>7.0 버전까지만 해도 clt 파일을 따로 추가해줘야 했는데 7.2 부턴 그냥 한줄 추가만 해주면 된다. <a href="http://egloos.zum.com/shadowxx/v/11310107" target="_blank" rel="noopener">제작자</a>가파일을 보냈다고 했는데 회사에서 잘 반영해준 것 같다. 상단의 주석에도 IDA 사용자가 제공해줬다고 적혀있다.</p><img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/60010989-d3e7b180-96b3-11e9-94e7-7a83b0a31d89.PNG"><center><small> [Korean.clt] </small><center> <br><br><img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/60011395-a94a2880-96b4-11e9-8ae8-860ac2d98aa7.PNG"><center><small> [IDA Pro 7.2] </small><center> <br><style>  img.border-shadow{        border:1px solid #888888;        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);    }</style></center></center></center></center>]]></content:encoded>
+      <content:encoded><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="ida-pro-72-한글-스트링-지원"><a class="markdownIt-Anchor" href="#ida-pro-72-한글-스트링-지원"></a> IDA Pro 7.2 한글 스트링 지원</h3><p>7.0 버전까지만 해도 clt 파일을 따로 추가해줘야 했는데 7.2 부턴 그냥 한줄 추가만 해주면 된다. <a href="http://egloos.zum.com/shadowxx/v/11310107" target="_blank" rel="noopener">제작자</a>가 파일을 보냈다고 했는데 회사에서 잘 반영해준 것 같다. 상단의 주석에도 IDA 사용자가 제공해줬다고 적혀있다.</p><img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/60010989-d3e7b180-96b3-11e9-94e7-7a83b0a31d89.PNG"><center><small> [Korean.clt] </small><center> <br><br><img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/60011395-a94a2880-96b4-11e9-8ae8-860ac2d98aa7.PNG"><center><small> [IDA Pro 7.2] </small><center> <br><style>  img.border-shadow{        border:1px solid #888888;        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);    }</style></center></center></center></center>]]></content:encoded>
       
       <comments>http://j0n9hyun.github.io/2019/06/24/IDA-Pro-7-2-%ED%95%9C%EA%B8%80-%EC%8A%A4%ED%8A%B8%EB%A7%81-%EC%A7%80%EC%9B%90/#disqus_thread</comments>
     </item>
