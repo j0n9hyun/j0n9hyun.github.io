@@ -3,6 +3,13 @@
 
 
     <url>
+        <loc>http://j0n9hyun.github.io/tags/Tips/</loc>
+        <lastmod>2019-06-26T17:26:46.298Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://j0n9hyun.github.io/tags/Theory/</loc>
         <lastmod>2019-06-26T15:51:02.124Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -12,13 +19,6 @@
     <url>
         <loc>http://j0n9hyun.github.io/tags/CTF/</loc>
         <lastmod>2019-06-23T10:57:39.693Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://j0n9hyun.github.io/tags/Tips/</loc>
-        <lastmod>2019-06-17T12:20:41.310Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
