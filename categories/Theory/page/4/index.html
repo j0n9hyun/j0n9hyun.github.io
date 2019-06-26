@@ -22,7 +22,7 @@
 <meta name="keywords" content="j0n9hyun, HackCTF">
 <meta property="og:type" content="website">
 <meta property="og:title" content="j0n9hyun">
-<meta property="og:url" content="http://j0n9hyun.github.io/categories/Theory/page/2/index.html">
+<meta property="og:url" content="http://j0n9hyun.github.io/categories/Theory/page/4/index.html">
 <meta property="og:site_name" content="j0n9hyun">
 <meta property="og:description" content="j0n9yhun&apos;s repository">
 <meta property="og:locale" content="ko">
@@ -30,7 +30,7 @@
 <meta name="twitter:title" content="j0n9hyun">
 <meta name="twitter:description" content="j0n9yhun&apos;s repository">
     
-	<link rel="canonical" href="http://j0n9hyun.github.io/categories/theory/page/2/">
+	<link rel="canonical" href="http://j0n9hyun.github.io/categories/theory/page/4/">
 
     
 
@@ -170,106 +170,18 @@
             <div class="category">
             <a class="article-category-link" href="/categories/Theory/">Theory</a>
             </div>
-            <div class="date"><time datetime="2019-05-31T02:18:06.000Z" itemprop="datePublished">2019-05-31</time></div>
+            <div class="date"><time datetime="2019-03-19T01:21:00.000Z" itemprop="datePublished">2019-03-19</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/05/31/How2Heap-Poison-null-byte/">[How2Heap] Poison_null_byte</a>
+        <a href="/2019/03/19/tcache_theory/">Tcache Theory Analysis</a>
         </h1>
     
 
         <p class="article-excerpt">
-             Poison_null_byte.c
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Theory/">Theory</a>
-            </div>
-            <div class="date"><time datetime="2019-05-29T07:05:24.000Z" itemprop="datePublished">2019-05-29</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/05/29/How2Heap-House-of-spirit-c/">[How2Heap] House_of_spirit</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-             House_of_spirit.c
-1234567891011121314151617181920212223242526272829303132333435#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;int main()&#123;fprintf(stderr, "house of spirit\n");fprintf(stderr, "m
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Theory/">Theory</a>
-            </div>
-            <div class="date"><time datetime="2019-05-29T05:50:05.000Z" itemprop="datePublished">2019-05-29</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/05/29/How2Heap-unsafe-unlink-c/">[How2Heap] unsafe_unlink</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-             unsafe_unlink.c
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#include &lt;string.h&g
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Theory/">Theory</a>
-            </div>
-            <div class="date"><time datetime="2019-05-28T05:15:29.000Z" itemprop="datePublished">2019-05-28</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/05/28/How2Heap-fastbin-dup-into-consolidate-c/">[How2Heap] fastbin_dup_into_consolidate</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-             fastbin_dup_into_consolidate.c
-12345678910111213141516171819202122#include &lt;stdio.h&gt;#include &lt;stdint.h&gt;#include &lt;stdlib.h&gt;int main() &#123;  void* p1 = malloc(0x40);  void* p2 = mal
+             Tcache
+12345678910111213141516171819202122#if USE_TCACHE/* We overlay this structure on the user-data portion of a chunk when   the chunk is stored in the per-thread cache.  */typedef struct tcache_e
         </p>
     </div>
 </article>
@@ -282,8 +194,8 @@
 
 
     <nav id="page-nav">
-        <span class="pages">페이지 2 of 4</span>
-        <a class="extend prev" rel="prev" href="/categories/Theory/">&laquo;</a><a class="page-number" href="/categories/Theory/">1</a><span class="page-number current">2</span><a class="page-number" href="/categories/Theory/page/3/">3</a><a class="page-number" href="/categories/Theory/page/4/">4</a><a class="extend next" rel="next" href="/categories/Theory/page/3/">&raquo;</a>
+        <span class="pages">페이지 4 of 4</span>
+        <a class="extend prev" rel="prev" href="/categories/Theory/page/3/">&laquo;</a><a class="page-number" href="/categories/Theory/">1</a><a class="page-number" href="/categories/Theory/page/2/">2</a><a class="page-number" href="/categories/Theory/page/3/">3</a><span class="page-number current">4</span>
     </nav>
 
 

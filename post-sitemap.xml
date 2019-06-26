@@ -8,6 +8,14 @@
     </url>
 
     <url>
+        <loc>http://j0n9hyun.github.io/2019/06/26/How2Heap-Tcache-Poisoning/</loc>
+        <lastmod>2019-06-26T14:46:22.491Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://j0n9hyun.github.io/2019/06/26/How2Heap-Tcache-dup/</loc>
         <lastmod>2019-06-26T14:25:49.543Z</lastmod>
         <changefreq>weekly</changefreq>
