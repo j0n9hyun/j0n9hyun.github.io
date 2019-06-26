@@ -8,8 +8,27 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>j0n9yhun&#39;s repository</description>
-    <pubDate>Wed, 26 Jun 2019 14:03:47 GMT</pubDate>
+    <pubDate>Wed, 26 Jun 2019 14:25:49 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>[How2Heap] Tcache_dup</title>
+      <link>http://j0n9hyun.github.io/2019/06/26/How2Heap-Tcache-dup/</link>
+      <guid>http://j0n9hyun.github.io/2019/06/26/How2Heap-Tcache-dup/</guid>
+      <pubDate>Wed, 26 Jun 2019 14:17:28 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css&quot;&gt;&lt;h3 id=&quot;tcache_dup&quot;&gt;&lt;a class=&quot;markdownIt-
+        
+      
+      </description>
+      
+      <content:encoded><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="tcache_dup"><a class="markdownIt-Anchor" href="#tcache_dup"></a> Tcache_dup</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"simple double-free attack with tcache.\n"</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"buffer를 할당한다.\n"</span>);</span><br><span class="line"><span class="keyword">int</span> *a = <span class="built_in">malloc</span>(<span class="number">8</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"malloc(8): %p\n"</span>, a);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"free를 두 번 한다.\n"</span>);</span><br><span class="line"><span class="built_in">free</span>(a);</span><br><span class="line"><span class="built_in">free</span>(a);</span><br><span class="line"><span class="built_in">puts</span>(<span class="string">"-------free(a)-------"</span>);</span><br><span class="line"><span class="built_in">puts</span>(<span class="string">"-------free(a)-------"</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"free list : [ %p, %p ]\n"</span>, a, a);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"다음으로 할당되는 buffer가 동일할 것이다.\n"</span></span><br><span class="line">[ %p, %p ]\n<span class="string">", malloc(8), malloc(8));</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">return 0;</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure><center><p>simple double-free attack with tcache.<br>buffer를 할당한다.<br><code>malloc(8): 0x55fef5f8d260</code><br>free를 두 번 한다.<br><code>-------free(a)-------</code><br><code>-------free(a)-------</code></p><h4 id="free-list-0x55fef5f8d260-0x55fef5f8d260"><a class="markdownIt-Anchor" href="#free-list-0x55fef5f8d260-0x55fef5f8d260"></a> <strong><code>free list : [ 0x55fef5f8d260, 0x55fef5f8d260 ]</code></strong></h4><p>다음으로 할당되는 buffer가 동일할 것이다.</p><h4 id="0x55fef5f8d260-0x55fef5f8d260"><a class="markdownIt-Anchor" href="#0x55fef5f8d260-0x55fef5f8d260"></a> <strong><code>[ 0x55fef5f8d260, 0x55fef5f8d260 ]</code></strong></h4></center>]]></content:encoded>
+      
+      <comments>http://j0n9hyun.github.io/2019/06/26/How2Heap-Tcache-dup/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>[How2Heap] Overlapping_Chunks_2</title>
@@ -370,25 +389,6 @@
       <content:encoded><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="ez"><a class="markdownIt-Anchor" href="#ez"></a> EZ</h2><p><a href="#" class="btn_success">File</a></p><img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/58034097-bda08000-7b60-11e9-80b3-5a9c06483d2b.PNG"><center><small>[Problem]</small></center> <br><img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/58034098-bda08000-7b60-11e9-9289-c9c21922caf7.PNG"><center><small>[Steganography Decoding]</small></center> <br><img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/58034100-bda08000-7b60-11e9-9c8d-9b239b667f3e.PNG"><center><small>[Hidden.txt]</small></center> <br><img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/58034101-bda08000-7b60-11e9-99da-ae3cbfcdd87e.PNG"><center><small>[Googling]</small></center> <br><img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/58034096-bd07e980-7b60-11e9-8b05-dd7b66865c84.PNG"><center><small>[SHA-1 Encoding]</small></center> <br><blockquote><p>flag is <strong>Securinets{b47f0d2a8866a75696f94a515d0cdf54c7ea3174}</strong></p></blockquote><style>  img.border-shadow{      border:1px solid #888888;      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  }</style>]]></content:encoded>
       
       <comments>http://j0n9hyun.github.io/2019/03/25/EZ/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>Securinets Prequals CTF 2019 HIDDEN</title>
-      <link>http://j0n9hyun.github.io/2019/03/25/securinets_hidden/</link>
-      <guid>http://j0n9hyun.github.io/2019/03/25/securinets_hidden/</guid>
-      <pubDate>Mon, 25 Mar 2019 06:41:00 GMT</pubDate>
-      <description>
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css&quot;&gt;&lt;h2 id=&quot;hidden&quot;&gt;&lt;a class=&quot;markdownIt-Anch
-        
-      
-      </description>
-      
-      <content:encoded><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="hidden"><a class="markdownIt-Anchor" href="#hidden"></a> HIDDEN</h2><img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/58033845-36530c80-7b60-11e9-903a-a6f0731646c8.PNG"><center><small>[Problem]</small></center> <br><img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/58033942-6c908c00-7b60-11e9-9858-264ee597dccc.PNG"><center><small>[Web Page]</small></center> <br><img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/58033943-6d292280-7b60-11e9-80d0-de53fe56db7f.PNG"><center><small>[Get FLAG]</small></center> <br><style>img.border-shadow {border:1px solid #888888;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}</style>]]></content:encoded>
-      
-      <comments>http://j0n9hyun.github.io/2019/03/25/securinets_hidden/#disqus_thread</comments>
     </item>
     
   </channel>
