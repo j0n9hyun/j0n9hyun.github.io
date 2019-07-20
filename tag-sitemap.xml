@@ -3,29 +3,29 @@
 
 
     <url>
-        <loc>http://j0n9hyun.github.io/tags/CTF/</loc>
-        <lastmod>2019-06-30T06:09:40.109Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://j0n9hyun.github.io/tags/Tips/</loc>
-        <lastmod>2019-06-26T17:26:46.298Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://j0n9hyun.github.io/tags/Theory/</loc>
-        <lastmod>2019-06-26T15:51:02.124Z</lastmod>
+        <lastmod>2019-07-05T15:18:38.058Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://j0n9hyun.github.io/tags/Wargame/</loc>
-        <lastmod>2019-05-26T10:06:01.261Z</lastmod>
+        <lastmod>2019-07-03T12:08:59.201Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://j0n9hyun.github.io/tags/CTF/</loc>
+        <lastmod>2019-06-30T06:09:40.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://j0n9hyun.github.io/tags/Tips/</loc>
+        <lastmod>2019-06-26T17:26:46.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

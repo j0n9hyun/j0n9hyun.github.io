@@ -82,7 +82,7 @@
                                     <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
-                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Daily/">Daily</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Theory/">Theory</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/">WriteUps</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Foren/">Foren</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Misc/">Misc</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Pwn/">Pwn</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Script/">Script</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Web/">Web</a></li></ul></li></ul>
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Daily/">Daily</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Theory/">Theory</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/">WriteUps</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Crypto/">Crypto</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Foren/">Foren</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Misc/">Misc</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Pwn/">Pwn</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Script/">Script</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Web/">Web</a></li></ul></li></ul>
                                     
                                 <li class="main-nav-list-item">
                                     <a class="main-nav-list-link" href="https://about.me/j0n9hyun">About</a>
@@ -158,6 +158,132 @@
                 <a href="/archives/2019" class="archive-year"><i class="icon fa fa-calendar-o"></i>2019</a>
             </div>
             <div class="archives">
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/Theory/">Theory</a>
+            </div>
+            <div class="date"><time datetime="2019-05-24T05:51:30.000Z" itemprop="datePublished">2019-05-24</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2019/05/24/Heap-Theory-First-Fit/">[Heap Thoery] First Fit</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+             First Fit
+Heap 문제를 공략하기 위해서는 기본적인 할당 흐름을 이해할 수 있어야 한다.
+그래서 이번 글에서는 블로그 활성화도 하고 복습도 할 겸 겸사겸사 끄적여보기로했다.
+다음의 예제를 한번 살펴보자.
+12345678910111213141516#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;int main
+        </p>
+    </div>
+</article>
+    
+
+    
+    
+    
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Pwn/">Pwn</a>
+            </div>
+            <div class="date"><time datetime="2019-05-24T00:03:43.000Z" itemprop="datePublished">2019-05-24</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2019/05/24/Security-Fest-2019-baby2/">Security Fest 2019 baby2</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+             Baby2
+기본 ROP 문제
+바이너리
+우분투 18.04 환경에서는  main으로 안 돌아가는 경우도 있는 것 같다. [1]  (일단 난 잘됨) 
+12345678910111213141516171819202122232425262728293031323334353637383940from pwn import *#r = process('./baby2')r = rem
+        </p>
+    </div>
+</article>
+    
+        </div>
+    
+
+    
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Pwn/">Pwn</a>
+            </div>
+            <div class="date"><time datetime="2019-05-24T00:01:52.000Z" itemprop="datePublished">2019-05-24</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2019/05/24/Security-Fest-2019-baby1/">Security Fest 2019 baby1</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+             Baby2
+12345678910111213141516171819from pwn import *#r = process('./baby1')r = remote('baby-01.pwn.beer', 10001)e = ELF('./baby1')binsh = e.search("/bin/sh").next()pr = 0x0000000000400793 # pop rdi; 
+        </p>
+    </div>
+</article>
+    
+
+    
+    
+    
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Script/">Script</a>
+            </div>
+            <div class="date"><time datetime="2019-05-04T17:06:00.000Z" itemprop="datePublished">2019-05-05</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2019/05/05/doesnt_contain_k_integer/">ALLMN CTF 2019 Doesn&#39;t contain K integer</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+             Doesn’t contain K integer
+123How many numbers from 1 to N that don&apos;t contain K number. Input: N (integer number) and space K (integer number).  Output: The total number. Example if N is 30 and K
+        </p>
+    </div>
+</article>
+    
+        </div>
+    
+
+    
     
     
     
@@ -399,155 +525,13 @@ Binary File
         </div>
     
 
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Pwn/">Pwn</a>
-            </div>
-            <div class="date"><time datetime="2019-03-25T05:20:00.000Z" itemprop="datePublished">2019-03-25</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/03/25/securinets_welcome/">Securinets Prequals CTF 2019 Welcome</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-             Welcome
-
-[Problem] 
-
-[wrapper.c] 
-
-[Get FLAG] 
-
-  img.border-shadow{
-      border:1px solid #888888;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  }
-
-
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Theory/">Theory</a>
-            </div>
-            <div class="date"><time datetime="2019-03-19T01:21:00.000Z" itemprop="datePublished">2019-03-19</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/03/19/tcache_theory/">Tcache Theory Analysis</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-             Tcache
-12345678910111213141516171819202122#if USE_TCACHE/* We overlay this structure on the user-data portion of a chunk when   the chunk is stored in the per-thread cache.  */typedef struct tcache_e
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Pwn/">Pwn</a>
-            </div>
-            <div class="date"><time datetime="2019-03-05T02:22:00.000Z" itemprop="datePublished">2019-03-05</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/03/05/warm_heap/">Warm Heap</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-             Warm Heap
-Binary File
-123456789101112131415161718192021void __fastcall __noreturn main(__int64 a1, char **a2, char **a3)&#123;  void *v3; // ST10_8  void *v4; // ST18_8  char s; // [rsp+20h] [rbp-101
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Pwn/">Pwn</a>
-            </div>
-            <div class="date"><time datetime="2019-02-19T13:30:00.000Z" itemprop="datePublished">2019-02-19</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/02/19/betting/">CODEGATE 2018 betting</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-             betting
-Binary File
-
-[사진 1-1]
-Canary가 걸려있으므로 Canary Leak을 해줘야 한다 우선 프로그램을 실행해보자.  
-
-
-[사진 1-2]
-
-[사진 1-3]
-함수를 하나하나 훑어보면 shell 실행 함수가 떡하니 나와있다. 앞에 padding을 하고 마지막에 오는 ret 주소 부분에 이 helper 함수를 넣어주면 될 것이다.
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
 
     </div></section>
 
 
     <nav id="page-nav">
-        <span class="pages">페이지 3 of 4</span>
-        <a class="extend prev" rel="prev" href="/page/2/">&laquo;</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">&raquo;</a>
+        <span class="pages">페이지 3 of 5</span>
+        <a class="extend prev" rel="prev" href="/page/2/">&laquo;</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">&raquo;</a>
     </nav>
 
 
@@ -593,18 +577,18 @@ Canary가 걸려있으므로 Canary Leak을 해줘야 한다 우선 프로그램
                     <li>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Daily/">Daily</a></p>
-                            <p class="item-title"><a href="/2019/06/27/Windows-Terminal-시작-터미널-변경-방법/" class="title">Windows Terminal 시작 터미널 변경</a></p>
-                            <p class="item-date"><time datetime="2019-06-26T16:58:15.000Z" itemprop="datePublished">2019-06-27</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Crypto/">Crypto</a></p>
+                            <p class="item-title"><a href="/2019/07/12/RSA-Hastad/" class="title">RSA Hastad Attack</a></p>
+                            <p class="item-date"><time datetime="2019-07-12T06:39:06.000Z" itemprop="datePublished">2019-07-12</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Theory/">Theory</a></p>
-                            <p class="item-title"><a href="/2019/06/27/How2Heap-Tcache-House-of-spirit/" class="title">[How2Heap] Tcache_House_of_spirit</a></p>
-                            <p class="item-date"><time datetime="2019-06-26T15:45:55.000Z" itemprop="datePublished">2019-06-27</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/Daily/">Daily</a></p>
+                            <p class="item-title"><a href="/2019/07/07/디미고-CTF-일반부-3등/" class="title">2019 디미고 CTF 일반부 3등</a></p>
+                            <p class="item-date"><time datetime="2019-07-07T12:40:25.000Z" itemprop="datePublished">2019-07-07</time></p>
                         </div>
                     </li>
                 
@@ -618,7 +602,7 @@ Canary가 걸려있으므로 Canary Leak을 해줘야 한다 우선 프로그램
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">카테고리</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Daily/">Daily</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Theory/">Theory</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/">WriteUps</a><span class="category-list-count">22</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Foren/">Foren</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Misc/">Misc</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Pwn/">Pwn</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Script/">Script</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Web/">Web</a><span class="category-list-count">1</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Daily/">Daily</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Theory/">Theory</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/">WriteUps</a><span class="category-list-count">25</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Crypto/">Crypto</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Foren/">Foren</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Misc/">Misc</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Pwn/">Pwn</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Script/">Script</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Web/">Web</a><span class="category-list-count">1</span></li></ul></li></ul>
         </div>
     </div>
 
@@ -628,7 +612,7 @@ Canary가 걸려있으므로 Canary Leak을 해줘야 한다 우선 프로그램
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">태그</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/">CTF</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theory/">Theory</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tips/">Tips</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wargame/">Wargame</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/">CTF</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theory/">Theory</a><span class="tag-list-count">15</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tips/">Tips</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wargame/">Wargame</a><span class="tag-list-count">2</span></li></ul>
         </div>
     </div>
 
