@@ -20,20 +20,20 @@
     
         <meta name="keywords" content="Theory">
     
-    <meta name="description" content="First Fit Heap 문제를 공략하기 위해서는 기본적인 할당 흐름을 이해할 수 있어야 한다. 그래서 이번 글에서는 블로그 활성화도 하고 복습도 할 겸 겸사겸사 끄적여보기로했다. 다음의 예제를 한번 살펴보자. 12345678910111213141516#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;int main">
+    <meta name="description" content="First Fit Heap 문제를 공략하기 위해서는 기본적인 할당 흐름을 이해할 수 있어야 한다. 그래서 이번 글에서는 블로그 활성화도 하고 복습도 할 겸 겸사겸사 끄적여보기로했다. 다음의 예제를 한번 살펴보자.  3줄 요약  a와 b에 각각 malloc[1]을 요청한다. a를 free[2]한다. a에 다시 malloc[1]을 요청한다.  a에 300,">
 <meta name="keywords" content="Theory">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[Heap Thoery] First Fit">
 <meta property="og:url" content="http://j0n9hyun.github.io/2019/05/24/Heap-Theory-First-Fit/index.html">
 <meta property="og:site_name" content="j0n9hyun">
-<meta property="og:description" content="First Fit Heap 문제를 공략하기 위해서는 기본적인 할당 흐름을 이해할 수 있어야 한다. 그래서 이번 글에서는 블로그 활성화도 하고 복습도 할 겸 겸사겸사 끄적여보기로했다. 다음의 예제를 한번 살펴보자. 12345678910111213141516#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;int main">
+<meta property="og:description" content="First Fit Heap 문제를 공략하기 위해서는 기본적인 할당 흐름을 이해할 수 있어야 한다. 그래서 이번 글에서는 블로그 활성화도 하고 복습도 할 겸 겸사겸사 끄적여보기로했다. 다음의 예제를 한번 살펴보자.  3줄 요약  a와 b에 각각 malloc[1]을 요청한다. a를 free[2]한다. a에 다시 malloc[1]을 요청한다.  a에 300,">
 <meta property="og:locale" content="ko">
-<meta property="og:image" content="https://user-images.githubusercontent.com/16969364/58300514-cc678b00-7e1d-11e9-80cf-c2f50de11e8c.png">
-<meta property="og:updated_time" content="2019-05-24T12:58:22.000Z">
+<meta property="og:image" content="https://user-images.githubusercontent.com/16969364/63589056-0bef7000-c5e3-11e9-983b-4c0a0470ca04.png">
+<meta property="og:updated_time" content="2019-08-23T11:20:32.132Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[Heap Thoery] First Fit">
-<meta name="twitter:description" content="First Fit Heap 문제를 공략하기 위해서는 기본적인 할당 흐름을 이해할 수 있어야 한다. 그래서 이번 글에서는 블로그 활성화도 하고 복습도 할 겸 겸사겸사 끄적여보기로했다. 다음의 예제를 한번 살펴보자. 12345678910111213141516#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;int main">
-<meta name="twitter:image" content="https://user-images.githubusercontent.com/16969364/58300514-cc678b00-7e1d-11e9-80cf-c2f50de11e8c.png">
+<meta name="twitter:description" content="First Fit Heap 문제를 공략하기 위해서는 기본적인 할당 흐름을 이해할 수 있어야 한다. 그래서 이번 글에서는 블로그 활성화도 하고 복습도 할 겸 겸사겸사 끄적여보기로했다. 다음의 예제를 한번 살펴보자.  3줄 요약  a와 b에 각각 malloc[1]을 요청한다. a를 free[2]한다. a에 다시 malloc[1]을 요청한다.  a에 300,">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/16969364/63589056-0bef7000-c5e3-11e9-983b-4c0a0470ca04.png">
     
 	<link rel="canonical" href="http://j0n9hyun.github.io/2019/05/24/heap-theory-first-fit/">
 
@@ -182,7 +182,7 @@
         <a class="tag-link" href="/tags/Theory/">Theory</a>
     </div>
 
-  			<span class="reading-time">⏱ 6 분</span>
+  			<span class="reading-time">⏱ 2 분</span>
             </div>
         
         
@@ -191,8 +191,7 @@
 <p>Heap 문제를 공략하기 위해서는 기본적인 할당 흐름을 이해할 수 있어야 한다.<br>
 그래서 이번 글에서는 블로그 활성화도 하고 복습도 할 겸 겸사겸사 끄적여보기로했다.</p>
 <p>다음의 예제를 한번 살펴보자.</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">char</span> *a = <span class="built_in">malloc</span>(<span class="number">300</span>);</span><br><span class="line">	<span class="keyword">char</span> *b = <span class="built_in">malloc</span>(<span class="number">250</span>);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"malloc(300) A : %p\n"</span>, a);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"malloc(250) B : %p\n"</span>, b);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">free</span>(a);</span><br><span class="line">	<span class="built_in">puts</span>(<span class="string">"-------free malloc A-------"</span>);</span><br><span class="line"></span><br><span class="line">	a = <span class="built_in">malloc</span>(<span class="number">250</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"malloc(250) A : %p\n"</span>, a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<center> [Example.c] </center>
+<p><img src="https://user-images.githubusercontent.com/16969364/63589056-0bef7000-c5e3-11e9-983b-4c0a0470ca04.png" alt="Example.c"></p>
 <p><strong>3줄 요약</strong></p>
 <ol>
 <li><strong>a</strong>와 <strong>b</strong>에 각각 <code>malloc</code><sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="동적할당
@@ -246,10 +245,9 @@ a를 free 해준 뒤 다시 재할당을 해주면 어떻게 될까?<br>
 </table>
 </center>
 <br>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">char</span> *a = <span class="built_in">malloc</span>(<span class="number">100</span>);</span><br><span class="line">	<span class="keyword">char</span> *b = <span class="built_in">malloc</span>(<span class="number">100</span>);</span><br><span class="line">	<span class="keyword">char</span> *c = <span class="built_in">malloc</span>(<span class="number">100</span>);</span><br><span class="line">	<span class="keyword">char</span> *d = <span class="built_in">malloc</span>(<span class="number">100</span>);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"malloc(100) A : %p\n"</span>, a);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"malloc(100) B : %p\n"</span>, b);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"malloc(100) C : %p\n"</span>, c);	</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"malloc(100) D : %p\n"</span>, d);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">free</span>(a);</span><br><span class="line">	<span class="built_in">free</span>(b);</span><br><span class="line">	<span class="built_in">free</span>(c);</span><br><span class="line">	<span class="built_in">free</span>(d);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">puts</span>(<span class="string">"-------free malloc A-------"</span>);</span><br><span class="line">	<span class="built_in">puts</span>(<span class="string">"-------free malloc B-------"</span>);</span><br><span class="line">	<span class="built_in">puts</span>(<span class="string">"-------free malloc C-------"</span>);</span><br><span class="line">	<span class="built_in">puts</span>(<span class="string">"-------free malloc D-------"</span>);</span><br><span class="line"></span><br><span class="line">	a = <span class="built_in">malloc</span>(<span class="number">100</span>);</span><br><span class="line">	b = <span class="built_in">malloc</span>(<span class="number">100</span>);</span><br><span class="line">	c = <span class="built_in">malloc</span>(<span class="number">100</span>);</span><br><span class="line">	d = <span class="built_in">malloc</span>(<span class="number">100</span>);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">puts</span>(<span class="string">"-------malloc(100) A-------"</span>);</span><br><span class="line">	<span class="built_in">puts</span>(<span class="string">"-------malloc(100) B-------"</span>);</span><br><span class="line">	<span class="built_in">puts</span>(<span class="string">"-------malloc(100) C-------"</span>);</span><br><span class="line">	<span class="built_in">puts</span>(<span class="string">"-------malloc(100) D-------"</span>);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"malloc(100) A : %p\n"</span>, a);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"malloc(100) B : %p\n"</span>, b);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"malloc(100) C : %p\n"</span>, c);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"malloc(100) D : %p\n"</span>, d);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<center> <caption> [Example2.c] </caption> </center>
-다음은 fastbin 예제이다. fastbin은 단일 연결 리스트<sup id="fnref:3"><a href="#fn:3" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Singly Linked list">[3]</span></a></sup>라서 메모리 할당 및 해제 속도가 빠르며 LIFO 구조를 지니고 있다.
-아래의 과정을 확인해보면 알 수 있다.
+<p><img src="https://user-images.githubusercontent.com/16969364/63589133-45c07680-c5e3-11e9-91eb-9471e91ebeba.png" alt="Example2.c"></p>
+<p>다음은 fastbin 예제이다. fastbin은 단일 연결 리스트<sup id="fnref:3"><a href="#fn:3" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Singly Linked list">[3]</span></a></sup>라서 메모리 할당 및 해제 속도가 빠르며 LIFO 구조를 지니고 있다.<br>
+아래의 과정을 확인해보면 알 수 있다.</p>
 <p><code>head - a - tail</code> <strong>free⒜</strong><br>
 <code>head - b - a - tail</code><strong>free⒝</strong><br>
 <code>head - c - b - a - tail</code> <strong>free⒞</strong><br>
@@ -347,19 +345,26 @@ a를 free 해준 뒤 다시 재할당을 해주면 어떻게 될까?<br>
             "name": "j0n9hyun"
         },
         "headline": "[Heap Thoery] First Fit",
-        "image": "http://j0n9hyun.github.iohttps://user-images.githubusercontent.com/16969364/58300514-cc678b00-7e1d-11e9-80cf-c2f50de11e8c.png",
+        "image": "http://j0n9hyun.github.iohttps://user-images.githubusercontent.com/16969364/63589056-0bef7000-c5e3-11e9-983b-4c0a0470ca04.png",
         "keywords": "Theory",
         "genre": "Theory",
         "datePublished": "2019-05-24",
         "dateCreated": "2019-05-24",
-        "dateModified": "2019-05-24",
+        "dateModified": "2019-08-23",
         "url": "http://j0n9hyun.github.io/2019/05/24/Heap-Theory-First-Fit/",
         "description": " First Fit
 Heap 문제를 공략하기 위해서는 기본적인 할당 흐름을 이해할 수 있어야 한다.
 그래서 이번 글에서는 블로그 활성화도 하고 복습도 할 겸 겸사겸사 끄적여보기로했다.
 다음의 예제를 한번 살펴보자.
-12345678910111213141516#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;int main"
-        "wordCount": 663
+
+3줄 요약
+
+a와 b에 각각 malloc[1]을 요청한다.
+a를 free[2]한다.
+a에 다시 malloc[1]을 요청한다.
+
+a에 300, "
+        "wordCount": 356
     }
 </script>
 

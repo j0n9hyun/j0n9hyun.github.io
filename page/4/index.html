@@ -256,7 +256,14 @@ Binary File
 
         <p class="article-excerpt">
              Tcache
-12345678910111213141516171819202122#if USE_TCACHE/* We overlay this structure on the user-data portion of a chunk when   the chunk is stored in the per-thread cache.  */typedef struct tcache_e
+
+Ubuntu 17.04 에서 glibc 2.6 버전이 릴리즈 되었는데 tcache_entry와 tcache_perthread_struct라는 구조체가 새로 추가되었다.
+ 특징 
+
+Single linked list(단일 연결 구조)를 이루고 있다.
+Consolidate를 하지 않는다.
+LIFO 구조를 가지고 있다.
+Pointer가 오직 nex
         </p>
     </div>
 </article>

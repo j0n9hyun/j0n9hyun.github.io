@@ -184,7 +184,14 @@
 Heap 문제를 공략하기 위해서는 기본적인 할당 흐름을 이해할 수 있어야 한다.
 그래서 이번 글에서는 블로그 활성화도 하고 복습도 할 겸 겸사겸사 끄적여보기로했다.
 다음의 예제를 한번 살펴보자.
-12345678910111213141516#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;int main
+
+3줄 요약
+
+a와 b에 각각 malloc[1]을 요청한다.
+a를 free[2]한다.
+a에 다시 malloc[1]을 요청한다.
+
+a에 300, 
         </p>
     </div>
 </article>
@@ -247,7 +254,14 @@ Binary File
 
         <p class="article-excerpt">
              Tcache
-12345678910111213141516171819202122#if USE_TCACHE/* We overlay this structure on the user-data portion of a chunk when   the chunk is stored in the per-thread cache.  */typedef struct tcache_e
+
+Ubuntu 17.04 에서 glibc 2.6 버전이 릴리즈 되었는데 tcache_entry와 tcache_perthread_struct라는 구조체가 새로 추가되었다.
+ 특징 
+
+Single linked list(단일 연결 구조)를 이루고 있다.
+Consolidate를 하지 않는다.
+LIFO 구조를 가지고 있다.
+Pointer가 오직 nex
         </p>
     </div>
 </article>

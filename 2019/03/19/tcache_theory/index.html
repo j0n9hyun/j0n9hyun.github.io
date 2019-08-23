@@ -20,20 +20,20 @@
     
         <meta name="keywords" content="Theory">
     
-    <meta name="description" content="Tcache 12345678910111213141516171819202122#if USE_TCACHE/* We overlay this structure on the user-data portion of a chunk when   the chunk is stored in the per-thread cache.  */typedef struct tcache_e">
+    <meta name="description" content="Tcache  Ubuntu 17.04 에서 glibc 2.6 버전이 릴리즈 되었는데 tcache_entry와 tcache_perthread_struct라는 구조체가 새로 추가되었다.  특징   Single linked list(단일 연결 구조)를 이루고 있다. Consolidate를 하지 않는다. LIFO 구조를 가지고 있다. Pointer가 오직 nex">
 <meta name="keywords" content="Theory">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Tcache Theory Analysis">
 <meta property="og:url" content="http://j0n9hyun.github.io/2019/03/19/tcache_theory/index.html">
 <meta property="og:site_name" content="j0n9hyun">
-<meta property="og:description" content="Tcache 12345678910111213141516171819202122#if USE_TCACHE/* We overlay this structure on the user-data portion of a chunk when   the chunk is stored in the per-thread cache.  */typedef struct tcache_e">
+<meta property="og:description" content="Tcache  Ubuntu 17.04 에서 glibc 2.6 버전이 릴리즈 되었는데 tcache_entry와 tcache_perthread_struct라는 구조체가 새로 추가되었다.  특징   Single linked list(단일 연결 구조)를 이루고 있다. Consolidate를 하지 않는다. LIFO 구조를 가지고 있다. Pointer가 오직 nex">
 <meta property="og:locale" content="ko">
-<meta property="og:image" content="https://user-images.githubusercontent.com/16969364/58037363-3eaf4580-7b68-11e9-9dec-a36a43808625.PNG">
-<meta property="og:updated_time" content="2019-05-22T07:49:40.000Z">
+<meta property="og:image" content="https://user-images.githubusercontent.com/16969364/63588950-b1561400-c5e2-11e9-8603-fb114c698e7e.png">
+<meta property="og:updated_time" content="2019-08-23T11:17:42.754Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Tcache Theory Analysis">
-<meta name="twitter:description" content="Tcache 12345678910111213141516171819202122#if USE_TCACHE/* We overlay this structure on the user-data portion of a chunk when   the chunk is stored in the per-thread cache.  */typedef struct tcache_e">
-<meta name="twitter:image" content="https://user-images.githubusercontent.com/16969364/58037363-3eaf4580-7b68-11e9-9dec-a36a43808625.PNG">
+<meta name="twitter:description" content="Tcache  Ubuntu 17.04 에서 glibc 2.6 버전이 릴리즈 되었는데 tcache_entry와 tcache_perthread_struct라는 구조체가 새로 추가되었다.  특징   Single linked list(단일 연결 구조)를 이루고 있다. Consolidate를 하지 않는다. LIFO 구조를 가지고 있다. Pointer가 오직 nex">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/16969364/63588950-b1561400-c5e2-11e9-8603-fb114c698e7e.png">
     
 	<link rel="canonical" href="http://j0n9hyun.github.io/2019/03/19/tcache_theory/">
 
@@ -182,14 +182,13 @@
         <a class="tag-link" href="/tags/Theory/">Theory</a>
     </div>
 
-  			<span class="reading-time">⏱ 5 분</span>
+  			<span class="reading-time">⏱ 3 분</span>
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
             <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="tcache"><a class="markdownIt-Anchor" href="#tcache"></a> Tcache</h2>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">if</span> USE_TCACHE</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* We overlay this structure on the user-data portion of a chunk when</span></span><br><span class="line"><span class="comment">   the chunk is stored in the per-thread cache.  */</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">tcache_entry</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">  <span class="class"><span class="keyword">struct</span> <span class="title">tcache_entry</span> *<span class="title">next</span>;</span></span><br><span class="line">&#125; tcache_entry;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* There is one of these for each thread, which contains the</span></span><br><span class="line"><span class="comment">   per-thread cache (hence "tcache_perthread_struct").  Keeping</span></span><br><span class="line"><span class="comment">   overall size low is mildly important.  Note that COUNTS and ENTRIES</span></span><br><span class="line"><span class="comment">   are redundant (we could have just counted the linked list each</span></span><br><span class="line"><span class="comment">   time), this is for performance reasons.  */</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">tcache_perthread_struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">  <span class="keyword">char</span> counts[TCACHE_MAX_BINS];</span><br><span class="line">  tcache_entry *entries[TCACHE_MAX_BINS];</span><br><span class="line">&#125; tcache_perthread_struct;</span><br><span class="line"></span><br><span class="line"><span class="keyword">static</span> __thread <span class="keyword">char</span> tcache_shutting_down = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">static</span> __thread tcache_perthread_struct *tcache = <span class="literal">NULL</span>;</span><br></pre></td></tr></table></figure>
-<center><small>[tcache_entry]</small></center>
+<p><img src="https://user-images.githubusercontent.com/16969364/63588950-b1561400-c5e2-11e9-8603-fb114c698e7e.png" alt="tcache_entry"></p>
 <p>Ubuntu 17.04 에서 glibc 2.6 버전이 릴리즈 되었는데 <strong>tcache_entry</strong>와 <strong>tcache_perthread_struct</strong>라는 구조체가 새로 추가되었다.</p>
 <h3 id="특징-br"><a class="markdownIt-Anchor" href="#특징-br"></a> 특징 <br></h3>
 <ul>
@@ -298,16 +297,23 @@ entry와 count가 보이는 것을 알 수 있다. <br> <br>
             "name": "j0n9hyun"
         },
         "headline": "Tcache Theory Analysis",
-        "image": "http://j0n9hyun.github.iohttps://user-images.githubusercontent.com/16969364/58037363-3eaf4580-7b68-11e9-9dec-a36a43808625.PNG",
+        "image": "http://j0n9hyun.github.iohttps://user-images.githubusercontent.com/16969364/63588950-b1561400-c5e2-11e9-8603-fb114c698e7e.png",
         "keywords": "Theory",
         "genre": "Theory",
         "datePublished": "2019-03-19",
         "dateCreated": "2019-03-19",
-        "dateModified": "2019-05-22",
+        "dateModified": "2019-08-23",
         "url": "http://j0n9hyun.github.io/2019/03/19/tcache_theory/",
         "description": " Tcache
-12345678910111213141516171819202122#if USE_TCACHE/* We overlay this structure on the user-data portion of a chunk when   the chunk is stored in the per-thread cache.  */typedef struct tcache_e"
-        "wordCount": 571
+
+Ubuntu 17.04 에서 glibc 2.6 버전이 릴리즈 되었는데 tcache_entry와 tcache_perthread_struct라는 구조체가 새로 추가되었다.
+ 특징 
+
+Single linked list(단일 연결 구조)를 이루고 있다.
+Consolidate를 하지 않는다.
+LIFO 구조를 가지고 있다.
+Pointer가 오직 nex"
+        "wordCount": 389
     }
 </script>
 
