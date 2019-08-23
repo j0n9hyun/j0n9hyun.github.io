@@ -269,7 +269,16 @@
 
         <p class="article-excerpt">
              Tcache_dup
-12345678910111213141516171819202122#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;int main()&#123;	fprintf(stderr, "simple double-free attack with tcache.\n");	fprintf(stderr, "buffer를 할
+
+
+simple double-free attack with tcache.
+buffer를 할당한다.
+malloc(8): 0x55fef5f8d260
+free를 두 번 한다.
+-------free(a)-------
+-------free(a)-------
+ free list : [ 0x55fef5f8d260, 0x55fef5f8d260 ]
+다
         </p>
     </div>
 </article>
