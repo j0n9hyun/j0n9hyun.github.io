@@ -20,18 +20,20 @@
     
         <meta name="keywords" content="Theory">
     
-    <meta name="description" content="Tcache_House_of_spirit 123456789101112131415161718192021222324252627282930313233343536373839#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;int main()&amp;#123;fprintf(stderr, &quot;the house of spirit attac">
+    <meta name="description" content="Tcache_House_of_spirit   the house of spirit attack on tcache. 기존의 house of spirit과 비슷한 방식으로 작동하지만 free될 fake chunk 뒤에 fake chunk를 만들 필요가 없다. malloc.c의 _int_free 함수에서 tcache_put이 다음 chunk의 prev_inuse">
 <meta name="keywords" content="Theory">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[How2Heap] Tcache_House_of_spirit">
 <meta property="og:url" content="http://j0n9hyun.github.io/2019/06/27/How2Heap-Tcache-House-of-spirit/index.html">
 <meta property="og:site_name" content="j0n9hyun">
-<meta property="og:description" content="Tcache_House_of_spirit 123456789101112131415161718192021222324252627282930313233343536373839#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;int main()&amp;#123;fprintf(stderr, &quot;the house of spirit attac">
+<meta property="og:description" content="Tcache_House_of_spirit   the house of spirit attack on tcache. 기존의 house of spirit과 비슷한 방식으로 작동하지만 free될 fake chunk 뒤에 fake chunk를 만들 필요가 없다. malloc.c의 _int_free 함수에서 tcache_put이 다음 chunk의 prev_inuse">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2019-06-26T15:51:02.000Z">
+<meta property="og:image" content="https://user-images.githubusercontent.com/16969364/63587858-ffb5e380-c5df-11e9-9979-032003ed7d29.png">
+<meta property="og:updated_time" content="2019-08-23T10:57:22.403Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[How2Heap] Tcache_House_of_spirit">
-<meta name="twitter:description" content="Tcache_House_of_spirit 123456789101112131415161718192021222324252627282930313233343536373839#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;int main()&amp;#123;fprintf(stderr, &quot;the house of spirit attac">
+<meta name="twitter:description" content="Tcache_House_of_spirit   the house of spirit attack on tcache. 기존의 house of spirit과 비슷한 방식으로 작동하지만 free될 fake chunk 뒤에 fake chunk를 만들 필요가 없다. malloc.c의 _int_free 함수에서 tcache_put이 다음 chunk의 prev_inuse">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/16969364/63587858-ffb5e380-c5df-11e9-9979-032003ed7d29.png">
     
 	<link rel="canonical" href="http://j0n9hyun.github.io/2019/06/27/how2heap-tcache-house-of-spirit/">
 
@@ -180,13 +182,13 @@
         <a class="tag-link" href="/tags/Theory/">Theory</a>
     </div>
 
-  			<span class="reading-time">⏱ 4 분</span>
+  			<span class="reading-time">⏱ 1 분</span>
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
             <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="tcache_house_of_spirit"><a class="markdownIt-Anchor" href="#tcache_house_of_spirit"></a> Tcache_House_of_spirit</h3>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"the house of spirit attack on tcache.\n"</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"기존의 house of spirit과 비슷한 방식으로 작동하지만 free될 fake chunk 뒤에 fake chunk를 만들 필요가 없다.\n"</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"malloc.c의 _int_free 함수에서 tcache_put이 다음 chunk의 prev_inuse가 정상인지 확인하지 않고 호출되는 것을 알 수 있다.\n"</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"(Search for strings \"invalid next size\" and \"double free or corruption\")\n\n"</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"malloc()을 한 번 호출해서 메모리를 세팅한다.\n"</span>);</span><br><span class="line"><span class="built_in">malloc</span>(<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"fake chunk 영역을 가리키기 위해 1 pointer를 overwrite할 것이라고 생각해보자.\n"</span>);</span><br><span class="line"><span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> *a; <span class="comment">// overwrite할 pointer</span></span><br><span class="line"><span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> fake_chunks[<span class="number">10</span>]; <span class="comment">// fake chunk 영역</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"이 영역에는 하나의 fake chunk가 있다. 크기 필드는 %p에 위치한다.\n"</span>, &amp;fake_chunks[<span class="number">1</span>]);</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"이 chunk 크기는 tcache 범주에 속해야 한다. (chunk 크기 &lt;= 0x410; x64: malloc arg &lt;= 0x408)\n"</span></span><br><span class="line"><span class="string">"prev_inuse(lsb) bit는 tcache chunk의 경우 free로 무시되지만\n"</span></span><br><span class="line"><span class="string">"is_mmapped(두번째 lsb)와 non_main_arena(세번째 lsb) 비트는 문제를 일으킨다.\n"</span>);</span><br><span class="line"><span class="comment">/* 이것은 다음 malloc 요청의 크기가 malloc 구현에 사용된 내부 크기로 반올림돼야 한다.</span></span><br><span class="line"><span class="comment">Ex) x64: 0x30~0x38은 모두 0x40으로 반올림되어, 끝에 있는 malloc 파라미터에서 작동한다. */</span></span><br><span class="line">fake_chunks[<span class="number">1</span>] = <span class="number">0x40</span>; <span class="comment">// 크기</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"이제 첫번째 fake chunk안에 있는 %p를 fake영역의 주소에 pointer를 overwrite할 것이다.\n"</span>, &amp;fake_chunks[<span class="number">1</span>]);</span><br><span class="line"><span class="comment">//이 chunk와 관련된 *영역*의 메모리 주소는 16바이트로 정렬돼야 한다.</span></span><br><span class="line"></span><br><span class="line">a = &amp;fake_chunks[<span class="number">2</span>];</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"overwrite된 pointer를 free한다.\n"</span>);</span><br><span class="line"><span class="built_in">puts</span>(<span class="string">"-------free(a)-------"</span>);</span><br><span class="line"><span class="built_in">free</span>(a);</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"이제 다음 malloc은 %p에서 fake chunk의 영역을 반환할 것이다. 그것은 %p일 것이다.\n"</span>, &amp;fake_chunks[<span class="number">1</span>], &amp;fake_chunks[<span class="number">2</span>]);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"malloc(0x30): %p\n"</span>, <span class="built_in">malloc</span>(<span class="number">0x30</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://user-images.githubusercontent.com/16969364/63587858-ffb5e380-c5df-11e9-9979-032003ed7d29.png" alt="tcache_house_of_spirit.c"></p>
 <center>
 <p><code>the house of spirit attack on tcache.</code><br>
 기존의 house of spirit과 비슷한 방식으로 작동하지만<br>
@@ -284,16 +286,21 @@ is_mmapped(두번째 lsb)와 non_main_arena(세번째 lsb) 비트는 문제를 �
             "name": "j0n9hyun"
         },
         "headline": "[How2Heap] Tcache_House_of_spirit",
-        "image": "http://j0n9hyun.github.io",
+        "image": "http://j0n9hyun.github.iohttps://user-images.githubusercontent.com/16969364/63587858-ffb5e380-c5df-11e9-9979-032003ed7d29.png",
         "keywords": "Theory",
         "genre": "Theory",
         "datePublished": "2019-06-27",
         "dateCreated": "2019-06-27",
-        "dateModified": "2019-06-27",
+        "dateModified": "2019-08-23",
         "url": "http://j0n9hyun.github.io/2019/06/27/How2Heap-Tcache-House-of-spirit/",
         "description": " Tcache_House_of_spirit
-123456789101112131415161718192021222324252627282930313233343536373839#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;int main()&#123;fprintf(stderr, "the house of spirit attac"
-        "wordCount": 472
+
+
+the house of spirit attack on tcache.
+기존의 house of spirit과 비슷한 방식으로 작동하지만
+free될 fake chunk 뒤에 fake chunk를 만들 필요가 없다.
+malloc.c의 _int_free 함수에서 tcache_put이 다음 chunk의 prev_inuse"
+        "wordCount": 127
     }
 </script>
 

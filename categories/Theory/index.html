@@ -181,7 +181,12 @@
 
         <p class="article-excerpt">
              Tcache_House_of_spirit
-123456789101112131415161718192021222324252627282930313233343536373839#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;int main()&#123;fprintf(stderr, "the house of spirit attac
+
+
+the house of spirit attack on tcache.
+기존의 house of spirit과 비슷한 방식으로 작동하지만
+free될 fake chunk 뒤에 fake chunk를 만들 필요가 없다.
+malloc.c의 _int_free 함수에서 tcache_put이 다음 chunk의 prev_inuse
         </p>
     </div>
 </article>
@@ -209,7 +214,14 @@
 
         <p class="article-excerpt">
              Tcache_Poisoning
-1234567891011121314151617181920212223242526272829303132333435#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#include &lt;stdint.h&gt;int main()&#123;fprintf(stderr, "이것은 malloc을 속여
+
+
+이것은 malloc을 속여서 pointer를 임의의 위치(이 경우, 스택)로
+반환하는 간단한 tcache poisoning 공격이다.
+이 공격은 fastbin corruption 공격과 매우 비슷하다.
+malloc()을 반환할 주소는 0x7fffb6be4b80이다.
+buffer를 한 개 할당한다.
+malloc(128): 
         </p>
     </div>
 </article>
@@ -278,7 +290,13 @@ free를 두 번 한다.
 
         <p class="article-excerpt">
              Overlapping_Chunks_2
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071#include &lt;stdio.h&gt;#include &lt;stdlib.h
+
+simple chunks overlapping problem
+이것은 인접하지 않은 free chunk를 consolidate하는 공격으로도 참조된다.
+heap에 chunk를 5개 할당한다.
+0x603010 ~ 0x6033f8 p1 chunk
+0x603400 ~ 0x6037e8 p2 chunk
+0x6037f0 ~ 0x
         </p>
     </div>
 </article>

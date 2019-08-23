@@ -20,18 +20,20 @@
     
         <meta name="keywords" content="Theory">
     
-    <meta name="description" content="House_of_spirit.c 1234567891011121314151617181920212223242526272829303132333435#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;int main()&amp;#123;fprintf(stderr, &quot;house of spirit\n&quot;);fprintf(stderr, &quot;m">
+    <meta name="description" content="House_of_spirit.c  house of spirit malloc을 한 번 호출해서 메모리를 설정한다. 이제 fake fastbin 영역을 가리키는 포인터를 overwirte할 것이다. 이 영역(메모리 길이: 80)은 chunk가 2개 있다. 첫번째는 0x7fffffffe338에서 시작하고 두번째는 0x7fffffffe378에서 시작한다. 이 영">
 <meta name="keywords" content="Theory">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[How2Heap] House_of_spirit">
 <meta property="og:url" content="http://j0n9hyun.github.io/2019/05/29/How2Heap-House-of-spirit-c/index.html">
 <meta property="og:site_name" content="j0n9hyun">
-<meta property="og:description" content="House_of_spirit.c 1234567891011121314151617181920212223242526272829303132333435#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;int main()&amp;#123;fprintf(stderr, &quot;house of spirit\n&quot;);fprintf(stderr, &quot;m">
+<meta property="og:description" content="House_of_spirit.c  house of spirit malloc을 한 번 호출해서 메모리를 설정한다. 이제 fake fastbin 영역을 가리키는 포인터를 overwirte할 것이다. 이 영역(메모리 길이: 80)은 chunk가 2개 있다. 첫번째는 0x7fffffffe338에서 시작하고 두번째는 0x7fffffffe378에서 시작한다. 이 영">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2019-05-29T07:16:06.000Z">
+<meta property="og:image" content="https://user-images.githubusercontent.com/16969364/63588772-43a9e800-c5e2-11e9-820d-a09ceabe5aaa.png">
+<meta property="og:updated_time" content="2019-08-23T11:12:37.347Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[How2Heap] House_of_spirit">
-<meta name="twitter:description" content="House_of_spirit.c 1234567891011121314151617181920212223242526272829303132333435#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;int main()&amp;#123;fprintf(stderr, &quot;house of spirit\n&quot;);fprintf(stderr, &quot;m">
+<meta name="twitter:description" content="House_of_spirit.c  house of spirit malloc을 한 번 호출해서 메모리를 설정한다. 이제 fake fastbin 영역을 가리키는 포인터를 overwirte할 것이다. 이 영역(메모리 길이: 80)은 chunk가 2개 있다. 첫번째는 0x7fffffffe338에서 시작하고 두번째는 0x7fffffffe378에서 시작한다. 이 영">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/16969364/63588772-43a9e800-c5e2-11e9-820d-a09ceabe5aaa.png">
     
 	<link rel="canonical" href="http://j0n9hyun.github.io/2019/05/29/how2heap-house-of-spirit-c/">
 
@@ -180,13 +182,13 @@
         <a class="tag-link" href="/tags/Theory/">Theory</a>
     </div>
 
-  			<span class="reading-time">⏱ 4 분</span>
+  			<span class="reading-time">⏱ 1 분</span>
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
             <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="house_of_spiritc"><a class="markdownIt-Anchor" href="#house_of_spiritc"></a> House_of_spirit.c</h3>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"house of spirit\n"</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"malloc을 한 번 호출해서 메모리를 설정한다.\n"</span>);</span><br><span class="line"><span class="built_in">malloc</span>(<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"이제 fake fastbin 영역을 가리키는 포인터를 overwirte할 것이다.\n"</span>);</span><br><span class="line"><span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> *a;</span><br><span class="line"><span class="comment">// This has nothing to do with fastbinsY (do not be fooled by the 10) - fake_chunks is just a piece of memory to fulfil allocations (pointed to from fastbinsY)</span></span><br><span class="line"><span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> fake_chunks[<span class="number">10</span>] __attribute__ ((aligned (<span class="number">16</span>)));</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"이 영역(메모리 길이: %lu)은 chunk가 2개 있다. 첫번째는 %p에서 시작하고 두번째는 %p에서 시작한다.\n"</span>, <span class="keyword">sizeof</span>(fake_chunks), &amp;fake_chunks[<span class="number">1</span>], &amp;fake_chunks[<span class="number">9</span>]);</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"이 영역의 chunk 크기는 fastbins에 속하는 영역(x64: &lt;= 128bytes)보다 큰 16bytes 이상이어야 한다.(chunk data를 수용하기 위해) PREV_INUSE(lsb)는 fastbin-sized chunk의 free로 무시되지만 IS_MMAPPED(second lsb)나 NON_MAIN_ARENA(third lsb)는 문제를 야기한다.\n"</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"... note that this has to be the size of the next malloc request rounded to the internal size used by the malloc implementation. E.g. on x64, 0x30-0x38 will all be rounded to 0x40, so they would work for the malloc parameter at the end. \n"</span>);</span><br><span class="line">fake_chunks[<span class="number">1</span>] = <span class="number">0x40</span>; <span class="comment">// this is the size</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"*next* fake 영역의 chunk 크기는 온전해야 한다. 그것은 &gt; 2*SIZE_SZ (&gt; 16 on x64) &amp;&amp; &lt; av-&gt;system_mem (main arena는 기본적으로 &lt; 128kb)이 nextsize 무결성 체크를 통과한다.그래서 fastbin 크기가 필요 없다.\n"</span>);</span><br><span class="line"><span class="comment">// fake_chunks[9] because 0x40 / sizeof(unsigned long long) = 8</span></span><br><span class="line">fake_chunks[<span class="number">9</span>] = <span class="number">0x1234</span>; <span class="comment">// nextsize</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"이제 포인터를 첫번째 fake chunk안에 있는 fake 영역의 주소로 overwrite할 것이다, %p.\n"</span>, &amp;fake_chunks[<span class="number">1</span>]);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"... note that the memory address of the *region* associated with this chunk must be 16-byte aligned.\n"</span>);</span><br><span class="line">a = &amp;fake_chunks[<span class="number">2</span>];</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"overwrite된 포인터를 free한다.\n"</span>);</span><br><span class="line"><span class="built_in">puts</span>(<span class="string">"-------free(a)-------\n"</span>);</span><br><span class="line"><span class="built_in">free</span>(a);</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"next malloc은 %p에 있는 fake chunk의 영역을 반환할 것이다. 그러면 %p이 될 것이다!\n"</span>, &amp;fake_chunks[<span class="number">1</span>], &amp;fake_chunks[<span class="number">2</span>]);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"malloc(0x30): %p\n"</span>, <span class="built_in">malloc</span>(<span class="number">0x30</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://user-images.githubusercontent.com/16969364/63588772-43a9e800-c5e2-11e9-820d-a09ceabe5aaa.png" alt="house_of_spirit.c"></p>
 <p><code>house of spirit</code><br>
 malloc을 한 번 호출해서 메모리를 설정한다.<br>
 이제 fake fastbin 영역을 가리키는 포인터를 overwirte할 것이다.<br>
@@ -275,16 +277,21 @@ next malloc은 <code>0x7fffffffe338</code>에 있는 fake chunk의 영역을 반
             "name": "j0n9hyun"
         },
         "headline": "[How2Heap] House_of_spirit",
-        "image": "http://j0n9hyun.github.io",
+        "image": "http://j0n9hyun.github.iohttps://user-images.githubusercontent.com/16969364/63588772-43a9e800-c5e2-11e9-820d-a09ceabe5aaa.png",
         "keywords": "Theory",
         "genre": "Theory",
         "datePublished": "2019-05-29",
         "dateCreated": "2019-05-29",
-        "dateModified": "2019-05-29",
+        "dateModified": "2019-08-23",
         "url": "http://j0n9hyun.github.io/2019/05/29/How2Heap-House-of-spirit-c/",
         "description": " House_of_spirit.c
-1234567891011121314151617181920212223242526272829303132333435#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;int main()&#123;fprintf(stderr, "house of spirit\n");fprintf(stderr, "m"
-        "wordCount": 487
+
+house of spirit
+malloc을 한 번 호출해서 메모리를 설정한다.
+이제 fake fastbin 영역을 가리키는 포인터를 overwirte할 것이다.
+이 영역(메모리 길이: 80)은 chunk가 2개 있다. 첫번째는 0x7fffffffe338에서 시작하고 두번째는 0x7fffffffe378에서 시작한다.
+이 영"
+        "wordCount": 88
     }
 </script>
 
