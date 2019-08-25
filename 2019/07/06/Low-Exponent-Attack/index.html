@@ -20,18 +20,20 @@
     
         <meta name="keywords" content="Theory">
     
-    <meta name="description" content="낮은 지수 공격 123456789101112131415import gmpyc_list = [3257687211413179849713234287228115652852064803596545802006316144655701336714918948672668217982037728069055370417273850104541474476810598369542627961">
+    <meta name="description" content="낮은 지수 공격">
 <meta name="keywords" content="Theory">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Low Exponent Attack">
 <meta property="og:url" content="http://j0n9hyun.github.io/2019/07/06/Low-Exponent-Attack/index.html">
 <meta property="og:site_name" content="j0n9hyun">
-<meta property="og:description" content="낮은 지수 공격 123456789101112131415import gmpyc_list = [3257687211413179849713234287228115652852064803596545802006316144655701336714918948672668217982037728069055370417273850104541474476810598369542627961">
+<meta property="og:description" content="낮은 지수 공격">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2019-07-05T15:18:38.000Z">
+<meta property="og:image" content="https://user-images.githubusercontent.com/16969364/63645063-76aec180-c731-11e9-8b82-e02834f489d7.png">
+<meta property="og:updated_time" content="2019-08-25T03:12:05.913Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Low Exponent Attack">
-<meta name="twitter:description" content="낮은 지수 공격 123456789101112131415import gmpyc_list = [3257687211413179849713234287228115652852064803596545802006316144655701336714918948672668217982037728069055370417273850104541474476810598369542627961">
+<meta name="twitter:description" content="낮은 지수 공격">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/16969364/63645063-76aec180-c731-11e9-8b82-e02834f489d7.png">
     
 	<link rel="canonical" href="http://j0n9hyun.github.io/2019/07/06/low-exponent-attack/">
 
@@ -186,7 +188,7 @@
         
         <div class="article-entry" itemprop="articleBody">
             <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="낮은-지수-공격"><a class="markdownIt-Anchor" href="#낮은-지수-공격"></a> 낮은 지수 공격</h3>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> gmpy</span><br><span class="line"></span><br><span class="line">c_list = [<span class="number">3257687211413179849713234287228115652852064803596545802006316144655701336714918948672668217982037728069055370417273850104541474476810598369542627961429180060096555295519064954697207788677528957569208943432299557549774333187664920215674167987939460257141632237998790136575185293301081863083862494006009415801599660234577382347813571039134562532471377834137776834839392965274882404992875421226913724316557631483699200757</span>]</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">e = <span class="number">7.00</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">for</span> idx, c <span class="keyword">in</span> enumerate(c_list):</span><br><span class="line">    c_list[idx], perfect = gmpy.root(c, <span class="number">7</span>)</span><br><span class="line">    print(<span class="string">"%x %d "</span> % (c_list[idx], perfect))</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="keyword">for</span> c <span class="keyword">in</span> c_list:</span><br><span class="line">    c=format(int(c), <span class="string">'x'</span>)</span><br><span class="line">    print(<span class="string">"%s "</span> % (c.decode(<span class="string">"hex"</span>)))</span><br></pre></td></tr></table></figure>
+<p><img src="https://user-images.githubusercontent.com/16969364/63645063-76aec180-c731-11e9-8b82-e02834f489d7.png" alt="low_exponent_attack"></p>
 
         </div>
         <footer class="article-footer">
@@ -265,16 +267,17 @@
             "name": "j0n9hyun"
         },
         "headline": "Low Exponent Attack",
-        "image": "http://j0n9hyun.github.io",
+        "image": "http://j0n9hyun.github.iohttps://user-images.githubusercontent.com/16969364/63645063-76aec180-c731-11e9-8b82-e02834f489d7.png",
         "keywords": "Theory",
         "genre": "WriteUps Crypto",
         "datePublished": "2019-07-06",
         "dateCreated": "2019-07-06",
-        "dateModified": "2019-07-06",
+        "dateModified": "2019-08-25",
         "url": "http://j0n9hyun.github.io/2019/07/06/Low-Exponent-Attack/",
         "description": " 낮은 지수 공격
-123456789101112131415import gmpyc_list = [3257687211413179849713234287228115652852064803596545802006316144655701336714918948672668217982037728069055370417273850104541474476810598369542627961"
-        "wordCount": 102
+
+"
+        "wordCount": 12
     }
 </script>
 
