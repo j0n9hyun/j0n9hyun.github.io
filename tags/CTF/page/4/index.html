@@ -59,7 +59,7 @@
     
 
 
-<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+</head>
 </html>
 <body>
     <div id="wrap">
@@ -223,19 +223,10 @@ Binary File
         <p class="article-excerpt">
              start
 Binary File
-sub_4005E6 proc near
-; __unwind {
-push    rbp
-mov     rbp, rsp
-pop     rax
-pop     rdx
-pop     rdi
-pop     rsi
-retn
-
+123456789sub_4005E6 proc near; __unwind &#123;push    rbpmov     rbp, rsppop     raxpop     rdxpop     rdipop     rsiretn
 [sub_4005E6]
 4개의 sub 함수 중 4005E6에는 pop gadget이 있다. 
-__int64 __fa
+1234567
         </p>
     </div>
 </article>
@@ -275,11 +266,7 @@ __int64 __fa
 [사진 1-2]
 필승법으로 이겨보려 하지만 치트를 쓴다.
 
-from pwn import *
-
-r = process('./baskin')
-e = ELF('./baskin')
-libc = ELF('/lib/x86
+1234567891011121314151617181920212223242526272829303132333435363738from pwn import 
         </p>
     </div>
 </article>

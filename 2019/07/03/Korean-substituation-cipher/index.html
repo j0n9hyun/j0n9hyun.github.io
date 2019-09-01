@@ -20,18 +20,18 @@
     
         <meta name="keywords" content="Wargame">
     
-    <meta name="description" content="한글 단일 치환 암호 # coding: utf-8  def divide_char(char):   num = ord(char) - 0xac00   if num&amp;lt;0:     return None   cho = num / (21*28)   jung = (num % (21*28))/28   jong = num % 28   return cho, jung, j">
+    <meta name="description" content="한글 단일 치환 암호 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374# coding: utf-8def divide_char(char):  num = ord">
 <meta name="keywords" content="Wargame">
 <meta property="og:type" content="article">
 <meta property="og:title" content="한글 단일 치환 암호">
 <meta property="og:url" content="http://j0n9hyun.github.io/2019/07/03/Korean-substituation-cipher/index.html">
 <meta property="og:site_name" content="j0n9hyun">
-<meta property="og:description" content="한글 단일 치환 암호 # coding: utf-8  def divide_char(char):   num = ord(char) - 0xac00   if num&amp;lt;0:     return None   cho = num / (21*28)   jung = (num % (21*28))/28   jong = num % 28   return cho, jung, j">
+<meta property="og:description" content="한글 단일 치환 암호 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374# coding: utf-8def divide_char(char):  num = ord">
 <meta property="og:locale" content="ko">
 <meta property="og:updated_time" content="2019-07-03T12:09:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="한글 단일 치환 암호">
-<meta name="twitter:description" content="한글 단일 치환 암호 # coding: utf-8  def divide_char(char):   num = ord(char) - 0xac00   if num&amp;lt;0:     return None   cho = num / (21*28)   jung = (num % (21*28))/28   jong = num % 28   return cho, jung, j">
+<meta name="twitter:description" content="한글 단일 치환 암호 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374# coding: utf-8def divide_char(char):  num = ord">
     
 	<link rel="canonical" href="http://j0n9hyun.github.io/2019/07/03/korean-substituation-cipher/">
 
@@ -62,7 +62,7 @@
     
 
 
-<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+</head>
 </html>
 <body>
     <div id="wrap">
@@ -180,87 +180,13 @@
         <a class="tag-link" href="/tags/Wargame/">Wargame</a>
     </div>
 
-  			<span class="reading-time">⏱ 5 분</span>
+  			<span class="reading-time">⏱ 7 분</span>
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
             <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="한글-단일-치환-암호"><a class="markdownIt-Anchor" href="#한글-단일-치환-암호"></a> 한글 단일 치환 암호</h3>
-<pre class="highlight"><code class="py"><span class="hljs-comment"># coding: utf-8</span>
-
-<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">divide_char</span><span class="hljs-params">(char)</span>:</span>
-  num = ord(char) - <span class="hljs-number">0xac00</span>
-  <span class="hljs-keyword">if</span> num&lt;<span class="hljs-number">0</span>:
-    <span class="hljs-keyword">return</span> <span class="hljs-literal">None</span>
-  cho = num / (<span class="hljs-number">21</span>*<span class="hljs-number">28</span>)
-  jung = (num % (<span class="hljs-number">21</span>*<span class="hljs-number">28</span>))/<span class="hljs-number">28</span>
-  jong = num % <span class="hljs-number">28</span>
-  <span class="hljs-keyword">return</span> cho, jung, jong
-
-<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">join_char</span><span class="hljs-params">(cho,jung,jong)</span>:</span>
-  num = <span class="hljs-number">0xac00</span> + cho*<span class="hljs-number">21</span>*<span class="hljs-number">28</span> + jung *<span class="hljs-number">28</span> + jong
-  <span class="hljs-keyword">return</span> unichr(num)
-
-
-unicoder = <span class="hljs-keyword">lambda</span> x:unicode(x.decode(<span class="hljs-string">'utf-8'</span>))
-
-original = [map(unicoder,
-[<span class="hljs-string">"ㄱ"</span>, <span class="hljs-string">"ㄲ"</span>, <span class="hljs-string">"ㄴ"</span>, <span class="hljs-string">"ㄷ"</span>, <span class="hljs-string">"ㄸ"</span>, <span class="hljs-string">"ㄹ"</span>, <span class="hljs-string">"ㅁ"</span>, <span class="hljs-string">"ㅂ"</span>, <span class="hljs-string">"ㅃ"</span>, <span class="hljs-string">"ㅅ"</span>, <span class="hljs-string">"ㅆ"</span>, <span class="hljs-string">"ㅇ"</span>, <span class="hljs-string">"ㅈ"</span>, <span class="hljs-string">"ㅉ"</span>, <span class="hljs-string">"ㅊ"</span>, <span class="hljs-string">"ㅋ"</span>, <span class="hljs-string">"ㅌ"</span>, <span class="hljs-string">"ㅍ"</span>,<span class="hljs-string">"ㅎ"</span>]), map(unicoder,
-[<span class="hljs-string">"ㅏ"</span>, <span class="hljs-string">"ㅐ"</span>, <span class="hljs-string">"ㅑ"</span>, <span class="hljs-string">"ㅒ"</span>, <span class="hljs-string">"ㅓ"</span>, <span class="hljs-string">"ㅔ"</span>, <span class="hljs-string">"ㅕ"</span>, <span class="hljs-string">"ㅖ"</span>, <span class="hljs-string">"ㅗ"</span>, <span class="hljs-string">"ㅘ"</span>, <span class="hljs-string">"ㅙ"</span>, <span class="hljs-string">"ㅚ"</span>, <span class="hljs-string">"ㅛ"</span>, <span class="hljs-string">"ㅜ"</span>, <span class="hljs-string">"ㅝ"</span>, <span class="hljs-string">"ㅞ"</span>, <span class="hljs-string">"ㅟ"</span>, <span class="hljs-string">"ㅠ"</span>, <span class="hljs-string">"ㅡ"</span>, <span class="hljs-string">"ㅢ"</span>,<span class="hljs-string">"ㅣ"</span>]), map(unicoder,
-[<span class="hljs-string">" "</span>, <span class="hljs-string">"ㄱ"</span>, <span class="hljs-string">"ㄲ"</span>, <span class="hljs-string">"ㄳ"</span>, <span class="hljs-string">"ㄴ"</span>, <span class="hljs-string">"ㄵ"</span>, <span class="hljs-string">"ㄶ"</span>, <span class="hljs-string">"ㄷ"</span>, <span class="hljs-string">"ㄹ"</span>, <span class="hljs-string">"ㄺ"</span>, <span class="hljs-string">"ㄻ"</span>, <span class="hljs-string">"ㄼ"</span>, <span class="hljs-string">"ㄽ"</span>, <span class="hljs-string">"ㄾ"</span>, <span class="hljs-string">"ㄿ"</span>, <span class="hljs-string">"ㅀ"</span>, <span class="hljs-string">"ㅁ"</span>, <span class="hljs-string">"ㅂ"</span>, <span class="hljs-string">"ㅄ"</span>, <span class="hljs-string">"ㅅ"</span>,<span class="hljs-string">"ㅆ"</span>, <span class="hljs-string">"ㅇ"</span>, <span class="hljs-string">"ㅈ"</span>, <span class="hljs-string">"ㅊ"</span>, <span class="hljs-string">"ㅋ"</span>, <span class="hljs-string">"ㅌ"</span>, <span class="hljs-string">"ㅍ"</span>, <span class="hljs-string">"ㅎ"</span>])]
-
-replace = [map(unicoder,
-[<span class="hljs-string">"ㅊ"</span>, <span class="hljs-string">"ㅆ"</span>, <span class="hljs-string">"ㄴ"</span>, <span class="hljs-string">"ㄹ"</span>, <span class="hljs-string">"ㄸ"</span>, <span class="hljs-string">"ㅍ"</span>, <span class="hljs-string">"ㅎ"</span>, <span class="hljs-string">"ㄱ"</span>, <span class="hljs-string">"ㅃ"</span>, <span class="hljs-string">"ㄴ"</span>, <span class="hljs-string">"ㅆ"</span>, <span class="hljs-string">"ㄷ"</span>, <span class="hljs-string">"ㄹ"</span>, <span class="hljs-string">"ㅉ"</span>, <span class="hljs-string">"ㅁ"</span>, <span class="hljs-string">"ㅂ"</span>, <span class="hljs-string">"ㅅ"</span>, <span class="hljs-string">"ㅇ"</span>,<span class="hljs-string">"ㅈ"</span>]), map(unicoder,
-[<span class="hljs-string">"ㅏ"</span>, <span class="hljs-string">"ㅐ"</span>, <span class="hljs-string">"ㅗ"</span>, <span class="hljs-string">"ㅒ"</span>, <span class="hljs-string">"ㅔ"</span>, <span class="hljs-string">"ㅝ"</span>, <span class="hljs-string">"ㅓ"</span>, <span class="hljs-string">"ㅑ"</span>, <span class="hljs-string">"ㅣ"</span>, <span class="hljs-string">"ㅕ"</span>, <span class="hljs-string">"ㅙ"</span>, <span class="hljs-string">"ㅜ"</span>, <span class="hljs-string">"ㅡ"</span>, <span class="hljs-string">"ㅜ"</span>, <span class="hljs-string">"ㅝ"</span>, <span class="hljs-string">"ㅞ"</span>, <span class="hljs-string">"ㅏ"</span>, <span class="hljs-string">"ㅟ"</span>, <span class="hljs-string">"ㅐ"</span>, <span class="hljs-string">"ㅢ"</span>,<span class="hljs-string">"ㅘ"</span>]), map(unicoder,
-[<span class="hljs-string">" "</span>, <span class="hljs-string">"ㅊ"</span>, <span class="hljs-string">"ㅆ"</span>, <span class="hljs-string">"ㄳ"</span>, <span class="hljs-string">"ㄴ"</span>, <span class="hljs-string">"ㄵ"</span>, <span class="hljs-string">"ㄶ"</span>, <span class="hljs-string">"ㄹ"</span>, <span class="hljs-string">"ㅍ"</span>, <span class="hljs-string">"ㄺ"</span>, <span class="hljs-string">"ㄻ"</span>, <span class="hljs-string">"ㄼ"</span>, <span class="hljs-string">"ㄽ"</span>, <span class="hljs-string">"ㄾ"</span>, <span class="hljs-string">"ㄿ"</span>, <span class="hljs-string">"ㅀ"</span>, <span class="hljs-string">"ㅎ"</span>, <span class="hljs-string">"ㄱ"</span>, <span class="hljs-string">"ㅄ"</span>, <span class="hljs-string">"ㄴ"</span>,<span class="hljs-string">"ㅆ"</span>, <span class="hljs-string">"ㄷ"</span>, <span class="hljs-string">"ㄹ"</span>, <span class="hljs-string">"ㅁ"</span>, <span class="hljs-string">"ㅂ"</span>, <span class="hljs-string">"ㅅ"</span>, <span class="hljs-string">"ㅇ"</span>, <span class="hljs-string">"ㅈ"</span>])]
-
-text = <span class="hljs-string">"쉬쥩췾뀌초 퓌무피 뷛퓌 쵯쮜피쟈 텨죠 튀츁오 퓌소뮞끄 포졋 홧귀쟈 퓌퍄켸뷔 소죠뱌화 먖 크 포톼야 취귗스 허 뚀욪 토져 롸오 챹뮞 샤초 뮈소쥐 스 포쥦 퓨뮈폐 펴퐡코 셔봐 트쟈 룆즈뵈죶 츺뷔샤소 룆즈뵈숏 퓌퍄켸뷰퐈페 포보퍼 튀쥧취위 슂쟈 꾀처 뽯퓟너 뮈쇼소쥐"</span>
-
-unicoded = unicoder(encrypted)
-decrypted = <span class="hljs-string">u""</span>
-
-
-stat = {<span class="hljs-string">'cho'</span>:{}, <span class="hljs-string">'jung'</span> : {},<span class="hljs-string">'jong'</span> :{}, <span class="hljs-string">'char'</span> :{} }
-<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> unicoded:
-  ret = divide_char(i)
-  <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> ret:
-    decrypted+=i
-    <span class="hljs-keyword">continue</span>
-
-  <span class="hljs-keyword">if</span> i <span class="hljs-keyword">in</span> stat[<span class="hljs-string">'char'</span>]:
-    stat[<span class="hljs-string">'char'</span>][i]=stat[<span class="hljs-string">'char'</span>][i]+<span class="hljs-number">1</span>
-  <span class="hljs-keyword">else</span>:
-    stat[<span class="hljs-string">'char'</span>][i]=<span class="hljs-number">1</span>
-
-  cho =  original_table[<span class="hljs-number">0</span>][ret[<span class="hljs-number">0</span>]]
-  jung = original_table[<span class="hljs-number">1</span>][ret[<span class="hljs-number">1</span>]]
-  jong = original_table[<span class="hljs-number">2</span>][ret[<span class="hljs-number">2</span>]]
-
-  <span class="hljs-keyword">if</span> cho <span class="hljs-keyword">in</span> stat[<span class="hljs-string">'cho'</span>]:
-    stat[<span class="hljs-string">'cho'</span>][cho]=stat[<span class="hljs-string">'cho'</span>][cho]+<span class="hljs-number">1</span>
-  <span class="hljs-keyword">else</span>:
-    stat[<span class="hljs-string">'cho'</span>][cho]=<span class="hljs-number">1</span>
-
-  <span class="hljs-keyword">if</span> jung <span class="hljs-keyword">in</span> stat[<span class="hljs-string">'jung'</span>]:
-    stat[<span class="hljs-string">'jung'</span>][jung]=stat[<span class="hljs-string">'jung'</span>][jung]+<span class="hljs-number">1</span>
-  <span class="hljs-keyword">else</span>:
-    stat[<span class="hljs-string">'jung'</span>][jung]=<span class="hljs-number">1</span>
-
-  <span class="hljs-keyword">if</span> jong <span class="hljs-keyword">in</span> stat[<span class="hljs-string">'jong'</span>]:
-    stat[<span class="hljs-string">'jong'</span>][jong]=stat[<span class="hljs-string">'jong'</span>][jong]+<span class="hljs-number">1</span>
-  <span class="hljs-keyword">else</span>:
-    stat[<span class="hljs-string">'jong'</span>][jong]=<span class="hljs-number">1</span>
-
-
-  new_ret=list()
-  <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">3</span>):
-    new_item = replace_table[i][ret[i]]
-    new_ret.append(original_table[i].index(new_item))
-
-  decrypted+=join_char(new_ret[<span class="hljs-number">0</span>],new_ret[<span class="hljs-number">1</span>],new_ret[<span class="hljs-number">2</span>])
-
-<span class="hljs-keyword">print</span> decrypted
-</code></pre>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># coding: utf-8</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">divide_char</span><span class="params">(char)</span>:</span></span><br><span class="line">  num = ord(char) - <span class="number">0xac00</span></span><br><span class="line">  <span class="keyword">if</span> num&lt;<span class="number">0</span>:</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">  cho = num / (<span class="number">21</span>*<span class="number">28</span>)</span><br><span class="line">  jung = (num % (<span class="number">21</span>*<span class="number">28</span>))/<span class="number">28</span></span><br><span class="line">  jong = num % <span class="number">28</span></span><br><span class="line">  <span class="keyword">return</span> cho, jung, jong</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">join_char</span><span class="params">(cho,jung,jong)</span>:</span></span><br><span class="line">  num = <span class="number">0xac00</span> + cho*<span class="number">21</span>*<span class="number">28</span> + jung *<span class="number">28</span> + jong</span><br><span class="line">  <span class="keyword">return</span> unichr(num)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">unicoder = <span class="keyword">lambda</span> x:unicode(x.decode(<span class="string">'utf-8'</span>))</span><br><span class="line"></span><br><span class="line">original = [map(unicoder,</span><br><span class="line">[<span class="string">"ㄱ"</span>, <span class="string">"ㄲ"</span>, <span class="string">"ㄴ"</span>, <span class="string">"ㄷ"</span>, <span class="string">"ㄸ"</span>, <span class="string">"ㄹ"</span>, <span class="string">"ㅁ"</span>, <span class="string">"ㅂ"</span>, <span class="string">"ㅃ"</span>, <span class="string">"ㅅ"</span>, <span class="string">"ㅆ"</span>, <span class="string">"ㅇ"</span>, <span class="string">"ㅈ"</span>, <span class="string">"ㅉ"</span>, <span class="string">"ㅊ"</span>, <span class="string">"ㅋ"</span>, <span class="string">"ㅌ"</span>, <span class="string">"ㅍ"</span>,<span class="string">"ㅎ"</span>]), map(unicoder,</span><br><span class="line">[<span class="string">"ㅏ"</span>, <span class="string">"ㅐ"</span>, <span class="string">"ㅑ"</span>, <span class="string">"ㅒ"</span>, <span class="string">"ㅓ"</span>, <span class="string">"ㅔ"</span>, <span class="string">"ㅕ"</span>, <span class="string">"ㅖ"</span>, <span class="string">"ㅗ"</span>, <span class="string">"ㅘ"</span>, <span class="string">"ㅙ"</span>, <span class="string">"ㅚ"</span>, <span class="string">"ㅛ"</span>, <span class="string">"ㅜ"</span>, <span class="string">"ㅝ"</span>, <span class="string">"ㅞ"</span>, <span class="string">"ㅟ"</span>, <span class="string">"ㅠ"</span>, <span class="string">"ㅡ"</span>, <span class="string">"ㅢ"</span>,<span class="string">"ㅣ"</span>]), map(unicoder,</span><br><span class="line">[<span class="string">" "</span>, <span class="string">"ㄱ"</span>, <span class="string">"ㄲ"</span>, <span class="string">"ㄳ"</span>, <span class="string">"ㄴ"</span>, <span class="string">"ㄵ"</span>, <span class="string">"ㄶ"</span>, <span class="string">"ㄷ"</span>, <span class="string">"ㄹ"</span>, <span class="string">"ㄺ"</span>, <span class="string">"ㄻ"</span>, <span class="string">"ㄼ"</span>, <span class="string">"ㄽ"</span>, <span class="string">"ㄾ"</span>, <span class="string">"ㄿ"</span>, <span class="string">"ㅀ"</span>, <span class="string">"ㅁ"</span>, <span class="string">"ㅂ"</span>, <span class="string">"ㅄ"</span>, <span class="string">"ㅅ"</span>,<span class="string">"ㅆ"</span>, <span class="string">"ㅇ"</span>, <span class="string">"ㅈ"</span>, <span class="string">"ㅊ"</span>, <span class="string">"ㅋ"</span>, <span class="string">"ㅌ"</span>, <span class="string">"ㅍ"</span>, <span class="string">"ㅎ"</span>])]</span><br><span class="line"></span><br><span class="line">replace = [map(unicoder,</span><br><span class="line">[<span class="string">"ㅊ"</span>, <span class="string">"ㅆ"</span>, <span class="string">"ㄴ"</span>, <span class="string">"ㄹ"</span>, <span class="string">"ㄸ"</span>, <span class="string">"ㅍ"</span>, <span class="string">"ㅎ"</span>, <span class="string">"ㄱ"</span>, <span class="string">"ㅃ"</span>, <span class="string">"ㄴ"</span>, <span class="string">"ㅆ"</span>, <span class="string">"ㄷ"</span>, <span class="string">"ㄹ"</span>, <span class="string">"ㅉ"</span>, <span class="string">"ㅁ"</span>, <span class="string">"ㅂ"</span>, <span class="string">"ㅅ"</span>, <span class="string">"ㅇ"</span>,<span class="string">"ㅈ"</span>]), map(unicoder,</span><br><span class="line">[<span class="string">"ㅏ"</span>, <span class="string">"ㅐ"</span>, <span class="string">"ㅗ"</span>, <span class="string">"ㅒ"</span>, <span class="string">"ㅔ"</span>, <span class="string">"ㅝ"</span>, <span class="string">"ㅓ"</span>, <span class="string">"ㅑ"</span>, <span class="string">"ㅣ"</span>, <span class="string">"ㅕ"</span>, <span class="string">"ㅙ"</span>, <span class="string">"ㅜ"</span>, <span class="string">"ㅡ"</span>, <span class="string">"ㅜ"</span>, <span class="string">"ㅝ"</span>, <span class="string">"ㅞ"</span>, <span class="string">"ㅏ"</span>, <span class="string">"ㅟ"</span>, <span class="string">"ㅐ"</span>, <span class="string">"ㅢ"</span>,<span class="string">"ㅘ"</span>]), map(unicoder,</span><br><span class="line">[<span class="string">" "</span>, <span class="string">"ㅊ"</span>, <span class="string">"ㅆ"</span>, <span class="string">"ㄳ"</span>, <span class="string">"ㄴ"</span>, <span class="string">"ㄵ"</span>, <span class="string">"ㄶ"</span>, <span class="string">"ㄹ"</span>, <span class="string">"ㅍ"</span>, <span class="string">"ㄺ"</span>, <span class="string">"ㄻ"</span>, <span class="string">"ㄼ"</span>, <span class="string">"ㄽ"</span>, <span class="string">"ㄾ"</span>, <span class="string">"ㄿ"</span>, <span class="string">"ㅀ"</span>, <span class="string">"ㅎ"</span>, <span class="string">"ㄱ"</span>, <span class="string">"ㅄ"</span>, <span class="string">"ㄴ"</span>,<span class="string">"ㅆ"</span>, <span class="string">"ㄷ"</span>, <span class="string">"ㄹ"</span>, <span class="string">"ㅁ"</span>, <span class="string">"ㅂ"</span>, <span class="string">"ㅅ"</span>, <span class="string">"ㅇ"</span>, <span class="string">"ㅈ"</span>])]</span><br><span class="line"></span><br><span class="line">text = <span class="string">"쉬쥩췾뀌초 퓌무피 뷛퓌 쵯쮜피쟈 텨죠 튀츁오 퓌소뮞끄 포졋 홧귀쟈 퓌퍄켸뷔 소죠뱌화 먖 크 포톼야 취귗스 허 뚀욪 토져 롸오 챹뮞 샤초 뮈소쥐 스 포쥦 퓨뮈폐 펴퐡코 셔봐 트쟈 룆즈뵈죶 츺뷔샤소 룆즈뵈숏 퓌퍄켸뷰퐈페 포보퍼 튀쥧취위 슂쟈 꾀처 뽯퓟너 뮈쇼소쥐"</span></span><br><span class="line"></span><br><span class="line">unicoded = unicoder(encrypted)</span><br><span class="line">decrypted = <span class="string">u""</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">stat = &#123;<span class="string">'cho'</span>:&#123;&#125;, <span class="string">'jung'</span> : &#123;&#125;,<span class="string">'jong'</span> :&#123;&#125;, <span class="string">'char'</span> :&#123;&#125; &#125;</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> unicoded:</span><br><span class="line">  ret = divide_char(i)</span><br><span class="line">  <span class="keyword">if</span> <span class="keyword">not</span> ret:</span><br><span class="line">    decrypted+=i</span><br><span class="line">    <span class="keyword">continue</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> i <span class="keyword">in</span> stat[<span class="string">'char'</span>]:</span><br><span class="line">    stat[<span class="string">'char'</span>][i]=stat[<span class="string">'char'</span>][i]+<span class="number">1</span></span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">    stat[<span class="string">'char'</span>][i]=<span class="number">1</span></span><br><span class="line"></span><br><span class="line">  cho =  original_table[<span class="number">0</span>][ret[<span class="number">0</span>]]</span><br><span class="line">  jung = original_table[<span class="number">1</span>][ret[<span class="number">1</span>]]</span><br><span class="line">  jong = original_table[<span class="number">2</span>][ret[<span class="number">2</span>]]</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> cho <span class="keyword">in</span> stat[<span class="string">'cho'</span>]:</span><br><span class="line">    stat[<span class="string">'cho'</span>][cho]=stat[<span class="string">'cho'</span>][cho]+<span class="number">1</span></span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">    stat[<span class="string">'cho'</span>][cho]=<span class="number">1</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> jung <span class="keyword">in</span> stat[<span class="string">'jung'</span>]:</span><br><span class="line">    stat[<span class="string">'jung'</span>][jung]=stat[<span class="string">'jung'</span>][jung]+<span class="number">1</span></span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">    stat[<span class="string">'jung'</span>][jung]=<span class="number">1</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> jong <span class="keyword">in</span> stat[<span class="string">'jong'</span>]:</span><br><span class="line">    stat[<span class="string">'jong'</span>][jong]=stat[<span class="string">'jong'</span>][jong]+<span class="number">1</span></span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">    stat[<span class="string">'jong'</span>][jong]=<span class="number">1</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  new_ret=list()</span><br><span class="line">  <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">3</span>):</span><br><span class="line">    new_item = replace_table[i][ret[i]]</span><br><span class="line">    new_ret.append(original_table[i].index(new_item))</span><br><span class="line"></span><br><span class="line">  decrypted+=join_char(new_ret[<span class="number">0</span>],new_ret[<span class="number">1</span>],new_ret[<span class="number">2</span>])</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> decrypted</span><br></pre></td></tr></table></figure>
 
         </div>
         <footer class="article-footer">
@@ -268,7 +194,7 @@ stat = {<span class="hljs-string">'cho'</span>:{}, <span class="hljs-string">'ju
 
 
 
-    <a data-url="http://j0n9hyun.github.io/2019/07/03/Korean-substituation-cipher/" data-id="ck00o3nqu001ez7fpyrv5sk7n" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+    <a data-url="http://j0n9hyun.github.io/2019/07/03/Korean-substituation-cipher/" data-id="ck00obmk8001ehifpyw39zygl" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -347,17 +273,8 @@ stat = {<span class="hljs-string">'cho'</span>:{}, <span class="hljs-string">'ju
         "dateModified": "2019-07-03",
         "url": "http://j0n9hyun.github.io/2019/07/03/Korean-substituation-cipher/",
         "description": " 한글 단일 치환 암호
-# coding: utf-8
-
-def divide_char(char):
-  num = ord(char) - 0xac00
-  if num&lt;0:
-    return None
-  cho = num / (21*28)
-  jung = (num % (21*28))/28
-  jong = num % 28
-  return cho, jung, j"
-        "wordCount": 593
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374# coding: utf-8def divide_char(char):  num = ord"
+        "wordCount": 743
     }
 </script>
 

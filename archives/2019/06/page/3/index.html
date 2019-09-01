@@ -59,7 +59,7 @@
     
 
 
-<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+</head>
 </html>
 <body>
     <div id="wrap">
@@ -182,14 +182,7 @@
         <p class="article-excerpt">
              Combo Chain
 Binary File
-from pwn import *
-#r = process('./combo-chain')
-r = remote('pwn.hsctf.com', 2345)
-e = ELF('./combo-chain')
-libc = e.libc
-
-ru = lambda a: r.recvuntil(a)
-sl = lambda a: r.sendli
+123456789101112131415161718192021222324252627282930313233343536373839from pwn import *#r = process('./combo-chain')r = remote('pwn.hsctf.com', 2345)e = ELF('./combo-chain')lib
         </p>
     </div>
 </article>

@@ -59,7 +59,7 @@
     
 
 
-<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+</head>
 </html>
 <body>
     <div id="wrap">
@@ -182,12 +182,7 @@
         <p class="article-excerpt">
              Base64
 디코딩을 3번 하면 풀리는 문제다.
-  1 from pwn import *
-  2 import base64
-  3 r = remote('35.237.96.115', 1357)
-  4 for i in range(3):
-  5     result = base64.decodestring(r.recvline())
-  6     r.sendlineaf
+12345671 from pwn import *2 import base643 r = remote('35.237.96.115', 1357)4 for i in range(3):5     result = base64.decodestring(r.recvline())6     r.sendlineafter(": ", 
         </p>
     </div>
 </article>

