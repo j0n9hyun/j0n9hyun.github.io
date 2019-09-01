@@ -64,7 +64,7 @@
     
 
 
-</head>
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 </html>
 <body>
     <div id="wrap">
@@ -90,7 +90,7 @@
                                         <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Daily/">Daily</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Theory/">Theory</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/">WriteUps</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Crypto/">Crypto</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Foren/">Foren</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Misc/">Misc</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Pwn/">Pwn</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Script/">Script</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Web/">Web</a></li></ul></li></ul>
                                     
                                 <li class="main-nav-list-item">
-                                    <a class="main-nav-list-link" href="https://about.me/j0n9hyun">About</a>
+                                    <a class="main-nav-list-link" href="/about">About</a>
                                 </li>
                             
                         </ul>
@@ -182,7 +182,7 @@
         <a class="tag-link" href="/tags/Theory/">Theory</a>
     </div>
 
-  			<span class="reading-time">⏱ 3 분</span>
+  			<span class="reading-time">⏱ 2 분</span>
             </div>
         
         
@@ -198,12 +198,44 @@
 <li>Pointer가 오직 next chunk만 포함하고 있다.</li>
 <li>기본적으로 Chunk Size는 24 ~ 1032 bytes 이다. (32bit : 12 ~ 516 bytes)</li>
 </ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* This is another arbitrary limit, which tunables can change.  Each</span></span><br><span class="line"><span class="comment">   tcache bin will hold at most this number of chunks.  */</span></span><br><span class="line"><span class="meta"># <span class="meta-keyword">define</span> TCACHE_FILL_COUNT 7</span></span><br></pre></td></tr></table></figure>
+<pre class="highlight"><code class="c"><span class="hljs-comment">/* This is another arbitrary limit, which tunables can change.  Each
+   tcache bin will hold at most this number of chunks.  */</span>
+<span class="hljs-meta"># <span class="hljs-meta-keyword">define</span> TCACHE_FILL_COUNT 7</span>
+</code></pre>
 <p>tcache bin 한 개당 기본적으로 7개의 Chunk를 가질 수 있다.</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">if</span> USE_TCACHE</span></span><br><span class="line"><span class="comment">/* We want 64 entries.  This is an arbitrary limit, which tunables can reduce.  */</span></span><br><span class="line"><span class="meta"># <span class="meta-keyword">define</span> TCACHE_MAX_BINS		64</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">tcache_put (mchunkptr chunk, <span class="keyword">size_t</span> tc_idx)</span><br><span class="line">&#123;</span><br><span class="line">  tcache_entry *e = (tcache_entry *) chunk2mem (chunk);</span><br><span class="line">  assert (tc_idx &lt; TCACHE_MAX_BINS);</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* Mark this chunk as "in the tcache" so the test in _int_free will</span></span><br><span class="line"><span class="comment">     detect a double free.  */</span></span><br><span class="line">  e-&gt;key = tcache;</span><br><span class="line"></span><br><span class="line">  e-&gt;next = tcache-&gt;entries[tc_idx];</span><br><span class="line">  tcache-&gt;entries[tc_idx] = e;</span><br><span class="line">  ++(tcache-&gt;counts[tc_idx]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="highlight"><code class="c"><span class="hljs-meta">#<span class="hljs-meta-keyword">if</span> USE_TCACHE</span>
+<span class="hljs-comment">/* We want 64 entries.  This is an arbitrary limit, which tunables can reduce.  */</span>
+<span class="hljs-meta"># <span class="hljs-meta-keyword">define</span> TCACHE_MAX_BINS		64</span>
+</code></pre>
+<pre class="highlight"><code class="c">tcache_put (mchunkptr chunk, <span class="hljs-keyword">size_t</span> tc_idx)
+{
+  tcache_entry *e = (tcache_entry *) chunk2mem (chunk);
+  assert (tc_idx &lt; TCACHE_MAX_BINS);
+
+  <span class="hljs-comment">/* Mark this chunk as "in the tcache" so the test in _int_free will
+     detect a double free.  */</span>
+  e-&gt;key = tcache;
+
+  e-&gt;next = tcache-&gt;entries[tc_idx];
+  tcache-&gt;entries[tc_idx] = e;
+  ++(tcache-&gt;counts[tc_idx]);
+}
+</code></pre>
 <center><small>[tcache_put]</small></center>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Caller must ensure that we know tc_idx is valid and there's</span></span><br><span class="line"><span class="comment">   available chunks to remove.  */</span></span><br><span class="line"><span class="keyword">static</span> __always_inline <span class="keyword">void</span> *</span><br><span class="line">tcache_get (<span class="keyword">size_t</span> tc_idx)</span><br><span class="line">&#123;</span><br><span class="line">  tcache_entry *e = tcache-&gt;entries[tc_idx];</span><br><span class="line">  assert (tc_idx &lt; TCACHE_MAX_BINS);</span><br><span class="line">  assert (tcache-&gt;counts[tc_idx] &gt; <span class="number">0</span>);</span><br><span class="line">  tcache-&gt;entries[tc_idx] = e-&gt;next;</span><br><span class="line">  --(tcache-&gt;counts[tc_idx]);</span><br><span class="line">  e-&gt;key = <span class="literal">NULL</span>;</span><br><span class="line">  <span class="keyword">return</span> (<span class="keyword">void</span> *) e;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="highlight"><code class="c"><span class="hljs-comment">/* Caller must ensure that we know tc_idx is valid and there's
+   available chunks to remove.  */</span>
+<span class="hljs-keyword">static</span> __<span class="hljs-function">always_inline <span class="hljs-keyword">void</span> *
+<span class="hljs-title">tcache_get</span> <span class="hljs-params">(<span class="hljs-keyword">size_t</span> tc_idx)</span>
+</span>{
+  tcache_entry *e = tcache-&gt;entries[tc_idx];
+  assert (tc_idx &lt; TCACHE_MAX_BINS);
+  assert (tcache-&gt;counts[tc_idx] &gt; <span class="hljs-number">0</span>);
+  tcache-&gt;entries[tc_idx] = e-&gt;next;
+  --(tcache-&gt;counts[tc_idx]);
+  e-&gt;key = <span class="hljs-literal">NULL</span>;
+  <span class="hljs-keyword">return</span> (<span class="hljs-keyword">void</span> *) e;
+}
+</code></pre>
 <center><small>[tcache_get]</small></center>
 <p><strong>tcache_put</strong>과 <strong>tcache_get</strong> 함수는 _int_free 와 __libc_malloc 함수가 시작할때 호출된다.<br>
 <strong>tacace_get</strong>은 할당된 크기의 영역이 요청될때 0x408보다 작으면 호출된다.</p>
@@ -226,7 +258,7 @@ entry와 count가 보이는 것을 알 수 있다. <br> <br>
 
 
 
-    <a data-url="http://j0n9hyun.github.io/2019/03/19/tcache_theory/" data-id="cjzsg5c07003iwnfpq0985wj1" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+    <a data-url="http://j0n9hyun.github.io/2019/03/19/tcache_theory/" data-id="ck00o3nuq0050z7fpr4h8pvzo" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -313,7 +345,7 @@ Single linked list(단일 연결 구조)를 이루고 있다.
 Consolidate를 하지 않는다.
 LIFO 구조를 가지고 있다.
 Pointer가 오직 nex"
-        "wordCount": 389
+        "wordCount": 317
     }
 </script>
 
@@ -426,6 +458,8 @@ Pointer가 오직 nex"
     </div>
 
 
+            
+                
             
                 
     <div class="widget-wrap widget-list">

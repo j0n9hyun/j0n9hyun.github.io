@@ -59,7 +59,7 @@
     
 
 
-</head>
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 </html>
 <body>
     <div id="wrap">
@@ -85,7 +85,7 @@
                                         <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Daily/">Daily</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Theory/">Theory</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/">WriteUps</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Crypto/">Crypto</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Foren/">Foren</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Misc/">Misc</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Pwn/">Pwn</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Script/">Script</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Web/">Web</a></li></ul></li></ul>
                                     
                                 <li class="main-nav-list-item">
-                                    <a class="main-nav-list-link" href="https://about.me/j0n9hyun">About</a>
+                                    <a class="main-nav-list-link" href="/about">About</a>
                                 </li>
                             
                         </ul>
@@ -181,7 +181,16 @@
 
         <p class="article-excerpt">
              한글 단일 치환 암호
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374# coding: utf-8def divide_char(char):  num = ord
+# coding: utf-8
+
+def divide_char(char):
+  num = ord(char) - 0xac00
+  if num&lt;0:
+    return None
+  cho = num / (21*28)
+  jung = (num % (21*28))/28
+  jong = num % 28
+  return cho, jung, j
         </p>
     </div>
 </article>
@@ -271,6 +280,8 @@
     </div>
 
 
+            
+                
             
                 
     <div class="widget-wrap widget-list">

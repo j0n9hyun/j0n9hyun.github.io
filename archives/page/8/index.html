@@ -59,7 +59,7 @@
     
 
 
-</head>
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 </html>
 <body>
     <div id="wrap">
@@ -85,7 +85,7 @@
                                         <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Daily/">Daily</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Theory/">Theory</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/">WriteUps</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Crypto/">Crypto</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Foren/">Foren</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Misc/">Misc</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Pwn/">Pwn</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Script/">Script</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Web/">Web</a></li></ul></li></ul>
                                     
                                 <li class="main-nav-list-item">
-                                    <a class="main-nav-list-link" href="https://about.me/j0n9hyun">About</a>
+                                    <a class="main-nav-list-link" href="/about">About</a>
                                 </li>
                             
                         </ul>
@@ -275,7 +275,15 @@ Pcap File
 Binary File
 
 [Problem] 
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051r = process('./baby1')#r = remote('51.254.114.246', 1111)e = ELF('./baby1
+r = process('./baby1')
+#r = remote('51.254.114.246', 1111)
+e = ELF('./baby1', checksec=False)
+libc = e.libc
+
+pr = 0x4006c3
+csu_init1 = 0x4006B6
+csu_init2 = 0x4006A0
+m
         </p>
     </div>
 </article>
@@ -405,6 +413,8 @@ Binary File
     </div>
 
 
+            
+                
             
                 
     <div class="widget-wrap widget-list">

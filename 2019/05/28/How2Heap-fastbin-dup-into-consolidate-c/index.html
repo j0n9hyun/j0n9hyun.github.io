@@ -20,19 +20,19 @@
     
         <meta name="keywords" content="Theory">
     
-    <meta name="description" content="fastbin_dup_into_consolidate.c 12345678910111213141516171819202122#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdint.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;int main() &amp;#123;  void* p1 = malloc(0x40);  void* p2 = mal">
+    <meta name="description" content="fastbin_dup_into_consolidate.c #include &amp;lt;stdio.h&amp;gt; #include &amp;lt;stdint.h&amp;gt; #include &amp;lt;stdlib.h&amp;gt;  int main() {   void* p1 = malloc(0x40);   void* p2 = malloc(0x40);   fprintf(stderr, &quot;fast">
 <meta name="keywords" content="Theory">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[How2Heap] fastbin_dup_into_consolidate">
 <meta property="og:url" content="http://j0n9hyun.github.io/2019/05/28/How2Heap-fastbin-dup-into-consolidate-c/index.html">
 <meta property="og:site_name" content="j0n9hyun">
-<meta property="og:description" content="fastbin_dup_into_consolidate.c 12345678910111213141516171819202122#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdint.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;int main() &amp;#123;  void* p1 = malloc(0x40);  void* p2 = mal">
+<meta property="og:description" content="fastbin_dup_into_consolidate.c #include &amp;lt;stdio.h&amp;gt; #include &amp;lt;stdint.h&amp;gt; #include &amp;lt;stdlib.h&amp;gt;  int main() {   void* p1 = malloc(0x40);   void* p2 = malloc(0x40);   fprintf(stderr, &quot;fast">
 <meta property="og:locale" content="ko">
 <meta property="og:image" content="https://user-images.githubusercontent.com/16969364/58452763-7cf1c980-8153-11e9-92de-1a7cd4eb43bd.png">
 <meta property="og:updated_time" content="2019-05-29T07:16:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[How2Heap] fastbin_dup_into_consolidate">
-<meta name="twitter:description" content="fastbin_dup_into_consolidate.c 12345678910111213141516171819202122#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdint.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;int main() &amp;#123;  void* p1 = malloc(0x40);  void* p2 = mal">
+<meta name="twitter:description" content="fastbin_dup_into_consolidate.c #include &amp;lt;stdio.h&amp;gt; #include &amp;lt;stdint.h&amp;gt; #include &amp;lt;stdlib.h&amp;gt;  int main() {   void* p1 = malloc(0x40);   void* p2 = malloc(0x40);   fprintf(stderr, &quot;fast">
 <meta name="twitter:image" content="https://user-images.githubusercontent.com/16969364/58452763-7cf1c980-8153-11e9-92de-1a7cd4eb43bd.png">
     
 	<link rel="canonical" href="http://j0n9hyun.github.io/2019/05/28/how2heap-fastbin-dup-into-consolidate-c/">
@@ -64,7 +64,7 @@
     
 
 
-</head>
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 </html>
 <body>
     <div id="wrap">
@@ -90,7 +90,7 @@
                                         <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Daily/">Daily</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Theory/">Theory</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/">WriteUps</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Crypto/">Crypto</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Foren/">Foren</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Misc/">Misc</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Pwn/">Pwn</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Script/">Script</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Web/">Web</a></li></ul></li></ul>
                                     
                                 <li class="main-nav-list-item">
-                                    <a class="main-nav-list-link" href="https://about.me/j0n9hyun">About</a>
+                                    <a class="main-nav-list-link" href="/about">About</a>
                                 </li>
                             
                         </ul>
@@ -188,7 +188,29 @@
         
         <div class="article-entry" itemprop="articleBody">
             <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="fastbin_dup_into_consolidatec"><a class="markdownIt-Anchor" href="#fastbin_dup_into_consolidatec"></a> fastbin_dup_into_consolidate.c</h3>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdint.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">void</span>* p1 = <span class="built_in">malloc</span>(<span class="number">0x40</span>);</span><br><span class="line">  <span class="keyword">void</span>* p2 = <span class="built_in">malloc</span>(<span class="number">0x40</span>);</span><br><span class="line">  <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"fastbin을 두개 할당한다: p1=%p p2=%p\n"</span>, p1, p2);</span><br><span class="line">  <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"-------free(p1)-------\n"</span>);</span><br><span class="line">  <span class="built_in">free</span>(p1);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">void</span>* p3 = <span class="built_in">malloc</span>(<span class="number">0x400</span>);</span><br><span class="line">  <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"malloc_consolidate()를 trigger하기 위해 largebin을 할당한다: p3=%p\n"</span>, p3);</span><br><span class="line">  <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"malloc_consolidate()에서 p1은 unsorted bin으로 이동한다.\n"</span>);</span><br><span class="line"></span><br><span class="line">  <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"-------free(p1)-------\n"</span>);</span><br><span class="line">  <span class="built_in">free</span>(p1);</span><br><span class="line">  <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"double free 취약점을 trigger한다.\n"</span>);</span><br><span class="line">  <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"이제 p1이 fast-top에 있지 않기 때문에 malloc의 체크를 통과할 수 있다.\n"</span>);</span><br><span class="line">  <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"현재 p1은 unsorted bin과 fastbin 안에 있다.\n"</span></span><br><span class="line">		  <span class="string">"그래서 우리는 주소를 2번 얻을 수 있다: %p %p\n"</span>, <span class="built_in">malloc</span>(<span class="number">0x40</span>), <span class="built_in">malloc</span>(<span class="number">0x40</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="highlight"><code class="c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdint.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdlib.h&gt;</span></span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-keyword">void</span>* p1 = <span class="hljs-built_in">malloc</span>(<span class="hljs-number">0x40</span>);
+  <span class="hljs-keyword">void</span>* p2 = <span class="hljs-built_in">malloc</span>(<span class="hljs-number">0x40</span>);
+  <span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>, <span class="hljs-string">"fastbin을 두개 할당한다: p1=%p p2=%p\n"</span>, p1, p2);
+  <span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>, <span class="hljs-string">"-------free(p1)-------\n"</span>);
+  <span class="hljs-built_in">free</span>(p1);
+
+  <span class="hljs-keyword">void</span>* p3 = <span class="hljs-built_in">malloc</span>(<span class="hljs-number">0x400</span>);
+  <span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>, <span class="hljs-string">"malloc_consolidate()를 trigger하기 위해 largebin을 할당한다: p3=%p\n"</span>, p3);
+  <span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>, <span class="hljs-string">"malloc_consolidate()에서 p1은 unsorted bin으로 이동한다.\n"</span>);
+
+  <span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>, <span class="hljs-string">"-------free(p1)-------\n"</span>);
+  <span class="hljs-built_in">free</span>(p1);
+  <span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>, <span class="hljs-string">"double free 취약점을 trigger한다.\n"</span>);
+  <span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>, <span class="hljs-string">"이제 p1이 fast-top에 있지 않기 때문에 malloc의 체크를 통과할 수 있다.\n"</span>);
+  <span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>, <span class="hljs-string">"현재 p1은 unsorted bin과 fastbin 안에 있다.\n"</span>
+		  <span class="hljs-string">"그래서 우리는 주소를 2번 얻을 수 있다: %p %p\n"</span>, <span class="hljs-built_in">malloc</span>(<span class="hljs-number">0x40</span>), <span class="hljs-built_in">malloc</span>(<span class="hljs-number">0x40</span>));
+}
+</code></pre>
 <p><small><center>[fastbin_dup_into_consolidate.c]</center></small><br><br>
 <img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/58452763-7cf1c980-8153-11e9-92de-1a7cd4eb43bd.png"></p>
 <center><small>
@@ -207,7 +229,7 @@
 
 
 
-    <a data-url="http://j0n9hyun.github.io/2019/05/28/How2Heap-fastbin-dup-into-consolidate-c/" data-id="cjzsg5bzj0014wnfp12y991pf" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+    <a data-url="http://j0n9hyun.github.io/2019/05/28/How2Heap-fastbin-dup-into-consolidate-c/" data-id="ck00o3nqp000yz7fp95dfk6ps" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -286,8 +308,15 @@
         "dateModified": "2019-05-29",
         "url": "http://j0n9hyun.github.io/2019/05/28/How2Heap-fastbin-dup-into-consolidate-c/",
         "description": " fastbin_dup_into_consolidate.c
-12345678910111213141516171819202122#include &lt;stdio.h&gt;#include &lt;stdint.h&gt;#include &lt;stdlib.h&gt;int main() &#123;  void* p1 = malloc(0x40);  void* p2 = mal"
-        "wordCount": 255
+#include &lt;stdio.h&gt;
+#include &lt;stdint.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main() {
+  void* p1 = malloc(0x40);
+  void* p2 = malloc(0x40);
+  fprintf(stderr, "fast"
+        "wordCount": 209
     }
 </script>
 
@@ -400,6 +429,8 @@
     </div>
 
 
+            
+                
             
                 
     <div class="widget-wrap widget-list">

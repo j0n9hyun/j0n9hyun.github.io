@@ -59,7 +59,7 @@
     
 
 
-</head>
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 </html>
 <body>
     <div id="wrap">
@@ -85,7 +85,7 @@
                                         <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Daily/">Daily</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Theory/">Theory</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/">WriteUps</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Crypto/">Crypto</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Foren/">Foren</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Misc/">Misc</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Pwn/">Pwn</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Script/">Script</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Web/">Web</a></li></ul></li></ul>
                                     
                                 <li class="main-nav-list-item">
-                                    <a class="main-nav-list-link" href="https://about.me/j0n9hyun">About</a>
+                                    <a class="main-nav-list-link" href="/about">About</a>
                                 </li>
                             
                         </ul>
@@ -181,7 +181,13 @@
 
         <p class="article-excerpt">
              fastbin_dup_into_stack.c
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;int main()&#123;	fprintf(stderr, "ma
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main()
+{
+	fprintf(stderr, "malloc을 tricking하는 fastbin_dup.c의 확장적 부분을 설명한다.\n"
+			"이번에는 포인터를 조작된 위치로 반환한다.(이 경우엔 stack)
         </p>
     </div>
 </article>
@@ -209,7 +215,15 @@
 
         <p class="article-excerpt">
              fastbin_dup.c
-12345678910111213141516171819202122232425262728293031#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;int main()&#123;	fprintf(stderr, "Simple double-free attack with fastbins.\n");	fpr
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main()
+{
+	fprintf(stderr, "Simple double-free attack with fastbins.\n");
+
+	fprintf(stderr, "버퍼를 3개 할당한다\n");
+	int *a = malloc(8);
         </p>
     </div>
 </article>
@@ -377,6 +391,8 @@ a에 300,
     </div>
 
 
+            
+                
             
                 
     <div class="widget-wrap widget-list">

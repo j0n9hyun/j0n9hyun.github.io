@@ -59,7 +59,7 @@
     
 
 
-</head>
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 </html>
 <body>
     <div id="wrap">
@@ -85,7 +85,7 @@
                                         <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Daily/">Daily</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Theory/">Theory</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/">WriteUps</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Crypto/">Crypto</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Foren/">Foren</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Misc/">Misc</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Pwn/">Pwn</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Script/">Script</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Web/">Web</a></li></ul></li></ul>
                                     
                                 <li class="main-nav-list-item">
-                                    <a class="main-nav-list-link" href="https://about.me/j0n9hyun">About</a>
+                                    <a class="main-nav-list-link" href="/about">About</a>
                                 </li>
                             
                         </ul>
@@ -181,7 +181,16 @@
 
         <p class="article-excerpt">
              Poison_null_byte.c
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt;
+#include &lt;stdint.h&gt;
+#include &lt;malloc.h&gt;
+
+
+int main()
+{
+fprintf(stderr, "null byte 2.0!\n");
         </p>
     </div>
 </article>
@@ -246,7 +255,18 @@ malloc을 한 번 호출해서 메모리를 설정한다.
 
         <p class="article-excerpt">
              unsafe_unlink.c
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#include &lt;string.h&g
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt;
+#include &lt;stdint.h&gt;
+
+
+uint64_t *chunk0_ptr;
+
+int main()
+{
+fprintf(stderr, "unsafe unlink 2.0!\n");
+f
         </p>
     </div>
 </article>
@@ -274,7 +294,14 @@ malloc을 한 번 호출해서 메모리를 설정한다.
 
         <p class="article-excerpt">
              fastbin_dup_into_consolidate.c
-12345678910111213141516171819202122#include &lt;stdio.h&gt;#include &lt;stdint.h&gt;#include &lt;stdlib.h&gt;int main() &#123;  void* p1 = malloc(0x40);  void* p2 = mal
+#include &lt;stdio.h&gt;
+#include &lt;stdint.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main() {
+  void* p1 = malloc(0x40);
+  void* p2 = malloc(0x40);
+  fprintf(stderr, "fast
         </p>
     </div>
 </article>
@@ -364,6 +391,8 @@ malloc을 한 번 호출해서 메모리를 설정한다.
     </div>
 
 
+            
+                
             
                 
     <div class="widget-wrap widget-list">
