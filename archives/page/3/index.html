@@ -170,6 +170,41 @@
             <div class="category">
             <a class="article-category-link" href="/categories/Theory/">Theory</a>
             </div>
+            <div class="date"><time datetime="2019-06-26T14:42:03.000Z" itemprop="datePublished">2019-06-26</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2019/06/26/How2Heap-Tcache-Poisoning/">[How2Heap] Tcache_Poisoning</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+             Tcache_Poisoning
+
+
+이것은 malloc을 속여서 pointer를 임의의 위치(이 경우, 스택)로
+반환하는 간단한 tcache poisoning 공격이다.
+이 공격은 fastbin corruption 공격과 매우 비슷하다.
+malloc()을 반환할 주소는 0x7fffb6be4b80이다.
+buffer를 한 개 할당한다.
+malloc(128): 
+        </p>
+    </div>
+</article>
+    
+
+    
+    
+    
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/Theory/">Theory</a>
+            </div>
             <div class="date"><time datetime="2019-06-26T14:17:28.000Z" itemprop="datePublished">2019-06-26</time></div>
         </div>
         
@@ -195,10 +230,14 @@ free를 두 번 한다.
     </div>
 </article>
     
+        </div>
+    
 
     
     
     
+    
+        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -229,14 +268,10 @@ heap에 chunk를 5개 할당한다.
     </div>
 </article>
     
-        </div>
-    
 
     
     
     
-    
-        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -263,43 +298,6 @@ heap에 chunk를 5개 할당한다.
  [IDA Pro 7.2]  
 
   img.border-sh
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Theory/">Theory</a>
-            </div>
-            <div class="date"><time datetime="2019-06-20T13:59:02.000Z" itemprop="datePublished">2019-06-20</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/06/20/How2Heap-Overlapping-Chunks/">[How2Heap] Overlapping_Chunks</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-             Overlapping_Chunks.c
-
-이 기법은 glibc에서 tcache옵션이 disabled된 상태에만 작동한다.
-simple chunks overlapping
-heap에 chunk 3개를 할당해보자.
-3개의 chunk가 여기에 할당됐다:
-p1=0x603010
-p2=0x603110
-p3=0x603210
-이제 p2 chunk를 free시켜보자
-p2 c
         </p>
     </div>
 </article>
@@ -359,18 +357,18 @@ p2 c
                     <li>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Pwn/">Pwn</a></p>
-                            <p class="item-title"><a href="/2019/07/21/Pwn-tw-HackNote/" class="title">[Pwn.tw] HackNote</a></p>
-                            <p class="item-date"><time datetime="2019-07-21T13:52:31.000Z" itemprop="datePublished">2019-07-21</time></p>
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2019/09/13/Notion-앱-추천/" class="title">Notion 앱 추천</a></p>
+                            <p class="item-date"><time datetime="2019-09-12T15:52:17.000Z" itemprop="datePublished">2019-09-13</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Crypto/">Crypto</a></p>
-                            <p class="item-title"><a href="/2019/07/12/RSA-Hastad/" class="title">RSA Hastad Attack</a></p>
-                            <p class="item-date"><time datetime="2019-07-12T06:39:06.000Z" itemprop="datePublished">2019-07-12</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Pwn/">Pwn</a></p>
+                            <p class="item-title"><a href="/2019/07/21/Pwn-tw-HackNote/" class="title">[Pwn.tw] HackNote</a></p>
+                            <p class="item-date"><time datetime="2019-07-21T13:52:31.000Z" itemprop="datePublished">2019-07-21</time></p>
                         </div>
                     </li>
                 
