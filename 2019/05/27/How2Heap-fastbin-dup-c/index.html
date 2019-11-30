@@ -20,20 +20,20 @@
     
         <meta name="keywords" content="Theory">
     
-    <meta name="description" content="fastbin_dup.c 12345678910111213141516171819202122232425262728293031#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;int main()&amp;#123;	fprintf(stderr, &quot;Simple double-free attack with fastbins.\n&quot;);	fpr">
+    <meta name="description" content="fastbin_dup.c    Source     img.border-shadow{           border:1px solid #888888;           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);       }">
 <meta name="keywords" content="Theory">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[How2Heap] fastbin_dup">
 <meta property="og:url" content="http://j0n9hyun.github.io/2019/05/27/How2Heap-fastbin-dup-c/index.html">
 <meta property="og:site_name" content="j0n9hyun">
-<meta property="og:description" content="fastbin_dup.c 12345678910111213141516171819202122232425262728293031#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;int main()&amp;#123;	fprintf(stderr, &quot;Simple double-free attack with fastbins.\n&quot;);	fpr">
+<meta property="og:description" content="fastbin_dup.c    Source     img.border-shadow{           border:1px solid #888888;           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);       }">
 <meta property="og:locale" content="ko">
-<meta property="og:image" content="https://user-images.githubusercontent.com/16969364/58414702-2931a280-80b7-11e9-9653-34ff0e49c802.png">
-<meta property="og:updated_time" content="2019-05-29T07:16:14.000Z">
+<meta property="og:image" content="https://user-images.githubusercontent.com/16969364/69904074-7172aa00-13e5-11ea-9bb8-e6d6dfdf56ac.png">
+<meta property="og:updated_time" content="2019-11-30T17:54:04.626Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[How2Heap] fastbin_dup">
-<meta name="twitter:description" content="fastbin_dup.c 12345678910111213141516171819202122232425262728293031#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;int main()&amp;#123;	fprintf(stderr, &quot;Simple double-free attack with fastbins.\n&quot;);	fpr">
-<meta name="twitter:image" content="https://user-images.githubusercontent.com/16969364/58414702-2931a280-80b7-11e9-9653-34ff0e49c802.png">
+<meta name="twitter:description" content="fastbin_dup.c    Source     img.border-shadow{           border:1px solid #888888;           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);       }">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/16969364/69904074-7172aa00-13e5-11ea-9bb8-e6d6dfdf56ac.png">
     
 	<link rel="canonical" href="http://j0n9hyun.github.io/2019/05/27/how2heap-fastbin-dup-c/">
 
@@ -182,15 +182,14 @@
         <a class="tag-link" href="/tags/Theory/">Theory</a>
     </div>
 
-  			<span class="reading-time">⏱ 3 분</span>
+  			<span class="reading-time">⏱ 1 분</span>
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
             <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="fastbin_dupc"><a class="markdownIt-Anchor" href="#fastbin_dupc"></a> fastbin_dup.c</h3>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"Simple double-free attack with fastbins.\n"</span>);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"버퍼를 3개 할당한다\n"</span>);</span><br><span class="line">	<span class="keyword">int</span> *a = <span class="built_in">malloc</span>(<span class="number">8</span>);</span><br><span class="line">	<span class="keyword">int</span> *b = <span class="built_in">malloc</span>(<span class="number">8</span>);</span><br><span class="line">	<span class="keyword">int</span> *c = <span class="built_in">malloc</span>(<span class="number">8</span>);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"malloc a(8): %p\n"</span>, a);</span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"malloc b(8): %p\n"</span>, b);</span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"malloc c(8): %p\n"</span>, c);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"-------free(a)-------\n"</span>);</span><br><span class="line">	<span class="built_in">free</span>(a); <span class="comment">// a를 한번 더 free하면 에러가 발생한다.(free list의 top에 위치하고 있기 때문)</span></span><br><span class="line"></span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"-------free(b)-------\n"</span>);</span><br><span class="line">	<span class="built_in">free</span>(b);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"-------free(a)-------\n"</span>);</span><br><span class="line">	<span class="built_in">free</span>(a); <span class="comment">// 이제 free list의 최상단에서 벗어났으니 free(a)가 가능하다.</span></span><br><span class="line"></span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"free list: [ %p, %p, %p ]\n"</span>, a, b, a);</span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"malloc을 세 번 하면, malloc a(8)를 두번 할당할 수 있다.\n"</span>);</span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"malloc a(8): %p\n"</span>, <span class="built_in">malloc</span>(<span class="number">8</span>));</span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"malloc b(8): %p\n"</span>, <span class="built_in">malloc</span>(<span class="number">8</span>));</span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"malloc c(8): %p\n"</span>, <span class="built_in">malloc</span>(<span class="number">8</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><small><center>[fastbin_dup_into_stack.c]</center></small><br><br>
-<img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/58414702-2931a280-80b7-11e9-9653-34ff0e49c802.png"></p>
+<p><img src="https://user-images.githubusercontent.com/16969364/69904074-7172aa00-13e5-11ea-9bb8-e6d6dfdf56ac.png" alt></p>
+<img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/58414702-2931a280-80b7-11e9-9653-34ff0e49c802.png">
 <center><small>
 <p><strong><a href="https://github.com/shellphish/how2heap/blob/master/fastbin_dup.c" target="_blank" rel="noopener">Source</a></strong></p>
 <p></p></small></center><p></p>
@@ -278,16 +277,27 @@
             "name": "j0n9hyun"
         },
         "headline": "[How2Heap] fastbin_dup",
-        "image": "http://j0n9hyun.github.iohttps://user-images.githubusercontent.com/16969364/58414702-2931a280-80b7-11e9-9653-34ff0e49c802.png",
+        "image": "http://j0n9hyun.github.iohttps://user-images.githubusercontent.com/16969364/69904074-7172aa00-13e5-11ea-9bb8-e6d6dfdf56ac.png",
         "keywords": "Theory",
         "genre": "Theory",
         "datePublished": "2019-05-27",
         "dateCreated": "2019-05-27",
-        "dateModified": "2019-05-29",
+        "dateModified": "2019-12-01",
         "url": "http://j0n9hyun.github.io/2019/05/27/How2Heap-fastbin-dup-c/",
         "description": " fastbin_dup.c
-12345678910111213141516171819202122232425262728293031#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;int main()&#123;	fprintf(stderr, "Simple double-free attack with fastbins.\n");	fpr"
-        "wordCount": 282
+
+
+
+Source
+
+
+  img.border-shadow{
+          border:1px solid #888888;
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+
+"
+        "wordCount": 61
     }
 </script>
 
