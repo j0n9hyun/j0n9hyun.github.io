@@ -1145,10 +1145,10 @@ a.article-title:hover {
   margin: 1.3em 0;
 }
 .article-entry a {
-  color: #2e9fff;
+  color: #6cf;
   text-decoration: none;
 }
-.article-entry:hover {
+.article-entry a:hover {
   text-decoration: underline;
 }
 .article-entry figcaption a {
