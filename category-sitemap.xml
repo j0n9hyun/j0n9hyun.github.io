@@ -8,15 +8,22 @@
     </url>
 
     <url>
-        <loc>http://j0n9hyun.github.io/categories/WriteUps/Misc/</loc>
-        <lastmod>2019-12-05T14:12:50.108Z</lastmod>
+        <loc>http://j0n9hyun.github.io/categories/WriteUps/Rev/</loc>
+        <lastmod>2019-12-05T14:23:48.434Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://j0n9hyun.github.io/categories/WriteUps/</loc>
-        <lastmod>2019-12-05T14:12:50.108Z</lastmod>
+        <lastmod>2019-12-05T14:23:48.434Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://j0n9hyun.github.io/categories/WriteUps/misc/</loc>
+        <lastmod>2019-12-05T14:19:11.106Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

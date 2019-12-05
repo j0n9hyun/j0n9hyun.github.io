@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- hexo-inject:begin --><script src='https://unpkg.com/echarts@3.3.2/dist/echarts.min.js'></script><!-- hexo-inject:end --><meta charset="utf-8">
+	<meta name="naver-site-verification" content="e19266ac7916f4f7f8ebeef5355bdce5102d3416">
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-140827316-1"></script>
+	<script>
+  window.dataLayer = window.dataLayer || [];
+			     function gtag(){dataLayer.push(arguments);}
+			     gtag('js', new Date());
+			     gtag('config', 'UA-140827316-1');
+	</script>
+    
+
+    
+    <title>한글 단일 치환 암호 | j0n9hyun</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="Wargame">
+    
+    <meta name="description" content="한글 단일 치환 암호 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374# coding: utf-8def divide_char(char):  num = ord">
+<meta name="keywords" content="Wargame">
+<meta property="og:type" content="article">
+<meta property="og:title" content="한글 단일 치환 암호">
+<meta property="og:url" content="http://j0n9hyun.github.io/2019/07/03/writeups/crypto/Korean-substituation-cipher/index.html">
+<meta property="og:site_name" content="j0n9hyun">
+<meta property="og:description" content="한글 단일 치환 암호 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374# coding: utf-8def divide_char(char):  num = ord">
+<meta property="og:locale" content="ko">
+<meta property="og:updated_time" content="2019-07-03T12:09:00.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="한글 단일 치환 암호">
+<meta name="twitter:description" content="한글 단일 치환 암호 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374# coding: utf-8def divide_char(char):  num = ord">
+    
+	<link rel="canonical" href="http://j0n9hyun.github.io/2019/07/03/writeups/crypto/korean-substituation-cipher/">
+
+    
+
+    
+        <link rel="icon" href="https://favicon-generator.org/favicon-generator/htdocs/favicons/2015-01-14/318ab48694395838406763908d9a1dad.ico">
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+	<link rel="stylesheet" type="text/css" href>
+	<link rel="stylesheet" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.css">	
+	<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+					<a href="/" style="font-size:40px;color:#fff; font-weight:bold; font-style: italic;text-decoration: none;">j0n9hyun's Blog</a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Daily/">Daily</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Theory/">Theory</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/">WriteUps</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Crypto/">Crypto</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Foren/">Foren</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Pwn/">Pwn</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Rev/">Rev</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Web/">Web</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/misc/">misc</a></li></ul></li></ul>
+                                    
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/about">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="검색">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="입력">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '포스트',
+            PAGES: 'Pages',
+            CATEGORIES: '카테고리',
+            TAGS: '태그',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/WriteUps/Crypto/">Crypto</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-writeups/crypto/Korean-substituation-cipher" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        한글 단일 치환 암호
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/07/03/writeups/crypto/Korean-substituation-cipher/" class="article-date">
+            <time datetime="2019-07-03T12:01:20.000Z" itemprop="datePublished">2019-07-03</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Wargame/">Wargame</a>
+    </div>
+
+  			<span class="reading-time">⏱ 7 분</span>
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="한글-단일-치환-암호"><a class="markdownIt-Anchor" href="#한글-단일-치환-암호"></a> 한글 단일 치환 암호</h3>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># coding: utf-8</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">divide_char</span><span class="params">(char)</span>:</span></span><br><span class="line">  num = ord(char) - <span class="number">0xac00</span></span><br><span class="line">  <span class="keyword">if</span> num&lt;<span class="number">0</span>:</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">  cho = num / (<span class="number">21</span>*<span class="number">28</span>)</span><br><span class="line">  jung = (num % (<span class="number">21</span>*<span class="number">28</span>))/<span class="number">28</span></span><br><span class="line">  jong = num % <span class="number">28</span></span><br><span class="line">  <span class="keyword">return</span> cho, jung, jong</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">join_char</span><span class="params">(cho,jung,jong)</span>:</span></span><br><span class="line">  num = <span class="number">0xac00</span> + cho*<span class="number">21</span>*<span class="number">28</span> + jung *<span class="number">28</span> + jong</span><br><span class="line">  <span class="keyword">return</span> unichr(num)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">unicoder = <span class="keyword">lambda</span> x:unicode(x.decode(<span class="string">'utf-8'</span>))</span><br><span class="line"></span><br><span class="line">original = [map(unicoder,</span><br><span class="line">[<span class="string">"ㄱ"</span>, <span class="string">"ㄲ"</span>, <span class="string">"ㄴ"</span>, <span class="string">"ㄷ"</span>, <span class="string">"ㄸ"</span>, <span class="string">"ㄹ"</span>, <span class="string">"ㅁ"</span>, <span class="string">"ㅂ"</span>, <span class="string">"ㅃ"</span>, <span class="string">"ㅅ"</span>, <span class="string">"ㅆ"</span>, <span class="string">"ㅇ"</span>, <span class="string">"ㅈ"</span>, <span class="string">"ㅉ"</span>, <span class="string">"ㅊ"</span>, <span class="string">"ㅋ"</span>, <span class="string">"ㅌ"</span>, <span class="string">"ㅍ"</span>,<span class="string">"ㅎ"</span>]), map(unicoder,</span><br><span class="line">[<span class="string">"ㅏ"</span>, <span class="string">"ㅐ"</span>, <span class="string">"ㅑ"</span>, <span class="string">"ㅒ"</span>, <span class="string">"ㅓ"</span>, <span class="string">"ㅔ"</span>, <span class="string">"ㅕ"</span>, <span class="string">"ㅖ"</span>, <span class="string">"ㅗ"</span>, <span class="string">"ㅘ"</span>, <span class="string">"ㅙ"</span>, <span class="string">"ㅚ"</span>, <span class="string">"ㅛ"</span>, <span class="string">"ㅜ"</span>, <span class="string">"ㅝ"</span>, <span class="string">"ㅞ"</span>, <span class="string">"ㅟ"</span>, <span class="string">"ㅠ"</span>, <span class="string">"ㅡ"</span>, <span class="string">"ㅢ"</span>,<span class="string">"ㅣ"</span>]), map(unicoder,</span><br><span class="line">[<span class="string">" "</span>, <span class="string">"ㄱ"</span>, <span class="string">"ㄲ"</span>, <span class="string">"ㄳ"</span>, <span class="string">"ㄴ"</span>, <span class="string">"ㄵ"</span>, <span class="string">"ㄶ"</span>, <span class="string">"ㄷ"</span>, <span class="string">"ㄹ"</span>, <span class="string">"ㄺ"</span>, <span class="string">"ㄻ"</span>, <span class="string">"ㄼ"</span>, <span class="string">"ㄽ"</span>, <span class="string">"ㄾ"</span>, <span class="string">"ㄿ"</span>, <span class="string">"ㅀ"</span>, <span class="string">"ㅁ"</span>, <span class="string">"ㅂ"</span>, <span class="string">"ㅄ"</span>, <span class="string">"ㅅ"</span>,<span class="string">"ㅆ"</span>, <span class="string">"ㅇ"</span>, <span class="string">"ㅈ"</span>, <span class="string">"ㅊ"</span>, <span class="string">"ㅋ"</span>, <span class="string">"ㅌ"</span>, <span class="string">"ㅍ"</span>, <span class="string">"ㅎ"</span>])]</span><br><span class="line"></span><br><span class="line">replace = [map(unicoder,</span><br><span class="line">[<span class="string">"ㅊ"</span>, <span class="string">"ㅆ"</span>, <span class="string">"ㄴ"</span>, <span class="string">"ㄹ"</span>, <span class="string">"ㄸ"</span>, <span class="string">"ㅍ"</span>, <span class="string">"ㅎ"</span>, <span class="string">"ㄱ"</span>, <span class="string">"ㅃ"</span>, <span class="string">"ㄴ"</span>, <span class="string">"ㅆ"</span>, <span class="string">"ㄷ"</span>, <span class="string">"ㄹ"</span>, <span class="string">"ㅉ"</span>, <span class="string">"ㅁ"</span>, <span class="string">"ㅂ"</span>, <span class="string">"ㅅ"</span>, <span class="string">"ㅇ"</span>,<span class="string">"ㅈ"</span>]), map(unicoder,</span><br><span class="line">[<span class="string">"ㅏ"</span>, <span class="string">"ㅐ"</span>, <span class="string">"ㅗ"</span>, <span class="string">"ㅒ"</span>, <span class="string">"ㅔ"</span>, <span class="string">"ㅝ"</span>, <span class="string">"ㅓ"</span>, <span class="string">"ㅑ"</span>, <span class="string">"ㅣ"</span>, <span class="string">"ㅕ"</span>, <span class="string">"ㅙ"</span>, <span class="string">"ㅜ"</span>, <span class="string">"ㅡ"</span>, <span class="string">"ㅜ"</span>, <span class="string">"ㅝ"</span>, <span class="string">"ㅞ"</span>, <span class="string">"ㅏ"</span>, <span class="string">"ㅟ"</span>, <span class="string">"ㅐ"</span>, <span class="string">"ㅢ"</span>,<span class="string">"ㅘ"</span>]), map(unicoder,</span><br><span class="line">[<span class="string">" "</span>, <span class="string">"ㅊ"</span>, <span class="string">"ㅆ"</span>, <span class="string">"ㄳ"</span>, <span class="string">"ㄴ"</span>, <span class="string">"ㄵ"</span>, <span class="string">"ㄶ"</span>, <span class="string">"ㄹ"</span>, <span class="string">"ㅍ"</span>, <span class="string">"ㄺ"</span>, <span class="string">"ㄻ"</span>, <span class="string">"ㄼ"</span>, <span class="string">"ㄽ"</span>, <span class="string">"ㄾ"</span>, <span class="string">"ㄿ"</span>, <span class="string">"ㅀ"</span>, <span class="string">"ㅎ"</span>, <span class="string">"ㄱ"</span>, <span class="string">"ㅄ"</span>, <span class="string">"ㄴ"</span>,<span class="string">"ㅆ"</span>, <span class="string">"ㄷ"</span>, <span class="string">"ㄹ"</span>, <span class="string">"ㅁ"</span>, <span class="string">"ㅂ"</span>, <span class="string">"ㅅ"</span>, <span class="string">"ㅇ"</span>, <span class="string">"ㅈ"</span>])]</span><br><span class="line"></span><br><span class="line">text = <span class="string">"쉬쥩췾뀌초 퓌무피 뷛퓌 쵯쮜피쟈 텨죠 튀츁오 퓌소뮞끄 포졋 홧귀쟈 퓌퍄켸뷔 소죠뱌화 먖 크 포톼야 취귗스 허 뚀욪 토져 롸오 챹뮞 샤초 뮈소쥐 스 포쥦 퓨뮈폐 펴퐡코 셔봐 트쟈 룆즈뵈죶 츺뷔샤소 룆즈뵈숏 퓌퍄켸뷰퐈페 포보퍼 튀쥧취위 슂쟈 꾀처 뽯퓟너 뮈쇼소쥐"</span></span><br><span class="line"></span><br><span class="line">unicoded = unicoder(encrypted)</span><br><span class="line">decrypted = <span class="string">u""</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">stat = &#123;<span class="string">'cho'</span>:&#123;&#125;, <span class="string">'jung'</span> : &#123;&#125;,<span class="string">'jong'</span> :&#123;&#125;, <span class="string">'char'</span> :&#123;&#125; &#125;</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> unicoded:</span><br><span class="line">  ret = divide_char(i)</span><br><span class="line">  <span class="keyword">if</span> <span class="keyword">not</span> ret:</span><br><span class="line">    decrypted+=i</span><br><span class="line">    <span class="keyword">continue</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> i <span class="keyword">in</span> stat[<span class="string">'char'</span>]:</span><br><span class="line">    stat[<span class="string">'char'</span>][i]=stat[<span class="string">'char'</span>][i]+<span class="number">1</span></span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">    stat[<span class="string">'char'</span>][i]=<span class="number">1</span></span><br><span class="line"></span><br><span class="line">  cho =  original_table[<span class="number">0</span>][ret[<span class="number">0</span>]]</span><br><span class="line">  jung = original_table[<span class="number">1</span>][ret[<span class="number">1</span>]]</span><br><span class="line">  jong = original_table[<span class="number">2</span>][ret[<span class="number">2</span>]]</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> cho <span class="keyword">in</span> stat[<span class="string">'cho'</span>]:</span><br><span class="line">    stat[<span class="string">'cho'</span>][cho]=stat[<span class="string">'cho'</span>][cho]+<span class="number">1</span></span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">    stat[<span class="string">'cho'</span>][cho]=<span class="number">1</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> jung <span class="keyword">in</span> stat[<span class="string">'jung'</span>]:</span><br><span class="line">    stat[<span class="string">'jung'</span>][jung]=stat[<span class="string">'jung'</span>][jung]+<span class="number">1</span></span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">    stat[<span class="string">'jung'</span>][jung]=<span class="number">1</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> jong <span class="keyword">in</span> stat[<span class="string">'jong'</span>]:</span><br><span class="line">    stat[<span class="string">'jong'</span>][jong]=stat[<span class="string">'jong'</span>][jong]+<span class="number">1</span></span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">    stat[<span class="string">'jong'</span>][jong]=<span class="number">1</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  new_ret=list()</span><br><span class="line">  <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">3</span>):</span><br><span class="line">    new_item = replace_table[i][ret[i]]</span><br><span class="line">    new_ret.append(original_table[i].index(new_item))</span><br><span class="line"></span><br><span class="line">  decrypted+=join_char(new_ret[<span class="number">0</span>],new_ret[<span class="number">1</span>],new_ret[<span class="number">2</span>])</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> decrypted</span><br></pre></td></tr></table></figure>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://j0n9hyun.github.io/2019/07/03/writeups/crypto/Korean-substituation-cipher/" data-id="ck3stjlky003yhtfpugydbvbk" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "j0n9hyun"
+        },
+        "headline": "한글 단일 치환 암호",
+        "image": "http://j0n9hyun.github.io",
+        "keywords": "Wargame",
+        "genre": "WriteUps Crypto",
+        "datePublished": "2019-07-03",
+        "dateCreated": "2019-07-03",
+        "dateModified": "2019-07-03",
+        "url": "http://j0n9hyun.github.io/2019/07/03/writeups/crypto/Korean-substituation-cipher/",
+        "description": " 한글 단일 치환 암호
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374# coding: utf-8def divide_char(char):  num = ord"
+        "wordCount": 743
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+      
+    <div class="fb-comments" data-width="100%" data-href="http://j0n9hyun.github.io/2019/07/03/writeups/crypto/Korean-substituation-cipher/" data-num-posts="5"></div>
+
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>정보:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/j0n9hyun" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/j0n9hyun/CTF" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2019/07/06/writeups/crypto/Low-Exponent-Attack/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">다음 글</strong>
+        <p class="article-nav-title">
+        
+            Low Exponent Attack
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2019/06/27/Windows-Terminal-시작-터미널-변경-방법/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">이전 글</strong>
+        <p class="article-nav-title">Windows Terminal 시작 터미널 변경</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">최근 글</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Rev/">Rev</a></p>
+                            <p class="item-title"><a href="/2019/12/05/nbsp/" class="title"> </a></p>
+                            <p class="item-date"><time datetime="2019-12-05T14:22:48.000Z" itemprop="datePublished">2019-12-05</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Theory/">Theory</a></p>
+                            <p class="item-title"><a href="/2019/09/16/theory/How2Heap-House-of-Force/" class="title">[How2Heap] House_of_Force</a></p>
+                            <p class="item-date"><time datetime="2019-09-16T14:41:05.000Z" itemprop="datePublished">2019-09-16</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">카테고리</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Daily/">Daily</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Theory/">Theory</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/">WriteUps</a><span class="category-list-count">27</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Crypto/">Crypto</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Foren/">Foren</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Pwn/">Pwn</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Rev/">Rev</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Web/">Web</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/misc/">misc</a><span class="category-list-count">7</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">태그</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/">CTF</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theory/">Theory</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tips/">Tips</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wargame/">Wargame</a><span class="tag-list-count">3</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">링크</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="https://ctf.j0n9hyun.xyz" target="_blank">HackCTF</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://defenit.kr" target="_blank">Defenit</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <p>&copy; 2019 j0n9hyun</p>
+                <p>Team <a href="https://ctf.j0n9hyun.xyz" target="_blank">Defenit</a>.</p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+</html>

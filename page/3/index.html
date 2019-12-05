@@ -82,7 +82,7 @@
                                     <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
-                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Daily/">Daily</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Theory/">Theory</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/">WriteUps</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Crypto/">Crypto</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Foren/">Foren</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Misc/">Misc</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Pwn/">Pwn</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Web/">Web</a></li></ul></li></ul>
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Daily/">Daily</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Theory/">Theory</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/">WriteUps</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Crypto/">Crypto</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Foren/">Foren</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Pwn/">Pwn</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Rev/">Rev</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Web/">Web</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/misc/">misc</a></li></ul></li></ul>
                                     
                                 <li class="main-nav-list-item">
                                     <a class="main-nav-list-link" href="/about">About</a>
@@ -170,18 +170,18 @@
             <div class="category">
             <a class="article-category-link" href="/categories/Theory/">Theory</a>
             </div>
-            <div class="date"><time datetime="2019-05-27T12:36:51.000Z" itemprop="datePublished">2019-05-27</time></div>
+            <div class="date"><time datetime="2019-05-28T05:15:29.000Z" itemprop="datePublished">2019-05-28</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/05/27/How2Heap-fastbin-dup-into-stack-c/">[How2Heap] fastbin_dup_into_stack</a>
+        <a href="/2019/05/28/theory/How2Heap-fastbin-dup-into-consolidate-c/">[How2Heap] fastbin_dup_into_consolidate</a>
         </h1>
     
 
         <p class="article-excerpt">
-             fastbin_dup_into_stack.c
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;int main()&#123;	fprintf(stderr, "ma
+             fastbin_dup_into_consolidate.c
+12345678910111213141516171819202122#include &lt;stdio.h&gt;#include &lt;stdint.h&gt;#include &lt;stdlib.h&gt;int main() &#123;  void* p1 = malloc(0x40);  void* p2 = mal
         </p>
     </div>
 </article>
@@ -198,12 +198,44 @@
             <div class="category">
             <a class="article-category-link" href="/categories/Theory/">Theory</a>
             </div>
+            <div class="date"><time datetime="2019-05-27T12:36:51.000Z" itemprop="datePublished">2019-05-27</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2019/05/27/theory/How2Heap-fastbin-dup-into-stack-c/">[How2Heap] fastbin_dup_into_stack</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+             fastbin_dup_into_stack.c
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;int main()&#123;	fprintf(stderr, "ma
+        </p>
+    </div>
+</article>
+    
+        </div>
+    
+
+    
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/Theory/">Theory</a>
+            </div>
             <div class="date"><time datetime="2019-05-27T10:31:21.000Z" itemprop="datePublished">2019-05-27</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/05/27/How2Heap-fastbin-dup-c/">[How2Heap] fastbin_dup</a>
+        <a href="/2019/05/27/theory/How2Heap-fastbin-dup-c/">[How2Heap] fastbin_dup</a>
         </h1>
     
 
@@ -225,14 +257,10 @@ Source
     </div>
 </article>
     
-        </div>
-    
 
     
     
     
-    
-        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -246,7 +274,7 @@ Source
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/05/25/HackCTF-Time-WriteUp/">[HackCTF] Time WriteUp</a>
+        <a href="/2019/05/25/writeups/pwn/HackCTF-Time-WriteUp/">[HackCTF] Time WriteUp</a>
         </h1>
     
 
@@ -265,10 +293,14 @@ Source
     </div>
 </article>
     
+        </div>
+    
 
     
     
     
+    
+        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -303,14 +335,10 @@ a에 300,
     </div>
 </article>
     
-        </div>
-    
 
     
     
     
-    
-        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -338,10 +366,14 @@ a에 300,
     </div>
 </article>
     
+        </div>
+    
 
     
     
     
+    
+        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -366,21 +398,17 @@ a에 300,
     </div>
 </article>
     
-        </div>
-    
 
     
     
     
-    
-        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
         
         <div class="article-meta">
             <div class="category">
-            <a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Misc/">Misc</a>
+            <a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/misc/">misc</a>
             </div>
             <div class="date"><time datetime="2019-05-04T17:06:00.000Z" itemprop="datePublished">2019-05-05</time></div>
         </div>
@@ -398,10 +426,14 @@ a에 300,
     </div>
 </article>
     
+        </div>
+    
 
     
     
     
+    
+        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -415,7 +447,7 @@ a에 300,
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/04/01/rtc_theory/">Reutrn-to-Csu Theory</a>
+        <a href="/2019/04/01/theory/rtc_theory/">Reutrn-to-Csu Theory</a>
         </h1>
     
 
@@ -429,14 +461,10 @@ Binary File
     </div>
 </article>
     
-        </div>
-    
 
     
     
     
-    
-        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -466,50 +494,6 @@ IDA를 통해서 열어보면 ASAN, UBSAN 보호기법의 영향으로 마치 li
 
 [main.c]
 여느 힙 문제와 같이 메뉴들이 주어졌는데 하단
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Foren/">Foren</a>
-            </div>
-            <div class="date"><time datetime="2019-03-25T07:27:00.000Z" itemprop="datePublished">2019-03-25</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/03/25/EZ/">Securinets Prequals CTF 2019 EZ</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-             EZ
-File
-
-[Problem] 
-
-[Steganography Decoding] 
-
-[Hidden.txt] 
-
-[Googling] 
-
-[SHA-1 Encoding] 
-
-flag is Securinets{b47f0d2a8866a75696f94a515d0cdf54c7ea3174}
-
-
-  img.border-shadow{
-      border:1px sol
         </p>
     </div>
 </article>
@@ -569,18 +553,18 @@ flag is Securinets{b47f0d2a8866a75696f94a515d0cdf54c7ea3174}
                     <li>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Theory/">Theory</a></p>
-                            <p class="item-title"><a href="/2019/09/16/How2Heap-House-of-Force/" class="title">[How2Heap] House_of_Force</a></p>
-                            <p class="item-date"><time datetime="2019-09-16T14:41:05.000Z" itemprop="datePublished">2019-09-16</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Rev/">Rev</a></p>
+                            <p class="item-title"><a href="/2019/12/05/nbsp/" class="title"> </a></p>
+                            <p class="item-date"><time datetime="2019-12-05T14:22:48.000Z" itemprop="datePublished">2019-12-05</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Daily/">Daily</a></p>
-                            <p class="item-title"><a href="/2019/09/13/Notion-앱-추천/" class="title">Notion 앱 추천</a></p>
-                            <p class="item-date"><time datetime="2019-09-12T15:52:17.000Z" itemprop="datePublished">2019-09-13</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/Theory/">Theory</a></p>
+                            <p class="item-title"><a href="/2019/09/16/theory/How2Heap-House-of-Force/" class="title">[How2Heap] House_of_Force</a></p>
+                            <p class="item-date"><time datetime="2019-09-16T14:41:05.000Z" itemprop="datePublished">2019-09-16</time></p>
                         </div>
                     </li>
                 
@@ -594,7 +578,7 @@ flag is Securinets{b47f0d2a8866a75696f94a515d0cdf54c7ea3174}
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">카테고리</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Daily/">Daily</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Theory/">Theory</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/">WriteUps</a><span class="category-list-count">26</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Crypto/">Crypto</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Foren/">Foren</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Misc/">Misc</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Pwn/">Pwn</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Web/">Web</a><span class="category-list-count">1</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Daily/">Daily</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Theory/">Theory</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/">WriteUps</a><span class="category-list-count">27</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Crypto/">Crypto</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Foren/">Foren</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Pwn/">Pwn</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Rev/">Rev</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Web/">Web</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/misc/">misc</a><span class="category-list-count">7</span></li></ul></li></ul>
         </div>
     </div>
 
@@ -617,7 +601,11 @@ flag is Securinets{b47f0d2a8866a75696f94a515d0cdf54c7ea3174}
             <ul>
                 
                     <li>
-                        <a href="https://ctf.j0n9hyun.xyz">HackCTF</a>
+                        <a href="https://ctf.j0n9hyun.xyz" target="_blank">HackCTF</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://defenit.kr" target="_blank">Defenit</a>
                     </li>
                 
             </ul>

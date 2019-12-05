@@ -82,7 +82,7 @@
                                     <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
-                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Daily/">Daily</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Theory/">Theory</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/">WriteUps</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Crypto/">Crypto</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Foren/">Foren</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Misc/">Misc</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Pwn/">Pwn</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Web/">Web</a></li></ul></li></ul>
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Daily/">Daily</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Theory/">Theory</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/">WriteUps</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Crypto/">Crypto</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Foren/">Foren</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Pwn/">Pwn</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Rev/">Rev</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Web/">Web</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/misc/">misc</a></li></ul></li></ul>
                                     
                                 <li class="main-nav-list-item">
                                     <a class="main-nav-list-link" href="/about">About</a>
@@ -168,20 +168,21 @@
         
         <div class="article-meta">
             <div class="category">
-            <a class="article-category-link" href="/categories/Theory/">Theory</a>
+            <a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Pwn/">Pwn</a>
             </div>
-            <div class="date"><time datetime="2019-05-31T02:18:06.000Z" itemprop="datePublished">2019-05-31</time></div>
+            <div class="date"><time datetime="2019-06-08T22:28:42.000Z" itemprop="datePublished">2019-06-09</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/05/31/How2Heap-Poison-null-byte/">[How2Heap] Poison_null_byte</a>
+        <a href="/2019/06/09/HSCTF-2019-Combo-Chain/">HSCTF 2019 Combo Chain</a>
         </h1>
     
 
         <p class="article-excerpt">
-             Poison_null_byte.c
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949
+             Combo Chain
+Binary File
+123456789101112131415161718192021222324252627282930313233343536373839from pwn import *#r = process('./combo-chain')r = remote('pwn.hsctf.com', 2345)e = ELF('./combo-chain')lib
         </p>
     </div>
 </article>
@@ -198,23 +199,18 @@
             <div class="category">
             <a class="article-category-link" href="/categories/Theory/">Theory</a>
             </div>
-            <div class="date"><time datetime="2019-05-29T07:05:24.000Z" itemprop="datePublished">2019-05-29</time></div>
+            <div class="date"><time datetime="2019-05-31T02:18:06.000Z" itemprop="datePublished">2019-05-31</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/05/29/How2Heap-House-of-spirit-c/">[How2Heap] House_of_spirit</a>
+        <a href="/2019/05/31/theory/How2Heap-Poison-null-byte/">[How2Heap] Poison_null_byte</a>
         </h1>
     
 
         <p class="article-excerpt">
-             House_of_spirit.c
-
-house of spirit
-malloc을 한 번 호출해서 메모리를 설정한다.
-이제 fake fastbin 영역을 가리키는 포인터를 overwirte할 것이다.
-이 영역(메모리 길이: 80)은 chunk가 2개 있다. 첫번째는 0x7fffffffe338에서 시작하고 두번째는 0x7fffffffe378에서 시작한다.
-이 영
+             Poison_null_byte.c
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949
         </p>
     </div>
 </article>
@@ -235,18 +231,23 @@ malloc을 한 번 호출해서 메모리를 설정한다.
             <div class="category">
             <a class="article-category-link" href="/categories/Theory/">Theory</a>
             </div>
-            <div class="date"><time datetime="2019-05-29T05:50:05.000Z" itemprop="datePublished">2019-05-29</time></div>
+            <div class="date"><time datetime="2019-05-29T07:05:24.000Z" itemprop="datePublished">2019-05-29</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/05/29/How2Heap-unsafe-unlink-c/">[How2Heap] unsafe_unlink</a>
+        <a href="/2019/05/29/theory/How2Heap-House-of-spirit-c/">[How2Heap] House_of_spirit</a>
         </h1>
     
 
         <p class="article-excerpt">
-             unsafe_unlink.c
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#include &lt;string.h&g
+             House_of_spirit.c
+
+house of spirit
+malloc을 한 번 호출해서 메모리를 설정한다.
+이제 fake fastbin 영역을 가리키는 포인터를 overwirte할 것이다.
+이 영역(메모리 길이: 80)은 chunk가 2개 있다. 첫번째는 0x7fffffffe338에서 시작하고 두번째는 0x7fffffffe378에서 시작한다.
+이 영
         </p>
     </div>
 </article>
@@ -263,18 +264,18 @@ malloc을 한 번 호출해서 메모리를 설정한다.
             <div class="category">
             <a class="article-category-link" href="/categories/Theory/">Theory</a>
             </div>
-            <div class="date"><time datetime="2019-05-28T05:15:29.000Z" itemprop="datePublished">2019-05-28</time></div>
+            <div class="date"><time datetime="2019-05-29T05:50:05.000Z" itemprop="datePublished">2019-05-29</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/05/28/How2Heap-fastbin-dup-into-consolidate-c/">[How2Heap] fastbin_dup_into_consolidate</a>
+        <a href="/2019/05/29/theory/How2Heap-unsafe-unlink-c/">[How2Heap] unsafe_unlink</a>
         </h1>
     
 
         <p class="article-excerpt">
-             fastbin_dup_into_consolidate.c
-12345678910111213141516171819202122#include &lt;stdio.h&gt;#include &lt;stdint.h&gt;#include &lt;stdlib.h&gt;int main() &#123;  void* p1 = malloc(0x40);  void* p2 = mal
+             unsafe_unlink.c
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#include &lt;string.h&g
         </p>
     </div>
 </article>
@@ -334,18 +335,18 @@ malloc을 한 번 호출해서 메모리를 설정한다.
                     <li>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Theory/">Theory</a></p>
-                            <p class="item-title"><a href="/2019/09/16/How2Heap-House-of-Force/" class="title">[How2Heap] House_of_Force</a></p>
-                            <p class="item-date"><time datetime="2019-09-16T14:41:05.000Z" itemprop="datePublished">2019-09-16</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Rev/">Rev</a></p>
+                            <p class="item-title"><a href="/2019/12/05/nbsp/" class="title"> </a></p>
+                            <p class="item-date"><time datetime="2019-12-05T14:22:48.000Z" itemprop="datePublished">2019-12-05</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Daily/">Daily</a></p>
-                            <p class="item-title"><a href="/2019/09/13/Notion-앱-추천/" class="title">Notion 앱 추천</a></p>
-                            <p class="item-date"><time datetime="2019-09-12T15:52:17.000Z" itemprop="datePublished">2019-09-13</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/Theory/">Theory</a></p>
+                            <p class="item-title"><a href="/2019/09/16/theory/How2Heap-House-of-Force/" class="title">[How2Heap] House_of_Force</a></p>
+                            <p class="item-date"><time datetime="2019-09-16T14:41:05.000Z" itemprop="datePublished">2019-09-16</time></p>
                         </div>
                     </li>
                 
@@ -359,7 +360,7 @@ malloc을 한 번 호출해서 메모리를 설정한다.
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">카테고리</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Daily/">Daily</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Theory/">Theory</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/">WriteUps</a><span class="category-list-count">26</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Crypto/">Crypto</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Foren/">Foren</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Misc/">Misc</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Pwn/">Pwn</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Web/">Web</a><span class="category-list-count">1</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Daily/">Daily</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Theory/">Theory</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/">WriteUps</a><span class="category-list-count">27</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Crypto/">Crypto</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Foren/">Foren</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Pwn/">Pwn</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Rev/">Rev</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Web/">Web</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/misc/">misc</a><span class="category-list-count">7</span></li></ul></li></ul>
         </div>
     </div>
 
@@ -382,7 +383,11 @@ malloc을 한 번 호출해서 메모리를 설정한다.
             <ul>
                 
                     <li>
-                        <a href="https://ctf.j0n9hyun.xyz">HackCTF</a>
+                        <a href="https://ctf.j0n9hyun.xyz" target="_blank">HackCTF</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://defenit.kr" target="_blank">Defenit</a>
                     </li>
                 
             </ul>

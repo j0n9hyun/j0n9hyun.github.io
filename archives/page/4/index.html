@@ -82,7 +82,7 @@
                                     <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
-                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Daily/">Daily</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Theory/">Theory</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/">WriteUps</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Crypto/">Crypto</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Foren/">Foren</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Misc/">Misc</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Pwn/">Pwn</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Web/">Web</a></li></ul></li></ul>
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Daily/">Daily</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Theory/">Theory</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/">WriteUps</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Crypto/">Crypto</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Foren/">Foren</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Pwn/">Pwn</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Rev/">Rev</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Web/">Web</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/misc/">misc</a></li></ul></li></ul>
                                     
                                 <li class="main-nav-list-item">
                                     <a class="main-nav-list-link" href="/about">About</a>
@@ -168,6 +168,40 @@
         
         <div class="article-meta">
             <div class="category">
+            <a class="article-category-link" href="/categories/Theory/">Theory</a>
+            </div>
+            <div class="date"><time datetime="2019-06-26T13:51:17.000Z" itemprop="datePublished">2019-06-26</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2019/06/26/theory/How2Heap-Overlapping-Chunks-2/">[How2Heap] Overlapping_Chunks_2</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+             Overlapping_Chunks_2
+
+simple chunks overlapping problem
+이것은 인접하지 않은 free chunk를 consolidate하는 공격으로도 참조된다.
+heap에 chunk를 5개 할당한다.
+0x603010 ~ 0x6033f8 p1 chunk
+0x603400 ~ 0x6037e8 p2 chunk
+0x6037f0 ~ 0x
+        </p>
+    </div>
+</article>
+    
+
+    
+    
+    
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <div class="article-meta">
+            <div class="category">
             <a class="article-category-link" href="/categories/Daily/">Daily</a>
             </div>
             <div class="date"><time datetime="2019-06-24T10:04:12.000Z" itemprop="datePublished">2019-06-24</time></div>
@@ -192,10 +226,14 @@
     </div>
 </article>
     
+        </div>
+    
 
     
     
     
+    
+        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -209,7 +247,7 @@
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/06/20/How2Heap-Overlapping-Chunks/">[How2Heap] Overlapping_Chunks</a>
+        <a href="/2019/06/20/theory/How2Heap-Overlapping-Chunks/">[How2Heap] Overlapping_Chunks</a>
         </h1>
     
 
@@ -229,14 +267,10 @@ p2 c
     </div>
 </article>
     
-        </div>
-    
 
     
     
     
-    
-        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -259,35 +293,6 @@ p2 c
 패치 파일
 바이너리 파일에  영어가 아닌 다른 언어가 입력돼있으면 IDA에서는 puts(byte_8048840) 처럼 한글 그대로 나오지 않는 것을 볼 수 있다. 물론 대부분은 영어로 작성돼있고 이렇게 돼있는다 한들, 보는 데 크게 지장을 주진 않지만 그래도 한번 찾아본 결과, 방법을 알아볼 수 있었다.
 
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Pwn/">Pwn</a>
-            </div>
-            <div class="date"><time datetime="2019-06-08T22:28:42.000Z" itemprop="datePublished">2019-06-09</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/06/09/HSCTF-2019-Combo-Chain/">HSCTF 2019 Combo Chain</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-             Combo Chain
-Binary File
-123456789101112131415161718192021222324252627282930313233343536373839from pwn import *#r = process('./combo-chain')r = remote('pwn.hsctf.com', 2345)e = ELF('./combo-chain')lib
         </p>
     </div>
 </article>
@@ -347,18 +352,18 @@ Binary File
                     <li>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Theory/">Theory</a></p>
-                            <p class="item-title"><a href="/2019/09/16/How2Heap-House-of-Force/" class="title">[How2Heap] House_of_Force</a></p>
-                            <p class="item-date"><time datetime="2019-09-16T14:41:05.000Z" itemprop="datePublished">2019-09-16</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Rev/">Rev</a></p>
+                            <p class="item-title"><a href="/2019/12/05/nbsp/" class="title"> </a></p>
+                            <p class="item-date"><time datetime="2019-12-05T14:22:48.000Z" itemprop="datePublished">2019-12-05</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Daily/">Daily</a></p>
-                            <p class="item-title"><a href="/2019/09/13/Notion-앱-추천/" class="title">Notion 앱 추천</a></p>
-                            <p class="item-date"><time datetime="2019-09-12T15:52:17.000Z" itemprop="datePublished">2019-09-13</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/Theory/">Theory</a></p>
+                            <p class="item-title"><a href="/2019/09/16/theory/How2Heap-House-of-Force/" class="title">[How2Heap] House_of_Force</a></p>
+                            <p class="item-date"><time datetime="2019-09-16T14:41:05.000Z" itemprop="datePublished">2019-09-16</time></p>
                         </div>
                     </li>
                 
@@ -372,7 +377,7 @@ Binary File
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">카테고리</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Daily/">Daily</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Theory/">Theory</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/">WriteUps</a><span class="category-list-count">26</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Crypto/">Crypto</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Foren/">Foren</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Misc/">Misc</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Pwn/">Pwn</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Web/">Web</a><span class="category-list-count">1</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Daily/">Daily</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Theory/">Theory</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/">WriteUps</a><span class="category-list-count">27</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Crypto/">Crypto</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Foren/">Foren</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Pwn/">Pwn</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Rev/">Rev</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Web/">Web</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/misc/">misc</a><span class="category-list-count">7</span></li></ul></li></ul>
         </div>
     </div>
 
@@ -395,7 +400,11 @@ Binary File
             <ul>
                 
                     <li>
-                        <a href="https://ctf.j0n9hyun.xyz">HackCTF</a>
+                        <a href="https://ctf.j0n9hyun.xyz" target="_blank">HackCTF</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://defenit.kr" target="_blank">Defenit</a>
                     </li>
                 
             </ul>

@@ -82,7 +82,7 @@
                                     <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
-                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Daily/">Daily</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Theory/">Theory</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/">WriteUps</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Crypto/">Crypto</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Foren/">Foren</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Misc/">Misc</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Pwn/">Pwn</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Web/">Web</a></li></ul></li></ul>
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Daily/">Daily</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Theory/">Theory</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/">WriteUps</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Crypto/">Crypto</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Foren/">Foren</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Pwn/">Pwn</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Rev/">Rev</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Web/">Web</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/misc/">misc</a></li></ul></li></ul>
                                     
                                 <li class="main-nav-list-item">
                                     <a class="main-nav-list-link" href="/about">About</a>
@@ -170,18 +170,18 @@
             <div class="category">
             <a class="article-category-link" href="/categories/Theory/">Theory</a>
             </div>
-            <div class="date"><time datetime="2019-05-27T12:36:51.000Z" itemprop="datePublished">2019-05-27</time></div>
+            <div class="date"><time datetime="2019-05-28T05:15:29.000Z" itemprop="datePublished">2019-05-28</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/05/27/How2Heap-fastbin-dup-into-stack-c/">[How2Heap] fastbin_dup_into_stack</a>
+        <a href="/2019/05/28/theory/How2Heap-fastbin-dup-into-consolidate-c/">[How2Heap] fastbin_dup_into_consolidate</a>
         </h1>
     
 
         <p class="article-excerpt">
-             fastbin_dup_into_stack.c
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;int main()&#123;	fprintf(stderr, "ma
+             fastbin_dup_into_consolidate.c
+12345678910111213141516171819202122#include &lt;stdio.h&gt;#include &lt;stdint.h&gt;#include &lt;stdlib.h&gt;int main() &#123;  void* p1 = malloc(0x40);  void* p2 = mal
         </p>
     </div>
 </article>
@@ -198,12 +198,44 @@
             <div class="category">
             <a class="article-category-link" href="/categories/Theory/">Theory</a>
             </div>
+            <div class="date"><time datetime="2019-05-27T12:36:51.000Z" itemprop="datePublished">2019-05-27</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2019/05/27/theory/How2Heap-fastbin-dup-into-stack-c/">[How2Heap] fastbin_dup_into_stack</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+             fastbin_dup_into_stack.c
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;int main()&#123;	fprintf(stderr, "ma
+        </p>
+    </div>
+</article>
+    
+        </div>
+    
+
+    
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/Theory/">Theory</a>
+            </div>
             <div class="date"><time datetime="2019-05-27T10:31:21.000Z" itemprop="datePublished">2019-05-27</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/05/27/How2Heap-fastbin-dup-c/">[How2Heap] fastbin_dup</a>
+        <a href="/2019/05/27/theory/How2Heap-fastbin-dup-c/">[How2Heap] fastbin_dup</a>
         </h1>
     
 
@@ -225,14 +257,10 @@ Source
     </div>
 </article>
     
-        </div>
-    
 
     
     
     
-    
-        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -246,7 +274,7 @@ Source
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/05/25/HackCTF-Time-WriteUp/">[HackCTF] Time WriteUp</a>
+        <a href="/2019/05/25/writeups/pwn/HackCTF-Time-WriteUp/">[HackCTF] Time WriteUp</a>
         </h1>
     
 
@@ -261,44 +289,6 @@ Source
 풀기 위해서는 5184000 ~ 7776000 사이의 값을 넣어야 하는데 단순하게 생각했을 때 해당 시간동안 계속 켜놓으면 된다.
 
  [사진 1-2
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Theory/">Theory</a>
-            </div>
-            <div class="date"><time datetime="2019-05-24T05:51:30.000Z" itemprop="datePublished">2019-05-24</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/05/24/Heap-Theory-First-Fit/">[Heap Thoery] First Fit</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-             First Fit
-Heap 문제를 공략하기 위해서는 기본적인 할당 흐름을 이해할 수 있어야 한다.
-그래서 이번 글에서는 블로그 활성화도 하고 복습도 할 겸 겸사겸사 끄적여보기로했다.
-다음의 예제를 한번 살펴보자.
-
-3줄 요약
-
-a와 b에 각각 malloc[1]을 요청한다.
-a를 free[2]한다.
-a에 다시 malloc[1]을 요청한다.
-
-a에 300, 
         </p>
     </div>
 </article>
@@ -358,18 +348,18 @@ a에 300,
                     <li>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Theory/">Theory</a></p>
-                            <p class="item-title"><a href="/2019/09/16/How2Heap-House-of-Force/" class="title">[How2Heap] House_of_Force</a></p>
-                            <p class="item-date"><time datetime="2019-09-16T14:41:05.000Z" itemprop="datePublished">2019-09-16</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Rev/">Rev</a></p>
+                            <p class="item-title"><a href="/2019/12/05/nbsp/" class="title"> </a></p>
+                            <p class="item-date"><time datetime="2019-12-05T14:22:48.000Z" itemprop="datePublished">2019-12-05</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Daily/">Daily</a></p>
-                            <p class="item-title"><a href="/2019/09/13/Notion-앱-추천/" class="title">Notion 앱 추천</a></p>
-                            <p class="item-date"><time datetime="2019-09-12T15:52:17.000Z" itemprop="datePublished">2019-09-13</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/Theory/">Theory</a></p>
+                            <p class="item-title"><a href="/2019/09/16/theory/How2Heap-House-of-Force/" class="title">[How2Heap] House_of_Force</a></p>
+                            <p class="item-date"><time datetime="2019-09-16T14:41:05.000Z" itemprop="datePublished">2019-09-16</time></p>
                         </div>
                     </li>
                 
@@ -383,7 +373,7 @@ a에 300,
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">카테고리</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Daily/">Daily</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Theory/">Theory</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/">WriteUps</a><span class="category-list-count">26</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Crypto/">Crypto</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Foren/">Foren</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Misc/">Misc</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Pwn/">Pwn</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Web/">Web</a><span class="category-list-count">1</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Daily/">Daily</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Theory/">Theory</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/">WriteUps</a><span class="category-list-count">27</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Crypto/">Crypto</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Foren/">Foren</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Pwn/">Pwn</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Rev/">Rev</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Web/">Web</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/misc/">misc</a><span class="category-list-count">7</span></li></ul></li></ul>
         </div>
     </div>
 
@@ -406,7 +396,11 @@ a에 300,
             <ul>
                 
                     <li>
-                        <a href="https://ctf.j0n9hyun.xyz">HackCTF</a>
+                        <a href="https://ctf.j0n9hyun.xyz" target="_blank">HackCTF</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://defenit.kr" target="_blank">Defenit</a>
                     </li>
                 
             </ul>
