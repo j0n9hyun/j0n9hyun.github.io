@@ -8,6 +8,34 @@
     </url>
 
     <url>
+        <loc>http://j0n9hyun.github.io/categories/WriteUps/Misc/</loc>
+        <lastmod>2019-12-05T14:12:50.108Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://j0n9hyun.github.io/categories/WriteUps/</loc>
+        <lastmod>2019-12-05T14:12:50.108Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://j0n9hyun.github.io/categories/WriteUps/Pwn/</loc>
+        <lastmod>2019-12-05T14:12:36.736Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://j0n9hyun.github.io/categories/Daily/</loc>
+        <lastmod>2019-12-05T14:10:24.551Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://j0n9hyun.github.io/categories/Theory/</loc>
         <lastmod>2019-11-30T17:54:04.626Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -15,21 +43,7 @@
     </url>
 
     <url>
-        <loc>http://j0n9hyun.github.io/categories/Daily/</loc>
-        <lastmod>2019-11-30T17:37:39.408Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://j0n9hyun.github.io/categories/WriteUps/Web/</loc>
-        <lastmod>2019-09-01T08:14:50.659Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://j0n9hyun.github.io/categories/WriteUps/</loc>
         <lastmod>2019-09-01T08:14:50.659Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -43,29 +57,8 @@
     </url>
 
     <url>
-        <loc>http://j0n9hyun.github.io/categories/WriteUps/Pwn/</loc>
-        <lastmod>2019-08-23T10:06:54.709Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://j0n9hyun.github.io/categories/WriteUps/Misc/</loc>
-        <lastmod>2019-05-30T05:53:52.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://j0n9hyun.github.io/categories/WriteUps/Foren/</loc>
         <lastmod>2019-05-24T15:48:14.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://j0n9hyun.github.io/categories/WriteUps/Script/</loc>
-        <lastmod>2019-05-24T13:14:04.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
