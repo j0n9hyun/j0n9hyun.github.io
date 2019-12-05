@@ -170,66 +170,6 @@
             <div class="category">
             <a class="article-category-link" href="/categories/Theory/">Theory</a>
             </div>
-            <div class="date"><time datetime="2019-05-29T05:50:05.000Z" itemprop="datePublished">2019-05-29</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/05/29/theory/How2Heap-unsafe-unlink-c/">[How2Heap] unsafe_unlink</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-             unsafe_unlink.c
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#include &lt;string.h&g
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Theory/">Theory</a>
-            </div>
-            <div class="date"><time datetime="2019-05-28T05:15:29.000Z" itemprop="datePublished">2019-05-28</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/05/28/theory/How2Heap-fastbin-dup-into-consolidate-c/">[How2Heap] fastbin_dup_into_consolidate</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-             fastbin_dup_into_consolidate.c
-12345678910111213141516171819202122#include &lt;stdio.h&gt;#include &lt;stdint.h&gt;#include &lt;stdlib.h&gt;int main() &#123;  void* p1 = malloc(0x40);  void* p2 = mal
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Theory/">Theory</a>
-            </div>
             <div class="date"><time datetime="2019-05-27T12:36:51.000Z" itemprop="datePublished">2019-05-27</time></div>
         </div>
         
@@ -288,13 +228,91 @@ Source
         </div>
     
 
+    
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Web/">Web</a>
+            </div>
+            <div class="date"><time datetime="2019-05-25T09:13:01.000Z" itemprop="datePublished">2019-05-25</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2019/05/25/writeups/pwn/HackCTF-Time-WriteUp/">[HackCTF] Time WriteUp</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+             Time
+ [문제] 
+문제 링크
+문제에서는 is_numeric을 사용하여 숫자를 체크한다.
+그리고 끝에는 time값을 int로 변환을 해준 뒤 나온 값의 시간이 지나면 플래그를 뱉어낸다.
+
+ [사진 1-1] 
+풀기 위해서는 5184000 ~ 7776000 사이의 값을 넣어야 하는데 단순하게 생각했을 때 해당 시간동안 계속 켜놓으면 된다.
+
+ [사진 1-2
+        </p>
+    </div>
+</article>
+    
+
+    
+    
+    
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/Theory/">Theory</a>
+            </div>
+            <div class="date"><time datetime="2019-05-24T05:51:30.000Z" itemprop="datePublished">2019-05-24</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2019/05/24/theory/Heap-Theory-First-Fit/">[Heap Thoery] First Fit</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+             First Fit
+Heap 문제를 공략하기 위해서는 기본적인 할당 흐름을 이해할 수 있어야 한다.
+그래서 이번 글에서는 블로그 활성화도 하고 복습도 할 겸 겸사겸사 끄적여보기로했다.
+다음의 예제를 한번 살펴보자.
+
+3줄 요약
+
+a와 b에 각각 malloc[1]을 요청한다.
+a를 free[2]한다.
+a에 다시 malloc[1]을 요청한다.
+
+a에 300, 
+        </p>
+    </div>
+</article>
+    
+        </div>
+    
+
 
     </div></section>
 
 
     <nav id="page-nav">
-        <span class="pages">페이지 6 of 13</span>
-        <a class="extend prev" rel="prev" href="/archives/2019/page/5/">&laquo;</a><a class="page-number" href="/archives/2019/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2019/page/4/">4</a><a class="page-number" href="/archives/2019/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/archives/2019/page/7/">7</a><a class="page-number" href="/archives/2019/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2019/page/13/">13</a><a class="extend next" rel="next" href="/archives/2019/page/7/">&raquo;</a>
+        <span class="pages">페이지 6 of 12</span>
+        <a class="extend prev" rel="prev" href="/archives/2019/page/5/">&laquo;</a><a class="page-number" href="/archives/2019/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2019/page/4/">4</a><a class="page-number" href="/archives/2019/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/archives/2019/page/7/">7</a><a class="page-number" href="/archives/2019/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2019/page/12/">12</a><a class="extend next" rel="next" href="/archives/2019/page/7/">&raquo;</a>
     </nav>
 
 
@@ -340,18 +358,18 @@ Source
                     <li>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Script/">Script</a></p>
-                            <p class="item-title"><a href="/2019/12/05/test/" class="title"></a></p>
-                            <p class="item-date"><time datetime="2019-12-05T14:39:03.000Z" itemprop="datePublished">2019-12-05</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/Theory/">Theory</a></p>
+                            <p class="item-title"><a href="/2019/09/16/theory/How2Heap-House-of-Force/" class="title">[How2Heap] House_of_Force</a></p>
+                            <p class="item-date"><time datetime="2019-09-16T14:41:05.000Z" itemprop="datePublished">2019-09-16</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Rev/">Rev</a></p>
-                            <p class="item-title"><a href="/2019/12/05/nbsp/" class="title"> </a></p>
-                            <p class="item-date"><time datetime="2019-12-05T14:22:48.000Z" itemprop="datePublished">2019-12-05</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/Daily/">Daily</a></p>
+                            <p class="item-title"><a href="/2019/09/13/daily/Notion-앱-추천/" class="title">Notion 앱 추천</a></p>
+                            <p class="item-date"><time datetime="2019-09-12T15:52:17.000Z" itemprop="datePublished">2019-09-13</time></p>
                         </div>
                     </li>
                 

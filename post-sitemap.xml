@@ -8,8 +8,16 @@
     </url>
 
     <url>
-        <loc>http://j0n9hyun.github.io/2019/12/05/test/</loc>
-        <lastmod>2019-12-05T14:40:09.363Z</lastmod>
+        <loc>http://j0n9hyun.github.io/1999/04/06/test/</loc>
+        <lastmod>2019-12-05T15:33:37.681Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://j0n9hyun.github.io/1999/04/06/nbsp/</loc>
+        <lastmod>2019-12-05T15:33:21.837Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -18,14 +26,6 @@
     <url>
         <loc>http://j0n9hyun.github.io/2019/05/05/writeups/misc/doesnt_contain_k_integer/</loc>
         <lastmod>2019-12-05T14:36:35.552Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://j0n9hyun.github.io/2019/12/05/nbsp/</loc>
-        <lastmod>2019-12-05T14:23:48.434Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

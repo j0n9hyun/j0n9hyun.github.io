@@ -168,81 +168,6 @@
         
         <div class="article-meta">
             <div class="category">
-            <a class="article-category-link" href="/categories/Theory/">Theory</a>
-            </div>
-            <div class="date"><time datetime="2019-06-26T14:17:28.000Z" itemprop="datePublished">2019-06-26</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/06/26/theory/How2Heap-Tcache-dup/">[How2Heap] Tcache_dup</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-             Tcache_dup
-
-
-simple double-free attack with tcache.
-buffer를 할당한다.
-malloc(8): 0x55fef5f8d260
-free를 두 번 한다.
--------free(a)-------
--------free(a)-------
- free list : [ 0x55fef5f8d260, 0x55fef5f8d260 ]
-다
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Theory/">Theory</a>
-            </div>
-            <div class="date"><time datetime="2019-06-26T13:51:17.000Z" itemprop="datePublished">2019-06-26</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/06/26/theory/How2Heap-Overlapping-Chunks-2/">[How2Heap] Overlapping_Chunks_2</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-             Overlapping_Chunks_2
-
-simple chunks overlapping problem
-이것은 인접하지 않은 free chunk를 consolidate하는 공격으로도 참조된다.
-heap에 chunk를 5개 할당한다.
-0x603010 ~ 0x6033f8 p1 chunk
-0x603400 ~ 0x6037e8 p2 chunk
-0x6037f0 ~ 0x
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
             <a class="article-category-link" href="/categories/Daily/">Daily</a>
             </div>
             <div class="date"><time datetime="2019-06-24T10:04:12.000Z" itemprop="datePublished">2019-06-24</time></div>
@@ -307,13 +232,76 @@ p2 c
         </div>
     
 
+    
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/Daily/">Daily</a>
+            </div>
+            <div class="date"><time datetime="2019-06-13T04:37:48.000Z" itemprop="datePublished">2019-06-13</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2019/06/13/daily/ida-7.0-korean-string-apply/">IDA Pro 한글 스트링 적용 방법</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+             IDA Pro Korean String 적용 방법
+패치 파일
+바이너리 파일에  영어가 아닌 다른 언어가 입력돼있으면 IDA에서는 puts(byte_8048840) 처럼 한글 그대로 나오지 않는 것을 볼 수 있다. 물론 대부분은 영어로 작성돼있고 이렇게 돼있는다 한들, 보는 데 크게 지장을 주진 않지만 그래도 한번 찾아본 결과, 방법을 알아볼 수 있었다.
+
+        </p>
+    </div>
+</article>
+    
+
+    
+    
+    
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Pwn/">Pwn</a>
+            </div>
+            <div class="date"><time datetime="2019-06-08T22:28:42.000Z" itemprop="datePublished">2019-06-09</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2019/06/09/writeups/pwn/HSCTF-2019-Combo-Chain/">HSCTF 2019 Combo Chain</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+             Combo Chain
+Binary File
+123456789101112131415161718192021222324252627282930313233343536373839from pwn import *#r = process('./combo-chain')r = remote('pwn.hsctf.com', 2345)e = ELF('./combo-chain')lib
+        </p>
+    </div>
+</article>
+    
+        </div>
+    
+
 
     </div></section>
 
 
     <nav id="page-nav">
-        <span class="pages">페이지 4 of 13</span>
-        <a class="extend prev" rel="prev" href="/archives/2019/page/3/">&laquo;</a><a class="page-number" href="/archives/2019/">1</a><a class="page-number" href="/archives/2019/page/2/">2</a><a class="page-number" href="/archives/2019/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/archives/2019/page/5/">5</a><a class="page-number" href="/archives/2019/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2019/page/13/">13</a><a class="extend next" rel="next" href="/archives/2019/page/5/">&raquo;</a>
+        <span class="pages">페이지 4 of 12</span>
+        <a class="extend prev" rel="prev" href="/archives/2019/page/3/">&laquo;</a><a class="page-number" href="/archives/2019/">1</a><a class="page-number" href="/archives/2019/page/2/">2</a><a class="page-number" href="/archives/2019/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/archives/2019/page/5/">5</a><a class="page-number" href="/archives/2019/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2019/page/12/">12</a><a class="extend next" rel="next" href="/archives/2019/page/5/">&raquo;</a>
     </nav>
 
 
@@ -359,18 +347,18 @@ p2 c
                     <li>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Script/">Script</a></p>
-                            <p class="item-title"><a href="/2019/12/05/test/" class="title"></a></p>
-                            <p class="item-date"><time datetime="2019-12-05T14:39:03.000Z" itemprop="datePublished">2019-12-05</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/Theory/">Theory</a></p>
+                            <p class="item-title"><a href="/2019/09/16/theory/How2Heap-House-of-Force/" class="title">[How2Heap] House_of_Force</a></p>
+                            <p class="item-date"><time datetime="2019-09-16T14:41:05.000Z" itemprop="datePublished">2019-09-16</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Rev/">Rev</a></p>
-                            <p class="item-title"><a href="/2019/12/05/nbsp/" class="title"> </a></p>
-                            <p class="item-date"><time datetime="2019-12-05T14:22:48.000Z" itemprop="datePublished">2019-12-05</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/Daily/">Daily</a></p>
+                            <p class="item-title"><a href="/2019/09/13/daily/Notion-앱-추천/" class="title">Notion 앱 추천</a></p>
+                            <p class="item-date"><time datetime="2019-09-12T15:52:17.000Z" itemprop="datePublished">2019-09-13</time></p>
                         </div>
                     </li>
                 
