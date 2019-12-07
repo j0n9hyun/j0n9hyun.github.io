@@ -8,6 +8,13 @@
     </url>
 
     <url>
+        <loc>http://j0n9hyun.github.io/categories/Daily/</loc>
+        <lastmod>2019-12-07T12:20:54.542Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://j0n9hyun.github.io/categories/Script/</loc>
         <lastmod>2019-12-07T11:13:03.175Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -38,13 +45,6 @@
     <url>
         <loc>http://j0n9hyun.github.io/categories/WriteUps/Pwn/</loc>
         <lastmod>2019-12-05T14:12:36.736Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://j0n9hyun.github.io/categories/Daily/</loc>
-        <lastmod>2019-12-05T14:10:24.551Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
