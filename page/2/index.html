@@ -170,6 +170,41 @@
             <div class="category">
             <a class="article-category-link" href="/categories/Theory/">Theory</a>
             </div>
+            <div class="date"><time datetime="2019-06-26T14:42:03.000Z" itemprop="datePublished">2019-06-26</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2019/06/26/theory/How2Heap-Tcache-Poisoning/">[How2Heap] Tcache_Poisoning</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+             Tcache_Poisoning
+
+
+이것은 malloc을 속여서 pointer를 임의의 위치(이 경우, 스택)로
+반환하는 간단한 tcache poisoning 공격이다.
+이 공격은 fastbin corruption 공격과 매우 비슷하다.
+malloc()을 반환할 주소는 0x7fffb6be4b80이다.
+buffer를 한 개 할당한다.
+malloc(128): 
+        </p>
+    </div>
+</article>
+    
+
+    
+    
+    
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/Theory/">Theory</a>
+            </div>
             <div class="date"><time datetime="2019-06-26T14:17:28.000Z" itemprop="datePublished">2019-06-26</time></div>
         </div>
         
@@ -195,10 +230,14 @@ free를 두 번 한다.
     </div>
 </article>
     
+        </div>
+    
 
     
     
     
+    
+        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -229,14 +268,10 @@ heap에 chunk를 5개 할당한다.
     </div>
 </article>
     
-        </div>
-    
 
     
     
     
-    
-        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -267,10 +302,14 @@ heap에 chunk를 5개 할당한다.
     </div>
 </article>
     
+        </div>
+    
 
     
     
     
+    
+        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -304,14 +343,10 @@ p2 c
     </div>
 </article>
     
-        </div>
-    
 
     
     
     
-    
-        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -338,10 +373,14 @@ p2 c
     </div>
 </article>
     
+        </div>
+    
 
     
     
     
+    
+        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -367,14 +406,10 @@ Binary File
     </div>
 </article>
     
-        </div>
-    
 
     
     
     
-    
-        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -399,10 +434,14 @@ Binary File
     </div>
 </article>
     
+        </div>
+    
 
     
     
     
+    
+        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -432,14 +471,10 @@ malloc을 한 번 호출해서 메모리를 설정한다.
     </div>
 </article>
     
-        </div>
-    
 
     
     
     
-    
-        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -460,34 +495,6 @@ malloc을 한 번 호출해서 메모리를 설정한다.
         <p class="article-excerpt">
              unsafe_unlink.c
 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#include &lt;string.h&g
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Theory/">Theory</a>
-            </div>
-            <div class="date"><time datetime="2019-05-28T05:15:29.000Z" itemprop="datePublished">2019-05-28</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/05/28/theory/How2Heap-fastbin-dup-into-consolidate-c/">[How2Heap] fastbin_dup_into_consolidate</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-             fastbin_dup_into_consolidate.c
-12345678910111213141516171819202122#include &lt;stdio.h&gt;#include &lt;stdint.h&gt;#include &lt;stdlib.h&gt;int main() &#123;  void* p1 = malloc(0x40);  void* p2 = mal
         </p>
     </div>
 </article>
@@ -547,18 +554,18 @@ malloc을 한 번 호출해서 메모리를 설정한다.
                     <li>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Theory/">Theory</a></p>
-                            <p class="item-title"><a href="/2019/09/16/theory/How2Heap-House-of-Force/" class="title">[How2Heap] House_of_Force</a></p>
-                            <p class="item-date"><time datetime="2019-09-16T14:41:05.000Z" itemprop="datePublished">2019-09-16</time></p>
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2019/12/07/compile_options/" class="title">Compile Options</a></p>
+                            <p class="item-date"><time datetime="2019-12-07T12:15:39.000Z" itemprop="datePublished">2019-12-07</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Daily/">Daily</a></p>
-                            <p class="item-title"><a href="/2019/09/13/daily/Notion-앱-추천/" class="title">Notion 앱 추천</a></p>
-                            <p class="item-date"><time datetime="2019-09-12T15:52:17.000Z" itemprop="datePublished">2019-09-13</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/Theory/">Theory</a></p>
+                            <p class="item-title"><a href="/2019/09/16/theory/How2Heap-House-of-Force/" class="title">[How2Heap] House_of_Force</a></p>
+                            <p class="item-date"><time datetime="2019-09-16T14:41:05.000Z" itemprop="datePublished">2019-09-16</time></p>
                         </div>
                     </li>
                 
