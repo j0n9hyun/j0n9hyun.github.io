@@ -8,7 +8,7 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>j0n9yhun&#39;s repository</description>
-    <pubDate>Sat, 21 Dec 2019 01:07:31 GMT</pubDate>
+    <pubDate>Sat, 21 Dec 2019 01:19:49 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -25,7 +25,7 @@
       
       </description>
       
-      <content:encoded><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><img src="https://user-images.githubusercontent.com/16969364/71300578-6c4bbe00-23d9-11ea-8816-fcb01656db8c.PNG" alt="[2019 X-MAS CTF]"></p>]]></content:encoded>
+      <content:encoded><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><img src="https://user-images.githubusercontent.com/16969364/71300578-6c4bbe00-23d9-11ea-8816-fcb01656db8c.PNG" alt="[2019 X-MAS CTF]"><br>사진 클릭 시 원본 크기로 볼 수 있다.</p>]]></content:encoded>
       
       <comments>http://j0n9hyun.github.io/2019/12/21/daily/2019-x-mas-ctf-result/#disqus_thread</comments>
     </item>
