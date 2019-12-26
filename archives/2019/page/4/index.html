@@ -178,27 +178,21 @@
         
         <div class="article-meta">
             <div class="category">
-            <a class="article-category-link" href="/categories/Theory/">Theory</a>
+            <a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Pwn/">Pwn</a>
             </div>
-            <div class="date"><time datetime="2019-06-26T14:42:03.000Z" itemprop="datePublished">2019-06-26</time></div>
+            <div class="date"><time datetime="2019-06-08T22:28:42.000Z" itemprop="datePublished">2019년 06월 09일</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/06/26/theory/How2Heap-Tcache-Poisoning/">[How2Heap] Tcache_Poisoning</a>
+        <a href="/writeups/pwn/HSCTF-2019-Combo-Chain/">HSCTF 2019 Combo Chain</a>
         </h1>
     
 
         <p class="article-excerpt">
-             Tcache_Poisoning
-
-
-이것은 malloc을 속여서 pointer를 임의의 위치(이 경우, 스택)로
-반환하는 간단한 tcache poisoning 공격이다.
-이 공격은 fastbin corruption 공격과 매우 비슷하다.
-malloc()을 반환할 주소는 0x7fffb6be4b80이다.
-buffer를 한 개 할당한다.
-malloc(128): 
+             Combo Chain
+Binary File
+123456789101112131415161718192021222324252627282930313233343536373839from pwn import *#r = process('./combo-chain')r = remote('pwn.hsctf.com', 2345)e = ELF('./combo-chain')lib
         </p>
     </div>
 </article>
@@ -215,27 +209,18 @@ malloc(128):
             <div class="category">
             <a class="article-category-link" href="/categories/Theory/">Theory</a>
             </div>
-            <div class="date"><time datetime="2019-06-26T14:17:28.000Z" itemprop="datePublished">2019-06-26</time></div>
+            <div class="date"><time datetime="2019-05-31T02:18:06.000Z" itemprop="datePublished">2019년 05월 31일</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/06/26/theory/How2Heap-Tcache-dup/">[How2Heap] Tcache_dup</a>
+        <a href="/theory/How2Heap-Poison-null-byte/">[How2Heap] Poison_null_byte</a>
         </h1>
     
 
         <p class="article-excerpt">
-             Tcache_dup
-
-
-simple double-free attack with tcache.
-buffer를 할당한다.
-malloc(8): 0x55fef5f8d260
-free를 두 번 한다.
--------free(a)-------
--------free(a)-------
- free list : [ 0x55fef5f8d260, 0x55fef5f8d260 ]
-다
+             Poison_null_byte.c
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949
         </p>
     </div>
 </article>
@@ -256,24 +241,23 @@ free를 두 번 한다.
             <div class="category">
             <a class="article-category-link" href="/categories/Theory/">Theory</a>
             </div>
-            <div class="date"><time datetime="2019-06-26T13:51:17.000Z" itemprop="datePublished">2019-06-26</time></div>
+            <div class="date"><time datetime="2019-05-29T07:05:24.000Z" itemprop="datePublished">2019년 05월 29일</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/06/26/theory/How2Heap-Overlapping-Chunks-2/">[How2Heap] Overlapping_Chunks_2</a>
+        <a href="/theory/How2Heap-House-of-spirit-c/">[How2Heap] House_of_spirit</a>
         </h1>
     
 
         <p class="article-excerpt">
-             Overlapping_Chunks_2
+             House_of_spirit.c
 
-simple chunks overlapping problem
-이것은 인접하지 않은 free chunk를 consolidate하는 공격으로도 참조된다.
-heap에 chunk를 5개 할당한다.
-0x603010 ~ 0x6033f8 p1 chunk
-0x603400 ~ 0x6037e8 p2 chunk
-0x6037f0 ~ 0x
+house of spirit
+malloc을 한 번 호출해서 메모리를 설정한다.
+이제 fake fastbin 영역을 가리키는 포인터를 overwirte할 것이다.
+이 영역(메모리 길이: 80)은 chunk가 2개 있다. 첫번째는 0x7fffffffe338에서 시작하고 두번째는 0x7fffffffe378에서 시작한다.
+이 영
         </p>
     </div>
 </article>
@@ -288,26 +272,80 @@ heap에 chunk를 5개 할당한다.
         
         <div class="article-meta">
             <div class="category">
-            <a class="article-category-link" href="/categories/Daily/">Daily</a>
+            <a class="article-category-link" href="/categories/Theory/">Theory</a>
             </div>
-            <div class="date"><time datetime="2019-06-24T10:04:12.000Z" itemprop="datePublished">2019-06-24</time></div>
+            <div class="date"><time datetime="2019-05-29T05:50:05.000Z" itemprop="datePublished">2019년 05월 29일</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/06/24/daily/IDA-Pro-7-2-한글-스트링-지원/">IDA Pro 7.2 한글 스트링 지원</a>
+        <a href="/theory/How2Heap-unsafe-unlink-c/">[How2Heap] unsafe_unlink</a>
         </h1>
     
 
         <p class="article-excerpt">
-             IDA Pro 7.2 한글 스트링 지원
-7.0 버전까지만 해도 clt 파일을 따로 추가해줘야 했는데 7.2 부턴 그냥 한줄 추가만 해주면 된다. 제작자가 파일을 보냈다고 했는데 회사에서 잘 반영해준 것 같다. 상단의 주석에도 IDA 사용자가 제공해줬다고 적혀있다.
+             unsafe_unlink.c
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#include &lt;string.h&g
+        </p>
+    </div>
+</article>
+    
+        </div>
+    
 
- [Korean.clt]  
+    
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/Theory/">Theory</a>
+            </div>
+            <div class="date"><time datetime="2019-05-28T05:15:29.000Z" itemprop="datePublished">2019년 05월 28일</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/theory/How2Heap-fastbin-dup-into-consolidate-c/">[How2Heap] fastbin_dup_into_consolidate</a>
+        </h1>
+    
 
- [IDA Pro 7.2]  
+        <p class="article-excerpt">
+             fastbin_dup_into_consolidate.c
+12345678910111213141516171819202122#include &lt;stdio.h&gt;#include &lt;stdint.h&gt;#include &lt;stdlib.h&gt;int main() &#123;  void* p1 = malloc(0x40);  void* p2 = mal
+        </p>
+    </div>
+</article>
+    
 
-  img.border-sh
+    
+    
+    
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/Theory/">Theory</a>
+            </div>
+            <div class="date"><time datetime="2019-05-27T12:36:51.000Z" itemprop="datePublished">2019년 05월 27일</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/theory/How2Heap-fastbin-dup-into-stack-c/">[How2Heap] fastbin_dup_into_stack</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+             fastbin_dup_into_stack.c
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;int main()&#123;	fprintf(stderr, "ma
         </p>
     </div>
 </article>
@@ -320,8 +358,8 @@ heap에 chunk를 5개 할당한다.
 
 
     <nav id="page-nav">
-        <span class="pages">페이지 4 of 13</span>
-        <a class="extend prev" rel="prev" href="/archives/2019/page/3/">&laquo;</a><a class="page-number" href="/archives/2019/">1</a><a class="page-number" href="/archives/2019/page/2/">2</a><a class="page-number" href="/archives/2019/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/archives/2019/page/5/">5</a><a class="page-number" href="/archives/2019/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2019/page/13/">13</a><a class="extend next" rel="next" href="/archives/2019/page/5/">&raquo;</a>
+        <span class="pages">페이지 4 of 9</span>
+        <a class="extend prev" rel="prev" href="/archives/2019/page/3/">&laquo;</a><a class="page-number" href="/archives/2019/">1</a><a class="page-number" href="/archives/2019/page/2/">2</a><a class="page-number" href="/archives/2019/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/archives/2019/page/5/">5</a><a class="page-number" href="/archives/2019/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2019/page/9/">9</a><a class="extend next" rel="next" href="/archives/2019/page/5/">&raquo;</a>
     </nav>
 
 
@@ -368,8 +406,8 @@ heap에 chunk를 5개 할당한다.
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Script/">Script</a></p>
-                            <p class="item-title"><a href="/2019/12/26/script/CTF-Dockerfile/" class="title">CTF Dockerfile</a></p>
-                            <p class="item-date"><time datetime="2019-12-26T08:12:01.000Z" itemprop="datePublished">2019-12-26</time></p>
+                            <p class="item-title"><a href="/script/CTF-Dockerfile/" class="title">CTF Dockerfile</a></p>
+                            <p class="item-date"><time datetime="2019-12-26T08:12:01.000Z" itemprop="datePublished">2019년 12월 26일</time></p>
                         </div>
                     </li>
                 
@@ -377,8 +415,8 @@ heap에 chunk를 5개 할당한다.
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Daily/">Daily</a></p>
-                            <p class="item-title"><a href="/2019/12/21/daily/2019-x-mas-ctf-result/" class="title">2019 X-MAS CTF 결과</a></p>
-                            <p class="item-date"><time datetime="2019-12-21T01:02:50.000Z" itemprop="datePublished">2019-12-21</time></p>
+                            <p class="item-title"><a href="/daily/2019-x-mas-ctf-result/" class="title">2019 X-MAS CTF 결과</a></p>
+                            <p class="item-date"><time datetime="2019-12-21T01:02:50.000Z" itemprop="datePublished">2019년 12월 21일</time></p>
                         </div>
                     </li>
                 

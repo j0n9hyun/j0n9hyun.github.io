@@ -180,87 +180,12 @@
             <div class="category">
             <a class="article-category-link" href="/categories/Theory/">Theory</a>
             </div>
-            <div class="date"><time datetime="2019-06-26T14:17:28.000Z" itemprop="datePublished">2019-06-26</time></div>
+            <div class="date"><time datetime="2019-06-20T13:59:02.000Z" itemprop="datePublished">2019년 06월 20일</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/06/26/theory/How2Heap-Tcache-dup/">[How2Heap] Tcache_dup</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-             Tcache_dup
-
-
-simple double-free attack with tcache.
-buffer를 할당한다.
-malloc(8): 0x55fef5f8d260
-free를 두 번 한다.
--------free(a)-------
--------free(a)-------
- free list : [ 0x55fef5f8d260, 0x55fef5f8d260 ]
-다
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Theory/">Theory</a>
-            </div>
-            <div class="date"><time datetime="2019-06-26T13:51:17.000Z" itemprop="datePublished">2019-06-26</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/06/26/theory/How2Heap-Overlapping-Chunks-2/">[How2Heap] Overlapping_Chunks_2</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-             Overlapping_Chunks_2
-
-simple chunks overlapping problem
-이것은 인접하지 않은 free chunk를 consolidate하는 공격으로도 참조된다.
-heap에 chunk를 5개 할당한다.
-0x603010 ~ 0x6033f8 p1 chunk
-0x603400 ~ 0x6037e8 p2 chunk
-0x6037f0 ~ 0x
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Theory/">Theory</a>
-            </div>
-            <div class="date"><time datetime="2019-06-20T13:59:02.000Z" itemprop="datePublished">2019-06-20</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/06/20/theory/How2Heap-Overlapping-Chunks/">[How2Heap] Overlapping_Chunks</a>
+        <a href="/theory/How2Heap-Overlapping-Chunks/">[How2Heap] Overlapping_Chunks</a>
         </h1>
     
 
@@ -292,12 +217,12 @@ p2 c
             <div class="category">
             <a class="article-category-link" href="/categories/Theory/">Theory</a>
             </div>
-            <div class="date"><time datetime="2019-05-31T02:18:06.000Z" itemprop="datePublished">2019-05-31</time></div>
+            <div class="date"><time datetime="2019-05-31T02:18:06.000Z" itemprop="datePublished">2019년 05월 31일</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/05/31/theory/How2Heap-Poison-null-byte/">[How2Heap] Poison_null_byte</a>
+        <a href="/theory/How2Heap-Poison-null-byte/">[How2Heap] Poison_null_byte</a>
         </h1>
     
 
@@ -311,13 +236,138 @@ p2 c
         </div>
     
 
+    
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/Theory/">Theory</a>
+            </div>
+            <div class="date"><time datetime="2019-05-29T07:05:24.000Z" itemprop="datePublished">2019년 05월 29일</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/theory/How2Heap-House-of-spirit-c/">[How2Heap] House_of_spirit</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+             House_of_spirit.c
+
+house of spirit
+malloc을 한 번 호출해서 메모리를 설정한다.
+이제 fake fastbin 영역을 가리키는 포인터를 overwirte할 것이다.
+이 영역(메모리 길이: 80)은 chunk가 2개 있다. 첫번째는 0x7fffffffe338에서 시작하고 두번째는 0x7fffffffe378에서 시작한다.
+이 영
+        </p>
+    </div>
+</article>
+    
+
+    
+    
+    
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/Theory/">Theory</a>
+            </div>
+            <div class="date"><time datetime="2019-05-29T05:50:05.000Z" itemprop="datePublished">2019년 05월 29일</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/theory/How2Heap-unsafe-unlink-c/">[How2Heap] unsafe_unlink</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+             unsafe_unlink.c
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#include &lt;string.h&g
+        </p>
+    </div>
+</article>
+    
+        </div>
+    
+
+    
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/Theory/">Theory</a>
+            </div>
+            <div class="date"><time datetime="2019-05-28T05:15:29.000Z" itemprop="datePublished">2019년 05월 28일</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/theory/How2Heap-fastbin-dup-into-consolidate-c/">[How2Heap] fastbin_dup_into_consolidate</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+             fastbin_dup_into_consolidate.c
+12345678910111213141516171819202122#include &lt;stdio.h&gt;#include &lt;stdint.h&gt;#include &lt;stdlib.h&gt;int main() &#123;  void* p1 = malloc(0x40);  void* p2 = mal
+        </p>
+    </div>
+</article>
+    
+
+    
+    
+    
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/Theory/">Theory</a>
+            </div>
+            <div class="date"><time datetime="2019-05-27T12:36:51.000Z" itemprop="datePublished">2019년 05월 27일</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/theory/How2Heap-fastbin-dup-into-stack-c/">[How2Heap] fastbin_dup_into_stack</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+             fastbin_dup_into_stack.c
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;int main()&#123;	fprintf(stderr, "ma
+        </p>
+    </div>
+</article>
+    
+        </div>
+    
+
 
     </div></section>
 
 
     <nav id="page-nav">
-        <span class="pages">페이지 2 of 4</span>
-        <a class="extend prev" rel="prev" href="/tags/Theory/">&laquo;</a><a class="page-number" href="/tags/Theory/">1</a><span class="page-number current">2</span><a class="page-number" href="/tags/Theory/page/3/">3</a><a class="page-number" href="/tags/Theory/page/4/">4</a><a class="extend next" rel="next" href="/tags/Theory/page/3/">&raquo;</a>
+        <span class="pages">페이지 2 of 3</span>
+        <a class="extend prev" rel="prev" href="/tags/Theory/">&laquo;</a><a class="page-number" href="/tags/Theory/">1</a><span class="page-number current">2</span><a class="page-number" href="/tags/Theory/page/3/">3</a><a class="extend next" rel="next" href="/tags/Theory/page/3/">&raquo;</a>
     </nav>
 
 
@@ -364,8 +414,8 @@ p2 c
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Script/">Script</a></p>
-                            <p class="item-title"><a href="/2019/12/26/script/CTF-Dockerfile/" class="title">CTF Dockerfile</a></p>
-                            <p class="item-date"><time datetime="2019-12-26T08:12:01.000Z" itemprop="datePublished">2019-12-26</time></p>
+                            <p class="item-title"><a href="/script/CTF-Dockerfile/" class="title">CTF Dockerfile</a></p>
+                            <p class="item-date"><time datetime="2019-12-26T08:12:01.000Z" itemprop="datePublished">2019년 12월 26일</time></p>
                         </div>
                     </li>
                 
@@ -373,8 +423,8 @@ p2 c
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Daily/">Daily</a></p>
-                            <p class="item-title"><a href="/2019/12/21/daily/2019-x-mas-ctf-result/" class="title">2019 X-MAS CTF 결과</a></p>
-                            <p class="item-date"><time datetime="2019-12-21T01:02:50.000Z" itemprop="datePublished">2019-12-21</time></p>
+                            <p class="item-title"><a href="/daily/2019-x-mas-ctf-result/" class="title">2019 X-MAS CTF 결과</a></p>
+                            <p class="item-date"><time datetime="2019-12-21T01:02:50.000Z" itemprop="datePublished">2019년 12월 21일</time></p>
                         </div>
                     </li>
                 

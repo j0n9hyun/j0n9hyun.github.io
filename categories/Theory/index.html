@@ -180,12 +180,12 @@
             <div class="category">
             <a class="article-category-link" href="/categories/Theory/">Theory</a>
             </div>
-            <div class="date"><time datetime="2019-09-16T14:41:05.000Z" itemprop="datePublished">2019-09-16</time></div>
+            <div class="date"><time datetime="2019-09-16T14:41:05.000Z" itemprop="datePublished">2019년 09월 16일</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/09/16/theory/How2Heap-House-of-Force/">[How2Heap] House_of_Force</a>
+        <a href="/theory/How2Heap-House-of-Force/">[How2Heap] House_of_Force</a>
         </h1>
     
 
@@ -213,12 +213,12 @@ top chunk는 메모리의 마지막에 위치하는 특별한 chunk이다.그리
             <div class="category">
             <a class="article-category-link" href="/categories/Theory/">Theory</a>
             </div>
-            <div class="date"><time datetime="2019-06-26T15:45:55.000Z" itemprop="datePublished">2019-06-27</time></div>
+            <div class="date"><time datetime="2019-06-26T15:45:55.000Z" itemprop="datePublished">2019년 06월 27일</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/06/27/theory/How2Heap-Tcache-House-of-spirit/">[How2Heap] Tcache_House_of_spirit</a>
+        <a href="/theory/How2Heap-Tcache-House-of-spirit/">[How2Heap] Tcache_House_of_spirit</a>
         </h1>
     
 
@@ -250,12 +250,12 @@ malloc.c의 _int_free 함수에서 tcache_put이 다음 chunk의 prev_inuse
             <div class="category">
             <a class="article-category-link" href="/categories/Theory/">Theory</a>
             </div>
-            <div class="date"><time datetime="2019-06-26T14:42:03.000Z" itemprop="datePublished">2019-06-26</time></div>
+            <div class="date"><time datetime="2019-06-26T14:42:03.000Z" itemprop="datePublished">2019년 06월 26일</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/06/26/theory/How2Heap-Tcache-Poisoning/">[How2Heap] Tcache_Poisoning</a>
+        <a href="/theory/How2Heap-Tcache-Poisoning/">[How2Heap] Tcache_Poisoning</a>
         </h1>
     
 
@@ -285,12 +285,12 @@ malloc(128):
             <div class="category">
             <a class="article-category-link" href="/categories/Theory/">Theory</a>
             </div>
-            <div class="date"><time datetime="2019-06-26T14:17:28.000Z" itemprop="datePublished">2019-06-26</time></div>
+            <div class="date"><time datetime="2019-06-26T14:17:28.000Z" itemprop="datePublished">2019년 06월 26일</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/06/26/theory/How2Heap-Tcache-dup/">[How2Heap] Tcache_dup</a>
+        <a href="/theory/How2Heap-Tcache-dup/">[How2Heap] Tcache_dup</a>
         </h1>
     
 
@@ -313,13 +313,88 @@ free를 두 번 한다.
         </div>
     
 
+    
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/Theory/">Theory</a>
+            </div>
+            <div class="date"><time datetime="2019-06-26T13:51:17.000Z" itemprop="datePublished">2019년 06월 26일</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/theory/How2Heap-Overlapping-Chunks-2/">[How2Heap] Overlapping_Chunks_2</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+             Overlapping_Chunks_2
+
+simple chunks overlapping problem
+이것은 인접하지 않은 free chunk를 consolidate하는 공격으로도 참조된다.
+heap에 chunk를 5개 할당한다.
+0x603010 ~ 0x6033f8 p1 chunk
+0x603400 ~ 0x6037e8 p2 chunk
+0x6037f0 ~ 0x
+        </p>
+    </div>
+</article>
+    
+
+    
+    
+    
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/Theory/">Theory</a>
+            </div>
+            <div class="date"><time datetime="2019-06-20T13:59:02.000Z" itemprop="datePublished">2019년 06월 20일</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/theory/How2Heap-Overlapping-Chunks/">[How2Heap] Overlapping_Chunks</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+             Overlapping_Chunks.c
+
+이 기법은 glibc에서 tcache옵션이 disabled된 상태에만 작동한다.
+simple chunks overlapping
+heap에 chunk 3개를 할당해보자.
+3개의 chunk가 여기에 할당됐다:
+p1=0x603010
+p2=0x603110
+p3=0x603210
+이제 p2 chunk를 free시켜보자
+p2 c
+        </p>
+    </div>
+</article>
+    
+        </div>
+    
+
 
     </div></section>
 
 
     <nav id="page-nav">
-        <span class="pages">페이지 1 of 4</span>
-        <span class="page-number current">1</span><a class="page-number" href="/categories/Theory/page/2/">2</a><a class="page-number" href="/categories/Theory/page/3/">3</a><a class="page-number" href="/categories/Theory/page/4/">4</a><a class="extend next" rel="next" href="/categories/Theory/page/2/">&raquo;</a>
+        <span class="pages">페이지 1 of 3</span>
+        <span class="page-number current">1</span><a class="page-number" href="/categories/Theory/page/2/">2</a><a class="page-number" href="/categories/Theory/page/3/">3</a><a class="extend next" rel="next" href="/categories/Theory/page/2/">&raquo;</a>
     </nav>
 
 
@@ -367,8 +442,8 @@ free를 두 번 한다.
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Script/">Script</a></p>
-                            <p class="item-title"><a href="/2019/12/26/script/CTF-Dockerfile/" class="title">CTF Dockerfile</a></p>
-                            <p class="item-date"><time datetime="2019-12-26T08:12:01.000Z" itemprop="datePublished">2019-12-26</time></p>
+                            <p class="item-title"><a href="/script/CTF-Dockerfile/" class="title">CTF Dockerfile</a></p>
+                            <p class="item-date"><time datetime="2019-12-26T08:12:01.000Z" itemprop="datePublished">2019년 12월 26일</time></p>
                         </div>
                     </li>
                 
@@ -376,8 +451,8 @@ free를 두 번 한다.
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Daily/">Daily</a></p>
-                            <p class="item-title"><a href="/2019/12/21/daily/2019-x-mas-ctf-result/" class="title">2019 X-MAS CTF 결과</a></p>
-                            <p class="item-date"><time datetime="2019-12-21T01:02:50.000Z" itemprop="datePublished">2019-12-21</time></p>
+                            <p class="item-title"><a href="/daily/2019-x-mas-ctf-result/" class="title">2019 X-MAS CTF 결과</a></p>
+                            <p class="item-date"><time datetime="2019-12-21T01:02:50.000Z" itemprop="datePublished">2019년 12월 21일</time></p>
                         </div>
                     </li>
                 

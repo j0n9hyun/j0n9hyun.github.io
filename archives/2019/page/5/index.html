@@ -180,27 +180,29 @@
             <div class="category">
             <a class="article-category-link" href="/categories/Theory/">Theory</a>
             </div>
-            <div class="date"><time datetime="2019-06-20T13:59:02.000Z" itemprop="datePublished">2019-06-20</time></div>
+            <div class="date"><time datetime="2019-05-27T10:31:21.000Z" itemprop="datePublished">2019년 05월 27일</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/06/20/theory/How2Heap-Overlapping-Chunks/">[How2Heap] Overlapping_Chunks</a>
+        <a href="/theory/How2Heap-fastbin-dup-c/">[How2Heap] fastbin_dup</a>
         </h1>
     
 
         <p class="article-excerpt">
-             Overlapping_Chunks.c
+             fastbin_dup.c
 
-이 기법은 glibc에서 tcache옵션이 disabled된 상태에만 작동한다.
-simple chunks overlapping
-heap에 chunk 3개를 할당해보자.
-3개의 chunk가 여기에 할당됐다:
-p1=0x603010
-p2=0x603110
-p3=0x603210
-이제 p2 chunk를 free시켜보자
-p2 c
+
+
+Source
+
+
+  img.border-shadow{
+          border:1px solid #888888;
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+
+
         </p>
     </div>
 </article>
@@ -215,22 +217,101 @@ p2 c
         
         <div class="article-meta">
             <div class="category">
-            <a class="article-category-link" href="/categories/Daily/">Daily</a>
+            <a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Web/">Web</a>
             </div>
-            <div class="date"><time datetime="2019-06-13T04:37:48.000Z" itemprop="datePublished">2019-06-13</time></div>
+            <div class="date"><time datetime="2019-05-25T09:13:01.000Z" itemprop="datePublished">2019년 05월 25일</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/06/13/daily/ida-7.0-korean-string-apply/">IDA Pro 한글 스트링 적용 방법</a>
+        <a href="/writeups/pwn/HackCTF-Time-WriteUp/">[HackCTF] Time WriteUp</a>
         </h1>
     
 
         <p class="article-excerpt">
-             IDA Pro Korean String 적용 방법
-패치 파일
-바이너리 파일에  영어가 아닌 다른 언어가 입력돼있으면 IDA에서는 puts(byte_8048840) 처럼 한글 그대로 나오지 않는 것을 볼 수 있다. 물론 대부분은 영어로 작성돼있고 이렇게 돼있는다 한들, 보는 데 크게 지장을 주진 않지만 그래도 한번 찾아본 결과, 방법을 알아볼 수 있었다.
+             Time
+ [문제] 
+문제 링크
+문제에서는 is_numeric을 사용하여 숫자를 체크한다.
+그리고 끝에는 time값을 int로 변환을 해준 뒤 나온 값의 시간이 지나면 플래그를 뱉어낸다.
 
+ [사진 1-1] 
+풀기 위해서는 5184000 ~ 7776000 사이의 값을 넣어야 하는데 단순하게 생각했을 때 해당 시간동안 계속 켜놓으면 된다.
+
+ [사진 1-2
+        </p>
+    </div>
+</article>
+    
+        </div>
+    
+
+    
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/Theory/">Theory</a>
+            </div>
+            <div class="date"><time datetime="2019-05-24T05:51:30.000Z" itemprop="datePublished">2019년 05월 24일</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/theory/Heap-Theory-First-Fit/">[Heap Thoery] First Fit</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+             First Fit
+Heap 문제를 공략하기 위해서는 기본적인 할당 흐름을 이해할 수 있어야 한다.
+그래서 이번 글에서는 블로그 활성화도 하고 복습도 할 겸 겸사겸사 끄적여보기로했다.
+다음의 예제를 한번 살펴보자.
+
+3줄 요약
+
+a와 b에 각각 malloc[1]을 요청한다.
+a를 free[2]한다.
+a에 다시 malloc[1]을 요청한다.
+
+a에 300, 
+        </p>
+    </div>
+</article>
+    
+
+    
+    
+    
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Pwn/">Pwn</a>
+            </div>
+            <div class="date"><time datetime="2019-05-24T00:03:43.000Z" itemprop="datePublished">2019년 05월 24일</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/writeups/pwn/Security-Fest-2019-baby2/">Security Fest 2019 baby2</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+             Baby2
+기본 ROP 문제
+바이너리
+우분투 18.04 환경에서는  main으로 안 돌아가는 경우도 있는 것 같다. [1]  (일단 난 잘됨) 
+12345678910111213141516171819202122232425262728293031323334353637383940from pwn import *#r = process('./baby2')r = rem
         </p>
     </div>
 </article>
@@ -251,19 +332,18 @@ p2 c
             <div class="category">
             <a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Pwn/">Pwn</a>
             </div>
-            <div class="date"><time datetime="2019-06-08T22:28:42.000Z" itemprop="datePublished">2019-06-09</time></div>
+            <div class="date"><time datetime="2019-05-24T00:01:52.000Z" itemprop="datePublished">2019년 05월 24일</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/06/09/writeups/pwn/HSCTF-2019-Combo-Chain/">HSCTF 2019 Combo Chain</a>
+        <a href="/writeups/pwn/Security-Fest-2019-baby1/">Security Fest 2019 baby1</a>
         </h1>
     
 
         <p class="article-excerpt">
-             Combo Chain
-Binary File
-123456789101112131415161718192021222324252627282930313233343536373839from pwn import *#r = process('./combo-chain')r = remote('pwn.hsctf.com', 2345)e = ELF('./combo-chain')lib
+             Baby2
+12345678910111213141516171819from pwn import *#r = process('./baby1')r = remote('baby-01.pwn.beer', 10001)e = ELF('./baby1')binsh = e.search("/bin/sh").next()pr = 0x0000000000400793 # pop rdi; 
         </p>
     </div>
 </article>
@@ -278,20 +358,20 @@ Binary File
         
         <div class="article-meta">
             <div class="category">
-            <a class="article-category-link" href="/categories/Theory/">Theory</a>
+            <a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/misc/">misc</a>
             </div>
-            <div class="date"><time datetime="2019-05-31T02:18:06.000Z" itemprop="datePublished">2019-05-31</time></div>
+            <div class="date"><time datetime="2019-05-04T17:06:00.000Z" itemprop="datePublished">2019년 05월 05일</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/05/31/theory/How2Heap-Poison-null-byte/">[How2Heap] Poison_null_byte</a>
+        <a href="/writeups/misc/doesnt_contain_k_integer/">ALLMN CTF 2019 Doesn&#39;t contain K integer</a>
         </h1>
     
 
         <p class="article-excerpt">
-             Poison_null_byte.c
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949
+             Doesn’t contain K integer
+123How many numbers from 1 to N that don&apos;t contain K number. Input: N (integer number) and space K (integer number).  Output: The total number. Example if N is 30 and K
         </p>
     </div>
 </article>
@@ -304,8 +384,8 @@ Binary File
 
 
     <nav id="page-nav">
-        <span class="pages">페이지 5 of 13</span>
-        <a class="extend prev" rel="prev" href="/archives/2019/page/4/">&laquo;</a><a class="page-number" href="/archives/2019/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2019/page/3/">3</a><a class="page-number" href="/archives/2019/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/archives/2019/page/6/">6</a><a class="page-number" href="/archives/2019/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2019/page/13/">13</a><a class="extend next" rel="next" href="/archives/2019/page/6/">&raquo;</a>
+        <span class="pages">페이지 5 of 9</span>
+        <a class="extend prev" rel="prev" href="/archives/2019/page/4/">&laquo;</a><a class="page-number" href="/archives/2019/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2019/page/3/">3</a><a class="page-number" href="/archives/2019/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/archives/2019/page/6/">6</a><a class="page-number" href="/archives/2019/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2019/page/9/">9</a><a class="extend next" rel="next" href="/archives/2019/page/6/">&raquo;</a>
     </nav>
 
 
@@ -352,8 +432,8 @@ Binary File
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Script/">Script</a></p>
-                            <p class="item-title"><a href="/2019/12/26/script/CTF-Dockerfile/" class="title">CTF Dockerfile</a></p>
-                            <p class="item-date"><time datetime="2019-12-26T08:12:01.000Z" itemprop="datePublished">2019-12-26</time></p>
+                            <p class="item-title"><a href="/script/CTF-Dockerfile/" class="title">CTF Dockerfile</a></p>
+                            <p class="item-date"><time datetime="2019-12-26T08:12:01.000Z" itemprop="datePublished">2019년 12월 26일</time></p>
                         </div>
                     </li>
                 
@@ -361,8 +441,8 @@ Binary File
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Daily/">Daily</a></p>
-                            <p class="item-title"><a href="/2019/12/21/daily/2019-x-mas-ctf-result/" class="title">2019 X-MAS CTF 결과</a></p>
-                            <p class="item-date"><time datetime="2019-12-21T01:02:50.000Z" itemprop="datePublished">2019-12-21</time></p>
+                            <p class="item-title"><a href="/daily/2019-x-mas-ctf-result/" class="title">2019 X-MAS CTF 결과</a></p>
+                            <p class="item-date"><time datetime="2019-12-21T01:02:50.000Z" itemprop="datePublished">2019년 12월 21일</time></p>
                         </div>
                     </li>
                 

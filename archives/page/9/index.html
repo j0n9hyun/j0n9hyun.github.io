@@ -178,36 +178,21 @@
         
         <div class="article-meta">
             <div class="category">
-            <a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Foren/">Foren</a>
+            <a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/misc/">misc</a>
             </div>
-            <div class="date"><time datetime="2019-03-25T07:27:00.000Z" itemprop="datePublished">2019-03-25</time></div>
+            <div class="date"><time datetime="2019-01-30T06:00:28.000Z" itemprop="datePublished">2019년 01월 30일</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/03/25/writeups/foren/EZ/">Securinets Prequals CTF 2019 EZ</a>
+        <a href="/writeups/misc/base64/">NEWSECU CTF 2019 Base64</a>
         </h1>
     
 
         <p class="article-excerpt">
-             EZ
-File
-
-[Problem] 
-
-[Steganography Decoding] 
-
-[Hidden.txt] 
-
-[Googling] 
-
-[SHA-1 Encoding] 
-
-flag is Securinets{b47f0d2a8866a75696f94a515d0cdf54c7ea3174}
-
-
-  img.border-shadow{
-      border:1px sol
+             Base64
+디코딩을 3번 하면 풀리는 문제다.
+12345671 from pwn import *2 import base643 r = remote('35.237.96.115', 1357)4 for i in range(3):5     result = base64.decodestring(r.recvline())6     r.sendlineafter(": ", 
         </p>
     </div>
 </article>
@@ -224,30 +209,27 @@ flag is Securinets{b47f0d2a8866a75696f94a515d0cdf54c7ea3174}
             <div class="category">
             <a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/misc/">misc</a>
             </div>
-            <div class="date"><time datetime="2019-03-25T06:41:00.000Z" itemprop="datePublished">2019-03-25</time></div>
+            <div class="date"><time datetime="2019-01-30T05:47:28.000Z" itemprop="datePublished">2019년 01월 30일</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/03/25/writeups/misc/securinets_hidden/">Securinets Prequals CTF 2019 HIDDEN</a>
+        <a href="/writeups/misc/solidity/">NEWSECU CTF 2019 Solidity</a>
         </h1>
     
 
         <p class="article-excerpt">
-             HIDDEN
+             Solidity
+문제에 Ropsten 주소가 주어진다.
+0x74b841a9d926db89b2cfeef454a75d178feda06f
 
-[Problem] 
-
-[Web Page] 
-
-[Get FLAG] 
-
-img.border-shadow {
-	border:1px solid #888888;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
+이 주소를 기반으로 거래내역을 살펴보면 위와 같이 나타난다.
 
 
+거래내역을 하나하나 살펴보면 플래그가 입력되어 있는 것을 볼 수 있다. 
+
+  img.border-shadow{
+        border:1px solid 
         </p>
     </div>
 </article>
@@ -256,6 +238,16 @@ img.border-shadow {
     
 
     
+    
+        
+            </div></section>
+        
+        
+        <section class="archives-wrap">
+            <div class="archive-year-wrap">
+                <a href="/archives/1999" class="archive-year"><i class="icon fa fa-calendar-o"></i>1999</a>
+            </div>
+            <div class="archives">
     
     
     
@@ -266,84 +258,31 @@ img.border-shadow {
         
         <div class="article-meta">
             <div class="category">
-            <a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Foren/">Foren</a>
+            <a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Rev/">Rev</a>
             </div>
-            <div class="date"><time datetime="2019-03-25T06:25:00.000Z" itemprop="datePublished">2019-03-25</time></div>
+            <div class="date"><time datetime="1999-04-05T19:44:44.000Z" itemprop="datePublished">1999년 04월 06일</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/03/25/writeups/foren/securinet_easy_trade/">Securinets Prequals CTF 2019 Easy Trade</a>
+        <a href="/writeups/rev/nbsp/"> </a>
         </h1>
     
 
         <p class="article-excerpt">
-             Easy Trade
-Pcap File
-
-[Problem] 
-
-[Pcap File 1-1] 
-
-[Pacp File 1-2] 
-
-[4444 Port Packet] 
-
-[Hxd] 
-
-[flag.zip] 
-
-[Zip Password] 
-
-[Base64 Decoding] 
-
-  img.border-shadow{
-      border:1px solid #88888
+            
         </p>
     </div>
 </article>
     
 
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Pwn/">Pwn</a>
-            </div>
-            <div class="date"><time datetime="2019-03-25T05:22:00.000Z" itemprop="datePublished">2019-03-25</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/03/25/writeups/pwn/securinet_baby1/">Securinets Prequals CTF 2019 Baby One</a>
-        </h1>
-    
 
-        <p class="article-excerpt">
-             Baby One
-Binary File
-
-[Problem] 
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051r = process('./baby1')#r = remote('51.254.114.246', 1111)e = ELF('./baby1
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-
-    </div></section>
+    </div></div></section>
 
 
     <nav id="page-nav">
-        <span class="pages">페이지 9 of 13</span>
-        <a class="extend prev" rel="prev" href="/archives/page/8/">&laquo;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/7/">7</a><a class="page-number" href="/archives/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/archives/page/10/">10</a><a class="page-number" href="/archives/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/13/">13</a><a class="extend next" rel="next" href="/archives/page/10/">&raquo;</a>
+        <span class="pages">페이지 9 of 9</span>
+        <a class="extend prev" rel="prev" href="/archives/page/8/">&laquo;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/7/">7</a><a class="page-number" href="/archives/page/8/">8</a><span class="page-number current">9</span>
     </nav>
 
 
@@ -390,8 +329,8 @@ Binary File
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Script/">Script</a></p>
-                            <p class="item-title"><a href="/2019/12/26/script/CTF-Dockerfile/" class="title">CTF Dockerfile</a></p>
-                            <p class="item-date"><time datetime="2019-12-26T08:12:01.000Z" itemprop="datePublished">2019-12-26</time></p>
+                            <p class="item-title"><a href="/script/CTF-Dockerfile/" class="title">CTF Dockerfile</a></p>
+                            <p class="item-date"><time datetime="2019-12-26T08:12:01.000Z" itemprop="datePublished">2019년 12월 26일</time></p>
                         </div>
                     </li>
                 
@@ -399,8 +338,8 @@ Binary File
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Daily/">Daily</a></p>
-                            <p class="item-title"><a href="/2019/12/21/daily/2019-x-mas-ctf-result/" class="title">2019 X-MAS CTF 결과</a></p>
-                            <p class="item-date"><time datetime="2019-12-21T01:02:50.000Z" itemprop="datePublished">2019-12-21</time></p>
+                            <p class="item-title"><a href="/daily/2019-x-mas-ctf-result/" class="title">2019 X-MAS CTF 결과</a></p>
+                            <p class="item-date"><time datetime="2019-12-21T01:02:50.000Z" itemprop="datePublished">2019년 12월 21일</time></p>
                         </div>
                     </li>
                 

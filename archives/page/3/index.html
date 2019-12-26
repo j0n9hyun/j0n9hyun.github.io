@@ -178,21 +178,27 @@
         
         <div class="article-meta">
             <div class="category">
-            <a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Crypto/">Crypto</a>
+            <a class="article-category-link" href="/categories/Theory/">Theory</a>
             </div>
-            <div class="date"><time datetime="2019-07-05T15:14:23.000Z" itemprop="datePublished">2019-07-06</time></div>
+            <div class="date"><time datetime="2019-06-26T14:42:03.000Z" itemprop="datePublished">2019년 06월 26일</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/07/06/writeups/crypto/Low-Exponent-Attack/">Low Exponent Attack</a>
+        <a href="/theory/How2Heap-Tcache-Poisoning/">[How2Heap] Tcache_Poisoning</a>
         </h1>
     
 
         <p class="article-excerpt">
-             낮은 지수 공격
+             Tcache_Poisoning
 
 
+이것은 malloc을 속여서 pointer를 임의의 위치(이 경우, 스택)로
+반환하는 간단한 tcache poisoning 공격이다.
+이 공격은 fastbin corruption 공격과 매우 비슷하다.
+malloc()을 반환할 주소는 0x7fffb6be4b80이다.
+buffer를 한 개 할당한다.
+malloc(128): 
         </p>
     </div>
 </article>
@@ -207,20 +213,29 @@
         
         <div class="article-meta">
             <div class="category">
-            <a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Crypto/">Crypto</a>
+            <a class="article-category-link" href="/categories/Theory/">Theory</a>
             </div>
-            <div class="date"><time datetime="2019-07-03T12:01:20.000Z" itemprop="datePublished">2019-07-03</time></div>
+            <div class="date"><time datetime="2019-06-26T14:17:28.000Z" itemprop="datePublished">2019년 06월 26일</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/07/03/writeups/crypto/Korean-substituation-cipher/">한글 단일 치환 암호</a>
+        <a href="/theory/How2Heap-Tcache-dup/">[How2Heap] Tcache_dup</a>
         </h1>
     
 
         <p class="article-excerpt">
-             한글 단일 치환 암호
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374# coding: utf-8def divide_char(char):  num = ord
+             Tcache_dup
+
+
+simple double-free attack with tcache.
+buffer를 할당한다.
+malloc(8): 0x55fef5f8d260
+free를 두 번 한다.
+-------free(a)-------
+-------free(a)-------
+ free list : [ 0x55fef5f8d260, 0x55fef5f8d260 ]
+다
         </p>
     </div>
 </article>
@@ -239,21 +254,26 @@
         
         <div class="article-meta">
             <div class="category">
-            <a class="article-category-link" href="/categories/Daily/">Daily</a>
+            <a class="article-category-link" href="/categories/Theory/">Theory</a>
             </div>
-            <div class="date"><time datetime="2019-06-26T16:58:15.000Z" itemprop="datePublished">2019-06-27</time></div>
+            <div class="date"><time datetime="2019-06-26T13:51:17.000Z" itemprop="datePublished">2019년 06월 26일</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/06/27/daily/Windows-Terminal-시작-터미널-변경-방법/">Windows Terminal 시작 터미널 변경</a>
+        <a href="/theory/How2Heap-Overlapping-Chunks-2/">[How2Heap] Overlapping_Chunks_2</a>
         </h1>
     
 
         <p class="article-excerpt">
-             Windows Terminal 시작 터미널 변경 방법
-드디어 윈도우 터미널 프리뷰 버전이 스토어에 릴리즈 됐다.
-줄곧 WSL관련 기능들을 써왔던 나로썬 매우 반가운 소식이었다. 호다닥 설치하고 잠깐 사용해봤는데 나름대로 만족한다. 그리고 글 쓰다가 알게된 사실인데 마우스 커서를 오른쪽에 대고 드래그해야 터미널을 이동시킬 수 있다. 이 부분은 살짝 불편하긴
+             Overlapping_Chunks_2
+
+simple chunks overlapping problem
+이것은 인접하지 않은 free chunk를 consolidate하는 공격으로도 참조된다.
+heap에 chunk를 5개 할당한다.
+0x603010 ~ 0x6033f8 p1 chunk
+0x603400 ~ 0x6037e8 p2 chunk
+0x6037f0 ~ 0x
         </p>
     </div>
 </article>
@@ -268,25 +288,97 @@
         
         <div class="article-meta">
             <div class="category">
-            <a class="article-category-link" href="/categories/Theory/">Theory</a>
+            <a class="article-category-link" href="/categories/Daily/">Daily</a>
             </div>
-            <div class="date"><time datetime="2019-06-26T15:45:55.000Z" itemprop="datePublished">2019-06-27</time></div>
+            <div class="date"><time datetime="2019-06-24T10:04:12.000Z" itemprop="datePublished">2019년 06월 24일</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/06/27/theory/How2Heap-Tcache-House-of-spirit/">[How2Heap] Tcache_House_of_spirit</a>
+        <a href="/daily/IDA-Pro-7-2-한글-스트링-지원/">IDA Pro 7.2 한글 스트링 지원</a>
         </h1>
     
 
         <p class="article-excerpt">
-             Tcache_House_of_spirit
+             IDA Pro 7.2 한글 스트링 지원
+7.0 버전까지만 해도 clt 파일을 따로 추가해줘야 했는데 7.2 부턴 그냥 한줄 추가만 해주면 된다. 제작자가 파일을 보냈다고 했는데 회사에서 잘 반영해준 것 같다. 상단의 주석에도 IDA 사용자가 제공해줬다고 적혀있다.
 
+ [Korean.clt]  
 
-the house of spirit attack on tcache.
-기존의 house of spirit과 비슷한 방식으로 작동하지만
-free될 fake chunk 뒤에 fake chunk를 만들 필요가 없다.
-malloc.c의 _int_free 함수에서 tcache_put이 다음 chunk의 prev_inuse
+ [IDA Pro 7.2]  
+
+  img.border-sh
+        </p>
+    </div>
+</article>
+    
+        </div>
+    
+
+    
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/Theory/">Theory</a>
+            </div>
+            <div class="date"><time datetime="2019-06-20T13:59:02.000Z" itemprop="datePublished">2019년 06월 20일</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/theory/How2Heap-Overlapping-Chunks/">[How2Heap] Overlapping_Chunks</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+             Overlapping_Chunks.c
+
+이 기법은 glibc에서 tcache옵션이 disabled된 상태에만 작동한다.
+simple chunks overlapping
+heap에 chunk 3개를 할당해보자.
+3개의 chunk가 여기에 할당됐다:
+p1=0x603010
+p2=0x603110
+p3=0x603210
+이제 p2 chunk를 free시켜보자
+p2 c
+        </p>
+    </div>
+</article>
+    
+
+    
+    
+    
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/Daily/">Daily</a>
+            </div>
+            <div class="date"><time datetime="2019-06-13T04:37:48.000Z" itemprop="datePublished">2019년 06월 13일</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/daily/ida-7.0-korean-string-apply/">IDA Pro 한글 스트링 적용 방법</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+             IDA Pro Korean String 적용 방법
+패치 파일
+바이너리 파일에  영어가 아닌 다른 언어가 입력돼있으면 IDA에서는 puts(byte_8048840) 처럼 한글 그대로 나오지 않는 것을 볼 수 있다. 물론 대부분은 영어로 작성돼있고 이렇게 돼있는다 한들, 보는 데 크게 지장을 주진 않지만 그래도 한번 찾아본 결과, 방법을 알아볼 수 있었다.
+
         </p>
     </div>
 </article>
@@ -299,8 +391,8 @@ malloc.c의 _int_free 함수에서 tcache_put이 다음 chunk의 prev_inuse
 
 
     <nav id="page-nav">
-        <span class="pages">페이지 3 of 13</span>
-        <a class="extend prev" rel="prev" href="/archives/page/2/">&laquo;</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/archives/page/4/">4</a><a class="page-number" href="/archives/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/13/">13</a><a class="extend next" rel="next" href="/archives/page/4/">&raquo;</a>
+        <span class="pages">페이지 3 of 9</span>
+        <a class="extend prev" rel="prev" href="/archives/page/2/">&laquo;</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/archives/page/4/">4</a><a class="page-number" href="/archives/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/9/">9</a><a class="extend next" rel="next" href="/archives/page/4/">&raquo;</a>
     </nav>
 
 
@@ -347,8 +439,8 @@ malloc.c의 _int_free 함수에서 tcache_put이 다음 chunk의 prev_inuse
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Script/">Script</a></p>
-                            <p class="item-title"><a href="/2019/12/26/script/CTF-Dockerfile/" class="title">CTF Dockerfile</a></p>
-                            <p class="item-date"><time datetime="2019-12-26T08:12:01.000Z" itemprop="datePublished">2019-12-26</time></p>
+                            <p class="item-title"><a href="/script/CTF-Dockerfile/" class="title">CTF Dockerfile</a></p>
+                            <p class="item-date"><time datetime="2019-12-26T08:12:01.000Z" itemprop="datePublished">2019년 12월 26일</time></p>
                         </div>
                     </li>
                 
@@ -356,8 +448,8 @@ malloc.c의 _int_free 함수에서 tcache_put이 다음 chunk의 prev_inuse
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Daily/">Daily</a></p>
-                            <p class="item-title"><a href="/2019/12/21/daily/2019-x-mas-ctf-result/" class="title">2019 X-MAS CTF 결과</a></p>
-                            <p class="item-date"><time datetime="2019-12-21T01:02:50.000Z" itemprop="datePublished">2019-12-21</time></p>
+                            <p class="item-title"><a href="/daily/2019-x-mas-ctf-result/" class="title">2019 X-MAS CTF 결과</a></p>
+                            <p class="item-date"><time datetime="2019-12-21T01:02:50.000Z" itemprop="datePublished">2019년 12월 21일</time></p>
                         </div>
                     </li>
                 

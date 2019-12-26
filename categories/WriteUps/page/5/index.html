@@ -178,29 +178,21 @@
         
         <div class="article-meta">
             <div class="category">
-            <a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Pwn/">Pwn</a>
+            <a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/misc/">misc</a>
             </div>
-            <div class="date"><time datetime="2019-02-19T13:30:00.000Z" itemprop="datePublished">2019-02-19</time></div>
+            <div class="date"><time datetime="2019-01-30T06:00:28.000Z" itemprop="datePublished">2019년 01월 30일</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/02/19/writeups/pwn/betting/">CODEGATE 2018 betting</a>
+        <a href="/writeups/misc/base64/">NEWSECU CTF 2019 Base64</a>
         </h1>
     
 
         <p class="article-excerpt">
-             betting
-Binary File
-
-[사진 1-1]
-Canary가 걸려있으므로 Canary Leak을 해줘야 한다 우선 프로그램을 실행해보자.  
-
-
-[사진 1-2]
-
-[사진 1-3]
-함수를 하나하나 훑어보면 shell 실행 함수가 떡하니 나와있다. 앞에 padding을 하고 마지막에 오는 ret 주소 부분에 이 helper 함수를 넣어주면 될 것이다.
+             Base64
+디코딩을 3번 하면 풀리는 문제다.
+12345671 from pwn import *2 import base643 r = remote('35.237.96.115', 1357)4 for i in range(3):5     result = base64.decodestring(r.recvline())6     r.sendlineafter(": ", 
         </p>
     </div>
 </article>
@@ -215,33 +207,29 @@ Canary가 걸려있으므로 Canary Leak을 해줘야 한다 우선 프로그램
         
         <div class="article-meta">
             <div class="category">
-            <a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Pwn/">Pwn</a>
+            <a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/misc/">misc</a>
             </div>
-            <div class="date"><time datetime="2019-02-18T10:07:00.000Z" itemprop="datePublished">2019-02-18</time></div>
+            <div class="date"><time datetime="2019-01-30T05:47:28.000Z" itemprop="datePublished">2019년 01월 30일</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/02/18/writeups/pwn/r0pbaby/">DEFCON 2015 r0pbaby</a>
+        <a href="/writeups/misc/solidity/">NEWSECU CTF 2019 Solidity</a>
         </h1>
     
 
         <p class="article-excerpt">
-             r0pbaby
-Binary File
+             Solidity
+문제에 Ropsten 주소가 주어진다.
+0x74b841a9d926db89b2cfeef454a75d178feda06f
 
-[바이너리 보호기법 확인]
-
-
-[실행 화면 메뉴]
-
-1번 진입시, libc의 주소를 알려준다. 하지만 확인해보니 실제 libc 주소는 아니었다.
+이 주소를 기반으로 거래내역을 살펴보면 위와 같이 나타난다.
 
 
-2번 진입시, symbol 입력란이 추가로 뜨는데 여기서 system 함수의 주소를 알려준다.
+거래내역을 하나하나 살펴보면 플래그가 입력되어 있는 것을 볼 수 있다. 
 
-
-3번 진입시, 최대 1024 바이트까지 버퍼를 보낼 수 있다. 우리가 최
+  img.border-shadow{
+        border:1px solid 
         </p>
     </div>
 </article>
@@ -250,6 +238,16 @@ Binary File
     
 
     
+    
+        
+            </div></section>
+        
+        
+        <section class="archives-wrap">
+            <div class="archive-year-wrap">
+                <a href="/archives/1999" class="archive-year"><i class="icon fa fa-calendar-o"></i>1999</a>
+            </div>
+            <div class="archives">
     
     
     
@@ -260,74 +258,31 @@ Binary File
         
         <div class="article-meta">
             <div class="category">
-            <a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Pwn/">Pwn</a>
+            <a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Rev/">Rev</a>
             </div>
-            <div class="date"><time datetime="2019-02-15T05:40:00.000Z" itemprop="datePublished">2019-02-15</time></div>
+            <div class="date"><time datetime="1999-04-05T19:44:44.000Z" itemprop="datePublished">1999년 04월 06일</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/02/15/writeups/pwn/pwnstart/">TRUST CTF 2019 start</a>
+        <a href="/writeups/rev/nbsp/"> </a>
         </h1>
     
 
         <p class="article-excerpt">
-             start
-Binary File
-123456789sub_4005E6 proc near; __unwind &#123;push    rbpmov     rbp, rsppop     raxpop     rdxpop     rdipop     rsiretn
-[sub_4005E6]
-4개의 sub 함수 중 4005E6에는 pop gadget이 있다. 
-1234567
+            
         </p>
     </div>
 </article>
     
 
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/WriteUps/">WriteUps</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WriteUps/Pwn/">Pwn</a>
-            </div>
-            <div class="date"><time datetime="2019-02-05T03:42:00.000Z" itemprop="datePublished">2019-02-05</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/02/05/writeups/pwn/baskinrobbins31/">CODEGATE 2018 BaskinRobbins31</a>
-        </h1>
-    
 
-        <p class="article-excerpt">
-             BaskinRobbins31
- Binary File 
-
-[사진 1-1]
-우리가 아는 그 베라 게임이다. 하지만 일반적인 방법으로는 이길 수 없다.
-
-[사진 1-2]
-필승법으로 이겨보려 하지만 치트를 쓴다.
-
-1234567891011121314151617181920212223242526272829303132333435363738from pwn import 
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-
-    </div></section>
+    </div></div></section>
 
 
     <nav id="page-nav">
-        <span class="pages">페이지 5 of 7</span>
-        <a class="extend prev" rel="prev" href="/categories/WriteUps/page/4/">&laquo;</a><a class="page-number" href="/categories/WriteUps/">1</a><span class="space">&hellip;</span><a class="page-number" href="/categories/WriteUps/page/3/">3</a><a class="page-number" href="/categories/WriteUps/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/categories/WriteUps/page/6/">6</a><a class="page-number" href="/categories/WriteUps/page/7/">7</a><a class="extend next" rel="next" href="/categories/WriteUps/page/6/">&raquo;</a>
+        <span class="pages">페이지 5 of 5</span>
+        <a class="extend prev" rel="prev" href="/categories/WriteUps/page/4/">&laquo;</a><a class="page-number" href="/categories/WriteUps/">1</a><span class="space">&hellip;</span><a class="page-number" href="/categories/WriteUps/page/3/">3</a><a class="page-number" href="/categories/WriteUps/page/4/">4</a><span class="page-number current">5</span>
     </nav>
 
 
@@ -375,8 +330,8 @@ Binary File
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Script/">Script</a></p>
-                            <p class="item-title"><a href="/2019/12/26/script/CTF-Dockerfile/" class="title">CTF Dockerfile</a></p>
-                            <p class="item-date"><time datetime="2019-12-26T08:12:01.000Z" itemprop="datePublished">2019-12-26</time></p>
+                            <p class="item-title"><a href="/script/CTF-Dockerfile/" class="title">CTF Dockerfile</a></p>
+                            <p class="item-date"><time datetime="2019-12-26T08:12:01.000Z" itemprop="datePublished">2019년 12월 26일</time></p>
                         </div>
                     </li>
                 
@@ -384,8 +339,8 @@ Binary File
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Daily/">Daily</a></p>
-                            <p class="item-title"><a href="/2019/12/21/daily/2019-x-mas-ctf-result/" class="title">2019 X-MAS CTF 결과</a></p>
-                            <p class="item-date"><time datetime="2019-12-21T01:02:50.000Z" itemprop="datePublished">2019-12-21</time></p>
+                            <p class="item-title"><a href="/daily/2019-x-mas-ctf-result/" class="title">2019 X-MAS CTF 결과</a></p>
+                            <p class="item-date"><time datetime="2019-12-21T01:02:50.000Z" itemprop="datePublished">2019년 12월 21일</time></p>
                         </div>
                     </li>
                 
