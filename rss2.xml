@@ -39,12 +39,13 @@
       
         
         
-          &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css&quot;&gt;&lt;p&gt;&lt;img src=&quot;https://user-images.githubus
+          &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css&quot;&gt;&lt;center&gt;
+&lt;p&gt;&lt;img src=&quot;https://user-images
         
       
       </description>
       
-      <content:encoded><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><img src="https://user-images.githubusercontent.com/16969364/71300578-6c4bbe00-23d9-11ea-8816-fcb01656db8c.PNG" alt="[2019 X-MAS CTF]"><br>사진 클릭 시 원본 크기로 볼 수 있다.</p>]]></content:encoded>
+      <content:encoded><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><center><p><img src="https://user-images.githubusercontent.com/16969364/71300578-6c4bbe00-23d9-11ea-8816-fcb01656db8c.PNG" alt="[2019 X-MAS CTF]"><br>사진 클릭 시 원본 크기로 볼 수 있다.</p></center>]]></content:encoded>
       
       <comments>http://j0n9hyun.github.io/2019/12/21/daily/2019-x-mas-ctf-result/#disqus_thread</comments>
     </item>
