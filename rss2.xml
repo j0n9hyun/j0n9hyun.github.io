@@ -8,7 +8,7 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>j0n9yhun&#39;s repository</description>
-    <pubDate>Thu, 26 Dec 2019 10:33:58 GMT</pubDate>
+    <pubDate>Thu, 26 Dec 2019 13:23:43 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -25,7 +25,7 @@
       
       </description>
       
-      <content:encoded><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="ctf-dockerfile"><a class="markdownIt-Anchor" href="#ctf-dockerfile"></a> CTF Dockerfile</h3><p>CTF 전용 도커 파일<br>주요 설치 파일을 간단하게 나열하면 다음과 같다.</p><style> </style><hr><b>pwntools, multilib, gef, pwngdb, ROPgadget, xrop, python, one_gadget seccomp-tools, zsh, wget, git, lrzsz</b><hr><p>필자는 기본 테마를 별로 좋아하지 않기 때문에, vi 테마 및 플러그인도 도커파일에 들어가있다.</p><center> <img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/71468133-5b031700-2808-11ea-817f-3ca3e09e5b1f.PNG"><center><small>[vi theme]</small></center> <br><img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/71468953-0319df80-280b-11ea-98c3-d31327a2c488.PNG"><center><small>[vimrc]</small></center> <br><p><img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/71466832-1ecdb780-2804-11ea-9653-52ddd5c487ee.PNG"> <br><br>마지막으로 plugin 설치 과정이 끝나면 생성된다.<br></p><p>설치 소요 시간 : <b>약 7분</b> <br></p><h3 id="b-dockerfile-center"><a class="markdownIt-Anchor" href="#b-dockerfile-center"></a> <b> <a href="https://github.com/j0n9hyun/j0n9hyun.github.io/files/4001862/Dockerfile.zip" target="_blank" rel="noopener">[Dockerfile]</a> </b></h3></center><style>  img.border-shadow{      border:1px solid #888888;      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  }</style>]]></content:encoded>
+      <content:encoded><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="ctf-dockerfile"><a class="markdownIt-Anchor" href="#ctf-dockerfile"></a> CTF Dockerfile</h3><p>CTF 전용 도커 파일<br>주요 설치 파일을 간단하게 나열하면 다음과 같다.</p><style> </style><hr><b>pwntools, multilib, gef, pwngdb, ROPgadget, xrop, python, one_gadget seccomp-tools, zsh, wget, git, lrzsz</b><hr><p>필자는 기본 테마를 별로 좋아하지 않기 때문에, vi 테마 및 플러그인도 도커파일에 들어가있다.</p><center> <img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/71468133-5b031700-2808-11ea-817f-3ca3e09e5b1f.PNG"><center><small>[vi theme]</small></center> <br><img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/71468953-0319df80-280b-11ea-98c3-d31327a2c488.PNG"><center><small>[vimrc]</small></center> <br><p><img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/71466832-1ecdb780-2804-11ea-9653-52ddd5c487ee.PNG"> <br><br>마지막으로 plugin 설치 과정이 끝나면 생성된다.<br></p><p>설치 소요 시간 : <b>약 7분</b> <br></p><h3 id="b-dockerfile-center"><a class="markdownIt-Anchor" href="#b-dockerfile-center"></a> <b> <a href="https://github.com/j0n9hyun/j0n9hyun.github.io/files/4002601/Dockerfile.zip" target="_blank" rel="noopener">[Dockerfile]</a> </b></h3></center><style>  img.border-shadow{      border:1px solid #888888;      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  }</style>]]></content:encoded>
       
       <comments>http://j0n9hyun.github.io/2019/12/26/script/CTF-Dockerfile/#disqus_thread</comments>
     </item>
