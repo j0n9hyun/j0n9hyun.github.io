@@ -8,6 +8,14 @@
     </url>
 
     <url>
+        <loc>http://j0n9hyun.github.io/2019/12/26/script/CTF-Dockerfile/</loc>
+        <lastmod>2019-12-26T09:17:20.506Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://j0n9hyun.github.io/2019/12/21/daily/2019-x-mas-ctf-result/</loc>
         <lastmod>2019-12-21T01:19:49.328Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -16,7 +24,7 @@
     </url>
 
     <url>
-        <loc>http://j0n9hyun.github.io/2019/12/07/compile_options/</loc>
+        <loc>http://j0n9hyun.github.io/2019/12/07/daily/compile_options/</loc>
         <lastmod>2019-12-07T14:41:35.145Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -24,15 +32,7 @@
     </url>
 
     <url>
-        <loc>http://j0n9hyun.github.io/1999/04/06/script/</loc>
-        <lastmod>2019-12-07T11:13:03.175Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://j0n9hyun.github.io/1999/04/06/nbsp/</loc>
+        <loc>http://j0n9hyun.github.io/1999/04/06/writeups/rev/nbsp/</loc>
         <lastmod>2019-12-05T15:33:21.837Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
