@@ -3,22 +3,22 @@
 
 
     <sitemap>
-        <loc>http://j0n9hyun.github.io/post-sitemap.xml</loc>
+        <loc>https://j0n9hyun.xyz/post-sitemap.xml</loc>
         <lastmod>2019-12-26T17:00:58.007Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>http://j0n9hyun.github.io/page-sitemap.xml</loc>
+        <loc>https://j0n9hyun.xyz/page-sitemap.xml</loc>
         <lastmod>2019-12-27T04:22:51.246Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>http://j0n9hyun.github.io/category-sitemap.xml</loc>
+        <loc>https://j0n9hyun.xyz/category-sitemap.xml</loc>
         <lastmod>2019-12-26T17:00:58.007Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>http://j0n9hyun.github.io/tag-sitemap.xml</loc>
+        <loc>https://j0n9hyun.xyz/tag-sitemap.xml</loc>
         <lastmod>2019-12-26T09:17:22.830Z</lastmod>
     </sitemap>
 
