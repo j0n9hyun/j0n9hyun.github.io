@@ -8,6 +8,13 @@
     </url>
 
     <url>
+        <loc>https://j0n9hyun.xyz/categories/Theory/</loc>
+        <lastmod>2019-12-27T11:42:35.246Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://j0n9hyun.xyz/categories/Daily/</loc>
         <lastmod>2019-12-26T17:00:58.007Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -45,13 +52,6 @@
     <url>
         <loc>https://j0n9hyun.xyz/categories/WriteUps/Pwn/</loc>
         <lastmod>2019-12-05T14:12:36.736Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://j0n9hyun.xyz/categories/Theory/</loc>
-        <lastmod>2019-11-30T17:54:04.626Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

@@ -20,19 +20,19 @@
     
         <meta name="keywords" content="Theory">
     
-    <meta name="description" content="House of Force house of force 기법은 top chunk를 overwrite하고 malloc의 인접한 값을 반환시키는 방법이다 top chunk는 메모리의 마지막에 위치하는 특별한 chunk이다.그리고 malloc이 os로부터 공간을 더 필요로 할때 resize할 수 있는 chunk이다. 끝에서, 우리는 0x602050에 있는 변">
+    <meta name="description" content="House of Force house of force 기법은 top chunk를 overwrite하고 malloc의 인접한 값을 반환시키는 방법이다 top chunk는 메모리의 마지막에 위치하는 특별한 chunk이다.그리고 malloc이 os로부터 공간을 더 필요로 할때 resize할 수 있는 chunk이다. 끝에서, 우리는 0x602050에 있는">
 <meta name="keywords" content="Theory">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[How2Heap] House_of_Force">
 <meta property="og:url" content="https://j0n9hyun.xyz/theory/How2Heap-House-of-Force/index.html">
 <meta property="og:site_name" content="j0n9hyun">
-<meta property="og:description" content="House of Force house of force 기법은 top chunk를 overwrite하고 malloc의 인접한 값을 반환시키는 방법이다 top chunk는 메모리의 마지막에 위치하는 특별한 chunk이다.그리고 malloc이 os로부터 공간을 더 필요로 할때 resize할 수 있는 chunk이다. 끝에서, 우리는 0x602050에 있는 변">
+<meta property="og:description" content="House of Force house of force 기법은 top chunk를 overwrite하고 malloc의 인접한 값을 반환시키는 방법이다 top chunk는 메모리의 마지막에 위치하는 특별한 chunk이다.그리고 malloc이 os로부터 공간을 더 필요로 할때 resize할 수 있는 chunk이다. 끝에서, 우리는 0x602050에 있는">
 <meta property="og:locale" content="ko">
 <meta property="og:image" content="https://user-images.githubusercontent.com/16969364/64967511-9c1b8f00-d8db-11e9-8052-9858e502a1ca.png">
-<meta property="og:updated_time" content="2019-09-16T15:09:13.369Z">
+<meta property="og:updated_time" content="2019-12-27T11:42:35.246Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[How2Heap] House_of_Force">
-<meta name="twitter:description" content="House of Force house of force 기법은 top chunk를 overwrite하고 malloc의 인접한 값을 반환시키는 방법이다 top chunk는 메모리의 마지막에 위치하는 특별한 chunk이다.그리고 malloc이 os로부터 공간을 더 필요로 할때 resize할 수 있는 chunk이다. 끝에서, 우리는 0x602050에 있는 변">
+<meta name="twitter:description" content="House of Force house of force 기법은 top chunk를 overwrite하고 malloc의 인접한 값을 반환시키는 방법이다 top chunk는 메모리의 마지막에 위치하는 특별한 chunk이다.그리고 malloc이 os로부터 공간을 더 필요로 할때 resize할 수 있는 chunk이다. 끝에서, 우리는 0x602050에 있는">
 <meta name="twitter:image" content="https://user-images.githubusercontent.com/16969364/64967511-9c1b8f00-d8db-11e9-8052-9858e502a1ca.png">
     
 	<link rel="canonical" href="https://j0n9hyun.xyz/theory/how2heap-house-of-force/">
@@ -197,7 +197,8 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><img src="https://user-images.githubusercontent.com/16969364/64967511-9c1b8f00-d8db-11e9-8052-9858e502a1ca.png" alt="[House_of_Force.c]"><br>
+            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><center>
+<p><img src="https://user-images.githubusercontent.com/16969364/64967511-9c1b8f00-d8db-11e9-8052-9858e502a1ca.png" alt="[House_of_Force.c]"><br>
 <img src="https://user-images.githubusercontent.com/16969364/64968851-d0904a80-d8dd-11e9-9150-781c71f158af.PNG" alt><br>
 <img src="https://user-images.githubusercontent.com/16969364/64968852-d0904a80-d8dd-11e9-8da9-e55075ffc3cc.PNG" alt></p>
 <p>House of Force</p>
@@ -225,6 +226,7 @@ malloc(100) =&gt; 0x602050!<br>
 <code>... 이전 문자열: j0n9hyun</code><br>
 … &quot;YEAH!!!&quot;를 strcpy해서 overwrite해보자…<br>
 <code>... 새 문자열: YEAH!!!</code></p>
+</center>
 
         </div>
         <footer class="article-footer">
@@ -308,15 +310,16 @@ malloc(100) =&gt; 0x602050!<br>
         "genre": "Theory",
         "datePublished": "2019-09-16",
         "dateCreated": "2019-09-16",
-        "dateModified": "2019-09-17",
+        "dateModified": "2019-12-27",
         "url": "https://j0n9hyun.xyz/theory/How2Heap-House-of-Force/",
         "description": "
+
 
 
 House of Force
 house of force 기법은 top chunk를 overwrite하고 malloc의 인접한 값을 반환시키는 방법이다
 top chunk는 메모리의 마지막에 위치하는 특별한 chunk이다.그리고 malloc이 os로부터 공간을 더 필요로 할때 resize할 수 있는 chunk이다.
-끝에서, 우리는 0x602050에 있는 변"
+끝에서, 우리는 0x602050에 있는 "
         "wordCount": 181
     }
 </script>

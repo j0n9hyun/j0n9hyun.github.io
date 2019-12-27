@@ -3,6 +3,13 @@
 
 
     <url>
+        <loc>https://j0n9hyun.xyz/tags/Theory/</loc>
+        <lastmod>2019-12-27T11:42:35.246Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://j0n9hyun.xyz/tags/CTF/</loc>
         <lastmod>2019-12-26T09:17:22.830Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -12,13 +19,6 @@
     <url>
         <loc>https://j0n9hyun.xyz/tags/Tips/</loc>
         <lastmod>2019-12-07T14:41:35.145Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://j0n9hyun.xyz/tags/Theory/</loc>
-        <lastmod>2019-11-30T17:54:04.626Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
