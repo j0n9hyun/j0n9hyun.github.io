@@ -14,28 +14,23 @@
     
 
     
-    <title>[How2Heap] Overlapping_Chunks | j0n9hyun</title>
+    <title>아카이브: 2020/1 | j0n9hyun</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="Theory">
-    
-    <meta name="description" content="Overlapping_Chunks.c  이 기법은 glibc에서 tcache옵션이 disabled된 상태에만 작동한다. simple chunks overlapping heap에 chunk 3개를 할당해보자. 3개의 chunk가 여기에 할당됐다: p1=0x603010 p2=0x603110 p3=0x603210 이제 p2 chunk를 free시켜보자 p2 c">
-<meta name="keywords" content="Theory">
-<meta property="og:type" content="article">
-<meta property="og:title" content="[How2Heap] Overlapping_Chunks">
-<meta property="og:url" content="https://j0n9hyun.xyz/theory/How2Heap-Overlapping-Chunks/index.html">
+    <meta name="description" content="I am j0n9hyun">
+<meta name="keywords" content="j0n9hyun, HackCTF, CTF">
+<meta property="og:type" content="website">
+<meta property="og:title" content="j0n9hyun">
+<meta property="og:url" content="https://j0n9hyun.xyz/archives/2020/01/index.html">
 <meta property="og:site_name" content="j0n9hyun">
-<meta property="og:description" content="Overlapping_Chunks.c  이 기법은 glibc에서 tcache옵션이 disabled된 상태에만 작동한다. simple chunks overlapping heap에 chunk 3개를 할당해보자. 3개의 chunk가 여기에 할당됐다: p1=0x603010 p2=0x603110 p3=0x603210 이제 p2 chunk를 free시켜보자 p2 c">
+<meta property="og:description" content="I am j0n9hyun">
 <meta property="og:locale" content="ko">
-<meta property="og:image" content="https://user-images.githubusercontent.com/16969364/63588638-fa599880-c5e1-11e9-894e-98ba069523b6.png">
-<meta property="og:updated_time" content="2019-08-23T11:10:42.683Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[How2Heap] Overlapping_Chunks">
-<meta name="twitter:description" content="Overlapping_Chunks.c  이 기법은 glibc에서 tcache옵션이 disabled된 상태에만 작동한다. simple chunks overlapping heap에 chunk 3개를 할당해보자. 3개의 chunk가 여기에 할당됐다: p1=0x603010 p2=0x603110 p3=0x603210 이제 p2 chunk를 free시켜보자 p2 c">
-<meta name="twitter:image" content="https://user-images.githubusercontent.com/16969364/63588638-fa599880-c5e1-11e9-894e-98ba069523b6.png">
+<meta name="twitter:title" content="j0n9hyun">
+<meta name="twitter:description" content="I am j0n9hyun">
     
-	<link rel="canonical" href="https://j0n9hyun.xyz/theory/how2heap-overlapping-chunks/">
+	<link rel="canonical" href="https://j0n9hyun.xyz/archives/2020/01/">
 
     
 
@@ -157,188 +152,48 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/Theory/">Theory</a>
+    <i class="icon fa fa-archive"></i>아카이브: 2020/1
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-theory/How2Heap-Overlapping-Chunks" class="article article-single article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-            <header class="article-header">
-                
+                            
+
     
-        <h1 class="article-title" itemprop="name">
-        [How2Heap] Overlapping_Chunks
-        </h1>
     
-
-            </header>
         
         
-            <div class="article-meta">
-                
-    <div class="article-date">
-        <a href="/theory/How2Heap-Overlapping-Chunks/" class="article-date">
-            <time datetime="2019-06-20T13:59:02.000Z" itemprop="datePublished">2019년 06월 20일</time>
-        </a>
-    </div>
-
-		
-
-                
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Theory/">Theory</a>
-    </div>
-
-  			<span class="reading-time">⏱ 1 분</span>
+        <section class="archives-wrap">
+            <div class="archive-year-wrap">
+                <a href="/archives/2020" class="archive-year"><i class="icon fa fa-calendar-o"></i>2020</a>
             </div>
+            <div class="archives">
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
         
-        
-        <div class="article-entry" itemprop="articleBody">
-            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="overlapping_chunksc"><a class="markdownIt-Anchor" href="#overlapping_chunksc"></a> Overlapping_Chunks.c</h3>
-<p><img src="https://user-images.githubusercontent.com/16969364/63588638-fa599880-c5e1-11e9-894e-98ba069523b6.png" alt="overlapping_chunks.c"></p>
-<p>이 기법은 glibc에서 tcache옵션이 disabled된 상태에만 작동한다.</p>
-<p><code>simple chunks overlapping</code></p>
-<p>heap에 chunk 3개를 할당해보자.<br>
-3개의 chunk가 여기에 할당됐다:<br>
-<code>p1=0x603010</code><br>
-<code>p2=0x603110</code><br>
-<code>p3=0x603210</code></p>
-<p>이제 p2 chunk를 free시켜보자<br>
-p2 chuck는 이제 unsorted bin안에서 그 크기의 새로운 malloc()을 제공할 준비가 되어있다<br>
-이제 p2를 free시킨 chunk의 크키를 overwrite할 수 있는 overflow를 시연해보자.<br>
-toy 프로그램의 경우, 마지막 세 개의 bit값은 중요하지 않다.<br>
-하지만, heap의 안정성을 유지하는 것이 베스트다.<br>
-이 안정성을 유지하기 위해 우리는 최하위 bit를 1(prev_inuse)로 표시할 것이다.<br>
-p1이 free chunk로 오인하지 않고 확실히 하기 위해 우리는 p2 chunk의 크기를 385로 설정할 것이다. 그렇게 하는 것은 우리에게 376의 region size를 준다.</p>
-<p>이제 다른 chunk를 주입된 p2 chunk의 데이터 크기와 똑같은 크기에 할당해준다.<br>
-이 malloc은 우리가 크기를 바꾸었던, unsorted bin안에 있는, 전에 free되었던 chunk로부터 제공되어질 것이다.</p>
-<p>p4는 <code>0x603110</code>에 할당되었고 <code>0x603288</code>에서 끝난다.<br>
-p3는 <code>0x603210</code>에서 시작해 <code>0x603288</code>에서 끝난다<br>
-p4는 p3와 overlap되어야한다, 이 경우에 p4는 모든 p3를 포함한다.</p>
-<p>이제 p4 chunk안에 복사된 모든 것들은 p3 chunk에 있는 데이터를 overwrite할 수 있다<br>
-그리고 p3 chunk에 쓰여진 데이터는 p4 chunk 안에 저장되어있는 데이터를 overwrite할 수 있다.</p>
-<p>이제 예시를 돌려보자. 지금, 우리는 가지고 있다:<br>
-<code>p4 = x</code><br>
-<code>3 = 333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333</code></p>
-<p>If we memset(p4, ‘4’, 376), we have:<br>
-<code>p4 = 4444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444</code><br>
-<code>p3 = 444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444</code></p>
-<p>And if we then memset(p3, ‘3’, 80), we have:<br>
-<code>p4 = 4444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444333333333333333333333333333333333333333333333333333333333333333333333333333333334444444444444444444444444444444444444444</code><br>
-<code>p3 = 333333333333333333333333333333333333333333333333333333333333333333333333333333334444444444444444444444444444444444444444</code></p>
-
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/Develop/">Develop</a>
+            </div>
+            <div class="date"><time datetime="2019-12-31T15:00:00.000Z" itemprop="datePublished">2020년 01월 01일</time></div>
         </div>
-        <footer class="article-footer">
+        
+        <p class="article-excerpt">
             
-
-
-
-    <a data-url="https://j0n9hyun.xyz/theory/How2Heap-Overlapping-Chunks/" data-id="ck5p1nomg000wlyfp917yqneq" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
-<script>
-    (function ($) {
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-        </footer>
+        </p>
     </div>
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BlogPosting",
-        "author": {
-            "@type": "Person",
-            "name": "j0n9hyun"
-        },
-        "headline": "[How2Heap] Overlapping_Chunks",
-        "image": "https://j0n9hyun.xyzhttps://user-images.githubusercontent.com/16969364/63588638-fa599880-c5e1-11e9-894e-98ba069523b6.png",
-        "keywords": "Theory",
-        "genre": "Theory",
-        "datePublished": "2019-06-20",
-        "dateCreated": "2019-06-20",
-        "dateModified": "2019-08-23",
-        "url": "https://j0n9hyun.xyz/theory/How2Heap-Overlapping-Chunks/",
-        "description": " Overlapping_Chunks.c
-
-이 기법은 glibc에서 tcache옵션이 disabled된 상태에만 작동한다.
-simple chunks overlapping
-heap에 chunk 3개를 할당해보자.
-3개의 chunk가 여기에 할당됐다:
-p1=0x603010
-p2=0x603110
-p3=0x603210
-이제 p2 chunk를 free시켜보자
-p2 c"
-        "wordCount": 185
-    }
-</script>
-
 </article>
-
-    <section id="comments">
     
-      
-    <div class="fb-comments" data-width="100%" data-href="https://j0n9hyun.xyz/theory/How2Heap-Overlapping-Chunks/" data-num-posts="5"></div>
-
-
+        </div>
     
-    </section>
+
+
+    </div></section>
 
 
 
@@ -368,29 +223,6 @@ p2 c"
             
         </ul>
     </div>
-    
-        
-<nav id="article-nav">
-    
-        <a href="/daily/IDA-Pro-7-2-한글-스트링-지원/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">다음 글</strong>
-        <p class="article-nav-title">
-        
-            IDA Pro 7.2 한글 스트링 지원
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
-    
-    
-        <a href="/daily/ida-7.0-korean-string-apply/" id="article-nav-older" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">이전 글</strong>
-        <p class="article-nav-title">IDA Pro 한글 스트링 적용 방법</p>
-        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
-        </a>
-    
-</nav>
-
     
     <div class="widgets-container">
         
