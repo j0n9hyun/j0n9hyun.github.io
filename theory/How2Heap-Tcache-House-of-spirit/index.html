@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
-    <!-- hexo-inject:begin --><script src='https://unpkg.com/echarts@3.3.2/dist/echarts.min.js'></script><!-- hexo-inject:end --><meta charset="utf-8">
-	<meta name="naver-site-verification" content="e19266ac7916f4f7f8ebeef5355bdce5102d3416">
+<head>
+    <!-- hexo-inject:begin --><script src='https://unpkg.com/echarts@3.3.2/dist/echarts.min.js'></script><!-- hexo-inject:end --><meta charset="utf-8" />
+	<meta name="naver-site-verification" content="e19266ac7916f4f7f8ebeef5355bdce5102d3416"/>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-140827316-1"></script>
 	<script>
@@ -18,54 +18,72 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="Theory">
+        <meta name="keywords" content="Theory" />
     
     <meta name="description" content="Tcache_House_of_spirit   the house of spirit attack on tcache. 기존의 house of spirit과 비슷한 방식으로 작동하지만 free될 fake chunk 뒤에 fake chunk를 만들 필요가 없다. malloc.c의 _int_free 함수에서 tcache_put이 다음 chunk의 prev_inuse">
-<meta name="keywords" content="Theory">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[How2Heap] Tcache_House_of_spirit">
 <meta property="og:url" content="https://j0n9hyun.xyz/theory/How2Heap-Tcache-House-of-spirit/index.html">
 <meta property="og:site_name" content="j0n9hyun">
 <meta property="og:description" content="Tcache_House_of_spirit   the house of spirit attack on tcache. 기존의 house of spirit과 비슷한 방식으로 작동하지만 free될 fake chunk 뒤에 fake chunk를 만들 필요가 없다. malloc.c의 _int_free 함수에서 tcache_put이 다음 chunk의 prev_inuse">
-<meta property="og:locale" content="ko">
+<meta property="og:locale" content="ko_KR">
 <meta property="og:image" content="https://user-images.githubusercontent.com/16969364/63587858-ffb5e380-c5df-11e9-9979-032003ed7d29.png">
-<meta property="og:updated_time" content="2019-08-23T10:57:22.403Z">
+<meta property="article:published_time" content="2019-06-26T15:45:55.000Z">
+<meta property="article:modified_time" content="2019-08-23T10:57:22.000Z">
+<meta property="article:author" content="j0n9hyun">
+<meta property="article:tag" content="Theory">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[How2Heap] Tcache_House_of_spirit">
-<meta name="twitter:description" content="Tcache_House_of_spirit   the house of spirit attack on tcache. 기존의 house of spirit과 비슷한 방식으로 작동하지만 free될 fake chunk 뒤에 fake chunk를 만들 필요가 없다. malloc.c의 _int_free 함수에서 tcache_put이 다음 chunk의 prev_inuse">
 <meta name="twitter:image" content="https://user-images.githubusercontent.com/16969364/63587858-ffb5e380-c5df-11e9-9979-032003ed7d29.png">
     
-	<link rel="canonical" href="https://j0n9hyun.xyz/theory/how2heap-tcache-house-of-spirit/">
+	<link rel="canonical" href="https://j0n9hyun.xyz/theory/how2heap-tcache-house-of-spirit/"/>
 
     
 
     
-        <link rel="icon" href="https://ctf.j0n9hyun.xyz/files/fbf1004228885fb7ac783e1d540d4538/vector.ico">
+        <link rel="icon" href="https://ctf.j0n9hyun.xyz/files/fbf1004228885fb7ac783e1d540d4538/vector.ico" />
     
 
-    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
-    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
 
-	<link rel="stylesheet" type="text/css" href>
-	<link rel="stylesheet" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.css">	
-	<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css">
-    <link rel="stylesheet" href="/css/style.css">
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
 
-    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
     
-    
-        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
-    
-    
-        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-    
-    
-    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
 
 
-</head>
-</html>
+	<link rel="stylesheet" type="text/css" href="">
+	
+<link rel="stylesheet" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.css">
+	
+	
+<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css">
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+
+
+<meta name="generator" content="Hexo 5.0.2"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
 <body>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="wrap">
         <header id="header">
@@ -93,13 +111,13 @@
                     <div class="nav-container-inner">
                         <ul id="main-nav">
                             
-                                <li class="main-nav-list-item">
+                                <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
                                         <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Daily/">Daily</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/">Develop</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Script/">Script</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Theory/">Theory</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/">WriteUps</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Crypto/">Crypto</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Foren/">Foren</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Pwn/">Pwn</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Rev/">Rev</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Web/">Web</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/misc/">misc</a></li></ul></li></ul>
                                     
-                                <li class="main-nav-list-item">
+                                <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/about">About</a>
                                 </li>
                             
@@ -108,14 +126,14 @@
                             <div id="search-form-wrap">
 
     <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="검색">
+        <input type="text" class="ins-search-input search-form-input" placeholder="검색" />
         <button type="submit" class="search-form-submit"></button>
     </form>
     <div class="ins-search">
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="입력">
+            <input type="text" class="ins-search-input" placeholder="입력" />
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -139,7 +157,9 @@
     window.INSIGHT_CONFIG = INSIGHT_CONFIG;
 })(window);
 </script>
+
 <script src="/js/insight.js"></script>
+
 
 </div>
                         </nav>
@@ -189,7 +209,7 @@
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Theory/">Theory</a>
+        <a class="tag-link-link" href="/tags/Theory/" rel="tag">Theory</a>
     </div>
 
   			<span class="reading-time">⏱ 1 분</span>
@@ -198,24 +218,24 @@
         
         <div class="article-entry" itemprop="articleBody">
             <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="tcache_house_of_spirit"><a class="markdownIt-Anchor" href="#tcache_house_of_spirit"></a> Tcache_House_of_spirit</h3>
-<p><img src="https://user-images.githubusercontent.com/16969364/63587858-ffb5e380-c5df-11e9-9979-032003ed7d29.png" alt="tcache_house_of_spirit.c"></p>
+<p><img src="https://user-images.githubusercontent.com/16969364/63587858-ffb5e380-c5df-11e9-9979-032003ed7d29.png" alt="tcache_house_of_spirit.c" /></p>
 <center>
-<p><code>the house of spirit attack on tcache.</code><br>
-기존의 house of spirit과 비슷한 방식으로 작동하지만<br>
-free될 fake chunk 뒤에 fake chunk를 만들 필요가 없다.<br>
-malloc.c의 _int_free 함수에서 tcache_put이 다음 chunk의 prev_inuse가 정상인지 확인하지 않고 호출되는 것을 알 수 있다.<br>
+<p><code>the house of spirit attack on tcache.</code><br />
+기존의 house of spirit과 비슷한 방식으로 작동하지만<br />
+free될 fake chunk 뒤에 fake chunk를 만들 필요가 없다.<br />
+malloc.c의 _int_free 함수에서 tcache_put이 다음 chunk의 prev_inuse가 정상인지 확인하지 않고 호출되는 것을 알 수 있다.<br />
 (Search for strings “invalid next size” and “double free or corruption”)</p>
-<p>malloc()을 한 번 호출해서 메모리를 세팅한다.<br>
-fake chunk 영역을 가리키기 위해 1 pointer를 overwrite할 것이라고 생각해보자.<br>
-이 영역에는 하나의 fake chunk가 있다. 크기 필드는 <code>0x7fff15cd5518</code>에 위치한다.<br>
-이 chunk 크기는 tcache 범주에 속해야 한다.<br>
+<p>malloc()을 한 번 호출해서 메모리를 세팅한다.<br />
+fake chunk 영역을 가리키기 위해 1 pointer를 overwrite할 것이라고 생각해보자.<br />
+이 영역에는 하나의 fake chunk가 있다. 크기 필드는 <code>0x7fff15cd5518</code>에 위치한다.<br />
+이 chunk 크기는 tcache 범주에 속해야 한다.<br />
 <code>(chunk 크기 &lt;= 0x410; x64: malloc arg &lt;= 0x408)</code></p>
-<p>prev_inuse(lsb) bit는 tcache chunk의 경우 free로 무시되지만<br>
-is_mmapped(두번째 lsb)와 non_main_arena(세번째 lsb) 비트는 문제를 일으킨다.<br>
+<p>prev_inuse(lsb) bit는 tcache chunk의 경우 free로 무시되지만<br />
+is_mmapped(두번째 lsb)와 non_main_arena(세번째 lsb) 비트는 문제를 일으킨다.<br />
 이제 첫번째 fake chunk안에 있는 <code>0x7fff15cd5518</code>를 fake영역의 주소에 pointer를 overwrite할 것이다.</p>
-<p>overwrite된 pointer를 free한다.<br>
-<code>-------free(a)-------</code><br>
-이제 다음 malloc은 <code>0x7fff15cd5518</code>에서 fake chunk의 영역을 반환할 것이다. 그것은 <code>0x7fff15cd5520</code>일 것이다.<br>
+<p>overwrite된 pointer를 free한다.<br />
+<code>-------free(a)-------</code><br />
+이제 다음 malloc은 <code>0x7fff15cd5518</code>에서 fake chunk의 영역을 반환할 것이다. 그것은 <code>0x7fff15cd5520</code>일 것이다.<br />
 <code>malloc(0x30): 0x7fff15cd5520</code></p>
 </center>
 
@@ -225,7 +245,7 @@ is_mmapped(두번째 lsb)와 non_main_arena(세번째 lsb) 비트는 문제를 �
 
 
 
-    <a data-url="https://j0n9hyun.xyz/theory/How2Heap-Tcache-House-of-spirit/" data-id="ck5p1non00013lyfp4xxqiqwa" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+    <a data-url="https://j0n9hyun.xyz/theory/How2Heap-Tcache-House-of-spirit/" data-id="ckdzanqe60017z5mp7b1jgfek" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -310,7 +330,7 @@ the house of spirit attack on tcache.
 기존의 house of spirit과 비슷한 방식으로 작동하지만
 free될 fake chunk 뒤에 fake chunk를 만들 필요가 없다.
 malloc.c의 _int_free 함수에서 tcache_put이 다음 chunk의 prev_inuse"
-        "wordCount": 127
+        "wordCount": 141
     }
 </script>
 
@@ -357,7 +377,7 @@ malloc.c의 _int_free 함수에서 tcache_put이 다음 chunk의 prev_inuse"
         
 <nav id="article-nav">
     
-        <a href="/daily/Windows-Terminal-시작-터미널-변경-방법/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/daily/Windows-Terminal-%EC%8B%9C%EC%9E%91-%ED%84%B0%EB%AF%B8%EB%84%90-%EB%B3%80%EA%B2%BD-%EB%B0%A9%EB%B2%95/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption">다음 글</strong>
         <p class="article-nav-title">
         
@@ -427,7 +447,7 @@ malloc.c의 _int_free 함수에서 tcache_put이 다음 chunk의 prev_inuse"
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">태그</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/">CTF</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theory/">Theory</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tips/">Tips</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wargame/">Wargame</a><span class="tag-list-count">3</span></li></ul>
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/" rel="tag">CTF</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theory/" rel="tag">Theory</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tips/" rel="tag">Tips</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wargame/" rel="tag">Wargame</a><span class="tag-list-count">3</span></li></ul>
         </div>
     </div>
 
@@ -482,25 +502,47 @@ malloc.c의 _int_free 함수에서 tcache_put이 다음 chunk의 prev_inuse"
 
 
     
-        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
     
     
-        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
     
     
 
 
 
 <!-- Custom Scripts -->
+
 <script src="/js/main.js"></script>
+
 
     </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>

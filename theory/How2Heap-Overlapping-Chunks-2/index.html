@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
-    <!-- hexo-inject:begin --><script src='https://unpkg.com/echarts@3.3.2/dist/echarts.min.js'></script><!-- hexo-inject:end --><meta charset="utf-8">
-	<meta name="naver-site-verification" content="e19266ac7916f4f7f8ebeef5355bdce5102d3416">
+<head>
+    <!-- hexo-inject:begin --><script src='https://unpkg.com/echarts@3.3.2/dist/echarts.min.js'></script><!-- hexo-inject:end --><meta charset="utf-8" />
+	<meta name="naver-site-verification" content="e19266ac7916f4f7f8ebeef5355bdce5102d3416"/>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-140827316-1"></script>
 	<script>
@@ -18,54 +18,72 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="Theory">
+        <meta name="keywords" content="Theory" />
     
     <meta name="description" content="Overlapping_Chunks_2  simple chunks overlapping problem 이것은 인접하지 않은 free chunk를 consolidate하는 공격으로도 참조된다. heap에 chunk를 5개 할당한다. 0x603010 ~ 0x6033f8 p1 chunk 0x603400 ~ 0x6037e8 p2 chunk 0x6037f0 ~ 0x">
-<meta name="keywords" content="Theory">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[How2Heap] Overlapping_Chunks_2">
 <meta property="og:url" content="https://j0n9hyun.xyz/theory/How2Heap-Overlapping-Chunks-2/index.html">
 <meta property="og:site_name" content="j0n9hyun">
 <meta property="og:description" content="Overlapping_Chunks_2  simple chunks overlapping problem 이것은 인접하지 않은 free chunk를 consolidate하는 공격으로도 참조된다. heap에 chunk를 5개 할당한다. 0x603010 ~ 0x6033f8 p1 chunk 0x603400 ~ 0x6037e8 p2 chunk 0x6037f0 ~ 0x">
-<meta property="og:locale" content="ko">
+<meta property="og:locale" content="ko_KR">
 <meta property="og:image" content="https://user-images.githubusercontent.com/16969364/63588190-e06b8600-c5e0-11e9-8e36-02c5e15a487e.png">
-<meta property="og:updated_time" content="2019-08-23T11:03:12.632Z">
+<meta property="article:published_time" content="2019-06-26T13:51:17.000Z">
+<meta property="article:modified_time" content="2019-08-23T11:03:12.000Z">
+<meta property="article:author" content="j0n9hyun">
+<meta property="article:tag" content="Theory">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[How2Heap] Overlapping_Chunks_2">
-<meta name="twitter:description" content="Overlapping_Chunks_2  simple chunks overlapping problem 이것은 인접하지 않은 free chunk를 consolidate하는 공격으로도 참조된다. heap에 chunk를 5개 할당한다. 0x603010 ~ 0x6033f8 p1 chunk 0x603400 ~ 0x6037e8 p2 chunk 0x6037f0 ~ 0x">
 <meta name="twitter:image" content="https://user-images.githubusercontent.com/16969364/63588190-e06b8600-c5e0-11e9-8e36-02c5e15a487e.png">
     
-	<link rel="canonical" href="https://j0n9hyun.xyz/theory/how2heap-overlapping-chunks-2/">
+	<link rel="canonical" href="https://j0n9hyun.xyz/theory/how2heap-overlapping-chunks-2/"/>
 
     
 
     
-        <link rel="icon" href="https://ctf.j0n9hyun.xyz/files/fbf1004228885fb7ac783e1d540d4538/vector.ico">
+        <link rel="icon" href="https://ctf.j0n9hyun.xyz/files/fbf1004228885fb7ac783e1d540d4538/vector.ico" />
     
 
-    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
-    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
 
-	<link rel="stylesheet" type="text/css" href>
-	<link rel="stylesheet" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.css">	
-	<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css">
-    <link rel="stylesheet" href="/css/style.css">
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
 
-    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
     
-    
-        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
-    
-    
-        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-    
-    
-    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
 
 
-</head>
-</html>
+	<link rel="stylesheet" type="text/css" href="">
+	
+<link rel="stylesheet" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.css">
+	
+	
+<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css">
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+
+
+<meta name="generator" content="Hexo 5.0.2"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
 <body>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="wrap">
         <header id="header">
@@ -93,13 +111,13 @@
                     <div class="nav-container-inner">
                         <ul id="main-nav">
                             
-                                <li class="main-nav-list-item">
+                                <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
                                         <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Daily/">Daily</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/">Develop</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Script/">Script</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Theory/">Theory</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/">WriteUps</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Crypto/">Crypto</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Foren/">Foren</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Pwn/">Pwn</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Rev/">Rev</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Web/">Web</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/misc/">misc</a></li></ul></li></ul>
                                     
-                                <li class="main-nav-list-item">
+                                <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/about">About</a>
                                 </li>
                             
@@ -108,14 +126,14 @@
                             <div id="search-form-wrap">
 
     <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="검색">
+        <input type="text" class="ins-search-input search-form-input" placeholder="검색" />
         <button type="submit" class="search-form-submit"></button>
     </form>
     <div class="ins-search">
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="입력">
+            <input type="text" class="ins-search-input" placeholder="입력" />
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -139,7 +157,9 @@
     window.INSIGHT_CONFIG = INSIGHT_CONFIG;
 })(window);
 </script>
+
 <script src="/js/insight.js"></script>
+
 
 </div>
                         </nav>
@@ -189,7 +209,7 @@
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Theory/">Theory</a>
+        <a class="tag-link-link" href="/tags/Theory/" rel="tag">Theory</a>
     </div>
 
   			<span class="reading-time">⏱ 2 분</span>
@@ -198,26 +218,26 @@
         
         <div class="article-entry" itemprop="articleBody">
             <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="overlapping_chunks_2"><a class="markdownIt-Anchor" href="#overlapping_chunks_2"></a> Overlapping_Chunks_2</h3>
-<p><img src="https://user-images.githubusercontent.com/16969364/63588190-e06b8600-c5e0-11e9-8e36-02c5e15a487e.png" alt="overlapping_chunks2.c"></p>
-<p><code>simple chunks overlapping problem</code><br>
+<p><img src="https://user-images.githubusercontent.com/16969364/63588190-e06b8600-c5e0-11e9-8e36-02c5e15a487e.png" alt="overlapping_chunks2.c" /></p>
+<p><code>simple chunks overlapping problem</code><br />
 이것은 인접하지 않은 free chunk를 consolidate하는 공격으로도 참조된다.</p>
 <p>heap에 chunk를 5개 할당한다.</p>
-<p><code>0x603010 ~ 0x6033f8 p1 chunk</code><br>
-<code>0x603400 ~ 0x6037e8 p2 chunk</code><br>
-<code>0x6037f0 ~ 0x603bd8 p3 chunk</code><br>
-<code>0x603be0 ~ 0x603fc8 p4 chunk</code><br>
+<p><code>0x603010 ~ 0x6033f8 p1 chunk</code><br />
+<code>0x603400 ~ 0x6037e8 p2 chunk</code><br />
+<code>0x6037f0 ~ 0x603bd8 p3 chunk</code><br />
+<code>0x603be0 ~ 0x603fc8 p4 chunk</code><br />
 <code>0x603fd0 ~ 0x6043b8 p5 chunk</code></p>
 <p>p4 chunk를 <code>free</code>해보자. 이 경우, p4이후에 p5가 <code>top chunk</code>에 접하고 있어서 <code>top chunk</code>와 합쳐지지 않는다</p>
 <p>사용 중인 p2 chunk의 크기를 chunk_p2 + chunk_p3크기로 overwrite하는 p1 chunk취약점을 트리거하자.</p>
 <p>이제 p2에 free()동작 중에 할당자는 다음 chunk가 p4라고 생각한다. (p2 + p2의 크기가 p4를 가리키기 때문)</p>
 <p>이 작업은 기본적으로 p3을 잘못 포함하는 큰 free chunk를 생성한다.</p>
 <p>이제 이전에 free된 chunk로 만족할 수 있는 크기의 새 chunk를 할당하자</p>
-<p>malloc()은 우리의 만들어진 큰 free chunk에 의해 충족되었다. 이제 p6과 p3은 overlapping되어 우리는 p3에 있는 데이터를 p6 chunk에 쓰면서 overwrite할 수 있다.<br>
-<code>0x603400 ~ 0x603bd8 p6 chunk</code><br>
+<p>malloc()은 우리의 만들어진 큰 free chunk에 의해 충족되었다. 이제 p6과 p3은 overlapping되어 우리는 p3에 있는 데이터를 p6 chunk에 쓰면서 overwrite할 수 있다.<br />
+<code>0x603400 ~ 0x603bd8 p6 chunk</code><br />
 <code>0x6037f0 ~ 0x603bd8 p3 chunk</code></p>
 <p><strong><code>p3 chunk의 data:</code></strong></p>
 <p><code>CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC</code></p>
-<p>p6안에 뭔가 써보자.<br>
+<p>p6안에 뭔가 써보자.<br />
 -------memset(p6,‘F’,1500)-------</p>
 <p><strong><code>p3 chunk의 data:</code></strong></p>
 <p><code>FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC</code></p>
@@ -228,7 +248,7 @@
 
 
 
-    <a data-url="https://j0n9hyun.xyz/theory/How2Heap-Overlapping-Chunks-2/" data-id="ck5p1nomf000ulyfpn10u8j8j" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+    <a data-url="https://j0n9hyun.xyz/theory/How2Heap-Overlapping-Chunks-2/" data-id="ckdzanqe2000wz5mpakgbhvol" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -314,7 +334,7 @@ heap에 chunk를 5개 할당한다.
 0x603010 ~ 0x6033f8 p1 chunk
 0x603400 ~ 0x6037e8 p2 chunk
 0x6037f0 ~ 0x"
-        "wordCount": 137
+        "wordCount": 146
     }
 </script>
 
@@ -372,7 +392,7 @@ heap에 chunk를 5개 할당한다.
     </a>
     
     
-        <a href="/daily/IDA-Pro-7-2-한글-스트링-지원/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/daily/IDA-Pro-7-2-%ED%95%9C%EA%B8%80-%EC%8A%A4%ED%8A%B8%EB%A7%81-%EC%A7%80%EC%9B%90/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">이전 글</strong>
         <p class="article-nav-title">IDA Pro 7.2 한글 스트링 지원</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
@@ -431,7 +451,7 @@ heap에 chunk를 5개 할당한다.
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">태그</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/">CTF</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theory/">Theory</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tips/">Tips</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wargame/">Wargame</a><span class="tag-list-count">3</span></li></ul>
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/" rel="tag">CTF</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theory/" rel="tag">Theory</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tips/" rel="tag">Tips</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wargame/" rel="tag">Wargame</a><span class="tag-list-count">3</span></li></ul>
         </div>
     </div>
 
@@ -486,25 +506,47 @@ heap에 chunk를 5개 할당한다.
 
 
     
-        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
     
     
-        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
     
     
 
 
 
 <!-- Custom Scripts -->
+
 <script src="/js/main.js"></script>
+
 
     </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>

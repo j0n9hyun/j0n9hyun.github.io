@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
-    <!-- hexo-inject:begin --><script src='https://unpkg.com/echarts@3.3.2/dist/echarts.min.js'></script><!-- hexo-inject:end --><meta charset="utf-8">
-	<meta name="naver-site-verification" content="e19266ac7916f4f7f8ebeef5355bdce5102d3416">
+<head>
+    <!-- hexo-inject:begin --><script src='https://unpkg.com/echarts@3.3.2/dist/echarts.min.js'></script><!-- hexo-inject:end --><meta charset="utf-8" />
+	<meta name="naver-site-verification" content="e19266ac7916f4f7f8ebeef5355bdce5102d3416"/>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-140827316-1"></script>
 	<script>
@@ -18,54 +18,72 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="Tips">
+        <meta name="keywords" content="Tips" />
     
     <meta name="description" content="Windows Terminal 시작 터미널 변경 방법 드디어 윈도우 터미널 프리뷰 버전이 스토어에 릴리즈 됐다. 줄곧 WSL관련 기능들을 써왔던 나로썬 매우 반가운 소식이었다. 호다닥 설치하고 잠깐 사용해봤는데 나름대로 만족한다. 그리고 글 쓰다가 알게된 사실인데 마우스 커서를 오른쪽에 대고 드래그해야 터미널을 이동시킬 수 있다. 이 부분은 살짝 불편하긴">
-<meta name="keywords" content="Tips">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Windows Terminal 시작 터미널 변경">
-<meta property="og:url" content="https://j0n9hyun.xyz/daily/Windows-Terminal-시작-터미널-변경-방법/index.html">
+<meta property="og:url" content="https://j0n9hyun.xyz/daily/Windows-Terminal-%EC%8B%9C%EC%9E%91-%ED%84%B0%EB%AF%B8%EB%84%90-%EB%B3%80%EA%B2%BD-%EB%B0%A9%EB%B2%95/index.html">
 <meta property="og:site_name" content="j0n9hyun">
 <meta property="og:description" content="Windows Terminal 시작 터미널 변경 방법 드디어 윈도우 터미널 프리뷰 버전이 스토어에 릴리즈 됐다. 줄곧 WSL관련 기능들을 써왔던 나로썬 매우 반가운 소식이었다. 호다닥 설치하고 잠깐 사용해봤는데 나름대로 만족한다. 그리고 글 쓰다가 알게된 사실인데 마우스 커서를 오른쪽에 대고 드래그해야 터미널을 이동시킬 수 있다. 이 부분은 살짝 불편하긴">
-<meta property="og:locale" content="ko">
+<meta property="og:locale" content="ko_KR">
 <meta property="og:image" content="https://user-images.githubusercontent.com/16969364/60199695-7902b580-987f-11e9-9f6d-e079cbd1c586.PNG">
-<meta property="og:updated_time" content="2019-06-26T17:26:46.000Z">
+<meta property="article:published_time" content="2019-06-26T16:58:15.000Z">
+<meta property="article:modified_time" content="2019-06-26T17:26:46.000Z">
+<meta property="article:author" content="j0n9hyun">
+<meta property="article:tag" content="Tips">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Windows Terminal 시작 터미널 변경">
-<meta name="twitter:description" content="Windows Terminal 시작 터미널 변경 방법 드디어 윈도우 터미널 프리뷰 버전이 스토어에 릴리즈 됐다. 줄곧 WSL관련 기능들을 써왔던 나로썬 매우 반가운 소식이었다. 호다닥 설치하고 잠깐 사용해봤는데 나름대로 만족한다. 그리고 글 쓰다가 알게된 사실인데 마우스 커서를 오른쪽에 대고 드래그해야 터미널을 이동시킬 수 있다. 이 부분은 살짝 불편하긴">
 <meta name="twitter:image" content="https://user-images.githubusercontent.com/16969364/60199695-7902b580-987f-11e9-9f6d-e079cbd1c586.PNG">
     
-	<link rel="canonical" href="https://j0n9hyun.xyz/daily/windows-terminal-시작-터미널-변경-방법/">
+	<link rel="canonical" href="https://j0n9hyun.xyz/daily/windows-terminal-시작-터미널-변경-방법/"/>
 
     
 
     
-        <link rel="icon" href="https://ctf.j0n9hyun.xyz/files/fbf1004228885fb7ac783e1d540d4538/vector.ico">
+        <link rel="icon" href="https://ctf.j0n9hyun.xyz/files/fbf1004228885fb7ac783e1d540d4538/vector.ico" />
     
 
-    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
-    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
 
-	<link rel="stylesheet" type="text/css" href>
-	<link rel="stylesheet" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.css">	
-	<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css">
-    <link rel="stylesheet" href="/css/style.css">
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
 
-    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
     
-    
-        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
-    
-    
-        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-    
-    
-    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
 
 
-</head>
-</html>
+	<link rel="stylesheet" type="text/css" href="">
+	
+<link rel="stylesheet" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.css">
+	
+	
+<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css">
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+
+
+<meta name="generator" content="Hexo 5.0.2"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
 <body>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="wrap">
         <header id="header">
@@ -93,13 +111,13 @@
                     <div class="nav-container-inner">
                         <ul id="main-nav">
                             
-                                <li class="main-nav-list-item">
+                                <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
                                         <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Daily/">Daily</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/">Develop</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Script/">Script</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Theory/">Theory</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/">WriteUps</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Crypto/">Crypto</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Foren/">Foren</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Pwn/">Pwn</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Rev/">Rev</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Web/">Web</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/misc/">misc</a></li></ul></li></ul>
                                     
-                                <li class="main-nav-list-item">
+                                <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/about">About</a>
                                 </li>
                             
@@ -108,14 +126,14 @@
                             <div id="search-form-wrap">
 
     <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="검색">
+        <input type="text" class="ins-search-input search-form-input" placeholder="검색" />
         <button type="submit" class="search-form-submit"></button>
     </form>
     <div class="ins-search">
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="입력">
+            <input type="text" class="ins-search-input" placeholder="입력" />
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -139,7 +157,9 @@
     window.INSIGHT_CONFIG = INSIGHT_CONFIG;
 })(window);
 </script>
+
 <script src="/js/insight.js"></script>
+
 
 </div>
                         </nav>
@@ -179,7 +199,7 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/daily/Windows-Terminal-시작-터미널-변경-방법/" class="article-date">
+        <a href="/daily/Windows-Terminal-%EC%8B%9C%EC%9E%91-%ED%84%B0%EB%AF%B8%EB%84%90-%EB%B3%80%EA%B2%BD-%EB%B0%A9%EB%B2%95/" class="article-date">
             <time datetime="2019-06-26T16:58:15.000Z" itemprop="datePublished">2019년 06월 27일</time>
         </a>
     </div>
@@ -189,7 +209,7 @@
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Tips/">Tips</a>
+        <a class="tag-link-link" href="/tags/Tips/" rel="tag">Tips</a>
     </div>
 
   			<span class="reading-time">⏱ 1 분</span>
@@ -198,7 +218,7 @@
         
         <div class="article-entry" itemprop="articleBody">
             <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="windows-terminal-시작-터미널-변경-방법"><a class="markdownIt-Anchor" href="#windows-terminal-시작-터미널-변경-방법"></a> Windows Terminal 시작 터미널 변경 방법</h3>
-<p>드디어 윈도우 터미널 프리뷰 버전이 스토어에 릴리즈 됐다.<br>
+<p>드디어 윈도우 터미널 프리뷰 버전이 스토어에 릴리즈 됐다.<br />
 줄곧 WSL관련 기능들을 써왔던 나로썬 매우 반가운 소식이었다. 호다닥 설치하고 잠깐 사용해봤는데 나름대로 만족한다. 그리고 글 쓰다가 알게된 사실인데 마우스 커서를 오른쪽에 대고 드래그해야 터미널을 이동시킬 수 있다. 이 부분은 살짝 불편하긴한데 뭐 적응되겠지. 이제 올 겨울 정식 릴리즈될 WSL2만 남았다.</p>
 <img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/60199695-7902b580-987f-11e9-9f6d-e079cbd1c586.PNG" width="650px">
 <small><center>[Windows Terminal Preview]</center></small> <br>
@@ -227,7 +247,7 @@ img.border-shadow{
 
 
 
-    <a data-url="https://j0n9hyun.xyz/daily/Windows-Terminal-시작-터미널-변경-방법/" data-id="ck5p1nolu0005lyfp3u9vzumw" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+    <a data-url="https://j0n9hyun.xyz/daily/Windows-Terminal-%EC%8B%9C%EC%9E%91-%ED%84%B0%EB%AF%B8%EB%84%90-%EB%B3%80%EA%B2%BD-%EB%B0%A9%EB%B2%95/" data-id="ckdzanqdo0008z5mpbba6d8ug" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -308,7 +328,7 @@ img.border-shadow{
         "description": " Windows Terminal 시작 터미널 변경 방법
 드디어 윈도우 터미널 프리뷰 버전이 스토어에 릴리즈 됐다.
 줄곧 WSL관련 기능들을 써왔던 나로썬 매우 반가운 소식이었다. 호다닥 설치하고 잠깐 사용해봤는데 나름대로 만족한다. 그리고 글 쓰다가 알게된 사실인데 마우스 커서를 오른쪽에 대고 드래그해야 터미널을 이동시킬 수 있다. 이 부분은 살짝 불편하긴"
-        "wordCount": 159
+        "wordCount": 160
     }
 </script>
 
@@ -317,7 +337,7 @@ img.border-shadow{
     <section id="comments">
     
       
-    <div class="fb-comments" data-width="100%" data-href="https://j0n9hyun.xyz/daily/Windows-Terminal-시작-터미널-변경-방법/" data-num-posts="5"></div>
+    <div class="fb-comments" data-width="100%" data-href="https://j0n9hyun.xyz/daily/Windows-Terminal-%EC%8B%9C%EC%9E%91-%ED%84%B0%EB%AF%B8%EB%84%90-%EB%B3%80%EA%B2%BD-%EB%B0%A9%EB%B2%95/" data-num-posts="5"></div>
 
 
     
@@ -425,7 +445,7 @@ img.border-shadow{
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">태그</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/">CTF</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theory/">Theory</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tips/">Tips</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wargame/">Wargame</a><span class="tag-list-count">3</span></li></ul>
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/" rel="tag">CTF</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theory/" rel="tag">Theory</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tips/" rel="tag">Tips</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wargame/" rel="tag">Wargame</a><span class="tag-list-count">3</span></li></ul>
         </div>
     </div>
 
@@ -480,25 +500,47 @@ img.border-shadow{
 
 
     
-        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
     
     
-        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
     
     
 
 
 
 <!-- Custom Scripts -->
+
 <script src="/js/main.js"></script>
+
 
     </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>

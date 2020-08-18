@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
-    <!-- hexo-inject:begin --><script src='https://unpkg.com/echarts@3.3.2/dist/echarts.min.js'></script><!-- hexo-inject:end --><meta charset="utf-8">
-	<meta name="naver-site-verification" content="e19266ac7916f4f7f8ebeef5355bdce5102d3416">
+<head>
+    <!-- hexo-inject:begin --><script src='https://unpkg.com/echarts@3.3.2/dist/echarts.min.js'></script><!-- hexo-inject:end --><meta charset="utf-8" />
+	<meta name="naver-site-verification" content="e19266ac7916f4f7f8ebeef5355bdce5102d3416"/>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-140827316-1"></script>
 	<script>
@@ -18,54 +18,72 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="Theory">
+        <meta name="keywords" content="Theory" />
     
     <meta name="description" content="Tcache  Ubuntu 17.04 에서 glibc 2.6 버전이 릴리즈 되었는데 tcache_entry와 tcache_perthread_struct라는 구조체가 새로 추가되었다.  특징   Single linked list(단일 연결 구조)를 이루고 있다. Consolidate를 하지 않는다. LIFO 구조를 가지고 있다. Pointer가 오직 nex">
-<meta name="keywords" content="Theory">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Tcache Theory Analysis">
 <meta property="og:url" content="https://j0n9hyun.xyz/theory/tcache_theory/index.html">
 <meta property="og:site_name" content="j0n9hyun">
 <meta property="og:description" content="Tcache  Ubuntu 17.04 에서 glibc 2.6 버전이 릴리즈 되었는데 tcache_entry와 tcache_perthread_struct라는 구조체가 새로 추가되었다.  특징   Single linked list(단일 연결 구조)를 이루고 있다. Consolidate를 하지 않는다. LIFO 구조를 가지고 있다. Pointer가 오직 nex">
-<meta property="og:locale" content="ko">
+<meta property="og:locale" content="ko_KR">
 <meta property="og:image" content="https://user-images.githubusercontent.com/16969364/63588950-b1561400-c5e2-11e9-8603-fb114c698e7e.png">
-<meta property="og:updated_time" content="2019-08-23T11:17:42.754Z">
+<meta property="article:published_time" content="2019-03-19T01:21:00.000Z">
+<meta property="article:modified_time" content="2019-08-23T11:17:42.000Z">
+<meta property="article:author" content="j0n9hyun">
+<meta property="article:tag" content="Theory">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tcache Theory Analysis">
-<meta name="twitter:description" content="Tcache  Ubuntu 17.04 에서 glibc 2.6 버전이 릴리즈 되었는데 tcache_entry와 tcache_perthread_struct라는 구조체가 새로 추가되었다.  특징   Single linked list(단일 연결 구조)를 이루고 있다. Consolidate를 하지 않는다. LIFO 구조를 가지고 있다. Pointer가 오직 nex">
 <meta name="twitter:image" content="https://user-images.githubusercontent.com/16969364/63588950-b1561400-c5e2-11e9-8603-fb114c698e7e.png">
     
-	<link rel="canonical" href="https://j0n9hyun.xyz/theory/tcache_theory/">
+	<link rel="canonical" href="https://j0n9hyun.xyz/theory/tcache_theory/"/>
 
     
 
     
-        <link rel="icon" href="https://ctf.j0n9hyun.xyz/files/fbf1004228885fb7ac783e1d540d4538/vector.ico">
+        <link rel="icon" href="https://ctf.j0n9hyun.xyz/files/fbf1004228885fb7ac783e1d540d4538/vector.ico" />
     
 
-    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
-    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
 
-	<link rel="stylesheet" type="text/css" href>
-	<link rel="stylesheet" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.css">	
-	<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css">
-    <link rel="stylesheet" href="/css/style.css">
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
 
-    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
     
-    
-        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
-    
-    
-        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-    
-    
-    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
 
 
-</head>
-</html>
+	<link rel="stylesheet" type="text/css" href="">
+	
+<link rel="stylesheet" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.css">
+	
+	
+<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css">
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+
+
+<meta name="generator" content="Hexo 5.0.2"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
 <body>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="wrap">
         <header id="header">
@@ -93,13 +111,13 @@
                     <div class="nav-container-inner">
                         <ul id="main-nav">
                             
-                                <li class="main-nav-list-item">
+                                <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
                                         <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Daily/">Daily</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/">Develop</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Script/">Script</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Theory/">Theory</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/">WriteUps</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Crypto/">Crypto</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Foren/">Foren</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Pwn/">Pwn</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Rev/">Rev</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Web/">Web</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/misc/">misc</a></li></ul></li></ul>
                                     
-                                <li class="main-nav-list-item">
+                                <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/about">About</a>
                                 </li>
                             
@@ -108,14 +126,14 @@
                             <div id="search-form-wrap">
 
     <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="검색">
+        <input type="text" class="ins-search-input search-form-input" placeholder="검색" />
         <button type="submit" class="search-form-submit"></button>
     </form>
     <div class="ins-search">
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="입력">
+            <input type="text" class="ins-search-input" placeholder="입력" />
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -139,7 +157,9 @@
     window.INSIGHT_CONFIG = INSIGHT_CONFIG;
 })(window);
 </script>
+
 <script src="/js/insight.js"></script>
+
 
 </div>
                         </nav>
@@ -189,7 +209,7 @@
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Theory/">Theory</a>
+        <a class="tag-link-link" href="/tags/Theory/" rel="tag">Theory</a>
     </div>
 
   			<span class="reading-time">⏱ 3 분</span>
@@ -198,7 +218,7 @@
         
         <div class="article-entry" itemprop="articleBody">
             <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="tcache"><a class="markdownIt-Anchor" href="#tcache"></a> Tcache</h2>
-<p><img src="https://user-images.githubusercontent.com/16969364/63588950-b1561400-c5e2-11e9-8603-fb114c698e7e.png" alt="tcache_entry"></p>
+<p><img src="https://user-images.githubusercontent.com/16969364/63588950-b1561400-c5e2-11e9-8603-fb114c698e7e.png" alt="tcache_entry" /></p>
 <p>Ubuntu 17.04 에서 glibc 2.6 버전이 릴리즈 되었는데 <strong>tcache_entry</strong>와 <strong>tcache_perthread_struct</strong>라는 구조체가 새로 추가되었다.</p>
 <h3 id="특징-br"><a class="markdownIt-Anchor" href="#특징-br"></a> 특징 <br></h3>
 <ul>
@@ -211,11 +231,11 @@
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* This is another arbitrary limit, which tunables can change.  Each</span></span><br><span class="line"><span class="comment">   tcache bin will hold at most this number of chunks.  */</span></span><br><span class="line"><span class="meta"># <span class="meta-keyword">define</span> TCACHE_FILL_COUNT 7</span></span><br></pre></td></tr></table></figure>
 <p>tcache bin 한 개당 기본적으로 7개의 Chunk를 가질 수 있다.</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">if</span> USE_TCACHE</span></span><br><span class="line"><span class="comment">/* We want 64 entries.  This is an arbitrary limit, which tunables can reduce.  */</span></span><br><span class="line"><span class="meta"># <span class="meta-keyword">define</span> TCACHE_MAX_BINS		64</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">tcache_put (mchunkptr chunk, <span class="keyword">size_t</span> tc_idx)</span><br><span class="line">&#123;</span><br><span class="line">  tcache_entry *e = (tcache_entry *) chunk2mem (chunk);</span><br><span class="line">  assert (tc_idx &lt; TCACHE_MAX_BINS);</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* Mark this chunk as "in the tcache" so the test in _int_free will</span></span><br><span class="line"><span class="comment">     detect a double free.  */</span></span><br><span class="line">  e-&gt;key = tcache;</span><br><span class="line"></span><br><span class="line">  e-&gt;next = tcache-&gt;entries[tc_idx];</span><br><span class="line">  tcache-&gt;entries[tc_idx] = e;</span><br><span class="line">  ++(tcache-&gt;counts[tc_idx]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">tcache_put (mchunkptr chunk, <span class="keyword">size_t</span> tc_idx)</span><br><span class="line">&#123;</span><br><span class="line">  tcache_entry *e = (tcache_entry *) chunk2mem (chunk);</span><br><span class="line">  assert (tc_idx &lt; TCACHE_MAX_BINS);</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* Mark this chunk as &quot;in the tcache&quot; so the test in _int_free will</span></span><br><span class="line"><span class="comment">     detect a double free.  */</span></span><br><span class="line">  e-&gt;key = tcache;</span><br><span class="line"></span><br><span class="line">  e-&gt;next = tcache-&gt;entries[tc_idx];</span><br><span class="line">  tcache-&gt;entries[tc_idx] = e;</span><br><span class="line">  ++(tcache-&gt;counts[tc_idx]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <center><small>[tcache_put]</small></center>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Caller must ensure that we know tc_idx is valid and there's</span></span><br><span class="line"><span class="comment">   available chunks to remove.  */</span></span><br><span class="line"><span class="keyword">static</span> __always_inline <span class="keyword">void</span> *</span><br><span class="line">tcache_get (<span class="keyword">size_t</span> tc_idx)</span><br><span class="line">&#123;</span><br><span class="line">  tcache_entry *e = tcache-&gt;entries[tc_idx];</span><br><span class="line">  assert (tc_idx &lt; TCACHE_MAX_BINS);</span><br><span class="line">  assert (tcache-&gt;counts[tc_idx] &gt; <span class="number">0</span>);</span><br><span class="line">  tcache-&gt;entries[tc_idx] = e-&gt;next;</span><br><span class="line">  --(tcache-&gt;counts[tc_idx]);</span><br><span class="line">  e-&gt;key = <span class="literal">NULL</span>;</span><br><span class="line">  <span class="keyword">return</span> (<span class="keyword">void</span> *) e;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Caller must ensure that we know tc_idx is valid and there&#x27;s</span></span><br><span class="line"><span class="comment">   available chunks to remove.  */</span></span><br><span class="line"><span class="keyword">static</span> __always_inline <span class="keyword">void</span> *</span><br><span class="line">tcache_get (<span class="keyword">size_t</span> tc_idx)</span><br><span class="line">&#123;</span><br><span class="line">  tcache_entry *e = tcache-&gt;entries[tc_idx];</span><br><span class="line">  assert (tc_idx &lt; TCACHE_MAX_BINS);</span><br><span class="line">  assert (tcache-&gt;counts[tc_idx] &gt; <span class="number">0</span>);</span><br><span class="line">  tcache-&gt;entries[tc_idx] = e-&gt;next;</span><br><span class="line">  --(tcache-&gt;counts[tc_idx]);</span><br><span class="line">  e-&gt;key = <span class="literal">NULL</span>;</span><br><span class="line">  <span class="keyword">return</span> (<span class="keyword">void</span> *) e;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <center><small>[tcache_get]</small></center>
-<p><strong>tcache_put</strong>과 <strong>tcache_get</strong> 함수는 _int_free 와 __libc_malloc 함수가 시작할때 호출된다.<br>
+<p><strong>tcache_put</strong>과 <strong>tcache_get</strong> 함수는 _int_free 와 __libc_malloc 함수가 시작할때 호출된다.<br />
 <strong>tacace_get</strong>은 할당된 크기의 영역이 요청될때 0x408보다 작으면 호출된다.</p>
 <p><img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/58037363-3eaf4580-7b68-11e9-9dec-a36a43808625.PNG"> <br></p>
 <img class="border-shadow" src="https://user-images.githubusercontent.com/16969364/58037374-41119f80-7b68-11e9-8533-5a9f1d95e084.PNG">
@@ -236,7 +256,7 @@ entry와 count가 보이는 것을 알 수 있다. <br> <br>
 
 
 
-    <a data-url="https://j0n9hyun.xyz/theory/tcache_theory/" data-id="ck5p1nona001slyfpjt4sw3rm" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+    <a data-url="https://j0n9hyun.xyz/theory/tcache_theory/" data-id="ckdzanqef001wz5mpaarr17pz" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -323,7 +343,7 @@ Single linked list(단일 연결 구조)를 이루고 있다.
 Consolidate를 하지 않는다.
 LIFO 구조를 가지고 있다.
 Pointer가 오직 nex"
-        "wordCount": 389
+        "wordCount": 391
     }
 </script>
 
@@ -440,7 +460,7 @@ Pointer가 오직 nex"
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">태그</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/">CTF</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theory/">Theory</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tips/">Tips</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wargame/">Wargame</a><span class="tag-list-count">3</span></li></ul>
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/" rel="tag">CTF</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theory/" rel="tag">Theory</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tips/" rel="tag">Tips</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wargame/" rel="tag">Wargame</a><span class="tag-list-count">3</span></li></ul>
         </div>
     </div>
 
@@ -495,25 +515,47 @@ Pointer가 오직 nex"
 
 
     
-        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
     
     
-        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
     
     
 
 
 
 <!-- Custom Scripts -->
+
 <script src="/js/main.js"></script>
+
 
     </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>

